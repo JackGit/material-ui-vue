@@ -17,7 +17,11 @@
     </div>
     <div class="row">
         <select-field label="select field"
-                :options="[{value:'',text:'please make choice',disabled:true},{value:'1',text:'one',selected:true}]"></select-field>
+                :options="[
+                    {value:'',text:'please make choice',disabled:true},
+                    {value:'1',text:'one',selected:true},
+                    {value:'2',text:'two'}
+                ]"></select-field>
     </div>
 
 </template>
