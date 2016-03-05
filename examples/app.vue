@@ -18,6 +18,10 @@
 
         <text-field label="text field"
                     icon="phone"
+                    class="col s12"></text-field>
+
+        <text-field label="text field"
+                    icon="phone"
                     :disabled="true"
                     :value.sync="text"
                     :validate="true"

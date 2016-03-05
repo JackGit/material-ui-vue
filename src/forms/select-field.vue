@@ -44,11 +44,6 @@
             }
         },
 
-        watch: {
-            options: function() {
-                $(this.$els.select).material_select();
-            }
-        },
 
         ready: function() {
             $(this.$els.select).material_select();

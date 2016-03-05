@@ -5,7 +5,7 @@
 <template>
     <div class="input-field">
         <icon v-if="icon"
-              class="prefix"
+              :class="['prefix', labelActive ? 'active' : '']"
               :value="icon"></icon>
 
         <input v-el:input
@@ -14,7 +14,7 @@
                :type="type"
                :placeholder="placeholder"
                :disabled="disabled"
-               :class="validate ? 'validate' : ''">
+               :class="[validate ? 'validate' : '', valid]">
 
         <label :for="id"
                :class="(value || placeholder) ? 'active' : ''"
@@ -66,7 +66,9 @@
 
         data: function() {
             return {
-                id: uuid.v1()
+                id: uuid.v1(),
+                labelActive: false,
+                valid: ''           // 'valid', 'invalid'
             };
         },
 
@@ -77,6 +79,45 @@
                         this.$dispatch('text-field-' + e.type, e);
                     }.bind(this));
                 }
+            }
+        },
+
+        methods: {
+            validateField: function() {
+                var object = $(this.$els.input);
+                var hasLength = object.attr('length') !== undefined;
+                var lenAttr = parseInt(object.attr('length'));
+                var len = object.val().length;
+
+                if (object.val().length === 0 && object[0].validity.badInput === false) {
+                    if(this.validate) {
+                        this.valid = '';
+                    }
+                } else {
+                    if (this.validate) {
+                        // Check for character counter attributes
+                        if ((object.is(':valid') && hasLength && (len <= lenAttr)) || (object.is(':valid') && !hasLength)) {
+                            this.valid = 'valid';
+                        } else {
+                            this.valid = 'invalid';
+                        }
+                    }
+                }
+            }
+        },
+
+        events: {
+            'text-field-focus': function() {
+                this.labelActive = true;
+                return true;
+            },
+            'text-field-blur': function() {
+                this.labelActive = false;
+                return true;
+            },
+            'text-field-change': function() {
+                this.validateField();
+                return true;
             }
         }
     };

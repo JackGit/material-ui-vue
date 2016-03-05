@@ -5,14 +5,14 @@
 <template>
     <div class="input-field">
         <icon v-if="icon"
-              class="prefix"
+              :class="['prefix', labelActive ? 'active' : '']"
               :value="icon"></icon>
 
-        <textarea
-                :id="id"
-                class="materialize-textarea">{{value}}</textarea>
+        <textarea v-el:text-area
+                  :id="id"
+                  class="materialize-textarea">{{value}}</textarea>
 
-        <label :for="id" :class="'value ? 'active' : ''">{{label}}</label>
+        <label :for="id" :class="value ? 'active' : ''">{{label}}</label>
     </div>
 </template>
 
@@ -40,17 +40,29 @@
 
         data: function() {
             return {
-                id: uuid.v1()
+                id: uuid.v1(),
+                labelActive: false
             };
         },
 
         ready: function() {
-            for(var p in this.$els.input) {
+            for(var p in this.$els.textArea) {
                 if(p.startsWith('on')) {
-                    $(this.$els.input).on(p.substring(2), function(e) {
+                    $(this.$els.textArea).on(p.substring(2), function(e) {
                         this.$dispatch('text-area-' + e.type, e);
                     }.bind(this));
                 }
+            }
+        },
+
+        events: {
+            'text-area-focus': function() {
+                this.labelActive = true;
+                return true;
+            },
+            'text-area-blur': function() {
+                this.labelActive = false;
+                return true;
             }
         }
     };
