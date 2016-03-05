@@ -3,8 +3,8 @@
 </style>
 
 <template>
-    <div class="input-field col s12">
-        <select v-el:select>
+    <div class="input-field">
+        <select v-el:select id="test" @change="handleChange">
             <option v-for="option in options"
                     :value="option.value"
                     :disabled="option.disabled"
@@ -15,7 +15,10 @@
 </template>
 
 <script>
+    var Vue = require('vue');
     var uuid = require('uuid');
+
+
     module.exports = {
         props: {
             label: {
@@ -41,8 +44,20 @@
             }
         },
 
+        watch: {
+            options: function() {
+                $(this.$els.select).material_select();
+            }
+        },
+
         ready: function() {
             $(this.$els.select).material_select();
+        },
+
+        methods: {
+            handleChange: function() {
+                console.log('inner change')
+            }
         }
     };
 </script>

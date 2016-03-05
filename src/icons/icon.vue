@@ -3,19 +3,15 @@
 </style>
 
 <template>
-    <i :class="classes.concat('material-icons')">{{key}}</i>
+    <i class="material-icons">{{value}}</i>
 </template>
 
 <script>
     module.exports = {
         props: {
-            key: {
+            value: {
                 type: String,
                 required: true
-            },
-            classes: {
-                type: Array,
-                default: []
             }
         }
     };

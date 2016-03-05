@@ -3,14 +3,23 @@
 </style>
 
 <template>
-    <div :class="classes.concat(['input-field', 'col'])">
-        <icon v-if="icon" :classes="['prefix']" :key="icon"></icon>
-        <input id="{{id}}"
-               type="{{type}}"
-               placeholder="{{placeholder}}"
-               :class="validate ? 'validate' : ''"
-               v-model="value">
-        <label for="{{id}}" data-error="{{errorMessage}}" data-success="{{successMessage}}">{{label}}</label>
+    <div class="input-field">
+        <icon v-if="icon"
+              class="prefix"
+              :value="icon"></icon>
+
+        <input v-el:input
+               v-model="value"
+               :id="id"
+               :type="type"
+               :placeholder="placeholder"
+               :disabled="disabled"
+               :class="validate ? 'validate' : ''">
+
+        <label :for="id"
+               :class="(value || placeholder) ? 'active' : ''"
+               :data-error="errorMessage"
+               :data-success="successMessage">{{label}}</label>
     </div>
 </template>
 
@@ -27,7 +36,8 @@
                 type: String
             },
             value: {
-                type: String
+                type: String,
+                default: ''
             },
             placeholder: {
                 type: String
@@ -39,10 +49,6 @@
             disabled: {
                 type: Boolean,
                 default: false
-            },
-            classes: {
-                type: Array,
-                default: []
             },
             icon: {
                 type: String
@@ -62,6 +68,16 @@
             return {
                 id: uuid.v1()
             };
+        },
+
+        ready: function() {
+            for(var p in this.$els.input) {
+                if(p.startsWith('on')) {
+                    $(this.$els.input).on(p.substring(2), function(e) {
+                        this.$dispatch('text-field-' + e.type, e);
+                    }.bind(this));
+                }
+            }
         }
     };
 </script>
