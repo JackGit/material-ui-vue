@@ -14,7 +14,8 @@
                :type="type"
                :placeholder="placeholder"
                :disabled="disabled"
-               :class="[validate ? 'validate' : '', valid]">
+               :class="[validate ? 'validate' : '', valid]"
+               :length="length">
 
         <label :for="id"
                :class="(value || placeholder) ? 'active' : ''"
@@ -41,6 +42,9 @@
             },
             placeholder: {
                 type: String
+            },
+            length: {
+                type: Number
             },
             type: {
                 type: String,

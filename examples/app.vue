@@ -46,6 +46,9 @@
         <text-area class="col s12"
                    label="my text field"
                    value="this is description"
+                   :validate="true"
+                   :length="10"
+                   error-message="wrong"
                    @input="handleEvent"
                    icon="phone"></text-area>
     </div>

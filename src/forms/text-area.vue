@@ -10,9 +10,13 @@
 
         <textarea v-el:text-area
                   :id="id"
-                  class="materialize-textarea">{{value}}</textarea>
+                  :class="['materialize-textarea', validate ? 'validate': '', valid]"
+                  :length="length">{{value}}</textarea>
 
-        <label :for="id" :class="value ? 'active' : ''">{{label}}</label>
+        <label :for="id"
+               :class="value ? 'active' : ''"
+               :data-error="errorMessage"
+               :data-success="successMessage">{{label}}</label>
     </div>
 </template>
 
@@ -35,13 +39,26 @@
             },
             icon: {
                 type: String
+            },
+            length: {
+                type: Number
+            },
+            validate: {
+                type: Boolean
+            },
+            errorMessage: {
+                type: String
+            },
+            successMessage: {
+                type: String
             }
         },
 
         data: function() {
             return {
                 id: uuid.v1(),
-                labelActive: false
+                labelActive: false,
+                valid: ''
             };
         },
 
@@ -55,6 +72,30 @@
             }
         },
 
+        methods: {
+            validateField: function() {
+                var object = $(this.$els.textArea);
+                var hasLength = object.attr('length') !== undefined;
+                var lenAttr = parseInt(object.attr('length'));
+                var len = object.val().length;
+
+                if (object.val().length === 0 && object[0].validity.badInput === false) {
+                    if(this.validate) {
+                        this.valid = '';
+                    }
+                } else {
+                    if (this.validate) {
+                        // Check for character counter attributes
+                        if ((object.is(':valid') && hasLength && (len <= lenAttr)) || (object.is(':valid') && !hasLength)) {
+                            this.valid = 'valid';
+                        } else {
+                            this.valid = 'invalid';
+                        }
+                    }
+                }
+            }
+        },
+
         events: {
             'text-area-focus': function() {
                 this.labelActive = true;
@@ -62,6 +103,10 @@
             },
             'text-area-blur': function() {
                 this.labelActive = false;
+                return true;
+            },
+            'text-area-change': function() {
+                this.validateField();
                 return true;
             }
         }
