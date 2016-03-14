@@ -61,6 +61,30 @@
         <icon class="red-text" value="add"></icon>
 
         <div class="row">
+            <collapsible behavior="expandable" popout>
+                <li>
+                    <collapsible-header active label="first one" icon="edit"></collapsible-header>
+                    <collapsible-body><p>test for item 1</p></collapsible-body>
+                </li>
+                <li>
+                    <collapsible-header label="2nd one" icon="edit"></collapsible-header>
+                    <collapsible-body>
+                        <div class="row">
+                            <text-area class="col s12"
+                                       label="my text field"
+                                       value="this is description"
+                                       :validate="true"
+                                       :length="10"
+                                       error-message="wrong"
+                                       @input="handleEvent"
+                                       icon="phone"></text-area>
+                        </div>
+                    </collapsible-body>
+                </li>
+            </collapsible>
+        </div>
+
+        <div class="row">
             <div class="col s12">
                 <ul class="tabs">
                     <li class="tab col s3"><a href="#test1">Test 1</a></li>
@@ -128,7 +152,10 @@
             'text-area': MUI['text-area'],
             'select-field': MUI['select-field'],
             'tabs': MUI['tabs'],
-            'tab': MUI['tab']
+            'tab': MUI['tab'],
+            'collapsible': MUI['collapsible'],
+            'collapsible-header': MUI['collapsible-header'],
+            'collapsible-body': MUI['collapsible-body']
         },
 
         methods: {
