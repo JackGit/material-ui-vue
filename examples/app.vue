@@ -4,6 +4,37 @@
 
 <template>
     <div class="row">
+        <nav>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#!">First Sidebar Link</a></li>
+                <li><a href="#!">Second Sidebar Link</a></li>
+            </ul>
+            <ul id="slide-out" class="side-nav">
+                <li><a href="#!">First Sidebar Link</a></li>
+                <li><a href="#!">Second Sidebar Link</a></li>
+            </ul>
+            <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+        </nav>
+
+
+        <div class="col s7">
+            <card size="medium">
+                <card-image :src="imageUrl">
+                    <card-title>wedding image</card-title>
+                </card-image>
+                <card-content>
+                    <card-title class="red-text" title="123">Title</card-title>
+                    <p>this is description</p>
+                </card-content>
+                <card-action>
+                    <a href="#">Link A</a>
+                    <a href="#">Link B</a>
+                </card-action>
+            </card>
+        </div>
+
+
+
         <text-field label="text field"
                     :validate="true"
                     class="col s12"
@@ -155,7 +186,19 @@
             'tab': MUI['tab'],
             'collapsible': MUI['collapsible'],
             'collapsible-header': MUI['collapsible-header'],
-            'collapsible-body': MUI['collapsible-body']
+            'collapsible-body': MUI['collapsible-body'],
+            'card': MUI['card'],
+            'card-action': MUI['card-action'],
+            'card-content': MUI['card-content'],
+            'card-image': MUI['card-image'],
+            'card-panel': MUI['card-panel'],
+            'card-title': MUI['card-title'],
+        },
+
+        data: function() {
+            return {
+                imageUrl: 'http://wedding.jackyang.me/static/images/wedding_pic_02.jpg'
+            }
         },
 
         methods: {
