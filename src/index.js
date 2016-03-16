@@ -5,5 +5,14 @@ module.exports = {
     'icon': require('./icons/icon.vue'),
     'tabs': require('./tabs/tabs.vue'),
     'tab': require('./tabs/tab.vue'),
-    //'tab-page': require('./tabs/tab-page.vue')
+    'collapsible': require('./collapsible/collapsible.vue'),
+    'collapsible-body': require('./collapsible/collapsible-body.vue'),
+    'collapsible-header': require('./collapsible/collapsible-header.vue'),
+    'card': require('./cards/card.vue'),
+    'card-action': require('./cards/card-action.vue'),
+    'card-content': require('./cards/card-content.vue'),
+    'card-image': require('./cards/card-image.vue'),
+    'card-panel': require('./cards/card-panel.vue'),
+    'card-title': require('./cards/card-title.vue'),
+    'card-reveal': require('./cards/card-reveal.vue')
 };
