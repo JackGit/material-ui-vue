@@ -33,6 +33,20 @@
             </card>
         </div>
 
+        <div class="col s7">
+            <card :revealed="false">
+                <card-image :src="imageUrl" activator></card-image>
+                <card-content>
+                    <card-title class="red-text" title="123">Title</card-title>
+                    <p>this is description</p>
+                </card-content>
+                <card-reveal>
+                    <card-title class="blue-text">reveal title</card-title>
+                    <p>Here is some more information about this product that is o</p>
+                </card-reveal>
+            </card>
+        </div>
+
 
 
         <text-field label="text field"
@@ -193,6 +207,7 @@
             'card-image': MUI['card-image'],
             'card-panel': MUI['card-panel'],
             'card-title': MUI['card-title'],
+            'card-reveal': MUI['card-reveal']
         },
 
         data: function() {
