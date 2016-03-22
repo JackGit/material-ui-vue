@@ -99,11 +99,12 @@
 
         <div class="row">
             <select-field
+                    class="col s12"
                     label="select field"
                     :options="options"></select-field>
         </div>
 
-        <icon class="red-text" value="add"></icon>
+        <icon class="red-text" value="add" @click="changeOptions"></icon>
 
         <div class="row">
             <collapsible behavior="expandable" popout>
@@ -212,13 +213,26 @@
 
         data: function() {
             return {
-                imageUrl: 'http://wedding.jackyang.me/static/images/wedding_pic_02.jpg'
+                imageUrl: 'http://wedding.jackyang.me/static/images/wedding_pic_02.jpg',
+                options: [
+                    {value: '1', text: 'one', disabled: false, selected: true},
+                    {value: '2', text: 'two', disabled: false, selected: false},
+                    {value: '3', text: 'three', disabled: false, selected: false}]
             }
         },
 
         methods: {
             handleEvent: function(e) {
                 console.log(e.type, e);
+            },
+            changeOptions: function() {
+                this.options.forEach(function(o) {
+                    if(o.value === '3')
+                        o.selected = true;
+                    else
+                        o.selected = false;
+                });
+                console.log(this.options)
             }
         }
     };

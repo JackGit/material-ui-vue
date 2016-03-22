@@ -44,6 +44,12 @@
             }
         },
 
+        watch: {
+            options: function() {
+                console.log('options changed');
+                $(this.$els.select).material_select();
+            }
+        },
 
         ready: function() {
             $(this.$els.select).material_select();
