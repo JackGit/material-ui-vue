@@ -15,5 +15,7 @@ module.exports = {
     'card-panel': require('./cards/card-panel.vue'),
     'card-title': require('./cards/card-title.vue'),
     'card-reveal': require('./cards/card-reveal.vue'),
-    'dropdown': require('./dropdown/dropdown.vue')
+    'dropdown': require('./dropdown/dropdown.vue'),
+    'button': require('./buttons/button.vue'),
+    'fixed-action-button': require('./buttons/fixed-action-button.vue')
 };

@@ -9759,7 +9759,7 @@
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] app.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(63)
+	__vue_template__ = __webpack_require__(71)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -9769,7 +9769,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\app.vue"
+	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/app.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10121,7 +10121,9 @@
 	        'card-panel': MUI['card-panel'],
 	        'card-title': MUI['card-title'],
 	        'card-reveal': MUI['card-reveal'],
-	        'dropdown': MUI['dropdown']
+	        'dropdown': MUI['dropdown'],
+	        'btn': MUI['button'],
+	        'fixed-action-button': MUI['fixed-action-button']
 	    },
 	
 	    data: function data() {
@@ -10145,9 +10147,11 @@
 	                    if (o.value == i) o.selected = true;else o.selected = false;
 	                });
 	                i = (i + 1) % 4;
-	                console.log(this.options, i);
 	            };
-	        }()
+	        }(),
+	        clickButton: function clickButton() {
+	            alert('button clicked');
+	        }
 	    }
 	};
 
@@ -10172,7 +10176,9 @@
 	    'card-panel': __webpack_require__(54),
 	    'card-title': __webpack_require__(50),
 	    'card-reveal': __webpack_require__(57),
-	    'dropdown': __webpack_require__(60)
+	    'dropdown': __webpack_require__(60),
+	    'button': __webpack_require__(63),
+	    'fixed-action-button': __webpack_require__(68)
 	};
 
 /***/ },
@@ -10184,7 +10190,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] ..\\src\\forms\\text-field.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] ../src/forms/text-field.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(17)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -10195,7 +10201,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\src\\forms\\text-field.vue"
+	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/src/forms/text-field.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10544,7 +10550,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] ..\\src\\icons\\icon.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] ../src/icons/icon.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(16)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -10555,7 +10561,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\src\\icons\\icon.vue"
+	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/src/icons/icon.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10599,7 +10605,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] ..\\src\\forms\\select-field.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] ../src/forms/select-field.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(20)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -10610,7 +10616,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\src\\forms\\select-field.vue"
+	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/src/forms/select-field.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10694,7 +10700,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] ..\\src\\forms\\text-area.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] ../src/forms/text-area.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(23)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -10705,7 +10711,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\src\\forms\\text-area.vue"
+	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/src/forms/text-area.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10824,7 +10830,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] ..\\src\\tabs\\tabs.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] ../src/tabs/tabs.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(26)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -10835,7 +10841,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\src\\tabs\\tabs.vue"
+	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/src/tabs/tabs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10876,7 +10882,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] ..\\src\\tabs\\tab.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] ../src/tabs/tab.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(29)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -10887,7 +10893,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\src\\tabs\\tab.vue"
+	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/src/tabs/tab.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10948,7 +10954,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] ..\\src\\collapsible\\collapsible.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] ../src/collapsible/collapsible.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(32)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -10959,7 +10965,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\src\\collapsible\\collapsible.vue"
+	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/src/collapsible/collapsible.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11004,7 +11010,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] ..\\src\\collapsible\\collapsible-body.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] ../src/collapsible/collapsible-body.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(35)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -11015,7 +11021,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\src\\collapsible\\collapsible-body.vue"
+	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/src/collapsible/collapsible-body.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11046,7 +11052,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] ..\\src\\collapsible\\collapsible-header.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] ../src/collapsible/collapsible-header.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(38)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -11057,7 +11063,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\src\\collapsible\\collapsible-header.vue"
+	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/src/collapsible/collapsible-header.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11105,7 +11111,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] ..\\src\\cards\\card.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] ../src/cards/card.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(41)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -11116,7 +11122,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\src\\cards\\card.vue"
+	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/src/cards/card.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11163,7 +11169,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] ..\\src\\cards\\card-action.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] ../src/cards/card-action.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(44)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -11174,7 +11180,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\src\\cards\\card-action.vue"
+	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/src/cards/card-action.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11205,7 +11211,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] ..\\src\\cards\\card-content.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] ../src/cards/card-content.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(47)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -11216,7 +11222,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\src\\cards\\card-content.vue"
+	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/src/cards/card-content.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11247,7 +11253,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] ..\\src\\cards\\card-image.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] ../src/cards/card-image.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(53)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -11258,7 +11264,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\src\\cards\\card-image.vue"
+	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/src/cards/card-image.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11318,7 +11324,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] ..\\src\\cards\\card-title.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] ../src/cards/card-title.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(52)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -11329,7 +11335,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\src\\cards\\card-title.vue"
+	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/src/cards/card-title.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11372,7 +11378,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] ..\\src\\cards\\card-panel.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] ../src/cards/card-panel.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(56)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -11383,7 +11389,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\src\\cards\\card-panel.vue"
+	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/src/cards/card-panel.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11414,7 +11420,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] ..\\src\\cards\\card-reveal.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] ../src/cards/card-reveal.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(59)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -11425,7 +11431,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\src\\cards\\card-reveal.vue"
+	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/src/cards/card-reveal.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11456,7 +11462,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] ..\\src\\dropdown\\dropdown.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] ../src/dropdown/dropdown.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(62)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -11467,7 +11473,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\src\\dropdown\\dropdown.vue"
+	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/src/dropdown/dropdown.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11586,9 +11592,220 @@
 
 /***/ },
 /* 63 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(64)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] ../src/buttons/button.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(67)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/src/buttons/button.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 64 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var ButtonMixin = __webpack_require__(65);
+	
+	module.exports = {
+	    mixins: [ButtonMixin]
+	};
+
+/***/ },
+/* 65 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var classes = __webpack_require__(66).classes;
+	
+	module.exports = {
+	
+	    components: {
+	        icon: __webpack_require__(14)
+	    },
+	
+	    props: {
+	        label: {
+	            type: String
+	        },
+	        type: {
+	            type: String,   // '', flat, floating
+	            default: ''
+	        },
+	        large: {
+	            type: Boolean,
+	            default: false
+	        },
+	        icon: {
+	            type: String
+	        },
+	        iconPosition: {
+	            type: String,
+	            default: ''
+	        },
+	        lightWave: {
+	            type: Boolean,
+	            default: true
+	        },
+	        disabled: {
+	            type: Boolean,
+	            default: false
+	        }
+	
+	    },
+	
+	    data: function() {
+	        return {
+	            buttonClasses: classes({
+	                'waves-effect': true,
+	                'waves-light': this.lightWave,
+	                'disabled': this.disabled,
+	                'btn': !this.type,
+	                'btn-large': this.large,
+	                'btn-flat': this.type === 'flat',
+	                'btn-floating': this.type === 'floating'
+	            })
+	        };
+	    }
+	};
+
+/***/ },
+/* 66 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"row\">\n    <nav>\n        <ul class=\"right hide-on-med-and-down\">\n            <li><a href=\"#!\">First Sidebar Link</a></li>\n            <li><a href=\"#!\">Second Sidebar Link</a></li>\n        </ul>\n        <ul id=\"slide-out\" class=\"side-nav\">\n            <li><a href=\"#!\">First Sidebar Link</a></li>\n            <li><a href=\"#!\">Second Sidebar Link</a></li>\n        </ul>\n        <a href=\"#\" data-activates=\"slide-out\" class=\"button-collapse\"><i class=\"mdi-navigation-menu\"></i></a>\n    </nav>\n\n    <div class=\"row\">\n        <dropdown label=\"I am a dropdown\" :items=\"dropdownItems\"></dropdown>\n        <dropdown label=\"I am a dropdown 2\">\n            <ul>\n                <li><a href=\"\">223</a></li>\n                <li class=\"divider\"></li>\n                <li><a href=\"\">224</a></li>\n            </ul>\n        </dropdown>\n    </div>\n\n    <div class=\"col s7\">\n        <card size=\"medium\">\n            <card-image :src=\"imageUrl\">\n                <card-title>wedding image</card-title>\n            </card-image>\n            <card-content>\n                <card-title class=\"red-text\" title=\"123\">Title</card-title>\n                <p>this is description</p>\n            </card-content>\n            <card-action>\n                <a href=\"#\">Link A</a>\n                <a href=\"#\">Link B</a>\n            </card-action>\n        </card>\n    </div>\n\n    <div class=\"col s7\">\n        <card :revealed=\"false\">\n            <card-image :src=\"imageUrl\" activator></card-image>\n            <card-content>\n                <card-title class=\"red-text\" title=\"123\">Title</card-title>\n                <p>this is description</p>\n            </card-content>\n            <card-reveal>\n                <card-title class=\"blue-text\">reveal title</card-title>\n                <p>Here is some more information about this product that is o</p>\n            </card-reveal>\n        </card>\n    </div>\n\n\n\n    <text-field label=\"text field\"\n                :validate=\"true\"\n                class=\"col s12\"\n                @text-field-input=\"handleEvent\"\n                @text-field-click=\"handleEvent\"\n                @text-field-blur=\"handleEvent\"\n                @text-field-keydown=\"handleEvent\"\n                @text-field-keyup=\"handleEvent\"\n                @text-field-focus=\"handleEvent\"\n                @text-field-change=\"handleEvent\"\n                success-message=\"right\"></text-field>\n\n    <text-field label=\"text field\"\n                icon=\"phone\"\n                class=\"col s12\"></text-field>\n\n    <text-field label=\"text field\"\n                icon=\"phone\"\n                :disabled=\"true\"\n                :value.sync=\"text\"\n                :validate=\"true\"\n                class=\"col s12\"></text-field>\n\n    <text-field label=\"Email\"\n                icon=\"email\"\n                type=\"email\"\n                :validate=\"true\"\n                class=\"col s12\"\n                error-message=\"wrong email\"\n                success-message=\"correct email\"></text-field>\n\n    <text-field label=\"password\"\n                :value.sync=\"text\"\n                :validate=\"true\"\n                type=\"password\"\n                class=\"col s12\"\n                success-message=\"right\"\n                placeholder=\"enter your password\"></text-field>\n\n    <text-area class=\"col s12\"\n               label=\"my text field\"\n               value=\"this is description\"\n               :validate=\"true\"\n               :length=\"10\"\n               error-message=\"wrong\"\n               @input=\"handleEvent\"\n               icon=\"phone\"></text-area>\n\n    <div class=\"row\">\n        <select-field\n                class=\"col s12\"\n                label=\"select field\"\n                :options=\"options\"></select-field>\n    </div>\n\n    <icon class=\"red-text\" value=\"add\" @click=\"changeOptions\"></icon>\n\n    <div class=\"row\">\n        <collapsible behavior=\"expandable\" popout>\n            <li>\n                <collapsible-header active label=\"first one\" icon=\"edit\"></collapsible-header>\n                <collapsible-body><p>test for item 1</p></collapsible-body>\n            </li>\n            <li>\n                <collapsible-header label=\"2nd one\" icon=\"edit\"></collapsible-header>\n                <collapsible-body>\n                    <div class=\"row\">\n                        <text-area class=\"col s12\"\n                                   label=\"my text field\"\n                                   value=\"this is description\"\n                                   :validate=\"true\"\n                                   :length=\"10\"\n                                   error-message=\"wrong\"\n                                   @input=\"handleEvent\"\n                                   icon=\"phone\"></text-area>\n                    </div>\n                </collapsible-body>\n            </li>\n        </collapsible>\n    </div>\n\n    <div class=\"row\">\n        <div class=\"col s12\">\n            <ul class=\"tabs\">\n                <li class=\"tab col s3\"><a href=\"#test1\">Test 1</a></li>\n                <li class=\"tab col s3\"><a class=\"active\" href=\"#test2\">Test 2</a></li>\n                <li class=\"tab col s3 disabled\"><a href=\"#test3\">Disabled Tab</a></li>\n                <li class=\"tab col s3\"><a href=\"#test4\">Test 4</a></li>\n            </ul>\n        </div>\n        <div id=\"test1\" class=\"col s12\">Test 1</div>\n        <div id=\"test2\" class=\"col s12\">Test 2</div>\n        <div id=\"test3\" class=\"col s12\">Test 3</div>\n        <div id=\"test4\" class=\"col s12\">Test 4</div>\n    </div>\n\n    <div class=\"row\">\n        <ul class=\"tabs\">\n            <li class=\"tab col s3\"><a href=\"#test5\">Test 1</a></li>\n            <li class=\"tab col s3\"><a class=\"active\" href=\"#test6\">Test 2</a></li>\n            <li class=\"tab col s3 disabled\"><a href=\"#test7\">Disabled Tab</a></li>\n            <li class=\"tab col s3\"><a href=\"#test8\">Test 4</a></li>\n        </ul>\n        <div id=\"test5\">Test 1</div>\n        <div id=\"test6\">Test 2</div>\n        <div id=\"test7\">Test 3</div>\n        <div id=\"test8\">Test 4</div>\n    </div>\n\n\n\n    <div class=\"row\">\n        <tabs>\n            <tab label=\"tab1\" >\n                this is tab page 1\n            </tab>\n            <tab label=\"tab2\" disabled>\n                <div class=\"row\">\n                    <select-field\n                            class=\"col s12\"\n                            label=\"select field\"\n                            :options=\"options\"></select-field>\n\n                    <text-area class=\"col s12\"\n                               label=\"my text field\"\n                               value=\"this is description\"\n                               :validate=\"true\"\n                               :length=\"10\"\n                               error-message=\"wrong\"\n                               @input=\"handleEvent\"\n                               icon=\"phone\"></text-area>\n                </div>\n            </tab>\n        </tabs>\n    </div>\n</div>\n\n\n";
+	
+	
+	function classes(options) {
+	    var cls = [];
+	    for(var p in options) {
+	        if(options[p])
+	            cls.push(p);
+	    }
+	    return cls;
+	}
+	
+	module.exports = {
+	    classes: classes
+	};
+
+/***/ },
+/* 67 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<a :class=\"buttonClasses\">\n    <icon v-if=\"icon\" :value=\"icon\" :class=\"iconPosition\"></icon>\n    {{label}}\n</a>\n";
+
+/***/ },
+/* 68 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(69)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] ../src/buttons/fixed-action-button.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(70)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/src/buttons/fixed-action-button.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 69 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var classes = __webpack_require__(66).classes;
+	var ButtonMixin = __webpack_require__(65);
+	
+	module.exports = {
+	    mixins: [ButtonMixin],
+	
+	    components: {
+	        'btn': __webpack_require__(63)
+	    },
+	
+	    props: {
+	        horizontal: {
+	            type: Boolean,
+	            default: false
+	        },
+	        clickOnly: {
+	            type: Boolean,
+	            default: false
+	        },
+	        active: {
+	            type: Boolean,
+	            default: false
+	        }
+	    },
+	
+	    data: function data() {
+	        return {
+	            divClasses: classes({
+	                'fixed-action-btn': true,
+	                'horizontal': this.horizontal,
+	                'click-to-toggle': this.clickOnly
+	            })
+	        };
+	    },
+	
+	    ready: function ready() {
+	        if (this.active) {}
+	    },
+	
+	    methods: {
+	        openFAB: function openFAB() {
+	            $(this.$el).openFAB();
+	        },
+	        closeFAB: function closeFAB() {
+	            $(this.$el).closeFAB();
+	        }
+	    }
+	};
+
+/***/ },
+/* 70 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div :class=\"divClasses\">\n    <btn type=\"floating\" :large=\"true\" :icon=\"icon\" :light-wave=\"lightWave\" :disabled=\"disabled\"></btn>\n    <slot></slot>\n</div>\n";
+
+/***/ },
+/* 71 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"row\">\n    <nav>\n        <ul class=\"right hide-on-med-and-down\">\n            <li><a href=\"#!\">First Sidebar Link</a></li>\n            <li><a href=\"#!\">Second Sidebar Link</a></li>\n        </ul>\n        <ul id=\"slide-out\" class=\"side-nav\">\n            <li><a href=\"#!\">First Sidebar Link</a></li>\n            <li><a href=\"#!\">Second Sidebar Link</a></li>\n        </ul>\n        <a href=\"#\" data-activates=\"slide-out\" class=\"button-collapse\"><i class=\"mdi-navigation-menu\"></i></a>\n    </nav>\n\n    <div class=\"row\">\n        <dropdown label=\"I am a dropdown\" :items=\"dropdownItems\"></dropdown>\n        <dropdown label=\"I am a dropdown 2\">\n            <ul>\n                <li><a href=\"\">223</a></li>\n                <li class=\"divider\"></li>\n                <li><a href=\"\">224</a></li>\n            </ul>\n        </dropdown>\n    </div>\n\n    <div class=\"row\">\n        <btn label=\"test button\" icon=\"edit\" icon-position=\"left\" @click=\"clickButton\"></btn>\n        <btn label=\"large button\" :large=\"true\" icon=\"edit\" icon-position=\"left\" @click=\"clickButton\"></btn>\n        <btn class='waves-teal' label=\"flat button\" type=\"flat\" icon=\"edit\" icon-position=\"right\"></btn>\n        <btn type=\"floating\" icon=\"add\"></btn>\n        <btn type=\"floating\" :large=\"true\" :light-wave=\"false\" icon=\"edit\" class=\"red\"></btn>\n    </div>\n\n    <div class=\"row\">\n        <fixed-action-button icon=\"edit\" :horizontal=\"true\" :click-only=\"true\" :active=\"true\">\n            <ul>\n                <li><btn type=\"floating\" class=\"red\" icon=\"edit\"></btn></li>\n                <li><btn type=\"floating\" class=\"yellow\" icon=\"edit\"></btn></li>\n                <li><btn type=\"floating\" class=\"green\" icon=\"edit\"></btn></li>\n                <li><btn type=\"floating\" class=\"blue\" icon=\"edit\"></btn></li>\n            </ul>\n        </fixed-action-button>\n    </div>\n\n    <div class=\"col s7\">\n        <card size=\"medium\">\n            <card-image :src=\"imageUrl\">\n                <card-title>wedding image</card-title>\n            </card-image>\n            <card-content>\n                <card-title class=\"red-text\" title=\"123\">Title</card-title>\n                <p>this is description</p>\n            </card-content>\n            <card-action>\n                <a href=\"#\">Link A</a>\n                <a href=\"#\">Link B</a>\n            </card-action>\n        </card>\n    </div>\n\n    <div class=\"col s7\">\n        <card :revealed=\"false\">\n            <card-image :src=\"imageUrl\" activator></card-image>\n            <card-content>\n                <card-title class=\"red-text\" title=\"123\">Title</card-title>\n                <p>this is description</p>\n            </card-content>\n            <card-reveal>\n                <card-title class=\"blue-text\">reveal title</card-title>\n                <p>Here is some more information about this product that is o</p>\n            </card-reveal>\n        </card>\n    </div>\n\n\n\n    <text-field label=\"text field\"\n                :validate=\"true\"\n                class=\"col s12\"\n                @text-field-input=\"handleEvent\"\n                @text-field-click=\"handleEvent\"\n                @text-field-blur=\"handleEvent\"\n                @text-field-keydown=\"handleEvent\"\n                @text-field-keyup=\"handleEvent\"\n                @text-field-focus=\"handleEvent\"\n                @text-field-change=\"handleEvent\"\n                success-message=\"right\"></text-field>\n\n    <text-field label=\"text field\"\n                icon=\"phone\"\n                class=\"col s12\"></text-field>\n\n    <text-field label=\"text field\"\n                icon=\"phone\"\n                :disabled=\"true\"\n                :value.sync=\"text\"\n                :validate=\"true\"\n                class=\"col s12\"></text-field>\n\n    <text-field label=\"Email\"\n                icon=\"email\"\n                type=\"email\"\n                :validate=\"true\"\n                class=\"col s12\"\n                error-message=\"wrong email\"\n                success-message=\"correct email\"></text-field>\n\n    <text-field label=\"password\"\n                :value.sync=\"text\"\n                :validate=\"true\"\n                type=\"password\"\n                class=\"col s12\"\n                success-message=\"right\"\n                placeholder=\"enter your password\"></text-field>\n\n    <text-area class=\"col s12\"\n               label=\"my text field\"\n               value=\"this is description\"\n               :validate=\"true\"\n               :length=\"10\"\n               error-message=\"wrong\"\n               @input=\"handleEvent\"\n               icon=\"phone\"></text-area>\n\n    <div class=\"row\">\n        <select-field\n                class=\"col s12\"\n                label=\"select field\"\n                :options=\"options\"></select-field>\n    </div>\n\n    <icon class=\"red-text\" value=\"add\" @click=\"changeOptions\"></icon>\n\n    <div class=\"row\">\n        <collapsible behavior=\"expandable\" popout>\n            <li>\n                <collapsible-header active label=\"first one\" icon=\"edit\"></collapsible-header>\n                <collapsible-body><p>test for item 1</p></collapsible-body>\n            </li>\n            <li>\n                <collapsible-header label=\"2nd one\" icon=\"edit\"></collapsible-header>\n                <collapsible-body>\n                    <div class=\"row\">\n                        <text-area class=\"col s12\"\n                                   label=\"my text field\"\n                                   value=\"this is description\"\n                                   :validate=\"true\"\n                                   :length=\"10\"\n                                   error-message=\"wrong\"\n                                   @input=\"handleEvent\"\n                                   icon=\"phone\"></text-area>\n                    </div>\n                </collapsible-body>\n            </li>\n        </collapsible>\n    </div>\n\n    <div class=\"row\">\n        <div class=\"col s12\">\n            <ul class=\"tabs\">\n                <li class=\"tab col s3\"><a href=\"#test1\">Test 1</a></li>\n                <li class=\"tab col s3\"><a class=\"active\" href=\"#test2\">Test 2</a></li>\n                <li class=\"tab col s3 disabled\"><a href=\"#test3\">Disabled Tab</a></li>\n                <li class=\"tab col s3\"><a href=\"#test4\">Test 4</a></li>\n            </ul>\n        </div>\n        <div id=\"test1\" class=\"col s12\">Test 1</div>\n        <div id=\"test2\" class=\"col s12\">Test 2</div>\n        <div id=\"test3\" class=\"col s12\">Test 3</div>\n        <div id=\"test4\" class=\"col s12\">Test 4</div>\n    </div>\n\n    <div class=\"row\">\n        <ul class=\"tabs\">\n            <li class=\"tab col s3\"><a href=\"#test5\">Test 1</a></li>\n            <li class=\"tab col s3\"><a class=\"active\" href=\"#test6\">Test 2</a></li>\n            <li class=\"tab col s3 disabled\"><a href=\"#test7\">Disabled Tab</a></li>\n            <li class=\"tab col s3\"><a href=\"#test8\">Test 4</a></li>\n        </ul>\n        <div id=\"test5\">Test 1</div>\n        <div id=\"test6\">Test 2</div>\n        <div id=\"test7\">Test 3</div>\n        <div id=\"test8\">Test 4</div>\n    </div>\n\n\n\n    <div class=\"row\">\n        <tabs>\n            <tab label=\"tab1\" >\n                this is tab page 1\n            </tab>\n            <tab label=\"tab2\" disabled>\n                <div class=\"row\">\n                    <select-field\n                            class=\"col s12\"\n                            label=\"select field\"\n                            :options=\"options\"></select-field>\n\n                    <text-area class=\"col s12\"\n                               label=\"my text field\"\n                               value=\"this is description\"\n                               :validate=\"true\"\n                               :length=\"10\"\n                               error-message=\"wrong\"\n                               @input=\"handleEvent\"\n                               icon=\"phone\"></text-area>\n                </div>\n            </tab>\n        </tabs>\n    </div>\n</div>\n\n\n";
 
 /***/ }
 /******/ ]);

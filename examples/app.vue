@@ -27,6 +27,25 @@
             </dropdown>
         </div>
 
+        <div class="row">
+            <btn label="test button" icon="edit" icon-position="left" @click="clickButton"></btn>
+            <btn label="large button" :large="true" icon="edit" icon-position="left" @click="clickButton"></btn>
+            <btn class='waves-teal' label="flat button" type="flat" icon="edit" icon-position="right"></btn>
+            <btn type="floating" icon="add"></btn>
+            <btn type="floating" :large="true" :light-wave="false" icon="edit" class="red"></btn>
+        </div>
+
+        <div class="row">
+            <fixed-action-button icon="edit" :horizontal="true" :click-only="true" :active="true">
+                <ul>
+                    <li><btn type="floating" class="red" icon="edit"></btn></li>
+                    <li><btn type="floating" class="yellow" icon="edit"></btn></li>
+                    <li><btn type="floating" class="green" icon="edit"></btn></li>
+                    <li><btn type="floating" class="blue" icon="edit"></btn></li>
+                </ul>
+            </fixed-action-button>
+        </div>
+
         <div class="col s7">
             <card size="medium">
                 <card-image :src="imageUrl">
@@ -221,7 +240,9 @@
             'card-panel': MUI['card-panel'],
             'card-title': MUI['card-title'],
             'card-reveal': MUI['card-reveal'],
-            'dropdown': MUI['dropdown']
+            'dropdown': MUI['dropdown'],
+            'btn': MUI['button'],
+            'fixed-action-button': MUI['fixed-action-button']
         },
 
         data: function() {
@@ -259,7 +280,10 @@
                     });
                     i = (i+1) % 4;
                 }
-            })()
+            })(),
+            clickButton: function() {
+                alert('button clicked');
+            }
         }
     };
 </script>
