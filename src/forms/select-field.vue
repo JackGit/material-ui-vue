@@ -1,10 +1,6 @@
-<style>
-
-</style>
-
 <template>
     <div class="input-field">
-        <select v-el:select id="test" @change="handleChange">
+        <select v-el:select>
             <option v-for="option in options"
                     :value="option.value"
                     :disabled="option.disabled"
@@ -45,20 +41,32 @@
         },
 
         watch: {
-            options: function() {
-                console.log('options changed');
+            options: {
+                handler: function() {
+                    $(this.$els.select).material_select();
+                },
+                deep: true
+            },
+            disabled: function() {
                 $(this.$els.select).material_select();
             }
         },
 
         ready: function() {
-            $(this.$els.select).material_select();
-        },
+            var that = this;
 
-        methods: {
-            handleChange: function() {
-                console.log('inner change')
-            }
+            $(this.$els.select).material_select();
+            $(this.$els.select).on('change', function(e) {
+                var val = $(this).val();
+                that.options.forEach(function(o) {
+                    if(o.value == val)
+                        o.selected = true;
+                    else
+                        o.selected = false;
+                });
+
+                that.$dispatch('select-field-' + e.type, e);
+            });
         }
     };
 </script>

@@ -9759,7 +9759,7 @@
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] app.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(75)
+	__vue_template__ = __webpack_require__(63)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -10127,7 +10127,7 @@
 	    data: function data() {
 	        return {
 	            imageUrl: 'http://wedding.jackyang.me/static/images/wedding_pic_02.jpg',
-	            options: [{ value: '1', text: 'one', disabled: false, selected: true }, { value: '2', text: 'two', disabled: false, selected: false }, { value: '3', text: 'three', disabled: false, selected: false }],
+	            options: [{ value: '0', text: 'zero', disabled: false, selected: false }, { value: '1', text: 'one', disabled: false, selected: true }, { value: '2', text: 'two', disabled: false, selected: false }, { value: '3', text: 'three', disabled: false, selected: false }],
 	            dropdownItems: [{ href: '#', text: '123' }, { href: '#', text: '223' }, { href: '#', text: '323' }, { divider: true }, { href: '#', text: '423' }]
 	        };
 	    },
@@ -10136,12 +10136,18 @@
 	        handleEvent: function handleEvent(e) {
 	            console.log(e.type, e);
 	        },
-	        changeOptions: function changeOptions() {
-	            this.options.forEach(function (o) {
-	                if (o.value === '3') o.selected = true;else o.selected = false;
-	            });
-	            console.log(this.options);
-	        }
+	        changeOptions: function () {
+	            var i = 0;
+	
+	            return function () {
+	
+	                this.options.forEach(function (o) {
+	                    if (o.value == i) o.selected = true;else o.selected = false;
+	                });
+	                i = (i + 1) % 4;
+	                console.log(this.options, i);
+	            };
+	        }()
 	    }
 	};
 
@@ -10151,22 +10157,22 @@
 
 	module.exports = {
 	    'text-field': __webpack_require__(10),
-	    'select-field': __webpack_require__(22),
-	    'text-area': __webpack_require__(27),
-	    'icon': __webpack_require__(16),
-	    'tabs': __webpack_require__(32),
-	    'tab': __webpack_require__(37),
-	    'collapsible': __webpack_require__(42),
-	    'collapsible-body': __webpack_require__(45),
-	    'collapsible-header': __webpack_require__(48),
-	    'card': __webpack_require__(51),
-	    'card-action': __webpack_require__(54),
-	    'card-content': __webpack_require__(57),
-	    'card-image': __webpack_require__(60),
-	    'card-panel': __webpack_require__(66),
-	    'card-title': __webpack_require__(62),
-	    'card-reveal': __webpack_require__(69),
-	    'dropdown': __webpack_require__(72)
+	    'select-field': __webpack_require__(18),
+	    'text-area': __webpack_require__(21),
+	    'icon': __webpack_require__(14),
+	    'tabs': __webpack_require__(24),
+	    'tab': __webpack_require__(27),
+	    'collapsible': __webpack_require__(30),
+	    'collapsible-body': __webpack_require__(33),
+	    'collapsible-header': __webpack_require__(36),
+	    'card': __webpack_require__(39),
+	    'card-action': __webpack_require__(42),
+	    'card-content': __webpack_require__(45),
+	    'card-image': __webpack_require__(48),
+	    'card-panel': __webpack_require__(54),
+	    'card-title': __webpack_require__(50),
+	    'card-reveal': __webpack_require__(57),
+	    'dropdown': __webpack_require__(60)
 	};
 
 /***/ },
@@ -10174,13 +10180,12 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(11)
-	__vue_script__ = __webpack_require__(13)
+	__vue_script__ = __webpack_require__(11)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] ..\\src\\forms\\text-field.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(21)
+	__vue_template__ = __webpack_require__(17)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -10202,53 +10207,13 @@
 /* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(12);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(7)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./text-field.vue", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./text-field.vue");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 12 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(6)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, "\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"text-field.vue","sourceRoot":"webpack://"}]);
-	
-	// exports
-
-
-/***/ },
-/* 13 */
-/***/ function(module, exports, __webpack_require__) {
-
 	'use strict';
 	
-	var uuid = __webpack_require__(14);
+	var uuid = __webpack_require__(12);
 	
 	module.exports = {
 	    components: {
-	        'icon': __webpack_require__(16)
+	        'icon': __webpack_require__(14)
 	    },
 	
 	    props: {
@@ -10344,7 +10309,7 @@
 	};
 
 /***/ },
-/* 14 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//     uuid.js
@@ -10355,7 +10320,7 @@
 	// Unique ID creation requires a high quality random # generator.  We feature
 	// detect to determine the best RNG source, normalizing to a function that
 	// returns 128-bits of randomness, since that's what's usually required
-	var _rng = __webpack_require__(15);
+	var _rng = __webpack_require__(13);
 	
 	// Maps for number <-> hex string conversion
 	var _byteToHex = [];
@@ -10533,7 +10498,7 @@
 
 
 /***/ },
-/* 15 */
+/* 13 */
 /***/ function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {
@@ -10571,17 +10536,16 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 16 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(17)
-	__vue_script__ = __webpack_require__(19)
+	__vue_script__ = __webpack_require__(15)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] ..\\src\\icons\\icon.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(20)
+	__vue_template__ = __webpack_require__(16)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -10600,47 +10564,7 @@
 	})()}
 
 /***/ },
-/* 17 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(18);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(7)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./icon.vue", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./icon.vue");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 18 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(6)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, "\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"icon.vue","sourceRoot":"webpack://"}]);
-	
-	// exports
-
-
-/***/ },
-/* 19 */
+/* 15 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -10655,29 +10579,28 @@
 	};
 
 /***/ },
-/* 20 */
+/* 16 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<i class=\"material-icons\">{{value}}</i>\n";
 
 /***/ },
-/* 21 */
+/* 17 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"input-field\">\n    <icon v-if=\"icon\"\n          :class=\"['prefix', labelActive ? 'active' : '']\"\n          :value=\"icon\"></icon>\n\n    <input v-el:input\n           v-model=\"value\"\n           :id=\"id\"\n           :type=\"type\"\n           :placeholder=\"placeholder\"\n           :disabled=\"disabled\"\n           :class=\"[validate ? 'validate' : '', valid]\"\n           :length=\"length\">\n\n    <label :for=\"id\"\n           :class=\"(value || placeholder) ? 'active' : ''\"\n           :data-error=\"errorMessage\"\n           :data-success=\"successMessage\">{{label}}</label>\n</div>\n";
 
 /***/ },
-/* 22 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(23)
-	__vue_script__ = __webpack_require__(25)
+	__vue_script__ = __webpack_require__(19)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] ..\\src\\forms\\select-field.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(26)
+	__vue_template__ = __webpack_require__(20)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -10696,53 +10619,13 @@
 	})()}
 
 /***/ },
-/* 23 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(24);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(7)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./select-field.vue", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./select-field.vue");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 24 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(6)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, "\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"select-field.vue","sourceRoot":"webpack://"}]);
-	
-	// exports
-
-
-/***/ },
-/* 25 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	var Vue = __webpack_require__(1);
-	var uuid = __webpack_require__(14);
+	var uuid = __webpack_require__(12);
 	
 	module.exports = {
 	    props: {
@@ -10770,41 +10653,49 @@
 	    },
 	
 	    watch: {
-	        options: function options() {
-	            console.log('options changed');
+	        options: {
+	            handler: function handler() {
+	                $(this.$els.select).material_select();
+	            },
+	            deep: true
+	        },
+	        disabled: function disabled() {
 	            $(this.$els.select).material_select();
 	        }
 	    },
 	
 	    ready: function ready() {
-	        $(this.$els.select).material_select();
-	    },
+	        var that = this;
 	
-	    methods: {
-	        handleChange: function handleChange() {
-	            console.log('inner change');
-	        }
+	        $(this.$els.select).material_select();
+	        $(this.$els.select).on('change', function (e) {
+	            var val = $(this).val();
+	            that.options.forEach(function (o) {
+	                if (o.value == val) o.selected = true;else o.selected = false;
+	            });
+	
+	            that.$dispatch('select-field-' + e.type, e);
+	        });
 	    }
 	};
 
 /***/ },
-/* 26 */
+/* 20 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"input-field\">\n    <select v-el:select id=\"test\" @change=\"handleChange\">\n        <option v-for=\"option in options\"\n                :value=\"option.value\"\n                :disabled=\"option.disabled\"\n                :selected=\"option.selected\">{{option.text}}</option>\n    </select>\n    <label>{{label}}</label>\n</div>\n";
+	module.exports = "\n<div class=\"input-field\">\n    <select v-el:select>\n        <option v-for=\"option in options\"\n                :value=\"option.value\"\n                :disabled=\"option.disabled\"\n                :selected=\"option.selected\">{{option.text}}</option>\n    </select>\n    <label>{{label}}</label>\n</div>\n";
 
 /***/ },
-/* 27 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(28)
-	__vue_script__ = __webpack_require__(30)
+	__vue_script__ = __webpack_require__(22)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] ..\\src\\forms\\text-area.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(31)
+	__vue_template__ = __webpack_require__(23)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -10823,56 +10714,16 @@
 	})()}
 
 /***/ },
-/* 28 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(29);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(7)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./text-area.vue", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./text-area.vue");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 29 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(6)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, "\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"text-area.vue","sourceRoot":"webpack://"}]);
-	
-	// exports
-
-
-/***/ },
-/* 30 */
+/* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var uuid = __webpack_require__(14);
+	var uuid = __webpack_require__(12);
 	
 	module.exports = {
 	    components: {
-	        'icon': __webpack_require__(16)
+	        'icon': __webpack_require__(14)
 	    },
 	
 	    props: {
@@ -10959,23 +10810,22 @@
 	};
 
 /***/ },
-/* 31 */
+/* 23 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"input-field\">\n    <icon v-if=\"icon\"\n          :class=\"['prefix', labelActive ? 'active' : '']\"\n          :value=\"icon\"></icon>\n\n    <textarea v-el:text-area\n              :id=\"id\"\n              :class=\"['materialize-textarea', validate ? 'validate': '', valid]\"\n              :length=\"length\">{{value}}</textarea>\n\n    <label :for=\"id\"\n           :class=\"value ? 'active' : ''\"\n           :data-error=\"errorMessage\"\n           :data-success=\"successMessage\">{{label}}</label>\n</div>\n";
 
 /***/ },
-/* 32 */
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(33)
-	__vue_script__ = __webpack_require__(35)
+	__vue_script__ = __webpack_require__(25)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] ..\\src\\tabs\\tabs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(36)
+	__vue_template__ = __webpack_require__(26)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -10994,47 +10844,7 @@
 	})()}
 
 /***/ },
-/* 33 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(34);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(7)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./tabs.vue", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./tabs.vue");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 34 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(6)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, "\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"tabs.vue","sourceRoot":"webpack://"}]);
-	
-	// exports
-
-
-/***/ },
-/* 35 */
+/* 25 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -11052,23 +10862,22 @@
 	};
 
 /***/ },
-/* 36 */
+/* 26 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div>\n    <ul class=\"tabs\">\n        <slot></slot>\n    </ul>\n</div>\n";
 
 /***/ },
-/* 37 */
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(38)
-	__vue_script__ = __webpack_require__(40)
+	__vue_script__ = __webpack_require__(28)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] ..\\src\\tabs\\tab.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(41)
+	__vue_template__ = __webpack_require__(29)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -11087,52 +10896,12 @@
 	})()}
 
 /***/ },
-/* 38 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(39);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(7)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./tab.vue", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./tab.vue");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 39 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(6)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, "\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"tab.vue","sourceRoot":"webpack://"}]);
-	
-	// exports
-
-
-/***/ },
-/* 40 */
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var uuid = __webpack_require__(14);
+	var uuid = __webpack_require__(12);
 	
 	module.exports = {
 	    props: {
@@ -11165,22 +10934,22 @@
 	};
 
 /***/ },
-/* 41 */
+/* 29 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<li :class=\"['tab', disabled ? 'disabled' : '']\">\n    <a :class=\"active ? 'active' : ''\" :href=\"'#' + tabId\">{{label}}</a>\n    <div :id=\"tabId\">\n        <slot></slot>\n    </div>\n</li>\n";
 
 /***/ },
-/* 42 */
+/* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(43)
+	__vue_script__ = __webpack_require__(31)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] ..\\src\\collapsible\\collapsible.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(44)
+	__vue_template__ = __webpack_require__(32)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -11199,7 +10968,7 @@
 	})()}
 
 /***/ },
-/* 43 */
+/* 31 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -11221,22 +10990,22 @@
 	};
 
 /***/ },
-/* 44 */
+/* 32 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<ul :class=\"['collapsible', popout ? 'popout' : '']\" :data-collapsible=\"behavior\">\n    <slot></slot>\n</ul>\n";
 
 /***/ },
-/* 45 */
+/* 33 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(46)
+	__vue_script__ = __webpack_require__(34)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] ..\\src\\collapsible\\collapsible-body.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(47)
+	__vue_template__ = __webpack_require__(35)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -11255,7 +11024,7 @@
 	})()}
 
 /***/ },
-/* 46 */
+/* 34 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -11263,22 +11032,22 @@
 	module.exports = {};
 
 /***/ },
-/* 47 */
+/* 35 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"collapsible-body\">\n    <slot></slot>\n</div>\n";
 
 /***/ },
-/* 48 */
+/* 36 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(49)
+	__vue_script__ = __webpack_require__(37)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] ..\\src\\collapsible\\collapsible-header.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(50)
+	__vue_template__ = __webpack_require__(38)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -11297,14 +11066,14 @@
 	})()}
 
 /***/ },
-/* 49 */
+/* 37 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	module.exports = {
 	    components: {
-	        'mui-icon': __webpack_require__(16)
+	        'mui-icon': __webpack_require__(14)
 	    },
 	
 	    props: {
@@ -11322,22 +11091,22 @@
 	};
 
 /***/ },
-/* 50 */
+/* 38 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"['collapsible-header', active ? 'active' : '']\">\n    <mui-icon v-if=\"icon\" :value=\"icon\"></mui-icon>\n    {{label}}\n</div>\n";
 
 /***/ },
-/* 51 */
+/* 39 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(52)
+	__vue_script__ = __webpack_require__(40)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] ..\\src\\cards\\card.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(53)
+	__vue_template__ = __webpack_require__(41)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -11356,7 +11125,7 @@
 	})()}
 
 /***/ },
-/* 52 */
+/* 40 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -11380,22 +11149,22 @@
 	};
 
 /***/ },
-/* 53 */
+/* 41 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"['card', size]\">\n    <slot></slot>\n</div>\n";
 
 /***/ },
-/* 54 */
+/* 42 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(55)
+	__vue_script__ = __webpack_require__(43)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] ..\\src\\cards\\card-action.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(56)
+	__vue_template__ = __webpack_require__(44)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -11414,7 +11183,7 @@
 	})()}
 
 /***/ },
-/* 55 */
+/* 43 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -11422,22 +11191,22 @@
 	module.exports = {};
 
 /***/ },
-/* 56 */
+/* 44 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"card-action\">\n    <slot></slot>\n</div>\n";
 
 /***/ },
-/* 57 */
+/* 45 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(58)
+	__vue_script__ = __webpack_require__(46)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] ..\\src\\cards\\card-content.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(59)
+	__vue_template__ = __webpack_require__(47)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -11456,7 +11225,7 @@
 	})()}
 
 /***/ },
-/* 58 */
+/* 46 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -11464,22 +11233,22 @@
 	module.exports = {};
 
 /***/ },
-/* 59 */
+/* 47 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"card-content\">\n    <slot></slot>\n</div>\n";
 
 /***/ },
-/* 60 */
+/* 48 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(61)
+	__vue_script__ = __webpack_require__(49)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] ..\\src\\cards\\card-image.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(65)
+	__vue_template__ = __webpack_require__(53)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -11498,14 +11267,14 @@
 	})()}
 
 /***/ },
-/* 61 */
+/* 49 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	module.exports = {
 	    components: {
-	        'card-title': __webpack_require__(62)
+	        'card-title': __webpack_require__(50)
 	    },
 	
 	    props: {
@@ -11541,16 +11310,16 @@
 	};
 
 /***/ },
-/* 62 */
+/* 50 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(63)
+	__vue_script__ = __webpack_require__(51)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] ..\\src\\cards\\card-title.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(64)
+	__vue_template__ = __webpack_require__(52)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -11569,7 +11338,7 @@
 	})()}
 
 /***/ },
-/* 63 */
+/* 51 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -11583,28 +11352,28 @@
 	};
 
 /***/ },
-/* 64 */
+/* 52 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<span class=\"card-title\"><slot></slot></span>\n";
 
 /***/ },
-/* 65 */
+/* 53 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"divClasses\">\n    <img :src=\"src\" :class=\"imgClasses\">\n    <card-title v-if=\"title\" :title=\"title\"></card-title>\n    <!-- this slot can be put as styled card title -->\n    <slot></slot>\n</div>\n";
 
 /***/ },
-/* 66 */
+/* 54 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(67)
+	__vue_script__ = __webpack_require__(55)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] ..\\src\\cards\\card-panel.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(68)
+	__vue_template__ = __webpack_require__(56)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -11623,7 +11392,7 @@
 	})()}
 
 /***/ },
-/* 67 */
+/* 55 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -11631,22 +11400,22 @@
 	module.exports = {};
 
 /***/ },
-/* 68 */
+/* 56 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"card-panel\">\n    <slot></slot>\n</div>\n";
 
 /***/ },
-/* 69 */
+/* 57 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(70)
+	__vue_script__ = __webpack_require__(58)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] ..\\src\\cards\\card-reveal.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(71)
+	__vue_template__ = __webpack_require__(59)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -11665,7 +11434,7 @@
 	})()}
 
 /***/ },
-/* 70 */
+/* 58 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -11673,22 +11442,22 @@
 	module.exports = {};
 
 /***/ },
-/* 71 */
+/* 59 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"card-reveal\">\n    <slot></slot>\n</div>\n";
 
 /***/ },
-/* 72 */
+/* 60 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(73)
+	__vue_script__ = __webpack_require__(61)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] ..\\src\\dropdown\\dropdown.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(74)
+	__vue_template__ = __webpack_require__(62)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -11707,12 +11476,12 @@
 	})()}
 
 /***/ },
-/* 73 */
+/* 61 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var uuid = __webpack_require__(14);
+	var uuid = __webpack_require__(12);
 	
 	module.exports = {
 	    props: {
@@ -11759,31 +11528,64 @@
 	        };
 	    },
 	
+	    watch: {
+	        items: {
+	            handler: function handler() {
+	                this.initDropdown();
+	            },
+	            deep: true
+	        },
+	        inDuration: function inDuration() {
+	            this.initDropdown();
+	        },
+	        outDuration: function outDuration() {
+	            this.initDropdown();
+	        },
+	        constrainWidth: function constrainWidth() {
+	            this.initDropdown();
+	        },
+	        hover: function hover() {
+	            this.initDropdown();
+	        },
+	        gutter: function gutter() {
+	            this.initDropdown();
+	        },
+	        belowOrigin: function belowOrigin() {
+	            this.initDropdown();
+	        },
+	        alignment: function alignment() {
+	            this.initDropdown();
+	        }
+	    },
+	
 	    ready: function ready() {
-	        var $el = $(this.$el);
+	        $(this.$el).find('ul').addClass('dropdown-content').attr('id', this.id);
+	        this.initDropdown();
+	    },
 	
-	        $el.find('ul').addClass('dropdown-content').attr('id', this.id);
-	
-	        $el.find('.dropdown-button').dropdown({
-	            inDuration: this.inDuration,
-	            outDuration: this.outDuration,
-	            constrain_width: this.constrainWidth,
-	            hover: this.hover,
-	            gutter: this.gutter,
-	            belowOrigin: this.belowOrigin,
-	            alignment: this.alignment
-	        });
+	    methods: {
+	        initDropdown: function initDropdown() {
+	            $(this.$el).find('.dropdown-button').dropdown({
+	                inDuration: this.inDuration,
+	                outDuration: this.outDuration,
+	                constrain_width: this.constrainWidth,
+	                hover: this.hover,
+	                gutter: this.gutter,
+	                belowOrigin: this.belowOrigin,
+	                alignment: this.alignment
+	            });
+	        }
 	    }
 	};
 
 /***/ },
-/* 74 */
+/* 62 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<span>\n    <a class=\"dropdown-button btn\" href=\"#\" :data-activates=\"id\">{{label}}</a>\n    <ul v-if=\"items.length > 0\" class=\"dropdown-content\" :id=\"id\">\n        <li v-for=\"item in items\" :class=\"item.divider ? 'divider' : ''\">\n            <a v-if=\"!item.divider\" :href=\"item.href\">{{item.text}}</a>\n        </li>\n    </ul>\n    <slot v-if=\"items.length === 0\"></slot>\n</span>\n";
 
 /***/ },
-/* 75 */
+/* 63 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"row\">\n    <nav>\n        <ul class=\"right hide-on-med-and-down\">\n            <li><a href=\"#!\">First Sidebar Link</a></li>\n            <li><a href=\"#!\">Second Sidebar Link</a></li>\n        </ul>\n        <ul id=\"slide-out\" class=\"side-nav\">\n            <li><a href=\"#!\">First Sidebar Link</a></li>\n            <li><a href=\"#!\">Second Sidebar Link</a></li>\n        </ul>\n        <a href=\"#\" data-activates=\"slide-out\" class=\"button-collapse\"><i class=\"mdi-navigation-menu\"></i></a>\n    </nav>\n\n    <div class=\"row\">\n        <dropdown label=\"I am a dropdown\" :items=\"dropdownItems\"></dropdown>\n        <dropdown label=\"I am a dropdown 2\">\n            <ul>\n                <li><a href=\"\">223</a></li>\n                <li class=\"divider\"></li>\n                <li><a href=\"\">224</a></li>\n            </ul>\n        </dropdown>\n    </div>\n\n    <div class=\"col s7\">\n        <card size=\"medium\">\n            <card-image :src=\"imageUrl\">\n                <card-title>wedding image</card-title>\n            </card-image>\n            <card-content>\n                <card-title class=\"red-text\" title=\"123\">Title</card-title>\n                <p>this is description</p>\n            </card-content>\n            <card-action>\n                <a href=\"#\">Link A</a>\n                <a href=\"#\">Link B</a>\n            </card-action>\n        </card>\n    </div>\n\n    <div class=\"col s7\">\n        <card :revealed=\"false\">\n            <card-image :src=\"imageUrl\" activator></card-image>\n            <card-content>\n                <card-title class=\"red-text\" title=\"123\">Title</card-title>\n                <p>this is description</p>\n            </card-content>\n            <card-reveal>\n                <card-title class=\"blue-text\">reveal title</card-title>\n                <p>Here is some more information about this product that is o</p>\n            </card-reveal>\n        </card>\n    </div>\n\n\n\n    <text-field label=\"text field\"\n                :validate=\"true\"\n                class=\"col s12\"\n                @text-field-input=\"handleEvent\"\n                @text-field-click=\"handleEvent\"\n                @text-field-blur=\"handleEvent\"\n                @text-field-keydown=\"handleEvent\"\n                @text-field-keyup=\"handleEvent\"\n                @text-field-focus=\"handleEvent\"\n                @text-field-change=\"handleEvent\"\n                success-message=\"right\"></text-field>\n\n    <text-field label=\"text field\"\n                icon=\"phone\"\n                class=\"col s12\"></text-field>\n\n    <text-field label=\"text field\"\n                icon=\"phone\"\n                :disabled=\"true\"\n                :value.sync=\"text\"\n                :validate=\"true\"\n                class=\"col s12\"></text-field>\n\n    <text-field label=\"Email\"\n                icon=\"email\"\n                type=\"email\"\n                :validate=\"true\"\n                class=\"col s12\"\n                error-message=\"wrong email\"\n                success-message=\"correct email\"></text-field>\n\n    <text-field label=\"password\"\n                :value.sync=\"text\"\n                :validate=\"true\"\n                type=\"password\"\n                class=\"col s12\"\n                success-message=\"right\"\n                placeholder=\"enter your password\"></text-field>\n\n    <text-area class=\"col s12\"\n               label=\"my text field\"\n               value=\"this is description\"\n               :validate=\"true\"\n               :length=\"10\"\n               error-message=\"wrong\"\n               @input=\"handleEvent\"\n               icon=\"phone\"></text-area>\n\n    <div class=\"row\">\n        <select-field\n                class=\"col s12\"\n                label=\"select field\"\n                :options=\"options\"></select-field>\n    </div>\n\n    <icon class=\"red-text\" value=\"add\" @click=\"changeOptions\"></icon>\n\n    <div class=\"row\">\n        <collapsible behavior=\"expandable\" popout>\n            <li>\n                <collapsible-header active label=\"first one\" icon=\"edit\"></collapsible-header>\n                <collapsible-body><p>test for item 1</p></collapsible-body>\n            </li>\n            <li>\n                <collapsible-header label=\"2nd one\" icon=\"edit\"></collapsible-header>\n                <collapsible-body>\n                    <div class=\"row\">\n                        <text-area class=\"col s12\"\n                                   label=\"my text field\"\n                                   value=\"this is description\"\n                                   :validate=\"true\"\n                                   :length=\"10\"\n                                   error-message=\"wrong\"\n                                   @input=\"handleEvent\"\n                                   icon=\"phone\"></text-area>\n                    </div>\n                </collapsible-body>\n            </li>\n        </collapsible>\n    </div>\n\n    <div class=\"row\">\n        <div class=\"col s12\">\n            <ul class=\"tabs\">\n                <li class=\"tab col s3\"><a href=\"#test1\">Test 1</a></li>\n                <li class=\"tab col s3\"><a class=\"active\" href=\"#test2\">Test 2</a></li>\n                <li class=\"tab col s3 disabled\"><a href=\"#test3\">Disabled Tab</a></li>\n                <li class=\"tab col s3\"><a href=\"#test4\">Test 4</a></li>\n            </ul>\n        </div>\n        <div id=\"test1\" class=\"col s12\">Test 1</div>\n        <div id=\"test2\" class=\"col s12\">Test 2</div>\n        <div id=\"test3\" class=\"col s12\">Test 3</div>\n        <div id=\"test4\" class=\"col s12\">Test 4</div>\n    </div>\n\n    <div class=\"row\">\n        <ul class=\"tabs\">\n            <li class=\"tab col s3\"><a href=\"#test5\">Test 1</a></li>\n            <li class=\"tab col s3\"><a class=\"active\" href=\"#test6\">Test 2</a></li>\n            <li class=\"tab col s3 disabled\"><a href=\"#test7\">Disabled Tab</a></li>\n            <li class=\"tab col s3\"><a href=\"#test8\">Test 4</a></li>\n        </ul>\n        <div id=\"test5\">Test 1</div>\n        <div id=\"test6\">Test 2</div>\n        <div id=\"test7\">Test 3</div>\n        <div id=\"test8\">Test 4</div>\n    </div>\n\n\n\n    <div class=\"row\">\n        <tabs>\n            <tab label=\"tab1\" >\n                this is tab page 1\n            </tab>\n            <tab label=\"tab2\" disabled>\n                <div class=\"row\">\n                    <select-field\n                            class=\"col s12\"\n                            label=\"select field\"\n                            :options=\"options\"></select-field>\n\n                    <text-area class=\"col s12\"\n                               label=\"my text field\"\n                               value=\"this is description\"\n                               :validate=\"true\"\n                               :length=\"10\"\n                               error-message=\"wrong\"\n                               @input=\"handleEvent\"\n                               icon=\"phone\"></text-area>\n                </div>\n            </tab>\n        </tabs>\n    </div>\n</div>\n\n\n";

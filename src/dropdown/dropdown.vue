@@ -58,22 +58,54 @@
             }
         },
 
+        watch: {
+            items: {
+                handler: function() {
+                    this.initDropdown();
+                },
+                deep: true
+            },
+            inDuration: function() {
+                this.initDropdown();
+            },
+            outDuration: function() {
+                this.initDropdown();
+            },
+            constrainWidth: function() {
+                this.initDropdown();
+            },
+            hover: function() {
+                this.initDropdown();
+            },
+            gutter: function() {
+                this.initDropdown();
+            },
+            belowOrigin: function() {
+                this.initDropdown();
+            },
+            alignment: function() {
+                this.initDropdown();
+            }
+        },
+
         ready: function() {
-            var $el = $(this.$el);
+            $(this.$el).find('ul').addClass('dropdown-content').attr('id', this.id);// for <slot> case
+            this.initDropdown();
+        },
 
-            // for <slot> case
-            $el.find('ul').addClass('dropdown-content').attr('id', this.id);
-
-            // init dropdown
-            $el.find('.dropdown-button').dropdown({
-                inDuration: this.inDuration,
-                outDuration: this.outDuration,
-                constrain_width: this.constrainWidth,
-                hover: this.hover,
-                gutter: this.gutter,
-                belowOrigin: this.belowOrigin,
-                alignment: this.alignment
-            });
+        methods: {
+            initDropdown: function() {
+                // init dropdown
+                $(this.$el).find('.dropdown-button').dropdown({
+                    inDuration: this.inDuration,
+                    outDuration: this.outDuration,
+                    constrain_width: this.constrainWidth,
+                    hover: this.hover,
+                    gutter: this.gutter,
+                    belowOrigin: this.belowOrigin,
+                    alignment: this.alignment
+                });
+            }
         }
     };
 </script>

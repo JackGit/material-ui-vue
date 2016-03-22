@@ -228,6 +228,7 @@
             return {
                 imageUrl: 'http://wedding.jackyang.me/static/images/wedding_pic_02.jpg',
                 options: [
+                    {value: '0', text: 'zero', disabled: false, selected: false},
                     {value: '1', text: 'one', disabled: false, selected: true},
                     {value: '2', text: 'two', disabled: false, selected: false},
                     {value: '3', text: 'three', disabled: false, selected: false}],
@@ -245,15 +246,20 @@
             handleEvent: function(e) {
                 console.log(e.type, e);
             },
-            changeOptions: function() {
-                this.options.forEach(function(o) {
-                    if(o.value === '3')
-                        o.selected = true;
-                    else
-                        o.selected = false;
-                });
-                console.log(this.options)
-            }
+            changeOptions: (function() {
+                var i = 0;
+
+                return function() {
+
+                    this.options.forEach(function(o) {
+                        if(o.value == i)
+                            o.selected = true;
+                        else
+                            o.selected = false;
+                    });
+                    i = (i+1) % 4;
+                }
+            })()
         }
     };
 </script>

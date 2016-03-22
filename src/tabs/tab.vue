@@ -1,7 +1,3 @@
-<style>
-
-</style>
-
 <template>
     <li :class="['tab', disabled ? 'disabled' : '']">
         <a :class="active ? 'active' : ''" :href="'#' + tabId">{{label}}</a>

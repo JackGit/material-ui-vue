@@ -1,7 +1,3 @@
-<style>
-
-</style>
-
 <template>
     <i class="material-icons">{{value}}</i>
 </template>

@@ -1,7 +1,3 @@
-<style>
-
-</style>
-
 <template>
     <div>
         <ul class="tabs">
