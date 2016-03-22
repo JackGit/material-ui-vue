@@ -9759,7 +9759,7 @@
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] app.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(72)
+	__vue_template__ = __webpack_require__(75)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -10120,13 +10120,15 @@
 	        'card-image': MUI['card-image'],
 	        'card-panel': MUI['card-panel'],
 	        'card-title': MUI['card-title'],
-	        'card-reveal': MUI['card-reveal']
+	        'card-reveal': MUI['card-reveal'],
+	        'dropdown': MUI['dropdown']
 	    },
 	
 	    data: function data() {
 	        return {
 	            imageUrl: 'http://wedding.jackyang.me/static/images/wedding_pic_02.jpg',
-	            options: [{ value: '1', text: 'one', disabled: false, selected: true }, { value: '2', text: 'two', disabled: false, selected: false }, { value: '3', text: 'three', disabled: false, selected: false }]
+	            options: [{ value: '1', text: 'one', disabled: false, selected: true }, { value: '2', text: 'two', disabled: false, selected: false }, { value: '3', text: 'three', disabled: false, selected: false }],
+	            dropdownItems: [{ href: '#', text: '123' }, { href: '#', text: '223' }, { href: '#', text: '323' }, { divider: true }, { href: '#', text: '423' }]
 	        };
 	    },
 	
@@ -10163,7 +10165,8 @@
 	    'card-image': __webpack_require__(60),
 	    'card-panel': __webpack_require__(66),
 	    'card-title': __webpack_require__(62),
-	    'card-reveal': __webpack_require__(69)
+	    'card-reveal': __webpack_require__(69),
+	    'dropdown': __webpack_require__(72)
 	};
 
 /***/ },
@@ -11677,9 +11680,113 @@
 
 /***/ },
 /* 72 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(73)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] ..\\src\\dropdown\\dropdown.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(74)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\src\\dropdown\\dropdown.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 73 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var uuid = __webpack_require__(14);
+	
+	module.exports = {
+	    props: {
+	        label: {
+	            type: String
+	        },
+	        items: {
+	            type: Array,
+	            default: []
+	        },
+	        inDuration: {
+	            type: Number,
+	            default: 300
+	        },
+	        outDuration: {
+	            type: Number,
+	            default: 225
+	        },
+	        constrainWidth: {
+	            type: Boolean,
+	            default: true
+	        },
+	        hover: {
+	            type: Boolean,
+	            default: false
+	        },
+	        gutter: {
+	            type: Number,
+	            default: 0
+	        },
+	        belowOrigin: {
+	            type: Boolean,
+	            default: false
+	        },
+	        alignment: {
+	            type: String,
+	            default: 'left'
+	        }
+	    },
+	
+	    data: function data() {
+	        return {
+	            id: uuid.v1()
+	        };
+	    },
+	
+	    ready: function ready() {
+	        var $el = $(this.$el);
+	
+	        $el.find('ul').addClass('dropdown-content').attr('id', this.id);
+	
+	        $el.find('.dropdown-button').dropdown({
+	            inDuration: this.inDuration,
+	            outDuration: this.outDuration,
+	            constrain_width: this.constrainWidth,
+	            hover: this.hover,
+	            gutter: this.gutter,
+	            belowOrigin: this.belowOrigin,
+	            alignment: this.alignment
+	        });
+	    }
+	};
+
+/***/ },
+/* 74 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"row\">\n    <nav>\n        <ul class=\"right hide-on-med-and-down\">\n            <li><a href=\"#!\">First Sidebar Link</a></li>\n            <li><a href=\"#!\">Second Sidebar Link</a></li>\n        </ul>\n        <ul id=\"slide-out\" class=\"side-nav\">\n            <li><a href=\"#!\">First Sidebar Link</a></li>\n            <li><a href=\"#!\">Second Sidebar Link</a></li>\n        </ul>\n        <a href=\"#\" data-activates=\"slide-out\" class=\"button-collapse\"><i class=\"mdi-navigation-menu\"></i></a>\n    </nav>\n\n\n    <div class=\"col s7\">\n        <card size=\"medium\">\n            <card-image :src=\"imageUrl\">\n                <card-title>wedding image</card-title>\n            </card-image>\n            <card-content>\n                <card-title class=\"red-text\" title=\"123\">Title</card-title>\n                <p>this is description</p>\n            </card-content>\n            <card-action>\n                <a href=\"#\">Link A</a>\n                <a href=\"#\">Link B</a>\n            </card-action>\n        </card>\n    </div>\n\n    <div class=\"col s7\">\n        <card :revealed=\"false\">\n            <card-image :src=\"imageUrl\" activator></card-image>\n            <card-content>\n                <card-title class=\"red-text\" title=\"123\">Title</card-title>\n                <p>this is description</p>\n            </card-content>\n            <card-reveal>\n                <card-title class=\"blue-text\">reveal title</card-title>\n                <p>Here is some more information about this product that is o</p>\n            </card-reveal>\n        </card>\n    </div>\n\n\n\n    <text-field label=\"text field\"\n                :validate=\"true\"\n                class=\"col s12\"\n                @text-field-input=\"handleEvent\"\n                @text-field-click=\"handleEvent\"\n                @text-field-blur=\"handleEvent\"\n                @text-field-keydown=\"handleEvent\"\n                @text-field-keyup=\"handleEvent\"\n                @text-field-focus=\"handleEvent\"\n                @text-field-change=\"handleEvent\"\n                success-message=\"right\"></text-field>\n\n    <text-field label=\"text field\"\n                icon=\"phone\"\n                class=\"col s12\"></text-field>\n\n    <text-field label=\"text field\"\n                icon=\"phone\"\n                :disabled=\"true\"\n                :value.sync=\"text\"\n                :validate=\"true\"\n                class=\"col s12\"></text-field>\n\n    <text-field label=\"Email\"\n                icon=\"email\"\n                type=\"email\"\n                :validate=\"true\"\n                class=\"col s12\"\n                error-message=\"wrong email\"\n                success-message=\"correct email\"></text-field>\n\n    <text-field label=\"password\"\n                :value.sync=\"text\"\n                :validate=\"true\"\n                type=\"password\"\n                class=\"col s12\"\n                success-message=\"right\"\n                placeholder=\"enter your password\"></text-field>\n\n    <text-area class=\"col s12\"\n               label=\"my text field\"\n               value=\"this is description\"\n               :validate=\"true\"\n               :length=\"10\"\n               error-message=\"wrong\"\n               @input=\"handleEvent\"\n               icon=\"phone\"></text-area>\n\n    <div class=\"row\">\n        <select-field\n                class=\"col s12\"\n                label=\"select field\"\n                :options=\"options\"></select-field>\n    </div>\n\n    <icon class=\"red-text\" value=\"add\" @click=\"changeOptions\"></icon>\n\n    <div class=\"row\">\n        <collapsible behavior=\"expandable\" popout>\n            <li>\n                <collapsible-header active label=\"first one\" icon=\"edit\"></collapsible-header>\n                <collapsible-body><p>test for item 1</p></collapsible-body>\n            </li>\n            <li>\n                <collapsible-header label=\"2nd one\" icon=\"edit\"></collapsible-header>\n                <collapsible-body>\n                    <div class=\"row\">\n                        <text-area class=\"col s12\"\n                                   label=\"my text field\"\n                                   value=\"this is description\"\n                                   :validate=\"true\"\n                                   :length=\"10\"\n                                   error-message=\"wrong\"\n                                   @input=\"handleEvent\"\n                                   icon=\"phone\"></text-area>\n                    </div>\n                </collapsible-body>\n            </li>\n        </collapsible>\n    </div>\n\n    <div class=\"row\">\n        <div class=\"col s12\">\n            <ul class=\"tabs\">\n                <li class=\"tab col s3\"><a href=\"#test1\">Test 1</a></li>\n                <li class=\"tab col s3\"><a class=\"active\" href=\"#test2\">Test 2</a></li>\n                <li class=\"tab col s3 disabled\"><a href=\"#test3\">Disabled Tab</a></li>\n                <li class=\"tab col s3\"><a href=\"#test4\">Test 4</a></li>\n            </ul>\n        </div>\n        <div id=\"test1\" class=\"col s12\">Test 1</div>\n        <div id=\"test2\" class=\"col s12\">Test 2</div>\n        <div id=\"test3\" class=\"col s12\">Test 3</div>\n        <div id=\"test4\" class=\"col s12\">Test 4</div>\n    </div>\n\n    <div class=\"row\">\n        <ul class=\"tabs\">\n            <li class=\"tab col s3\"><a href=\"#test5\">Test 1</a></li>\n            <li class=\"tab col s3\"><a class=\"active\" href=\"#test6\">Test 2</a></li>\n            <li class=\"tab col s3 disabled\"><a href=\"#test7\">Disabled Tab</a></li>\n            <li class=\"tab col s3\"><a href=\"#test8\">Test 4</a></li>\n        </ul>\n        <div id=\"test5\">Test 1</div>\n        <div id=\"test6\">Test 2</div>\n        <div id=\"test7\">Test 3</div>\n        <div id=\"test8\">Test 4</div>\n    </div>\n\n    <div class=\"row\">\n        <tabs>\n            <tab label=\"tab1\" >\n                this is tab page 1\n            </tab>\n            <tab label=\"tab2\" disabled>\n                <div class=\"row\">\n                    <select-field\n                            class=\"col s12\"\n                            label=\"select field\"\n                            :options=\"options\"></select-field>\n\n                    <text-area class=\"col s12\"\n                               label=\"my text field\"\n                               value=\"this is description\"\n                               :validate=\"true\"\n                               :length=\"10\"\n                               error-message=\"wrong\"\n                               @input=\"handleEvent\"\n                               icon=\"phone\"></text-area>\n                </div>\n            </tab>\n        </tabs>\n    </div>\n</div>\n\n\n";
+	module.exports = "\n<span>\n    <a class=\"dropdown-button btn\" href=\"#\" :data-activates=\"id\">{{label}}</a>\n    <ul v-if=\"items.length > 0\" class=\"dropdown-content\" :id=\"id\">\n        <li v-for=\"item in items\" :class=\"item.divider ? 'divider' : ''\">\n            <a v-if=\"!item.divider\" :href=\"item.href\">{{item.text}}</a>\n        </li>\n    </ul>\n    <slot v-if=\"items.length === 0\"></slot>\n</span>\n";
+
+/***/ },
+/* 75 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"row\">\n    <nav>\n        <ul class=\"right hide-on-med-and-down\">\n            <li><a href=\"#!\">First Sidebar Link</a></li>\n            <li><a href=\"#!\">Second Sidebar Link</a></li>\n        </ul>\n        <ul id=\"slide-out\" class=\"side-nav\">\n            <li><a href=\"#!\">First Sidebar Link</a></li>\n            <li><a href=\"#!\">Second Sidebar Link</a></li>\n        </ul>\n        <a href=\"#\" data-activates=\"slide-out\" class=\"button-collapse\"><i class=\"mdi-navigation-menu\"></i></a>\n    </nav>\n\n    <div class=\"row\">\n        <dropdown label=\"I am a dropdown\" :items=\"dropdownItems\"></dropdown>\n        <dropdown label=\"I am a dropdown 2\">\n            <ul>\n                <li><a href=\"\">223</a></li>\n                <li class=\"divider\"></li>\n                <li><a href=\"\">224</a></li>\n            </ul>\n        </dropdown>\n    </div>\n\n    <div class=\"col s7\">\n        <card size=\"medium\">\n            <card-image :src=\"imageUrl\">\n                <card-title>wedding image</card-title>\n            </card-image>\n            <card-content>\n                <card-title class=\"red-text\" title=\"123\">Title</card-title>\n                <p>this is description</p>\n            </card-content>\n            <card-action>\n                <a href=\"#\">Link A</a>\n                <a href=\"#\">Link B</a>\n            </card-action>\n        </card>\n    </div>\n\n    <div class=\"col s7\">\n        <card :revealed=\"false\">\n            <card-image :src=\"imageUrl\" activator></card-image>\n            <card-content>\n                <card-title class=\"red-text\" title=\"123\">Title</card-title>\n                <p>this is description</p>\n            </card-content>\n            <card-reveal>\n                <card-title class=\"blue-text\">reveal title</card-title>\n                <p>Here is some more information about this product that is o</p>\n            </card-reveal>\n        </card>\n    </div>\n\n\n\n    <text-field label=\"text field\"\n                :validate=\"true\"\n                class=\"col s12\"\n                @text-field-input=\"handleEvent\"\n                @text-field-click=\"handleEvent\"\n                @text-field-blur=\"handleEvent\"\n                @text-field-keydown=\"handleEvent\"\n                @text-field-keyup=\"handleEvent\"\n                @text-field-focus=\"handleEvent\"\n                @text-field-change=\"handleEvent\"\n                success-message=\"right\"></text-field>\n\n    <text-field label=\"text field\"\n                icon=\"phone\"\n                class=\"col s12\"></text-field>\n\n    <text-field label=\"text field\"\n                icon=\"phone\"\n                :disabled=\"true\"\n                :value.sync=\"text\"\n                :validate=\"true\"\n                class=\"col s12\"></text-field>\n\n    <text-field label=\"Email\"\n                icon=\"email\"\n                type=\"email\"\n                :validate=\"true\"\n                class=\"col s12\"\n                error-message=\"wrong email\"\n                success-message=\"correct email\"></text-field>\n\n    <text-field label=\"password\"\n                :value.sync=\"text\"\n                :validate=\"true\"\n                type=\"password\"\n                class=\"col s12\"\n                success-message=\"right\"\n                placeholder=\"enter your password\"></text-field>\n\n    <text-area class=\"col s12\"\n               label=\"my text field\"\n               value=\"this is description\"\n               :validate=\"true\"\n               :length=\"10\"\n               error-message=\"wrong\"\n               @input=\"handleEvent\"\n               icon=\"phone\"></text-area>\n\n    <div class=\"row\">\n        <select-field\n                class=\"col s12\"\n                label=\"select field\"\n                :options=\"options\"></select-field>\n    </div>\n\n    <icon class=\"red-text\" value=\"add\" @click=\"changeOptions\"></icon>\n\n    <div class=\"row\">\n        <collapsible behavior=\"expandable\" popout>\n            <li>\n                <collapsible-header active label=\"first one\" icon=\"edit\"></collapsible-header>\n                <collapsible-body><p>test for item 1</p></collapsible-body>\n            </li>\n            <li>\n                <collapsible-header label=\"2nd one\" icon=\"edit\"></collapsible-header>\n                <collapsible-body>\n                    <div class=\"row\">\n                        <text-area class=\"col s12\"\n                                   label=\"my text field\"\n                                   value=\"this is description\"\n                                   :validate=\"true\"\n                                   :length=\"10\"\n                                   error-message=\"wrong\"\n                                   @input=\"handleEvent\"\n                                   icon=\"phone\"></text-area>\n                    </div>\n                </collapsible-body>\n            </li>\n        </collapsible>\n    </div>\n\n    <div class=\"row\">\n        <div class=\"col s12\">\n            <ul class=\"tabs\">\n                <li class=\"tab col s3\"><a href=\"#test1\">Test 1</a></li>\n                <li class=\"tab col s3\"><a class=\"active\" href=\"#test2\">Test 2</a></li>\n                <li class=\"tab col s3 disabled\"><a href=\"#test3\">Disabled Tab</a></li>\n                <li class=\"tab col s3\"><a href=\"#test4\">Test 4</a></li>\n            </ul>\n        </div>\n        <div id=\"test1\" class=\"col s12\">Test 1</div>\n        <div id=\"test2\" class=\"col s12\">Test 2</div>\n        <div id=\"test3\" class=\"col s12\">Test 3</div>\n        <div id=\"test4\" class=\"col s12\">Test 4</div>\n    </div>\n\n    <div class=\"row\">\n        <ul class=\"tabs\">\n            <li class=\"tab col s3\"><a href=\"#test5\">Test 1</a></li>\n            <li class=\"tab col s3\"><a class=\"active\" href=\"#test6\">Test 2</a></li>\n            <li class=\"tab col s3 disabled\"><a href=\"#test7\">Disabled Tab</a></li>\n            <li class=\"tab col s3\"><a href=\"#test8\">Test 4</a></li>\n        </ul>\n        <div id=\"test5\">Test 1</div>\n        <div id=\"test6\">Test 2</div>\n        <div id=\"test7\">Test 3</div>\n        <div id=\"test8\">Test 4</div>\n    </div>\n\n\n\n    <div class=\"row\">\n        <tabs>\n            <tab label=\"tab1\" >\n                this is tab page 1\n            </tab>\n            <tab label=\"tab2\" disabled>\n                <div class=\"row\">\n                    <select-field\n                            class=\"col s12\"\n                            label=\"select field\"\n                            :options=\"options\"></select-field>\n\n                    <text-area class=\"col s12\"\n                               label=\"my text field\"\n                               value=\"this is description\"\n                               :validate=\"true\"\n                               :length=\"10\"\n                               error-message=\"wrong\"\n                               @input=\"handleEvent\"\n                               icon=\"phone\"></text-area>\n                </div>\n            </tab>\n        </tabs>\n    </div>\n</div>\n\n\n";
 
 /***/ }
 /******/ ]);

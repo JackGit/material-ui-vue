@@ -14,5 +14,6 @@ module.exports = {
     'card-image': require('./cards/card-image.vue'),
     'card-panel': require('./cards/card-panel.vue'),
     'card-title': require('./cards/card-title.vue'),
-    'card-reveal': require('./cards/card-reveal.vue')
+    'card-reveal': require('./cards/card-reveal.vue'),
+    'dropdown': require('./dropdown/dropdown.vue')
 };
