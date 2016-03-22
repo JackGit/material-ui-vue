@@ -1,7 +1,3 @@
-<style>
-
-</style>
-
 <template>
     <div class="input-field">
         <icon v-if="icon"

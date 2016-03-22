@@ -16,6 +16,16 @@
             <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
         </nav>
 
+        <div class="row">
+            <dropdown label="I am a dropdown" :items="dropdownItems"></dropdown>
+            <dropdown label="I am a dropdown 2">
+                <ul>
+                    <li><a href="">223</a></li>
+                    <li class="divider"></li>
+                    <li><a href="">224</a></li>
+                </ul>
+            </dropdown>
+        </div>
 
         <div class="col s7">
             <card size="medium">
@@ -99,11 +109,12 @@
 
         <div class="row">
             <select-field
+                    class="col s12"
                     label="select field"
                     :options="options"></select-field>
         </div>
 
-        <icon class="red-text" value="add"></icon>
+        <icon class="red-text" value="add" @click="changeOptions"></icon>
 
         <div class="row">
             <collapsible behavior="expandable" popout>
@@ -157,6 +168,8 @@
             <div id="test8">Test 4</div>
         </div>
 
+
+
         <div class="row">
             <tabs>
                 <tab label="tab1" >
@@ -207,19 +220,46 @@
             'card-image': MUI['card-image'],
             'card-panel': MUI['card-panel'],
             'card-title': MUI['card-title'],
-            'card-reveal': MUI['card-reveal']
+            'card-reveal': MUI['card-reveal'],
+            'dropdown': MUI['dropdown']
         },
 
         data: function() {
             return {
-                imageUrl: 'http://wedding.jackyang.me/static/images/wedding_pic_02.jpg'
+                imageUrl: 'http://wedding.jackyang.me/static/images/wedding_pic_02.jpg',
+                options: [
+                    {value: '0', text: 'zero', disabled: false, selected: false},
+                    {value: '1', text: 'one', disabled: false, selected: true},
+                    {value: '2', text: 'two', disabled: false, selected: false},
+                    {value: '3', text: 'three', disabled: false, selected: false}],
+                dropdownItems: [
+                    {href: '#', text: '123'},
+                    {href: '#', text: '223'},
+                    {href: '#', text: '323'},
+                    {divider: true},
+                    {href: '#', text: '423'},
+                ]
             }
         },
 
         methods: {
             handleEvent: function(e) {
                 console.log(e.type, e);
-            }
+            },
+            changeOptions: (function() {
+                var i = 0;
+
+                return function() {
+
+                    this.options.forEach(function(o) {
+                        if(o.value == i)
+                            o.selected = true;
+                        else
+                            o.selected = false;
+                    });
+                    i = (i+1) % 4;
+                }
+            })()
         }
     };
 </script>
