@@ -24,5 +24,9 @@ module.exports = {
     'link-collection': require('./collections/link-collection.vue'),
     'collection': require('./collections/collection.vue'),
     'collection-item': require('./collections/collection-item.vue'),
-    'collection-header': require('./collections/collection-header.vue')
+    'collection-header': require('./collections/collection-header.vue'),
+    'search-bar': require('./navbar/search-bar.vue'),
+    'navbar': require('./navbar/navbar.vue'),
+    'nav-item': require('./navbar/nav-item.vue'),
+    'nav-dropdown-item': require('./navbar/nav-dropdown-item.vue')
 };

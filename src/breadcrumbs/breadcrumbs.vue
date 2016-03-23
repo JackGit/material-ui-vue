@@ -14,7 +14,7 @@
         props: {
             crumbs: {
                 type: Array,    // {href:'', label:''}
-                default: []
+                default: function() {return [];}
             }
         },
 

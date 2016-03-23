@@ -30,7 +30,7 @@
             },
             options: {
                 type: Array,    // {value: '', text: '', disabled: false, selected: false}
-                default: []
+                default: function() {return [];}
             }
         },
 

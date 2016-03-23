@@ -1,6 +1,7 @@
 <template>
     <span>
         <btn class="dropdown-button" href="#" :data-activates="id"
+             :type="type"
              :label="label"
              :icon="icon"
              :icon-position="iconPosition"
@@ -19,48 +20,14 @@
 
 <script>
     var uuid = require('uuid');
-    var ButtonMixin = require('../mixins/ButtonMixin.js');
+    var ButtonPropMixin = require('../mixins/ButtonPropMixin.js');
+    var DropdownPropMixin = require('../mixins/DropdownPropMixin.js');
 
     module.exports = {
-        mixins: [ButtonMixin],
+        mixins: [ButtonPropMixin, DropdownPropMixin],
 
         components: {
             btn: require('../buttons/button.vue')
-        },
-
-        props: {
-            items: {
-                type: Array,
-                default: []
-            },
-            inDuration: {
-                type: Number,
-                default: 300
-            },
-            outDuration: {
-                type: Number,
-                default: 225
-            },
-            constrainWidth: {
-                type: Boolean,
-                default: true
-            },
-            hover: {
-                type: Boolean,
-                default: false
-            },
-            gutter: {
-                type: Number,
-                default: 0
-            },
-            belowOrigin: {
-                type: Boolean,
-                default: false
-            },
-            alignment: {
-                type: String,
-                default: 'left'
-            }
         },
 
         data: function() {

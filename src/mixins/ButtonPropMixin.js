@@ -1,11 +1,6 @@
 var classes = require('../Util.js').classes;
 
 module.exports = {
-
-    components: {
-        icon: require('../icons/icon.vue')
-    },
-
     props: {
         label: {
             type: String
@@ -38,20 +33,5 @@ module.exports = {
             type: Boolean,
             default: false
         }
-
-    },
-
-    data: function() {
-        return {
-            buttonClasses: classes({
-                'waves-effect': this.wavesEffect,
-                'waves-light': this.lightWave,
-                'disabled': this.disabled,
-                'btn': !this.type,
-                'btn-large': this.large,
-                'btn-flat': this.type === 'flat',
-                'btn-floating': this.type === 'floating'
-            })
-        };
     }
 };

@@ -9759,7 +9759,7 @@
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] app.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(92)
+	__vue_template__ = __webpack_require__(107)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -10130,7 +10130,11 @@
 	        'link-collection': MUI['link-collection'],
 	        'collection': MUI['collection'],
 	        'collection-header': MUI['collection-header'],
-	        'collection-item': MUI['collection-item']
+	        'collection-item': MUI['collection-item'],
+	        'search-bar': MUI['search-bar'],
+	        'navbar': MUI['navbar'],
+	        'nav-item': MUI['nav-item'],
+	        'nav-dropdown-item': MUI['nav-dropdown-item']
 	    },
 	
 	    data: function data() {
@@ -10186,15 +10190,19 @@
 	    'card-title': __webpack_require__(50),
 	    'card-reveal': __webpack_require__(57),
 	    'dropdown': __webpack_require__(60),
-	    'button': __webpack_require__(64),
-	    'fixed-action-button': __webpack_require__(68),
-	    'badge': __webpack_require__(71),
-	    'breadcrumbs': __webpack_require__(74),
-	    'chip': __webpack_require__(77),
-	    'link-collection': __webpack_require__(80),
-	    'collection': __webpack_require__(83),
-	    'collection-item': __webpack_require__(86),
-	    'collection-header': __webpack_require__(89)
+	    'button': __webpack_require__(65),
+	    'fixed-action-button': __webpack_require__(70),
+	    'badge': __webpack_require__(73),
+	    'breadcrumbs': __webpack_require__(76),
+	    'chip': __webpack_require__(79),
+	    'link-collection': __webpack_require__(82),
+	    'collection': __webpack_require__(85),
+	    'collection-item': __webpack_require__(88),
+	    'collection-header': __webpack_require__(91),
+	    'search-bar': __webpack_require__(94),
+	    'navbar': __webpack_require__(97),
+	    'nav-item': __webpack_require__(100),
+	    'nav-dropdown-item': __webpack_require__(104)
 	};
 
 /***/ },
@@ -10664,7 +10672,9 @@
 	        },
 	        options: {
 	            type: Array,
-	            default: []
+	            default: function _default() {
+	                return [];
+	            }
 	        }
 	    },
 	
@@ -11479,7 +11489,7 @@
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] ..\\src\\dropdown\\dropdown.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(67)
+	__vue_template__ = __webpack_require__(69)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -11504,48 +11514,14 @@
 	'use strict';
 	
 	var uuid = __webpack_require__(12);
-	var ButtonMixin = __webpack_require__(62);
+	var ButtonPropMixin = __webpack_require__(62);
+	var DropdownPropMixin = __webpack_require__(64);
 	
 	module.exports = {
-	    mixins: [ButtonMixin],
+	    mixins: [ButtonPropMixin, DropdownPropMixin],
 	
 	    components: {
-	        btn: __webpack_require__(64)
-	    },
-	
-	    props: {
-	        items: {
-	            type: Array,
-	            default: []
-	        },
-	        inDuration: {
-	            type: Number,
-	            default: 300
-	        },
-	        outDuration: {
-	            type: Number,
-	            default: 225
-	        },
-	        constrainWidth: {
-	            type: Boolean,
-	            default: true
-	        },
-	        hover: {
-	            type: Boolean,
-	            default: false
-	        },
-	        gutter: {
-	            type: Number,
-	            default: 0
-	        },
-	        belowOrigin: {
-	            type: Boolean,
-	            default: false
-	        },
-	        alignment: {
-	            type: String,
-	            default: 'left'
-	        }
+	        btn: __webpack_require__(65)
 	    },
 	
 	    data: function data() {
@@ -11611,6 +11587,148 @@
 	var classes = __webpack_require__(63).classes;
 	
 	module.exports = {
+	    props: {
+	        label: {
+	            type: String
+	        },
+	        type: {
+	            type: String,   // '', flat, floating
+	            default: ''
+	        },
+	        large: {
+	            type: Boolean,
+	            default: false
+	        },
+	        icon: {
+	            type: String,
+	            default: ''
+	        },
+	        iconPosition: {
+	            type: String,
+	            default: ''
+	        },
+	        wavesEffect: {
+	            type: Boolean,
+	            default: true
+	        },
+	        lightWave: {
+	            type: Boolean,
+	            default: true
+	        },
+	        disabled: {
+	            type: Boolean,
+	            default: false
+	        }
+	    }
+	};
+
+/***/ },
+/* 63 */
+/***/ function(module, exports) {
+
+	
+	
+	function classes(options) {
+	    var cls = [];
+	    for(var p in options) {
+	        if(options[p])
+	            cls.push(p);
+	    }
+	    return cls;
+	}
+	
+	module.exports = {
+	    classes: classes
+	};
+
+/***/ },
+/* 64 */
+/***/ function(module, exports) {
+
+	module.exports = {
+	    props: {
+	        items: {
+	            type: Array,
+	            default: function() {return [];}
+	        },
+	        inDuration: {
+	            type: Number,
+	            default: 300
+	        },
+	        outDuration: {
+	            type: Number,
+	            default: 225
+	        },
+	        constrainWidth: {
+	            type: Boolean,
+	            default: true
+	        },
+	        hover: {
+	            type: Boolean,
+	            default: true
+	        },
+	        gutter: {
+	            type: Number,
+	            default: 0
+	        },
+	        belowOrigin: {
+	            type: Boolean,
+	            default: false
+	        },
+	        alignment: {
+	            type: String,
+	            default: 'left'
+	        }
+	    }
+	}
+
+/***/ },
+/* 65 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(66)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] ..\\src\\buttons\\button.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(68)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\src\\buttons\\button.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 66 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var ButtonMixin = __webpack_require__(67);
+	
+	module.exports = {
+	    mixins: [ButtonMixin]
+	};
+
+/***/ },
+/* 67 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var classes = __webpack_require__(63).classes;
+	
+	module.exports = {
 	
 	    components: {
 	        icon: __webpack_require__(14)
@@ -11629,7 +11747,8 @@
 	            default: false
 	        },
 	        icon: {
-	            type: String
+	            type: String,
+	            default: ''
 	        },
 	        iconPosition: {
 	            type: String,
@@ -11666,87 +11785,28 @@
 	};
 
 /***/ },
-/* 63 */
-/***/ function(module, exports) {
-
-	
-	
-	function classes(options) {
-	    var cls = [];
-	    for(var p in options) {
-	        if(options[p])
-	            cls.push(p);
-	    }
-	    return cls;
-	}
-	
-	module.exports = {
-	    classes: classes
-	};
-
-/***/ },
-/* 64 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(65)
-	if (__vue_script__ &&
-	    __vue_script__.__esModule &&
-	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] ..\\src\\buttons\\button.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(66)
-	module.exports = __vue_script__ || {}
-	if (module.exports.__esModule) module.exports = module.exports.default
-	if (__vue_template__) {
-	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
-	}
-	if (false) {(function () {  module.hot.accept()
-	  var hotAPI = require("vue-hot-reload-api")
-	  hotAPI.install(require("vue"), true)
-	  if (!hotAPI.compatible) return
-	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\src\\buttons\\button.vue"
-	  if (!module.hot.data) {
-	    hotAPI.createRecord(id, module.exports)
-	  } else {
-	    hotAPI.update(id, module.exports, __vue_template__)
-	  }
-	})()}
-
-/***/ },
-/* 65 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	var ButtonMixin = __webpack_require__(62);
-	
-	module.exports = {
-	    mixins: [ButtonMixin]
-	};
-
-/***/ },
-/* 66 */
+/* 68 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<a :class=\"buttonClasses\">\n    <icon v-if=\"icon\" :value=\"icon\" :class=\"iconPosition\"></icon>\n    {{label}}\n</a>\n";
 
 /***/ },
-/* 67 */
+/* 69 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<span>\n    <btn class=\"dropdown-button\" href=\"#\" :data-activates=\"id\"\n         :label=\"label\"\n         :icon=\"icon\"\n         :icon-position=\"iconPosition\"\n         :large=\"large\"\n         :waves-effect=\"false\"\n         :light-wave=\"false\"\n         :disabled=\"false\"></btn>\n    <ul v-if=\"items.length > 0\" class=\"dropdown-content\" :id=\"id\">\n        <li v-for=\"item in items\" :class=\"item.divider ? 'divider' : ''\">\n            <a v-if=\"!item.divider\" :href=\"item.href\">{{item.text}}</a>\n        </li>\n    </ul>\n    <slot v-if=\"items.length === 0\"></slot>\n</span>\n";
+	module.exports = "\n<span>\n    <btn class=\"dropdown-button\" href=\"#\" :data-activates=\"id\"\n         :type=\"type\"\n         :label=\"label\"\n         :icon=\"icon\"\n         :icon-position=\"iconPosition\"\n         :large=\"large\"\n         :waves-effect=\"false\"\n         :light-wave=\"false\"\n         :disabled=\"false\"></btn>\n    <ul v-if=\"items.length > 0\" class=\"dropdown-content\" :id=\"id\">\n        <li v-for=\"item in items\" :class=\"item.divider ? 'divider' : ''\">\n            <a v-if=\"!item.divider\" :href=\"item.href\">{{item.text}}</a>\n        </li>\n    </ul>\n    <slot v-if=\"items.length === 0\"></slot>\n</span>\n";
 
 /***/ },
-/* 68 */
+/* 70 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(69)
+	__vue_script__ = __webpack_require__(71)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] ..\\src\\buttons\\fixed-action-button.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(70)
+	__vue_template__ = __webpack_require__(72)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -11765,19 +11825,19 @@
 	})()}
 
 /***/ },
-/* 69 */
+/* 71 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	var classes = __webpack_require__(63).classes;
-	var ButtonMixin = __webpack_require__(62);
+	var ButtonMixin = __webpack_require__(67);
 	
 	module.exports = {
 	    mixins: [ButtonMixin],
 	
 	    components: {
-	        'btn': __webpack_require__(64)
+	        'btn': __webpack_require__(65)
 	    },
 	
 	    props: {
@@ -11820,22 +11880,22 @@
 	};
 
 /***/ },
-/* 70 */
+/* 72 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"divClasses\">\n    <btn type=\"floating\" :large=\"true\" :icon=\"icon\" :light-wave=\"lightWave\" :disabled=\"disabled\"></btn>\n    <slot></slot>\n</div>\n";
 
 /***/ },
-/* 71 */
+/* 73 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(72)
+	__vue_script__ = __webpack_require__(74)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] ..\\src\\badges\\badge.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(73)
+	__vue_template__ = __webpack_require__(75)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -11854,7 +11914,7 @@
 	})()}
 
 /***/ },
-/* 72 */
+/* 74 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -11880,22 +11940,22 @@
 	};
 
 /***/ },
-/* 73 */
+/* 75 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<span :class=\"classes\"><slot></slot></span>\n";
 
 /***/ },
-/* 74 */
+/* 76 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(75)
+	__vue_script__ = __webpack_require__(77)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] ..\\src\\breadcrumbs\\breadcrumbs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(76)
+	__vue_template__ = __webpack_require__(78)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -11914,7 +11974,7 @@
 	})()}
 
 /***/ },
-/* 75 */
+/* 77 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -11923,7 +11983,9 @@
 	    props: {
 	        crumbs: {
 	            type: Array,
-	            default: []
+	            default: function _default() {
+	                return [];
+	            }
 	        }
 	    },
 	
@@ -11933,22 +11995,22 @@
 	};
 
 /***/ },
-/* 76 */
+/* 78 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<nav>\n    <div class=\"nav-wrapper\">\n        <div class=\"col s12\">\n            <a v-for=\"crumb in crumbs\" :href=\"crumb.href\" class=\"breadcrumb\">{{crumb.label}}</a>\n            <slot></slot>\n        </div>\n    </div>\n</nav>\n";
 
 /***/ },
-/* 77 */
+/* 79 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(78)
+	__vue_script__ = __webpack_require__(80)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] ..\\src\\chips\\chip.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(79)
+	__vue_template__ = __webpack_require__(81)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -11967,7 +12029,7 @@
 	})()}
 
 /***/ },
-/* 78 */
+/* 80 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -11994,22 +12056,22 @@
 	};
 
 /***/ },
-/* 79 */
+/* 81 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"chip\">\n    <img v-if=\"image\" :src=\"image\">\n    {{label}}\n    <icon v-if=\"removable\" value=\"close\"></icon>\n</div>\n";
 
 /***/ },
-/* 80 */
+/* 82 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(81)
+	__vue_script__ = __webpack_require__(83)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] ..\\src\\collections\\link-collection.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(82)
+	__vue_template__ = __webpack_require__(84)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -12028,7 +12090,7 @@
 	})()}
 
 /***/ },
-/* 81 */
+/* 83 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -12037,7 +12099,9 @@
 	    props: {
 	        links: {
 	            type: Array,
-	            default: []
+	            default: function _default() {
+	                return [];
+	            }
 	        }
 	    },
 	
@@ -12047,22 +12111,22 @@
 	};
 
 /***/ },
-/* 82 */
+/* 84 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"collection\">\n    <a v-for=\"link in links\" :href=\"link.href\" :class=\"['collection-item', link.active ? 'active' : '']\">{{link.label}}</a>\n    <slot></slot>\n</div>\n";
 
 /***/ },
-/* 83 */
+/* 85 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(84)
+	__vue_script__ = __webpack_require__(86)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] ..\\src\\collections\\collection.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(85)
+	__vue_template__ = __webpack_require__(87)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -12081,7 +12145,7 @@
 	})()}
 
 /***/ },
-/* 84 */
+/* 86 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -12107,22 +12171,22 @@
 	};
 
 /***/ },
-/* 85 */
+/* 87 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<ul :class=\"ulClasses\">\n    <slot></slot>\n</ul>\n";
 
 /***/ },
-/* 86 */
+/* 88 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(87)
+	__vue_script__ = __webpack_require__(89)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] ..\\src\\collections\\collection-item.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(88)
+	__vue_template__ = __webpack_require__(90)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -12141,7 +12205,7 @@
 	})()}
 
 /***/ },
-/* 87 */
+/* 89 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -12172,22 +12236,22 @@
 	};
 
 /***/ },
-/* 88 */
+/* 90 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<li :class=\"liClasses\"><slot></slot></li>\n";
 
 /***/ },
-/* 89 */
+/* 91 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(90)
+	__vue_script__ = __webpack_require__(92)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] ..\\src\\collections\\collection-header.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(91)
+	__vue_template__ = __webpack_require__(93)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -12206,7 +12270,7 @@
 	})()}
 
 /***/ },
-/* 90 */
+/* 92 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -12214,16 +12278,285 @@
 	module.exports = {};
 
 /***/ },
-/* 91 */
+/* 93 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<li class=\"collection-header\"><slot></slot></li>\n";
 
 /***/ },
-/* 92 */
+/* 94 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(95)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] ..\\src\\navbar\\search-bar.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(96)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\src\\navbar\\search-bar.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 95 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var uuid = __webpack_require__(12);
+	
+	module.exports = {
+	    components: {
+	        icon: __webpack_require__(14)
+	    },
+	
+	    props: {
+	        placeholder: {
+	            type: String,
+	            default: ''
+	        },
+	        value: {
+	            type: String,
+	            default: ''
+	        },
+	        fixed: {
+	            type: Boolean,
+	            default: false
+	        }
+	    },
+	
+	    data: function data() {
+	        return {
+	            id: uuid.v1()
+	        };
+	    },
+	
+	    ready: function ready() {
+	        for (var p in this.$els.input) {
+	            if (p.startsWith('on')) {
+	                $(this.$els.input).on(p.substring(2), function (e) {
+	                    this.$dispatch('search-bar-' + e.type, e);
+	                }.bind(this));
+	            }
+	        }
+	    },
+	
+	    methods: {
+	        close: function close() {
+	            this.$dispatch('search-bar-close');
+	        }
+	    }
+	};
+
+/***/ },
+/* 96 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"row\">\n    <nav>\n        <ul class=\"right hide-on-med-and-down\">\n            <li><a href=\"#!\">First Sidebar Link</a></li>\n            <li><a href=\"#!\">Second Sidebar Link</a></li>\n        </ul>\n        <ul id=\"slide-out\" class=\"side-nav\">\n            <li><a href=\"#!\">First Sidebar Link</a></li>\n            <li><a href=\"#!\">Second Sidebar Link</a></li>\n        </ul>\n        <a href=\"#\" data-activates=\"slide-out\" class=\"button-collapse\"><i class=\"mdi-navigation-menu\"></i></a>\n    </nav>\n\n    <div class=\"row\">\n        <dropdown label=\"I am a dropdown\" :items=\"dropdownItems\" disabled></dropdown>\n        <dropdown label=\"I am a dropdown 2\" icon=\"edit\" icon-position=\"right\" :large=\"true\">\n            <ul>\n                <li><a href=\"#!\">223<badge>2</badge></a></li>\n                <li class=\"divider\"></li>\n                <li><a href=\"#!\">224<badge new>2</badge></a></li>\n            </ul>\n        </dropdown>\n    </div>\n\n    <div class=\"row\">\n        <breadcrumbs :crumbs=\"crumbs\"></breadcrumbs>\n        <breadcrumbs>\n            <a href=\"#!\">a in slot</a>\n            <a href=\"#!\">a2 in slot</a>\n            <a href=\"#!\">a3 in slot</a>\n        </breadcrumbs>\n    </div>\n\n    <div class=\"row\">\n        <chip label=\"Tag\"></chip>\n        <chip label=\"Tag\" removable :image=\"imageUrl\"></chip>\n    </div>\n\n    <div class=\"row\">\n        <link-collection>\n            <a href=\"#\" class=\"active\">active</a>\n            <a href=\"#\">link</a>\n        </link-collection>\n        <link-collection :links=\"links\"></link-collection>\n    </div>\n\n    <div class=\"row\">\n        <collection with-header>\n            <collection-header><h4>header</h4></collection-header>\n            <collection-item>Jack Yang</collection-item>\n            <collection-item dismissable>Tom J</collection-item>\n            <collection-item>\n                <div>\n                    Alvin\n                    <a href=\"#!\" class=\"secondary-content\">\n                        <icon value=\"send\"></icon>\n                    </a>\n                </div>\n            </collection-item>\n        </collection>\n    </div>\n\n    <div class=\"row\">\n        <collection>\n            <collection-item avatar>\n                <img :src=\"imageUrl\" alt=\"\" class=\"circle\">\n                <span class=\"title\">Title</span>\n                <p>First Line <br>\n                    Second Line\n                </p>\n                <a href=\"#!\" class=\"secondary-content\"><icon value=\"grade\"></icon></a>\n            </collection-item>\n        </collection>\n    </div>\n\n    <div class=\"row\">\n        <btn label=\"test button\" icon=\"edit\" icon-position=\"left\" @click=\"clickButton\"></btn>\n        <btn label=\"large button\" :large=\"true\" icon=\"edit\" icon-position=\"left\" @click=\"clickButton\"></btn>\n        <btn class='waves-teal' label=\"flat button\" type=\"flat\" icon=\"edit\" icon-position=\"right\"></btn>\n        <btn type=\"floating\" icon=\"add\"></btn>\n        <btn type=\"floating\" :large=\"true\" :light-wave=\"false\" icon=\"edit\" class=\"red\"></btn>\n    </div>\n\n    <div class=\"row\">\n        <fixed-action-button icon=\"edit\" :horizontal=\"true\" :click-only=\"true\" :active=\"true\">\n            <ul>\n                <li><btn type=\"floating\" class=\"red\" icon=\"edit\"></btn></li>\n                <li><btn type=\"floating\" class=\"yellow\" icon=\"edit\"></btn></li>\n                <li><btn type=\"floating\" class=\"green\" icon=\"edit\"></btn></li>\n                <li><btn type=\"floating\" class=\"blue\" icon=\"edit\"></btn></li>\n            </ul>\n        </fixed-action-button>\n    </div>\n\n    <div class=\"col s7\">\n        <card size=\"medium\">\n            <card-image :src=\"imageUrl\">\n                <card-title>wedding image</card-title>\n            </card-image>\n            <card-content>\n                <card-title class=\"red-text\" title=\"123\">Title</card-title>\n                <p>this is description</p>\n            </card-content>\n            <card-action>\n                <a href=\"#\">Link A</a>\n                <a href=\"#\">Link B</a>\n            </card-action>\n        </card>\n    </div>\n\n    <div class=\"col s7\">\n        <card :revealed=\"false\">\n            <card-image :src=\"imageUrl\" activator></card-image>\n            <card-content>\n                <card-title class=\"red-text\" title=\"123\">Title</card-title>\n                <p>this is description</p>\n            </card-content>\n            <card-reveal>\n                <card-title class=\"blue-text\">reveal title</card-title>\n                <p>Here is some more information about this product that is o</p>\n            </card-reveal>\n        </card>\n    </div>\n\n\n\n    <text-field label=\"text field\"\n                :validate=\"true\"\n                class=\"col s12\"\n                @text-field-input=\"handleEvent\"\n                @text-field-click=\"handleEvent\"\n                @text-field-blur=\"handleEvent\"\n                @text-field-keydown=\"handleEvent\"\n                @text-field-keyup=\"handleEvent\"\n                @text-field-focus=\"handleEvent\"\n                @text-field-change=\"handleEvent\"\n                success-message=\"right\"></text-field>\n\n    <text-field label=\"text field\"\n                icon=\"phone\"\n                class=\"col s12\"></text-field>\n\n    <text-field label=\"text field\"\n                icon=\"phone\"\n                :disabled=\"true\"\n                :value.sync=\"text\"\n                :validate=\"true\"\n                class=\"col s12\"></text-field>\n\n    <text-field label=\"Email\"\n                icon=\"email\"\n                type=\"email\"\n                :validate=\"true\"\n                class=\"col s12\"\n                error-message=\"wrong email\"\n                success-message=\"correct email\"></text-field>\n\n    <text-field label=\"password\"\n                :value.sync=\"text\"\n                :validate=\"true\"\n                type=\"password\"\n                class=\"col s12\"\n                success-message=\"right\"\n                placeholder=\"enter your password\"></text-field>\n\n    <text-area class=\"col s12\"\n               label=\"my text field\"\n               value=\"this is description\"\n               :validate=\"true\"\n               :length=\"10\"\n               error-message=\"wrong\"\n               @input=\"handleEvent\"\n               icon=\"phone\"></text-area>\n\n    <div class=\"row\">\n        <select-field\n                class=\"col s12\"\n                label=\"select field\"\n                :options=\"options\"></select-field>\n    </div>\n\n    <icon class=\"red-text\" value=\"add\" @click=\"changeOptions\"></icon>\n\n    <div class=\"row\">\n        <collapsible behavior=\"expandable\" popout>\n            <li>\n                <collapsible-header active label=\"first one\" icon=\"edit\"></collapsible-header>\n                <collapsible-body><p>test for item 1</p></collapsible-body>\n            </li>\n            <li>\n                <collapsible-header label=\"2nd one\" icon=\"edit\"></collapsible-header>\n                <collapsible-body>\n                    <div class=\"row\">\n                        <text-area class=\"col s12\"\n                                   label=\"my text field\"\n                                   value=\"this is description\"\n                                   :validate=\"true\"\n                                   :length=\"10\"\n                                   error-message=\"wrong\"\n                                   @input=\"handleEvent\"\n                                   icon=\"phone\"></text-area>\n                    </div>\n                </collapsible-body>\n            </li>\n        </collapsible>\n    </div>\n\n    <div class=\"row\">\n        <tabs>\n            <tab label=\"tab1\" >\n                this is tab page 1\n            </tab>\n            <tab label=\"tab2\" disabled>\n                <div class=\"row\">\n                    <select-field\n                            class=\"col s12\"\n                            label=\"select field\"\n                            :options=\"options\"></select-field>\n\n                    <text-area class=\"col s12\"\n                               label=\"my text field\"\n                               value=\"this is description\"\n                               :validate=\"true\"\n                               :length=\"10\"\n                               error-message=\"wrong\"\n                               @input=\"handleEvent\"\n                               icon=\"phone\"></text-area>\n                </div>\n            </tab>\n        </tabs>\n    </div>\n</div>\n\n\n";
+	module.exports = "\n<div :class=\"[fixed ? 'navbar-fixed' : '']\">\n    <nav>\n        <div class=\"nav-wrapper\">\n            <form>\n                <div class=\"input-field\">\n                    <input v-el:input :id=\"id\" type=\"search\" required :placeholder=\"placeholder\" :value=\"value\">\n                    <label :for=\"id\"><icon value=\"search\"></icon></label>\n                    <icon value=\"close\" @click=\"close\"></icon>\n                </div>\n            </form>\n        </div>\n    </nav>\n</div>\n";
+
+/***/ },
+/* 97 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(98)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] ..\\src\\navbar\\navbar.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(99)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\src\\navbar\\navbar.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 98 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	module.exports = {
+	    props: {
+	        linkPosition: {
+	            type: String,
+	            default: 'right' },
+	        logo: {
+	            type: String,
+	            default: ''
+	        },
+	        logoHref: {
+	            type: String,
+	            default: '#'
+	        },
+	        logoPosition: {
+	            type: String,
+	            default: 'left' },
+	        fixed: {
+	            type: Boolean,
+	            default: false
+	        },
+	        autoHide: {
+	            type: Boolean,
+	            default: true
+	        }
+	    }
+	};
+
+/***/ },
+/* 99 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div :class=\"[fixed ? 'navbar-fixed' : '']\">\n    <nav>\n        <div class=\"nav-wrapper\">\n            <a :href=\"logoHref\" :class=\"['brand-logo', logoPosition]\">{{logo}}</a>\n            <ul :class=\"[autoHide ? 'hide-on-med-and-down' : '', linkPosition]\">\n                <slot></slot>\n            </ul>\n        </div>\n    </nav>\n</div>\n";
+
+/***/ },
+/* 100 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(101)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] ..\\src\\navbar\\nav-item.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(103)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\src\\navbar\\nav-item.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 101 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var NavItemPropMixin = __webpack_require__(102);
+	module.exports = {
+	    mixins: [NavItemPropMixin]
+	};
+
+/***/ },
+/* 102 */
+/***/ function(module, exports) {
+
+	module.exports = {
+	    props: {
+	        active: {
+	            type: Boolean,
+	            default: false
+	        }
+	    }
+	};
+
+/***/ },
+/* 103 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<li :class=\"[active ? 'active' : '']\">\n    <slot></slot>\n</li>\n";
+
+/***/ },
+/* 104 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(105)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] ..\\src\\navbar\\nav-dropdown-item.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(106)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\src\\navbar\\nav-dropdown-item.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 105 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var ButtonPropMixin = __webpack_require__(62);
+	var DropdownPropMixin = __webpack_require__(64);
+	var NavItemPropMixin = __webpack_require__(102);
+	
+	module.exports = {
+	    mixins: [ButtonPropMixin, DropdownPropMixin, NavItemPropMixin],
+	
+	    components: {
+	        dropdown: __webpack_require__(60)
+	    },
+	
+	    props: {
+	        iconPosition: {
+	            type: String,
+	            default: 'right'
+	        }
+	    }
+	};
+
+/***/ },
+/* 106 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<li :class=\"[active ? 'active' : '']\">\n    <dropdown type=\"none\" icon=\"arrow_drop_down\" :icon-position=\"iconPosition\" :label=\"label\" :items=\"items\" :hover=\"false\">\n        <slot></slot>\n    </dropdown>\n</li>\n";
+
+/***/ },
+/* 107 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"row\">\n\n    <div class=\"row\">\n        <dropdown label=\"I am a dropdown\" :items=\"dropdownItems\" disabled></dropdown>\n        <dropdown label=\"I am a dropdown 2\" icon=\"edit\" icon-position=\"right\" :large=\"true\">\n            <ul>\n                <li><a href=\"#!\">223<badge>2</badge></a></li>\n                <li class=\"divider\"></li>\n                <li><a href=\"#!\">224<badge new>2</badge></a></li>\n            </ul>\n        </dropdown>\n    </div>\n\n    <div class=\"row\">\n        <breadcrumbs :crumbs=\"crumbs\"></breadcrumbs>\n        <breadcrumbs>\n            <a href=\"#!\">a in slot</a>\n            <a href=\"#!\">a2 in slot</a>\n            <a href=\"#!\">a3 in slot</a>\n        </breadcrumbs>\n    </div>\n\n    <div class=\"row\">\n        <chip label=\"Tag\"></chip>\n        <chip label=\"Tag\" removable :image=\"imageUrl\"></chip>\n    </div>\n\n    <div class=\"row\">\n        <link-collection>\n            <a href=\"#\" class=\"active\">active</a>\n            <a href=\"#\">link</a>\n        </link-collection>\n        <link-collection :links=\"links\"></link-collection>\n    </div>\n\n    <div class=\"row\">\n        <collection with-header>\n            <collection-header><h4>header</h4></collection-header>\n            <collection-item>Jack Yang</collection-item>\n            <collection-item dismissable>Tom J</collection-item>\n            <collection-item>\n                <div>\n                    Alvin\n                    <a href=\"#!\" class=\"secondary-content\">\n                        <icon value=\"send\"></icon>\n                    </a>\n                </div>\n            </collection-item>\n        </collection>\n    </div>\n\n    <div class=\"row\">\n        <collection>\n            <collection-item avatar>\n                <img :src=\"imageUrl\" alt=\"\" class=\"circle\">\n                <span class=\"title\">Title</span>\n                <p>First Line <br>\n                    Second Line\n                </p>\n                <a href=\"#!\" class=\"secondary-content\"><icon value=\"grade\"></icon></a>\n            </collection-item>\n        </collection>\n    </div>\n\n    <div class=\"row\">\n        <search-bar placeholder=\"search str\"></search-bar>\n    </div>\n\n    <div class=\"row\">\n        <navbar logo=\"Material UI with Vue\" logo-href=\"//wedding.jackyang.me\" fixed>\n            <nav-item><icon value=\"more_vert\"></icon></nav-item>\n            <nav-item><a href=\"#\">Sass</a></nav-item>\n            <nav-item><a href=\"#\">Sass</a></nav-item>\n            <nav-dropdown-item label=\"I am a dropdown\" :items=\"dropdownItems\" active></nav-dropdown-item>\n            <nav-dropdown-item label=\"I am a dropdown 2\">\n                <ul>\n                    <li><a href=\"#!\">223</a></li>\n                    <li class=\"divider\"></li>\n                    <li><a href=\"#!\">224</a></li>\n                </ul>\n            </nav-dropdown-item>\n        </navbar>\n    </div>\n\n    <div class=\"row\">\n        <btn label=\"test button\" icon=\"edit\" icon-position=\"left\" @click=\"clickButton\"></btn>\n        <btn label=\"large button\" :large=\"true\" icon=\"edit\" icon-position=\"left\" @click=\"clickButton\"></btn>\n        <btn class='waves-teal' label=\"flat button\" type=\"flat\" icon=\"edit\" icon-position=\"right\"></btn>\n        <btn type=\"floating\" icon=\"add\"></btn>\n        <btn type=\"floating\" :large=\"true\" :light-wave=\"false\" icon=\"edit\" class=\"red\"></btn>\n    </div>\n\n    <div class=\"row\">\n        <fixed-action-button icon=\"edit\" :horizontal=\"true\" :click-only=\"true\" :active=\"true\">\n            <ul>\n                <li><btn type=\"floating\" class=\"red\" icon=\"edit\"></btn></li>\n                <li><btn type=\"floating\" class=\"yellow\" icon=\"edit\"></btn></li>\n                <li><btn type=\"floating\" class=\"green\" icon=\"edit\"></btn></li>\n                <li><btn type=\"floating\" class=\"blue\" icon=\"edit\"></btn></li>\n            </ul>\n        </fixed-action-button>\n    </div>\n\n    <div class=\"col s7\">\n        <card size=\"medium\">\n            <card-image :src=\"imageUrl\">\n                <card-title>wedding image</card-title>\n            </card-image>\n            <card-content>\n                <card-title class=\"red-text\" title=\"123\">Title</card-title>\n                <p>this is description</p>\n            </card-content>\n            <card-action>\n                <a href=\"#\">Link A</a>\n                <a href=\"#\">Link B</a>\n            </card-action>\n        </card>\n    </div>\n\n    <div class=\"col s7\">\n        <card :revealed=\"false\">\n            <card-image :src=\"imageUrl\" activator></card-image>\n            <card-content>\n                <card-title class=\"red-text\" title=\"123\">Title</card-title>\n                <p>this is description</p>\n            </card-content>\n            <card-reveal>\n                <card-title class=\"blue-text\">reveal title</card-title>\n                <p>Here is some more information about this product that is o</p>\n            </card-reveal>\n        </card>\n    </div>\n\n\n\n    <text-field label=\"text field\"\n                :validate=\"true\"\n                class=\"col s12\"\n                @text-field-input=\"handleEvent\"\n                @text-field-click=\"handleEvent\"\n                @text-field-blur=\"handleEvent\"\n                @text-field-keydown=\"handleEvent\"\n                @text-field-keyup=\"handleEvent\"\n                @text-field-focus=\"handleEvent\"\n                @text-field-change=\"handleEvent\"\n                success-message=\"right\"></text-field>\n\n    <text-field label=\"text field\"\n                icon=\"phone\"\n                class=\"col s12\"></text-field>\n\n    <text-field label=\"text field\"\n                icon=\"phone\"\n                :disabled=\"true\"\n                :value.sync=\"text\"\n                :validate=\"true\"\n                class=\"col s12\"></text-field>\n\n    <text-field label=\"Email\"\n                icon=\"email\"\n                type=\"email\"\n                :validate=\"true\"\n                class=\"col s12\"\n                error-message=\"wrong email\"\n                success-message=\"correct email\"></text-field>\n\n    <text-field label=\"password\"\n                :value.sync=\"text\"\n                :validate=\"true\"\n                type=\"password\"\n                class=\"col s12\"\n                success-message=\"right\"\n                placeholder=\"enter your password\"></text-field>\n\n    <text-area class=\"col s12\"\n               label=\"my text field\"\n               value=\"this is description\"\n               :validate=\"true\"\n               :length=\"10\"\n               error-message=\"wrong\"\n               @input=\"handleEvent\"\n               icon=\"phone\"></text-area>\n\n    <div class=\"row\">\n        <select-field\n                class=\"col s12\"\n                label=\"select field\"\n                :options=\"options\"></select-field>\n    </div>\n\n    <icon class=\"red-text\" value=\"add\" @click=\"changeOptions\"></icon>\n\n    <div class=\"row\">\n        <collapsible behavior=\"expandable\" popout>\n            <li>\n                <collapsible-header active label=\"first one\" icon=\"edit\"></collapsible-header>\n                <collapsible-body><p>test for item 1</p></collapsible-body>\n            </li>\n            <li>\n                <collapsible-header label=\"2nd one\" icon=\"edit\"></collapsible-header>\n                <collapsible-body>\n                    <div class=\"row\">\n                        <text-area class=\"col s12\"\n                                   label=\"my text field\"\n                                   value=\"this is description\"\n                                   :validate=\"true\"\n                                   :length=\"10\"\n                                   error-message=\"wrong\"\n                                   @input=\"handleEvent\"\n                                   icon=\"phone\"></text-area>\n                    </div>\n                </collapsible-body>\n            </li>\n        </collapsible>\n    </div>\n\n    <div class=\"row\">\n        <tabs>\n            <tab label=\"tab1\" >\n                this is tab page 1\n            </tab>\n            <tab label=\"tab2\" disabled>\n                <div class=\"row\">\n                    <select-field\n                            class=\"col s12\"\n                            label=\"select field\"\n                            :options=\"options\"></select-field>\n\n                    <text-area class=\"col s12\"\n                               label=\"my text field\"\n                               value=\"this is description\"\n                               :validate=\"true\"\n                               :length=\"10\"\n                               error-message=\"wrong\"\n                               @input=\"handleEvent\"\n                               icon=\"phone\"></text-area>\n                </div>\n            </tab>\n        </tabs>\n    </div>\n</div>\n\n\n";
 
 /***/ }
 /******/ ]);

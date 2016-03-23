@@ -4,17 +4,6 @@
 
 <template>
     <div class="row">
-        <nav>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="#!">First Sidebar Link</a></li>
-                <li><a href="#!">Second Sidebar Link</a></li>
-            </ul>
-            <ul id="slide-out" class="side-nav">
-                <li><a href="#!">First Sidebar Link</a></li>
-                <li><a href="#!">Second Sidebar Link</a></li>
-            </ul>
-            <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-        </nav>
 
         <div class="row">
             <dropdown label="I am a dropdown" :items="dropdownItems" disabled></dropdown>
@@ -76,6 +65,26 @@
                     <a href="#!" class="secondary-content"><icon value="grade"></icon></a>
                 </collection-item>
             </collection>
+        </div>
+
+        <div class="row">
+            <search-bar placeholder="search str"></search-bar>
+        </div>
+
+        <div class="row">
+            <navbar logo="Material UI with Vue" logo-href="//wedding.jackyang.me" fixed>
+                <nav-item><icon value="more_vert"></icon></nav-item>
+                <nav-item><a href="#">Sass</a></nav-item>
+                <nav-item><a href="#">Sass</a></nav-item>
+                <nav-dropdown-item label="I am a dropdown" :items="dropdownItems" active></nav-dropdown-item>
+                <nav-dropdown-item label="I am a dropdown 2">
+                    <ul>
+                        <li><a href="#!">223</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#!">224</a></li>
+                    </ul>
+                </nav-dropdown-item>
+            </navbar>
         </div>
 
         <div class="row">
@@ -271,6 +280,10 @@
             'collection': MUI['collection'],
             'collection-header': MUI['collection-header'],
             'collection-item': MUI['collection-item'],
+            'search-bar': MUI['search-bar'],
+            'navbar': MUI['navbar'],
+            'nav-item': MUI['nav-item'],
+            'nav-dropdown-item': MUI['nav-dropdown-item']
         },
 
         data: function() {

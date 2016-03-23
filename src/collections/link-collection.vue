@@ -10,7 +10,7 @@
         props: {
             links: {
                 type: Array, // {href: '', label: '', active: false}
-                default: []
+                default: function() {return [];}
             }
         },
 
