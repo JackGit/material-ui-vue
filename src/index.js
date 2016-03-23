@@ -28,5 +28,8 @@ module.exports = {
     'search-bar': require('./navbar/search-bar.vue'),
     'navbar': require('./navbar/navbar.vue'),
     'nav-item': require('./navbar/nav-item.vue'),
-    'nav-dropdown-item': require('./navbar/nav-dropdown-item.vue')
+    'nav-dropdown-item': require('./navbar/nav-dropdown-item.vue'),
+    'nav-collapsible-item': require('./navbar/nav-collapsible-item.vue'),
+    'side-nav': require('./side-nav/side-nav.vue'),
+
 };

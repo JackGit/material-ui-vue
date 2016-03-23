@@ -76,6 +76,7 @@
                 <nav-item><icon value="more_vert"></icon></nav-item>
                 <nav-item><a href="#">Sass</a></nav-item>
                 <nav-item><a href="#">Sass</a></nav-item>
+                <nav-item><btn label="button"></btn></nav-item>
                 <nav-dropdown-item label="I am a dropdown" :items="dropdownItems" active></nav-dropdown-item>
                 <nav-dropdown-item label="I am a dropdown 2">
                     <ul>
@@ -85,6 +86,15 @@
                     </ul>
                 </nav-dropdown-item>
             </navbar>
+        </div>
+
+        <nav-collapsible-item></nav-collapsible-item>
+
+        <div class="row">
+            <side-nav fixed>
+                <nav-item active><a href="#" class="waves-effect waves-teal">Link 1</a></nav-item>
+                <nav-item><a href="#"  class="waves-effect waves-teal">Link 2</a></nav-item>
+            </side-nav>
         </div>
 
         <div class="row">
@@ -283,7 +293,9 @@
             'search-bar': MUI['search-bar'],
             'navbar': MUI['navbar'],
             'nav-item': MUI['nav-item'],
-            'nav-dropdown-item': MUI['nav-dropdown-item']
+            'nav-dropdown-item': MUI['nav-dropdown-item'],
+            'nav-collapsible-item': MUI['nav-collapsible-item'],
+            'side-nav': MUI['side-nav']
         },
 
         data: function() {

@@ -9,7 +9,7 @@
         props: {
             behavior: {
                 type: String,
-                default: 'accordion',   // 'expandable'
+                default: 'accordion'   // 'expandable'
             },
             popout: {
                 type: Boolean,
