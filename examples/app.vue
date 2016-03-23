@@ -28,6 +28,15 @@
         </div>
 
         <div class="row">
+            <breadcrumbs :crumbs="crumbs"></breadcrumbs>
+            <breadcrumbs>
+                <a href="#!">a in slot</a>
+                <a href="#!">a2 in slot</a>
+                <a href="#!">a3 in slot</a>
+            </breadcrumbs>
+        </div>
+
+        <div class="row">
             <btn label="test button" icon="edit" icon-position="left" @click="clickButton"></btn>
             <btn label="large button" :large="true" icon="edit" icon-position="left" @click="clickButton"></btn>
             <btn class='waves-teal' label="flat button" type="flat" icon="edit" icon-position="right"></btn>
@@ -213,7 +222,8 @@
             'dropdown': MUI['dropdown'],
             'btn': MUI['button'],
             'fixed-action-button': MUI['fixed-action-button'],
-            'badge': MUI['badge']
+            'badge': MUI['badge'],
+            'breadcrumbs': MUI['breadcrumbs']
         },
 
         data: function() {
@@ -230,7 +240,8 @@
                     {href: '#', text: '323'},
                     {divider: true},
                     {href: '#', text: '423'},
-                ]
+                ],
+                crumbs: [{href: '#', label: 'c1'}, {href: '#', label: 'c2'}]
             }
         },
 

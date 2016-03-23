@@ -18,5 +18,6 @@ module.exports = {
     'dropdown': require('./dropdown/dropdown.vue'),
     'button': require('./buttons/button.vue'),
     'fixed-action-button': require('./buttons/fixed-action-button.vue'),
-    'badge': require('./badges/badge.vue')
+    'badge': require('./badges/badge.vue'),
+    'breadcrumbs': require('./breadcrumbs/breadcrumbs.vue')
 };
