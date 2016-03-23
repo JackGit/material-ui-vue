@@ -1,6 +1,13 @@
 <template>
     <span>
-        <a class="dropdown-button btn" href="#" :data-activates="id">{{label}}</a>
+        <btn class="dropdown-button" href="#" :data-activates="id"
+             :label="label"
+             :icon="icon"
+             :icon-position="iconPosition"
+             :large="large"
+             :waves-effect="false"
+             :light-wave="false"
+             :disabled="false"></btn>
         <ul v-if="items.length > 0" class="dropdown-content" :id="id">
             <li v-for="item in items" :class="item.divider ? 'divider' : ''">
                 <a v-if="!item.divider" :href="item.href">{{item.text}}</a>
@@ -12,12 +19,16 @@
 
 <script>
     var uuid = require('uuid');
+    var ButtonMixin = require('../mixins/ButtonMixin.js');
 
     module.exports = {
+        mixins: [ButtonMixin],
+
+        components: {
+            btn: require('../buttons/button.vue')
+        },
+
         props: {
-            label: {
-                type: String
-            },
             items: {
                 type: Array,
                 default: []

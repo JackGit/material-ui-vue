@@ -25,6 +25,10 @@ module.exports = {
             type: String,
             default: ''
         },
+        wavesEffect: {
+            type: Boolean,
+            default: true
+        },
         lightWave: {
             type: Boolean,
             default: true
@@ -39,7 +43,7 @@ module.exports = {
     data: function() {
         return {
             buttonClasses: classes({
-                'waves-effect': true,
+                'waves-effect': this.wavesEffect,
                 'waves-light': this.lightWave,
                 'disabled': this.disabled,
                 'btn': !this.type,
