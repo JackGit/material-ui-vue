@@ -266,7 +266,7 @@
 </template>
 
 <script>
-    var MUI = require('../src/index.js');
+    var MUI = require('../src/components/index.js');
 
 
     module.exports = {

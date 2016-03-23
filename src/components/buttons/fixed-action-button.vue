@@ -6,8 +6,8 @@
 </template>
 
 <script>
-    var classes = require('../Util.js').classes;
-    var ButtonMixin = require('../mixins/ButtonMixin.js');
+    var classes = require('../../Util.js').classes;
+    var ButtonMixin = require('../../mixins/ButtonMixin.js');
 
     module.exports = {
         mixins: [ButtonMixin],

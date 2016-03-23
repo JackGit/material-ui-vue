@@ -6,7 +6,7 @@
 </template>
 
 <script>
-    var ButtonMixin = require('../mixins/ButtonMixin.js');
+    var ButtonMixin = require('../../mixins/ButtonMixin.js');
 
     module.exports = {
         mixins: [ButtonMixin]

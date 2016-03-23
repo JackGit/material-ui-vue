@@ -7,7 +7,7 @@
 </template>
 
 <script>
-    var NavItemPropMixin = require('../mixins/NavItemPropMixin.js');
+    var NavItemPropMixin = require('../../mixins/NavItemPropMixin.js');
 
     module.exports = {
         mixins: [NavItemPropMixin],

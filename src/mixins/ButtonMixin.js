@@ -3,7 +3,7 @@ var classes = require('../Util.js').classes;
 module.exports = {
 
     components: {
-        icon: require('../icons/icon.vue')
+        icon: require('../components/icons/icon.vue')
     },
 
     props: {

@@ -7,9 +7,9 @@
 </template>
 
 <script>
-    var ButtonPropMixin = require('../mixins/ButtonPropMixin.js');
-    var DropdownPropMixin = require('../mixins/DropdownPropMixin.js');
-    var NavItemPropMixin = require('../mixins/NavItemPropMixin.js');
+    var ButtonPropMixin = require('../../mixins/ButtonPropMixin.js');
+    var DropdownPropMixin = require('../../mixins/DropdownPropMixin.js');
+    var NavItemPropMixin = require('../../mixins/NavItemPropMixin.js');
 
     module.exports = {
         mixins: [ButtonPropMixin, DropdownPropMixin, NavItemPropMixin],

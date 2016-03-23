@@ -1,15 +1,13 @@
 <template>
-    <ul :class="ulClasses">
-        <slot></slot>
-    </ul>
+    <span :class="classes"><slot></slot></span>
 </template>
 
 <script>
-    var classes = require('../Util.js').classes;
+    var classes = require('../../Util.js').classes;
 
     module.exports = {
         props: {
-            withHeader: {
+            new: {
                 type: Boolean,
                 default: false
             }
@@ -17,9 +15,9 @@
 
         data: function() {
             return {
-                ulClasses: classes({
-                    'collection': true,
-                    'with-header': this.withHeader
+                classes: classes({
+                    'badge': true,
+                    'new': this.new
                 })
             }
         }

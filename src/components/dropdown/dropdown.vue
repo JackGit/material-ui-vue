@@ -20,8 +20,8 @@
 
 <script>
     var uuid = require('uuid');
-    var ButtonPropMixin = require('../mixins/ButtonPropMixin.js');
-    var DropdownPropMixin = require('../mixins/DropdownPropMixin.js');
+    var ButtonPropMixin = require('../../mixins/ButtonPropMixin.js');
+    var DropdownPropMixin = require('../../mixins/DropdownPropMixin.js');
 
     module.exports = {
         mixins: [ButtonPropMixin, DropdownPropMixin],

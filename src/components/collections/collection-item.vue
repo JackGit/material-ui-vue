@@ -3,7 +3,7 @@
 </template>
 
 <script>
-    var classes = require('../Util.js').classes;
+    var classes = require('../../Util.js').classes;
 
     module.exports = {
         props: {
