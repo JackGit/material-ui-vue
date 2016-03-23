@@ -237,6 +237,10 @@
         </div>
 
         <div class="row">
+            <linear-progress color="red" background-color="red lighten-4"></linear-progress>
+            <linear-progress determinate percentage="70"></linear-progress>
+            <circle-progress color="green"></circle-progress>
+            <circle-progress flash size="big"></circle-progress>
             <pagination>
                 <pagination-item prev disabled></pagination-item>
                 <pagination-item active>1</pagination-item>
@@ -315,7 +319,9 @@
             'nav-collapsible-item': MUI['nav-collapsible-item'],
             'side-nav': MUI['side-nav'],
             'pagination': MUI['pagination'],
-            'pagination-item': MUI['pagination-item']
+            'pagination-item': MUI['pagination-item'],
+            'linear-progress': MUI['linear-progress'],
+            'circle-progress': MUI['circle-progress'],
         },
 
         data: function() {

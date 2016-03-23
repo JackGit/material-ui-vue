@@ -33,6 +33,8 @@ module.exports = {
     'nav-collapsible-item': require('./navbar/nav-collapsible-item.vue'),
     'side-nav': require('./side-nav/side-nav.vue'),
     'pagination': require('./pagination/pagination.vue'),
-    'pagination-item': require('./pagination/pagination-item.vue')
+    'pagination-item': require('./pagination/pagination-item.vue'),
+    'linear-progress': require('./progresses/linear-progress.vue'),
+    'circle-progress': require('./progresses/circle-progress.vue')
 
 };

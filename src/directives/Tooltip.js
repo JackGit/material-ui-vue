@@ -5,7 +5,6 @@ Vue.directive('tooltip', {
 
     },
     update: function(value) {
-        console.log('update', value)
         var options = {
             delay: value.delay || 350,
             position: value.position || 'bottom'

@@ -9759,7 +9759,7 @@
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] app.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(123)
+	__vue_template__ = __webpack_require__(129)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -10139,7 +10139,9 @@
 	        'nav-collapsible-item': MUI['nav-collapsible-item'],
 	        'side-nav': MUI['side-nav'],
 	        'pagination': MUI['pagination'],
-	        'pagination-item': MUI['pagination-item']
+	        'pagination-item': MUI['pagination-item'],
+	        'linear-progress': MUI['linear-progress'],
+	        'circle-progress': MUI['circle-progress']
 	    },
 	
 	    data: function data() {
@@ -10212,7 +10214,9 @@
 	    'nav-collapsible-item': __webpack_require__(111),
 	    'side-nav': __webpack_require__(114),
 	    'pagination': __webpack_require__(117),
-	    'pagination-item': __webpack_require__(120)
+	    'pagination-item': __webpack_require__(120),
+	    'linear-progress': __webpack_require__(123),
+	    'circle-progress': __webpack_require__(126)
 	
 	};
 
@@ -11795,7 +11799,6 @@
 	
 	    },
 	    update: function(value) {
-	        console.log('update', value)
 	        var options = {
 	            delay: value.delay || 350,
 	            position: value.position || 'bottom'
@@ -12928,9 +12931,151 @@
 
 /***/ },
 /* 123 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(124)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] ..\\src\\components\\progresses\\linear-progress.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(125)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\src\\components\\progresses\\linear-progress.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 124 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"row\">\n\n    <div class=\"row\">\n        <dropdown label=\"I am a dropdown\" :items=\"dropdownItems\" disabled></dropdown>\n        <dropdown label=\"I am a dropdown 2\" icon=\"edit\" icon-position=\"right\" :large=\"true\">\n            <ul>\n                <li><a href=\"#!\">223<badge>2</badge></a></li>\n                <li class=\"divider\"></li>\n                <li><a href=\"#!\">224<badge new>2</badge></a></li>\n            </ul>\n        </dropdown>\n    </div>\n\n    <div class=\"row\">\n        <breadcrumbs :crumbs=\"crumbs\"></breadcrumbs>\n        <breadcrumbs>\n            <a href=\"#!\">a in slot</a>\n            <a href=\"#!\">a2 in slot</a>\n            <a href=\"#!\">a3 in slot</a>\n        </breadcrumbs>\n    </div>\n\n    <div class=\"row\">\n        <chip label=\"Tag\"></chip>\n        <chip label=\"Tag\" removable :image=\"imageUrl\"></chip>\n    </div>\n\n    <div class=\"row\">\n        <link-collection>\n            <a href=\"#\" class=\"active\">active</a>\n            <a href=\"#\">link</a>\n        </link-collection>\n        <link-collection :links=\"links\"></link-collection>\n    </div>\n\n    <div class=\"row\">\n        <collection with-header>\n            <collection-header><h4>header</h4></collection-header>\n            <collection-item>Jack Yang</collection-item>\n            <collection-item dismissable>Tom J</collection-item>\n            <collection-item>\n                <div>\n                    Alvin\n                    <a href=\"#!\" class=\"secondary-content\">\n                        <icon value=\"send\"></icon>\n                    </a>\n                </div>\n            </collection-item>\n        </collection>\n    </div>\n\n    <div class=\"row\">\n        <collection>\n            <collection-item avatar>\n                <img :src=\"imageUrl\" alt=\"\" class=\"circle\">\n                <span class=\"title\">Title</span>\n                <p>First Line <br>\n                    Second Line\n                </p>\n                <a href=\"#!\" class=\"secondary-content\"><icon value=\"grade\"></icon></a>\n            </collection-item>\n        </collection>\n    </div>\n\n    <div class=\"row\">\n        <search-bar placeholder=\"search str\"></search-bar>\n    </div>\n\n    <div class=\"row\">\n        <navbar logo=\"Material UI with Vue\" logo-href=\"//wedding.jackyang.me\" side-nav-id=\"sideNav\" show-on-large>\n            <nav-item><icon value=\"more_vert\"></icon></nav-item>\n            <nav-item><a href=\"#\">Sass</a></nav-item>\n            <nav-item><a href=\"#\">Sass</a></nav-item>\n            <nav-item><btn label=\"button\"></btn></nav-item>\n            <nav-dropdown-item label=\"I am a dropdown\" :items=\"dropdownItems\" active></nav-dropdown-item>\n            <nav-dropdown-item label=\"I am a dropdown 2\">\n                <ul>\n                    <li><a href=\"#!\">223</a></li>\n                    <li class=\"divider\"></li>\n                    <li><a href=\"#!\">224</a></li>\n                </ul>\n            </nav-dropdown-item>\n        </navbar>\n    </div>\n\n    <div class=\"row\">\n        <side-nav id=\"sideNav\">\n            <nav-item active><a href=\"#\" class=\"waves-effect waves-teal\">Link 1</a></nav-item>\n            <nav-item><a href=\"#\"  class=\"waves-effect waves-teal\">Link 2</a></nav-item>\n            <nav-collapsible-item>\n                <collapsible-header label=\"dropdown menu\" icon=\"arrow_drop_down\" icon-position=\"right\"></collapsible-header>\n                <collapsible-body>\n                    <ul>\n                        <nav-item><a href=\"#\">Link 1</a></nav-item>\n                        <nav-item><a href=\"#\">Link 2</a></nav-item>\n                    </ul>\n                </collapsible-body>\n            </nav-collapsible-item>\n        </side-nav>\n    </div>\n\n    <div class=\"row\">\n        <btn label=\"tooltipped button\" icon=\"edit\" icon-position=\"left\" @click=\"clickButton\" v-tooltip=\"{position:'top',text:'i am tooltip'}\"></btn>\n        <btn label=\"large button\" :large=\"true\" icon=\"edit\" icon-position=\"left\" @click=\"clickButton\"></btn>\n        <btn class='waves-teal' label=\"flat button\" type=\"flat\" icon=\"edit\" icon-position=\"right\"></btn>\n        <btn type=\"floating\" icon=\"add\"></btn>\n        <btn type=\"floating\" :large=\"true\" :light-wave=\"false\" icon=\"edit\" class=\"red\"></btn>\n    </div>\n\n    <div class=\"row\">\n        <fixed-action-button icon=\"edit\" :horizontal=\"true\" :click-only=\"true\" :active=\"true\">\n            <ul>\n                <li><btn type=\"floating\" class=\"red\" icon=\"edit\"></btn></li>\n                <li><btn type=\"floating\" class=\"yellow\" icon=\"edit\"></btn></li>\n                <li><btn type=\"floating\" class=\"green\" icon=\"edit\"></btn></li>\n                <li><btn type=\"floating\" class=\"blue\" icon=\"edit\"></btn></li>\n            </ul>\n        </fixed-action-button>\n    </div>\n\n    <div class=\"col s7\">\n        <card size=\"medium\">\n            <card-image :src=\"imageUrl\">\n                <card-title>wedding image</card-title>\n            </card-image>\n            <card-content>\n                <card-title class=\"red-text\" title=\"123\">Title</card-title>\n                <p>this is description</p>\n            </card-content>\n            <card-action>\n                <a href=\"#\">Link A</a>\n                <a href=\"#\">Link B</a>\n            </card-action>\n        </card>\n    </div>\n\n    <div class=\"col s7\">\n        <card :revealed=\"false\">\n            <card-image :src=\"imageUrl\" activator></card-image>\n            <card-content>\n                <card-title class=\"red-text\" title=\"123\">Title</card-title>\n                <p>this is description</p>\n            </card-content>\n            <card-reveal>\n                <card-title class=\"blue-text\">reveal title</card-title>\n                <p>Here is some more information about this product that is o</p>\n            </card-reveal>\n        </card>\n    </div>\n\n\n\n    <text-field label=\"text field\"\n                :validate=\"true\"\n                class=\"col s12\"\n                @text-field-input=\"handleEvent\"\n                @text-field-click=\"handleEvent\"\n                @text-field-blur=\"handleEvent\"\n                @text-field-keydown=\"handleEvent\"\n                @text-field-keyup=\"handleEvent\"\n                @text-field-focus=\"handleEvent\"\n                @text-field-change=\"handleEvent\"\n                success-message=\"right\"></text-field>\n\n    <text-field label=\"text field\"\n                icon=\"phone\"\n                class=\"col s12\"></text-field>\n\n    <text-field label=\"text field\"\n                icon=\"phone\"\n                :disabled=\"true\"\n                :value.sync=\"text\"\n                :validate=\"true\"\n                class=\"col s12\"></text-field>\n\n    <text-field label=\"Email\"\n                icon=\"email\"\n                type=\"email\"\n                :validate=\"true\"\n                class=\"col s12\"\n                error-message=\"wrong email\"\n                success-message=\"correct email\"></text-field>\n\n    <text-field label=\"password\"\n                :value.sync=\"text\"\n                :validate=\"true\"\n                type=\"password\"\n                class=\"col s12\"\n                success-message=\"right\"\n                placeholder=\"enter your password\"></text-field>\n\n    <text-area class=\"col s12\"\n               label=\"my text field\"\n               value=\"this is description\"\n               :validate=\"true\"\n               :length=\"10\"\n               error-message=\"wrong\"\n               @input=\"handleEvent\"\n               icon=\"phone\"></text-area>\n\n    <div class=\"row\">\n        <select-field\n                class=\"col s12\"\n                label=\"select field\"\n                :options=\"options\"></select-field>\n    </div>\n\n    <icon class=\"red-text\" value=\"add\" @click=\"changeOptions\"></icon>\n\n    <div class=\"row\">\n        <collapsible behavior=\"expandable\" popout>\n            <collapsible-item>\n                <collapsible-header active label=\"first one\" icon=\"edit\"></collapsible-header>\n                <collapsible-body><p>test for item 1</p></collapsible-body>\n            </collapsible-item>\n            <collapsible-item>\n                <collapsible-header label=\"2nd one\" icon=\"edit\"></collapsible-header>\n                <collapsible-body>\n                    <div class=\"row\">\n                        <text-area class=\"col s12\"\n                                   label=\"my text field\"\n                                   value=\"this is description\"\n                                   :validate=\"true\"\n                                   :length=\"10\"\n                                   error-message=\"wrong\"\n                                   @input=\"handleEvent\"\n                                   icon=\"phone\"></text-area>\n                    </div>\n                </collapsible-body>\n            </collapsible-item>\n        </collapsible>\n    </div>\n\n    <div class=\"row\">\n        <pagination>\n            <pagination-item prev disabled></pagination-item>\n            <pagination-item active>1</pagination-item>\n            <pagination-item>2</pagination-item>\n            <pagination-item>3</pagination-item>\n            <pagination-item next></pagination-item>\n        </pagination>\n    </div>\n\n    <div class=\"row\">\n        <tabs>\n            <tab label=\"tab1\" >\n                this is tab page 1\n            </tab>\n            <tab label=\"tab2\" disabled>\n                <div class=\"row\">\n                    <select-field\n                            class=\"col s12\"\n                            label=\"select field\"\n                            :options=\"options\"></select-field>\n\n                    <text-area class=\"col s12\"\n                               label=\"my text field\"\n                               value=\"this is description\"\n                               :validate=\"true\"\n                               :length=\"10\"\n                               error-message=\"wrong\"\n                               @input=\"handleEvent\"\n                               icon=\"phone\"></text-area>\n                </div>\n            </tab>\n        </tabs>\n    </div>\n</div>\n\n\n";
+	'use strict';
+	
+	module.exports = {
+	    props: {
+	        determinate: {
+	            type: Boolean,
+	            default: false
+	        },
+	        percentage: {
+	            default: 0
+	        },
+	        color: {
+	            type: String,
+	            default: ''
+	        },
+	        backgroundColor: {
+	            type: String,
+	            default: ''
+	        }
+	    },
+	
+	    data: function data() {
+	        return {
+	            containerClasses: 'progress ' + this.backgroundColor,
+	            barClasses: (this.determinate ? 'determinate' : 'indeterminate') + ' ' + this.color
+	        };
+	    }
+	};
+
+/***/ },
+/* 125 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"{{containerClasses}}\">\n    <div class=\"{{barClasses}}\" :style=\"{width: percentage + '%'}\"></div>\n</div>\n";
+
+/***/ },
+/* 126 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(127)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] ..\\src\\components\\progresses\\circle-progress.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(128)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\src\\components\\progresses\\circle-progress.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 127 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var classes = __webpack_require__(66).classes;
+	
+	
+	module.exports = {
+	    props: {
+	        size: {
+	            type: String,
+	            default: '' },
+	        active: {
+	            type: Boolean,
+	            default: true
+	        },
+	        color: {
+	            type: String,
+	            default: 'red'
+	        },
+	        flash: {
+	            type: Boolean,
+	            default: false
+	        }
+	    },
+	
+	    data: function data() {
+	        return {
+	            wrapperClasses: classes({
+	                'preloader-wrapper': true,
+	                'big': this.size === 'big',
+	                'small': this.size === 'small',
+	                'active': this.active
+	            }),
+	            colors: this.flash ? ['blue', 'red', 'yellow', 'green'] : [this.color]
+	        };
+	    }
+	};
+
+/***/ },
+/* 128 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div :class=\"wrapperClasses\">\n    <div v-for=\"cl in colors\" :class=\"['spinner-layer', colors.length === 1 ? 'spinner-' + cl + '-only' : 'spinner-' + cl]\">\n        <div class=\"circle-clipper left\">\n            <div class=\"circle\"></div>\n        </div>\n        <div class=\"gap-patch\">\n            <div class=\"circle\"></div>\n        </div>\n        <div class=\"circle-clipper right\">\n            <div class=\"circle\"></div>\n        </div>\n    </div>\n</div>\n";
+
+/***/ },
+/* 129 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"row\">\n\n    <div class=\"row\">\n        <dropdown label=\"I am a dropdown\" :items=\"dropdownItems\" disabled></dropdown>\n        <dropdown label=\"I am a dropdown 2\" icon=\"edit\" icon-position=\"right\" :large=\"true\">\n            <ul>\n                <li><a href=\"#!\">223<badge>2</badge></a></li>\n                <li class=\"divider\"></li>\n                <li><a href=\"#!\">224<badge new>2</badge></a></li>\n            </ul>\n        </dropdown>\n    </div>\n\n    <div class=\"row\">\n        <breadcrumbs :crumbs=\"crumbs\"></breadcrumbs>\n        <breadcrumbs>\n            <a href=\"#!\">a in slot</a>\n            <a href=\"#!\">a2 in slot</a>\n            <a href=\"#!\">a3 in slot</a>\n        </breadcrumbs>\n    </div>\n\n    <div class=\"row\">\n        <chip label=\"Tag\"></chip>\n        <chip label=\"Tag\" removable :image=\"imageUrl\"></chip>\n    </div>\n\n    <div class=\"row\">\n        <link-collection>\n            <a href=\"#\" class=\"active\">active</a>\n            <a href=\"#\">link</a>\n        </link-collection>\n        <link-collection :links=\"links\"></link-collection>\n    </div>\n\n    <div class=\"row\">\n        <collection with-header>\n            <collection-header><h4>header</h4></collection-header>\n            <collection-item>Jack Yang</collection-item>\n            <collection-item dismissable>Tom J</collection-item>\n            <collection-item>\n                <div>\n                    Alvin\n                    <a href=\"#!\" class=\"secondary-content\">\n                        <icon value=\"send\"></icon>\n                    </a>\n                </div>\n            </collection-item>\n        </collection>\n    </div>\n\n    <div class=\"row\">\n        <collection>\n            <collection-item avatar>\n                <img :src=\"imageUrl\" alt=\"\" class=\"circle\">\n                <span class=\"title\">Title</span>\n                <p>First Line <br>\n                    Second Line\n                </p>\n                <a href=\"#!\" class=\"secondary-content\"><icon value=\"grade\"></icon></a>\n            </collection-item>\n        </collection>\n    </div>\n\n    <div class=\"row\">\n        <search-bar placeholder=\"search str\"></search-bar>\n    </div>\n\n    <div class=\"row\">\n        <navbar logo=\"Material UI with Vue\" logo-href=\"//wedding.jackyang.me\" side-nav-id=\"sideNav\" show-on-large>\n            <nav-item><icon value=\"more_vert\"></icon></nav-item>\n            <nav-item><a href=\"#\">Sass</a></nav-item>\n            <nav-item><a href=\"#\">Sass</a></nav-item>\n            <nav-item><btn label=\"button\"></btn></nav-item>\n            <nav-dropdown-item label=\"I am a dropdown\" :items=\"dropdownItems\" active></nav-dropdown-item>\n            <nav-dropdown-item label=\"I am a dropdown 2\">\n                <ul>\n                    <li><a href=\"#!\">223</a></li>\n                    <li class=\"divider\"></li>\n                    <li><a href=\"#!\">224</a></li>\n                </ul>\n            </nav-dropdown-item>\n        </navbar>\n    </div>\n\n    <div class=\"row\">\n        <side-nav id=\"sideNav\">\n            <nav-item active><a href=\"#\" class=\"waves-effect waves-teal\">Link 1</a></nav-item>\n            <nav-item><a href=\"#\"  class=\"waves-effect waves-teal\">Link 2</a></nav-item>\n            <nav-collapsible-item>\n                <collapsible-header label=\"dropdown menu\" icon=\"arrow_drop_down\" icon-position=\"right\"></collapsible-header>\n                <collapsible-body>\n                    <ul>\n                        <nav-item><a href=\"#\">Link 1</a></nav-item>\n                        <nav-item><a href=\"#\">Link 2</a></nav-item>\n                    </ul>\n                </collapsible-body>\n            </nav-collapsible-item>\n        </side-nav>\n    </div>\n\n    <div class=\"row\">\n        <btn label=\"tooltipped button\" icon=\"edit\" icon-position=\"left\" @click=\"clickButton\" v-tooltip=\"{position:'top',text:'i am tooltip'}\"></btn>\n        <btn label=\"large button\" :large=\"true\" icon=\"edit\" icon-position=\"left\" @click=\"clickButton\"></btn>\n        <btn class='waves-teal' label=\"flat button\" type=\"flat\" icon=\"edit\" icon-position=\"right\"></btn>\n        <btn type=\"floating\" icon=\"add\"></btn>\n        <btn type=\"floating\" :large=\"true\" :light-wave=\"false\" icon=\"edit\" class=\"red\"></btn>\n    </div>\n\n    <div class=\"row\">\n        <fixed-action-button icon=\"edit\" :horizontal=\"true\" :click-only=\"true\" :active=\"true\">\n            <ul>\n                <li><btn type=\"floating\" class=\"red\" icon=\"edit\"></btn></li>\n                <li><btn type=\"floating\" class=\"yellow\" icon=\"edit\"></btn></li>\n                <li><btn type=\"floating\" class=\"green\" icon=\"edit\"></btn></li>\n                <li><btn type=\"floating\" class=\"blue\" icon=\"edit\"></btn></li>\n            </ul>\n        </fixed-action-button>\n    </div>\n\n    <div class=\"col s7\">\n        <card size=\"medium\">\n            <card-image :src=\"imageUrl\">\n                <card-title>wedding image</card-title>\n            </card-image>\n            <card-content>\n                <card-title class=\"red-text\" title=\"123\">Title</card-title>\n                <p>this is description</p>\n            </card-content>\n            <card-action>\n                <a href=\"#\">Link A</a>\n                <a href=\"#\">Link B</a>\n            </card-action>\n        </card>\n    </div>\n\n    <div class=\"col s7\">\n        <card :revealed=\"false\">\n            <card-image :src=\"imageUrl\" activator></card-image>\n            <card-content>\n                <card-title class=\"red-text\" title=\"123\">Title</card-title>\n                <p>this is description</p>\n            </card-content>\n            <card-reveal>\n                <card-title class=\"blue-text\">reveal title</card-title>\n                <p>Here is some more information about this product that is o</p>\n            </card-reveal>\n        </card>\n    </div>\n\n\n\n    <text-field label=\"text field\"\n                :validate=\"true\"\n                class=\"col s12\"\n                @text-field-input=\"handleEvent\"\n                @text-field-click=\"handleEvent\"\n                @text-field-blur=\"handleEvent\"\n                @text-field-keydown=\"handleEvent\"\n                @text-field-keyup=\"handleEvent\"\n                @text-field-focus=\"handleEvent\"\n                @text-field-change=\"handleEvent\"\n                success-message=\"right\"></text-field>\n\n    <text-field label=\"text field\"\n                icon=\"phone\"\n                class=\"col s12\"></text-field>\n\n    <text-field label=\"text field\"\n                icon=\"phone\"\n                :disabled=\"true\"\n                :value.sync=\"text\"\n                :validate=\"true\"\n                class=\"col s12\"></text-field>\n\n    <text-field label=\"Email\"\n                icon=\"email\"\n                type=\"email\"\n                :validate=\"true\"\n                class=\"col s12\"\n                error-message=\"wrong email\"\n                success-message=\"correct email\"></text-field>\n\n    <text-field label=\"password\"\n                :value.sync=\"text\"\n                :validate=\"true\"\n                type=\"password\"\n                class=\"col s12\"\n                success-message=\"right\"\n                placeholder=\"enter your password\"></text-field>\n\n    <text-area class=\"col s12\"\n               label=\"my text field\"\n               value=\"this is description\"\n               :validate=\"true\"\n               :length=\"10\"\n               error-message=\"wrong\"\n               @input=\"handleEvent\"\n               icon=\"phone\"></text-area>\n\n    <div class=\"row\">\n        <select-field\n                class=\"col s12\"\n                label=\"select field\"\n                :options=\"options\"></select-field>\n    </div>\n\n    <icon class=\"red-text\" value=\"add\" @click=\"changeOptions\"></icon>\n\n    <div class=\"row\">\n        <collapsible behavior=\"expandable\" popout>\n            <collapsible-item>\n                <collapsible-header active label=\"first one\" icon=\"edit\"></collapsible-header>\n                <collapsible-body><p>test for item 1</p></collapsible-body>\n            </collapsible-item>\n            <collapsible-item>\n                <collapsible-header label=\"2nd one\" icon=\"edit\"></collapsible-header>\n                <collapsible-body>\n                    <div class=\"row\">\n                        <text-area class=\"col s12\"\n                                   label=\"my text field\"\n                                   value=\"this is description\"\n                                   :validate=\"true\"\n                                   :length=\"10\"\n                                   error-message=\"wrong\"\n                                   @input=\"handleEvent\"\n                                   icon=\"phone\"></text-area>\n                    </div>\n                </collapsible-body>\n            </collapsible-item>\n        </collapsible>\n    </div>\n\n    <div class=\"row\">\n        <linear-progress color=\"red\" background-color=\"red lighten-4\"></linear-progress>\n        <linear-progress determinate percentage=\"70\"></linear-progress>\n        <circle-progress color=\"green\"></circle-progress>\n        <circle-progress flash size=\"big\"></circle-progress>\n        <pagination>\n            <pagination-item prev disabled></pagination-item>\n            <pagination-item active>1</pagination-item>\n            <pagination-item>2</pagination-item>\n            <pagination-item>3</pagination-item>\n            <pagination-item next></pagination-item>\n        </pagination>\n    </div>\n\n    <div class=\"row\">\n        <tabs>\n            <tab label=\"tab1\" >\n                this is tab page 1\n            </tab>\n            <tab label=\"tab2\" disabled>\n                <div class=\"row\">\n                    <select-field\n                            class=\"col s12\"\n                            label=\"select field\"\n                            :options=\"options\"></select-field>\n\n                    <text-area class=\"col s12\"\n                               label=\"my text field\"\n                               value=\"this is description\"\n                               :validate=\"true\"\n                               :length=\"10\"\n                               error-message=\"wrong\"\n                               @input=\"handleEvent\"\n                               icon=\"phone\"></text-area>\n                </div>\n            </tab>\n        </tabs>\n    </div>\n</div>\n\n\n";
 
 /***/ }
 /******/ ]);
