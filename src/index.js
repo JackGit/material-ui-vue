@@ -19,5 +19,6 @@ module.exports = {
     'button': require('./buttons/button.vue'),
     'fixed-action-button': require('./buttons/fixed-action-button.vue'),
     'badge': require('./badges/badge.vue'),
-    'breadcrumbs': require('./breadcrumbs/breadcrumbs.vue')
+    'breadcrumbs': require('./breadcrumbs/breadcrumbs.vue'),
+    'chip': require('./chips/chip.vue')
 };

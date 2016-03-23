@@ -37,6 +37,11 @@
         </div>
 
         <div class="row">
+            <chip label="Tag"></chip>
+            <chip label="Tag" removable :image="imageUrl"></chip>
+        </div>
+
+        <div class="row">
             <btn label="test button" icon="edit" icon-position="left" @click="clickButton"></btn>
             <btn label="large button" :large="true" icon="edit" icon-position="left" @click="clickButton"></btn>
             <btn class='waves-teal' label="flat button" type="flat" icon="edit" icon-position="right"></btn>
@@ -223,7 +228,8 @@
             'btn': MUI['button'],
             'fixed-action-button': MUI['fixed-action-button'],
             'badge': MUI['badge'],
-            'breadcrumbs': MUI['breadcrumbs']
+            'breadcrumbs': MUI['breadcrumbs'],
+            'chip': MUI['chip']
         },
 
         data: function() {
