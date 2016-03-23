@@ -167,6 +167,16 @@
             </card>
         </div>
 
+        <div class="col s12">
+            <radios group="g1">
+                <radio>Red</radio>
+                <radio with-gap>Green</radio>
+                <radio checked>Yellow</radio>
+                <radio disabled>Black</radio>
+                <radio>Blue</radio>
+            </radios>
+        </div>
+
         <text-field label="text field"
                     :validate="true"
                     class="col s12"
@@ -306,6 +316,8 @@
             'text-field': MUI['text-field'],
             'text-area': MUI['text-area'],
             'select-field': MUI['select-field'],
+            'radios': MUI['radios'],
+            'radio': MUI['radio'],
             'tabs': MUI['tabs'],
             'tab': MUI['tab'],
             'collapsible': MUI['collapsible'],
