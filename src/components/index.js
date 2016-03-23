@@ -35,6 +35,10 @@ module.exports = {
     'pagination': require('./pagination/pagination.vue'),
     'pagination-item': require('./pagination/pagination-item.vue'),
     'linear-progress': require('./progresses/linear-progress.vue'),
-    'circle-progress': require('./progresses/circle-progress.vue')
+    'circle-progress': require('./progresses/circle-progress.vue'),
+    'material-box': require('./media/material-box.vue'),
+    'modal': require('./modals/modal.vue'),
+    'modal-content': require('./modals/modal-content.vue'),
+    'modal-footer': require('./modals/modal-footer.vue'),
 
 };

@@ -8,7 +8,7 @@
         <div class="col s12">
             <btn @click="openModal">open modal</btn>
         </div>
-        <modal :open="modalStatus">
+        <modal :open="modalStatus" bottom-sheet>
             <modal-content>
                 <h4>Modal Header</h4>
                 <p>A bunch of text</p>
@@ -20,7 +20,7 @@
         </modal>
 
         <div class="row">
-            <dropdown label="I am a dropdown" :items="dropdownItems" disabled></dropdown>
+            <dropdown :label="label" :items="dropdownItems" disabled></dropdown>
             <dropdown label="I am a dropdown 2" icon="edit" icon-position="right" :large="true">
                 <ul>
                     <li><a href="#!">223<badge>2</badge></a></li>
@@ -167,8 +167,6 @@
             </card>
         </div>
 
-
-
         <text-field label="text field"
                     :validate="true"
                     class="col s12"
@@ -205,6 +203,7 @@
                     :validate="true"
                     type="password"
                     class="col s12"
+                    @text-field-input="handleTextFieldInput"
                     success-message="right"
                     placeholder="enter your password"></text-field>
 
@@ -363,7 +362,8 @@
                 ],
                 crumbs: [{href: '#', label: 'c1'}, {href: '#', label: 'c2'}],
                 links: [{href:'#',label:'active link',active:true},{href:'#',label:'link'}],
-                modalStatus: true
+                modalStatus: true,
+                label: 'i am a label'
             }
         },
 
@@ -397,6 +397,10 @@
             confirmModal: function() {
                 var value = window.confirm('are your sure to close the modal?');
                 this.modalStatus = !value;
+            },
+            handleTextFieldInput: function(e) {
+                console.log('handle text input', e)
+                this.label = e.target.value;
             }
         }
     };

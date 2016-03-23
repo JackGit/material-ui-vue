@@ -2,6 +2,7 @@
     <a :class="buttonClasses">
         <icon v-if="icon" :value="icon" :class="iconPosition"></icon>
         {{label}}
+        <slot></slot>
     </a>
 </template>
 
