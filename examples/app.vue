@@ -88,12 +88,19 @@
             </navbar>
         </div>
 
-        <nav-collapsible-item></nav-collapsible-item>
-
         <div class="row">
             <side-nav fixed>
                 <nav-item active><a href="#" class="waves-effect waves-teal">Link 1</a></nav-item>
                 <nav-item><a href="#"  class="waves-effect waves-teal">Link 2</a></nav-item>
+                <nav-collapsible-item>
+                    <collapsible-header label="dropdown menu" icon="arrow_drop_down" icon-position="right"></collapsible-header>
+                    <collapsible-body>
+                        <ul>
+                            <nav-item><a href="#">Link 1</a></nav-item>
+                            <nav-item><a href="#">Link 2</a></nav-item>
+                        </ul>
+                    </collapsible-body>
+                </nav-collapsible-item>
             </side-nav>
         </div>
 
@@ -207,11 +214,11 @@
 
         <div class="row">
             <collapsible behavior="expandable" popout>
-                <li>
+                <collapsible-item>
                     <collapsible-header active label="first one" icon="edit"></collapsible-header>
                     <collapsible-body><p>test for item 1</p></collapsible-body>
-                </li>
-                <li>
+                </collapsible-item>
+                <collapsible-item>
                     <collapsible-header label="2nd one" icon="edit"></collapsible-header>
                     <collapsible-body>
                         <div class="row">
@@ -225,7 +232,7 @@
                                        icon="phone"></text-area>
                         </div>
                     </collapsible-body>
-                </li>
+                </collapsible-item>
             </collapsible>
         </div>
 
@@ -271,6 +278,7 @@
             'tabs': MUI['tabs'],
             'tab': MUI['tab'],
             'collapsible': MUI['collapsible'],
+            'collapsible-item': MUI['collapsible-item'],
             'collapsible-header': MUI['collapsible-header'],
             'collapsible-body': MUI['collapsible-body'],
             'card': MUI['card'],

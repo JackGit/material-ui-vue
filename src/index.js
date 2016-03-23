@@ -6,6 +6,7 @@ module.exports = {
     'tabs': require('./tabs/tabs.vue'),
     'tab': require('./tabs/tab.vue'),
     'collapsible': require('./collapsible/collapsible.vue'),
+    'collapsible-item': require('./collapsible/collapsible-item.vue'),
     'collapsible-body': require('./collapsible/collapsible-body.vue'),
     'collapsible-header': require('./collapsible/collapsible-header.vue'),
     'card': require('./cards/card.vue'),

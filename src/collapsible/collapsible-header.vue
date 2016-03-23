@@ -1,6 +1,6 @@
 <template>
     <div :class="['collapsible-header', active ? 'active' : '']">
-        <mui-icon v-if="icon" :value="icon"></mui-icon>
+        <mui-icon v-if="icon" :value="icon" :class="iconPosition"></mui-icon>
         {{label}}
     </div>
 </template>
@@ -17,6 +17,10 @@
             },
             icon: {
                 type: String
+            },
+            iconPosition: {
+                type: String,
+                default: 'left'
             },
             active: {
                 type: Boolean,
