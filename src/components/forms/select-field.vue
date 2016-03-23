@@ -67,6 +67,10 @@
 
                 that.$dispatch('select-field-' + e.type, e);
             });
+        },
+
+        destroyed: function() {
+            $(this.$els.select).material_select('destroy');
         }
     };
 </script>

@@ -237,6 +237,16 @@
         </div>
 
         <div class="row">
+            <pagination>
+                <pagination-item prev disabled></pagination-item>
+                <pagination-item active>1</pagination-item>
+                <pagination-item>2</pagination-item>
+                <pagination-item>3</pagination-item>
+                <pagination-item next></pagination-item>
+            </pagination>
+        </div>
+
+        <div class="row">
             <tabs>
                 <tab label="tab1" >
                     this is tab page 1
@@ -303,7 +313,9 @@
             'nav-item': MUI['nav-item'],
             'nav-dropdown-item': MUI['nav-dropdown-item'],
             'nav-collapsible-item': MUI['nav-collapsible-item'],
-            'side-nav': MUI['side-nav']
+            'side-nav': MUI['side-nav'],
+            'pagination': MUI['pagination'],
+            'pagination-item': MUI['pagination-item']
         },
 
         data: function() {

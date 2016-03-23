@@ -32,5 +32,7 @@ module.exports = {
     'nav-dropdown-item': require('./navbar/nav-dropdown-item.vue'),
     'nav-collapsible-item': require('./navbar/nav-collapsible-item.vue'),
     'side-nav': require('./side-nav/side-nav.vue'),
+    'pagination': require('./pagination/pagination.vue'),
+    'pagination-item': require('./pagination/pagination-item.vue')
 
 };
