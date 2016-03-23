@@ -42,6 +42,43 @@
         </div>
 
         <div class="row">
+            <link-collection>
+                <a href="#" class="active">active</a>
+                <a href="#">link</a>
+            </link-collection>
+            <link-collection :links="links"></link-collection>
+        </div>
+
+        <div class="row">
+            <collection with-header>
+                <collection-header><h4>header</h4></collection-header>
+                <collection-item>Jack Yang</collection-item>
+                <collection-item dismissable>Tom J</collection-item>
+                <collection-item>
+                    <div>
+                        Alvin
+                        <a href="#!" class="secondary-content">
+                            <icon value="send"></icon>
+                        </a>
+                    </div>
+                </collection-item>
+            </collection>
+        </div>
+
+        <div class="row">
+            <collection>
+                <collection-item avatar>
+                    <img :src="imageUrl" alt="" class="circle">
+                    <span class="title">Title</span>
+                    <p>First Line <br>
+                        Second Line
+                    </p>
+                    <a href="#!" class="secondary-content"><icon value="grade"></icon></a>
+                </collection-item>
+            </collection>
+        </div>
+
+        <div class="row">
             <btn label="test button" icon="edit" icon-position="left" @click="clickButton"></btn>
             <btn label="large button" :large="true" icon="edit" icon-position="left" @click="clickButton"></btn>
             <btn class='waves-teal' label="flat button" type="flat" icon="edit" icon-position="right"></btn>
@@ -229,7 +266,11 @@
             'fixed-action-button': MUI['fixed-action-button'],
             'badge': MUI['badge'],
             'breadcrumbs': MUI['breadcrumbs'],
-            'chip': MUI['chip']
+            'chip': MUI['chip'],
+            'link-collection': MUI['link-collection'],
+            'collection': MUI['collection'],
+            'collection-header': MUI['collection-header'],
+            'collection-item': MUI['collection-item'],
         },
 
         data: function() {
@@ -247,7 +288,8 @@
                     {divider: true},
                     {href: '#', text: '423'},
                 ],
-                crumbs: [{href: '#', label: 'c1'}, {href: '#', label: 'c2'}]
+                crumbs: [{href: '#', label: 'c1'}, {href: '#', label: 'c2'}],
+                links: [{href:'#',label:'active link',active:true},{href:'#',label:'link'}]
             }
         },
 

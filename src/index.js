@@ -20,5 +20,9 @@ module.exports = {
     'fixed-action-button': require('./buttons/fixed-action-button.vue'),
     'badge': require('./badges/badge.vue'),
     'breadcrumbs': require('./breadcrumbs/breadcrumbs.vue'),
-    'chip': require('./chips/chip.vue')
+    'chip': require('./chips/chip.vue'),
+    'link-collection': require('./collections/link-collection.vue'),
+    'collection': require('./collections/collection.vue'),
+    'collection-item': require('./collections/collection-item.vue'),
+    'collection-header': require('./collections/collection-header.vue')
 };
