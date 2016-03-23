@@ -1,5 +1,5 @@
 <template>
-    <ul :id="id" :class="navClasses">
+    <ul :class="navClasses">
         <slot></slot>
     </ul>
 </template>
@@ -9,22 +9,6 @@
 
     module.exports = {
         props: {
-            menuWidth: {
-                type: Number,
-                default: 240
-            },
-            edge: {
-                type: String,
-                default: 'left'
-            },
-            closeOnClick: {
-                type: Boolean,
-                default: false
-            },
-            showOnLarge: {
-                type: Boolean,
-                default: false
-            },
             fixed: {
                 type: Boolean,
                 default: false
@@ -36,10 +20,6 @@
                 navClasses: classes({
                     'side-nav': true,
                     'fixed': this.fixed
-                }),
-                collapseButtonClasses: classes({
-                    'button-collapse': true,
-                    'show-on-large': this.showOnLarge
                 })
             }
         }

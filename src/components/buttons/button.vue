@@ -6,6 +6,7 @@
 </template>
 
 <script>
+    require('../../directives/Tooltip.js');
     var ButtonMixin = require('../../mixins/ButtonMixin.js');
 
     module.exports = {

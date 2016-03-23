@@ -72,7 +72,7 @@
         </div>
 
         <div class="row">
-            <navbar logo="Material UI with Vue" logo-href="//wedding.jackyang.me" fixed>
+            <navbar logo="Material UI with Vue" logo-href="//wedding.jackyang.me" side-nav-id="sideNav" show-on-large>
                 <nav-item><icon value="more_vert"></icon></nav-item>
                 <nav-item><a href="#">Sass</a></nav-item>
                 <nav-item><a href="#">Sass</a></nav-item>
@@ -89,7 +89,7 @@
         </div>
 
         <div class="row">
-            <side-nav fixed>
+            <side-nav id="sideNav">
                 <nav-item active><a href="#" class="waves-effect waves-teal">Link 1</a></nav-item>
                 <nav-item><a href="#"  class="waves-effect waves-teal">Link 2</a></nav-item>
                 <nav-collapsible-item>
@@ -105,7 +105,7 @@
         </div>
 
         <div class="row">
-            <btn label="test button" icon="edit" icon-position="left" @click="clickButton"></btn>
+            <btn label="tooltipped button" icon="edit" icon-position="left" @click="clickButton" v-tooltip="{position:'top',text:'i am tooltip'}"></btn>
             <btn label="large button" :large="true" icon="edit" icon-position="left" @click="clickButton"></btn>
             <btn class='waves-teal' label="flat button" type="flat" icon="edit" icon-position="right"></btn>
             <btn type="floating" icon="add"></btn>
