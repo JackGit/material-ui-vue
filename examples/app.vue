@@ -5,6 +5,20 @@
 <template>
     <div class="row">
 
+        <div class="col s12">
+            <btn @click="openModal">open modal</btn>
+        </div>
+        <modal :open="modalStatus">
+            <modal-content>
+                <h4>Modal Header</h4>
+                <p>A bunch of text</p>
+            </modal-content>
+            <modal-footer>
+                <btn @click="closeModal" class="modal-action" type="flat">close</btn>
+                <btn @click="confirmModal" class="modal-action" type="flat">Confirm</btn>
+            </modal-footer>
+        </modal>
+
         <div class="row">
             <dropdown label="I am a dropdown" :items="dropdownItems" disabled></dropdown>
             <dropdown label="I am a dropdown 2" icon="edit" icon-position="right" :large="true">
@@ -237,6 +251,10 @@
         </div>
 
         <div class="row">
+            <material-box :image-url="imageUrl" caption="test image" width="500"></material-box>
+        </div>
+
+        <div class="row">
             <linear-progress color="red" background-color="red lighten-4"></linear-progress>
             <linear-progress determinate percentage="70"></linear-progress>
             <circle-progress color="green"></circle-progress>
@@ -322,6 +340,10 @@
             'pagination-item': MUI['pagination-item'],
             'linear-progress': MUI['linear-progress'],
             'circle-progress': MUI['circle-progress'],
+            'material-box': MUI['material-box'],
+            'modal': MUI['modal'],
+            'modal-content': MUI['modal-content'],
+            'modal-footer': MUI['modal-footer']
         },
 
         data: function() {
@@ -340,7 +362,8 @@
                     {href: '#', text: '423'},
                 ],
                 crumbs: [{href: '#', label: 'c1'}, {href: '#', label: 'c2'}],
-                links: [{href:'#',label:'active link',active:true},{href:'#',label:'link'}]
+                links: [{href:'#',label:'active link',active:true},{href:'#',label:'link'}],
+                modalStatus: true
             }
         },
 
@@ -364,6 +387,16 @@
             })(),
             clickButton: function() {
                 alert('button clicked');
+            },
+            openModal: function() {
+                this.modalStatus = true;
+            },
+            closeModal: function() {
+                this.modalStatus = false;
+            },
+            confirmModal: function() {
+                var value = window.confirm('are your sure to close the modal?');
+                this.modalStatus = !value;
             }
         }
     };
