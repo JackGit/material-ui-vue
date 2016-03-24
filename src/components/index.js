@@ -1,7 +1,6 @@
 module.exports = {
     'text-field': require('./forms/text-field.vue'),
     'select-field': require('./forms/select-field.vue'),
-    'radios': require('./forms/radios.vue'),
     'radio': require('./forms/radio.vue'),
     'text-area': require('./forms/text-area.vue'),
     'icon': require('./icons/icon.vue'),

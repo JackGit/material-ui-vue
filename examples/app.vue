@@ -168,13 +168,7 @@
         </div>
 
         <div class="col s12">
-            <radios group="g1">
-                <radio>Red</radio>
-                <radio with-gap>Green</radio>
-                <radio checked>Yellow</radio>
-                <radio disabled>Black</radio>
-                <radio>Blue</radio>
-            </radios>
+            <radio group="g1" :items="radioItems" :selected.sync="radioSelected" with-gap @radio-click="clickRadio"></radio>
         </div>
 
         <text-field label="text field"
@@ -316,7 +310,6 @@
             'text-field': MUI['text-field'],
             'text-area': MUI['text-area'],
             'select-field': MUI['select-field'],
-            'radios': MUI['radios'],
             'radio': MUI['radio'],
             'tabs': MUI['tabs'],
             'tab': MUI['tab'],
@@ -375,7 +368,15 @@
                 crumbs: [{href: '#', label: 'c1'}, {href: '#', label: 'c2'}],
                 links: [{href:'#',label:'active link',active:true},{href:'#',label:'link'}],
                 modalStatus: true,
-                label: 'i am a label'
+                label: 'i am a label',
+                radioItems: [{label:'RED',value:'red',disabled:false}, {label:'GREEN',value:'green',disabled:true}, {label:'BLUE',value:'blue',disabled:false}, {label:'YELLOW',value:'yellow',disabled:false}],
+                radioSelected: 'red'
+            }
+        },
+
+        watch: {
+            radioSelected: function(value) {
+                console.log('radioSelected', value);
             }
         },
 
@@ -413,6 +414,9 @@
             handleTextFieldInput: function(e) {
                 console.log('handle text input', e)
                 this.label = e.target.value;
+            },
+            clickRadio: function() {
+                console.log('click radio')
             }
         }
     };
