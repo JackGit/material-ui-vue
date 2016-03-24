@@ -42,6 +42,7 @@ module.exports = {
     'linear-progress': require('./progresses/linear-progress.vue'),
     'circle-progress': require('./progresses/circle-progress.vue'),
     'material-box': require('./media/material-box.vue'),
+    'slider': require('./media/slider.vue'),
     'modal': require('./modals/modal.vue'),
     'modal-content': require('./modals/modal-content.vue'),
     'modal-footer': require('./modals/modal-footer.vue'),

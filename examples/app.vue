@@ -343,6 +343,7 @@
         </div>
 
         <parallax :image-url="imageUrl" height="200"></parallax>
+        <slider :images="images"></slider>
 
         <mui-footer>
             <div class="container">
@@ -362,6 +363,7 @@
                     </div>
                 </div>
             </div>
+
             <footer-copyright>
                 <div class="container">
                     © 2014 Copyright Text
@@ -429,7 +431,8 @@
             'modal-footer': MUI['modal-footer'],
             'mui-footer': MUI['footer'],
             'footer-copyright': MUI['footer-copyright'],
-            'parallax': MUI['parallax']
+            'parallax': MUI['parallax'],
+            'slider': MUI['slider']
         },
 
         data: function() {
@@ -464,7 +467,13 @@
                 switchValue: true,
                 rangeValue: 30,
                 openPicker: false,
-                date: new Date()
+                date: new Date(),
+                images: [
+                    {url:'http://lorempixel.com/580/250/nature/1',caption:'This is our big Tagline!',description:'Here our small slogan.'},
+                    {url:'http://lorempixel.com/580/250/nature/2',caption:'Left Aligned Caption',description:'Here our small slogan.'},
+                    {url:'http://lorempixel.com/580/250/nature/3',caption:'Right Aligned Caption',description:'Here our small slogan.'},
+                    {url:'http://lorempixel.com/580/250/nature/4',caption:'This is our big Tagline!',description:'Here our small slogan.'}
+                ]
             }
         },
 
