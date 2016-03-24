@@ -137,7 +137,7 @@
             </fixed-action-button>
         </div>
 
-        <div class="col s7">
+        <div class="row">
             <card size="medium">
                 <card-image :src="imageUrl">
                     <card-title>wedding image</card-title>
@@ -153,7 +153,7 @@
             </card>
         </div>
 
-        <div class="col s7">
+        <div class="row">
             <card :revealed="false">
                 <card-image :src="imageUrl" activator></card-image>
                 <card-content>
@@ -167,13 +167,16 @@
             </card>
         </div>
 
-        <div class="col s12">
-            <radio group="g1" :items="radioItems" :selected.sync="radioSelected" with-gap @radio-click="clickRadio"></radio>
-        </div>
-
         <div class="row">
-            <checkbox class="col s6" :items="checkboxItems" :selected.sync="checkboxSelected" @checkbox-change="changeCheckbox"></checkbox>
-            <checkbox class="col s6" :items="checkboxItems" :selected.sync="checkboxSelected" @checkbox-change="changeCheckbox"></checkbox>
+            <radio class="col s4" group="g1" :items="radioItems" :selected.sync="radioSelected" with-gap @radio-click="clickRadio"></radio>
+            <checkbox class="col s4" :items="checkboxItems" :selected.sync="checkboxSelected" @checkbox-change="changeCheckbox"></checkbox>
+            <div class="col s4">
+                <switch :value.sync="switchValue" left-label="off" right-label="on" @switch-change="changeSwitch"></switch>
+                <p></p>
+                <switch :value="false" disabled left-label="off" right-label="on"></switch>
+                <p></p>
+                <switch :value="true" disabled left-label="off" right-label="on"></switch>
+            </div>
         </div>
 
         <text-field label="text field"
@@ -317,6 +320,7 @@
             'select-field': MUI['select-field'],
             'radio': MUI['radio'],
             'checkbox': MUI['checkbox'],
+            'switch': MUI['switch'],
             'tabs': MUI['tabs'],
             'tab': MUI['tab'],
             'collapsible': MUI['collapsible'],
@@ -378,7 +382,8 @@
                 radioItems: [{label:'RED',value:'red',disabled:false}, {label:'GREEN',value:'green',disabled:true}, {label:'BLUE',value:'blue',disabled:false}, {label:'YELLOW',value:'yellow',disabled:false}],
                 radioSelected: 'red',
                 checkboxItems: [{label:'RED',value:'red',disabled:false}, {label:'GREEN',value:'green',disabled:true}, {label:'BLUE',value:'blue',disabled:false}, {label:'YELLOW',value:'yellow',disabled:false}],
-                checkboxSelected: ['red', 'blue', 'green']
+                checkboxSelected: ['red', 'blue', 'green'],
+                switchValue: true
             }
         },
 
@@ -388,7 +393,11 @@
             },
             checkboxSelected: function(value) {
                 console.log('checkboxSelected', value);
+            },
+            switchValue: function(value) {
+                console.log('switchValue', value)
             }
+
         },
 
         methods: {
@@ -431,6 +440,9 @@
             },
             changeCheckbox: function(e) {
                 console.log('change checkbox', e)
+            },
+            changeSwitch: function(e) {
+                console.log('change switch', e)
             }
         }
     };
