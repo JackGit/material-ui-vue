@@ -179,6 +179,12 @@
             </div>
         </div>
 
+        <div class="col s8">
+            <range min="20" max="50" :value.sync="rangeValue" @range-input="inputRange"></range>
+            <p></p>
+            <range disabled></range>
+        </div>
+
         <text-field label="text field"
                     :validate="true"
                     class="col s12"
@@ -321,6 +327,7 @@
             'radio': MUI['radio'],
             'checkbox': MUI['checkbox'],
             'switch': MUI['switch'],
+            'range': MUI['range'],
             'tabs': MUI['tabs'],
             'tab': MUI['tab'],
             'collapsible': MUI['collapsible'],
@@ -383,7 +390,8 @@
                 radioSelected: 'red',
                 checkboxItems: [{label:'RED',value:'red',disabled:false}, {label:'GREEN',value:'green',disabled:true}, {label:'BLUE',value:'blue',disabled:false}, {label:'YELLOW',value:'yellow',disabled:false}],
                 checkboxSelected: ['red', 'blue', 'green'],
-                switchValue: true
+                switchValue: true,
+                rangeValue: 30
             }
         },
 
@@ -396,6 +404,9 @@
             },
             switchValue: function(value) {
                 console.log('switchValue', value)
+            },
+            rangeValue: function(value) {
+                console.log('rangeValue', value);
             }
 
         },
@@ -443,6 +454,9 @@
             },
             changeSwitch: function(e) {
                 console.log('change switch', e)
+            },
+            inputRange: function() {
+                console.log('change range value');
             }
         }
     };

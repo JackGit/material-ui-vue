@@ -4,6 +4,7 @@ module.exports = {
     'radio': require('./forms/radio.vue'),
     'checkbox': require('./forms/checkbox.vue'),
     'switch': require('./forms/switch.vue'),
+    'range': require('./forms/range.vue'),
     'text-area': require('./forms/text-area.vue'),
     'icon': require('./icons/icon.vue'),
     'tabs': require('./tabs/tabs.vue'),
