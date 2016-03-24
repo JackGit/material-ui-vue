@@ -171,6 +171,11 @@
             <radio group="g1" :items="radioItems" :selected.sync="radioSelected" with-gap @radio-click="clickRadio"></radio>
         </div>
 
+        <div class="row">
+            <checkbox class="col s6" :items="checkboxItems" :selected.sync="checkboxSelected" @checkbox-change="changeCheckbox"></checkbox>
+            <checkbox class="col s6" :items="checkboxItems" :selected.sync="checkboxSelected" @checkbox-change="changeCheckbox"></checkbox>
+        </div>
+
         <text-field label="text field"
                     :validate="true"
                     class="col s12"
@@ -311,6 +316,7 @@
             'text-area': MUI['text-area'],
             'select-field': MUI['select-field'],
             'radio': MUI['radio'],
+            'checkbox': MUI['checkbox'],
             'tabs': MUI['tabs'],
             'tab': MUI['tab'],
             'collapsible': MUI['collapsible'],
@@ -370,13 +376,18 @@
                 modalStatus: true,
                 label: 'i am a label',
                 radioItems: [{label:'RED',value:'red',disabled:false}, {label:'GREEN',value:'green',disabled:true}, {label:'BLUE',value:'blue',disabled:false}, {label:'YELLOW',value:'yellow',disabled:false}],
-                radioSelected: 'red'
+                radioSelected: 'red',
+                checkboxItems: [{label:'RED',value:'red',disabled:false}, {label:'GREEN',value:'green',disabled:true}, {label:'BLUE',value:'blue',disabled:false}, {label:'YELLOW',value:'yellow',disabled:false}],
+                checkboxSelected: ['red', 'blue', 'green']
             }
         },
 
         watch: {
             radioSelected: function(value) {
                 console.log('radioSelected', value);
+            },
+            checkboxSelected: function(value) {
+                console.log('checkboxSelected', value);
             }
         },
 
@@ -417,6 +428,9 @@
             },
             clickRadio: function() {
                 console.log('click radio')
+            },
+            changeCheckbox: function(e) {
+                console.log('change checkbox', e)
             }
         }
     };

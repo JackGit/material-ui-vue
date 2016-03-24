@@ -14,9 +14,6 @@
 </template>
 
 <script>
-
-    var uuid = require('uuid');
-
     module.exports = {
         props: {
             group: {
@@ -37,12 +34,6 @@
             }
         },
 
-        watch: {
-            selected: function(value) {
-
-            }
-        },
-
         ready: function() {
             var that = this;
 
@@ -55,10 +46,6 @@
                     }
                 }
             });
-        },
-
-        methods: {
-
         }
     };
 </script>

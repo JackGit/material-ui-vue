@@ -2,6 +2,7 @@ module.exports = {
     'text-field': require('./forms/text-field.vue'),
     'select-field': require('./forms/select-field.vue'),
     'radio': require('./forms/radio.vue'),
+    'checkbox': require('./forms/checkbox.vue'),
     'text-area': require('./forms/text-area.vue'),
     'icon': require('./icons/icon.vue'),
     'tabs': require('./tabs/tabs.vue'),
