@@ -78,13 +78,17 @@
             this.picker.on({
                 open: function() {
                     that.opened = true;
+                    that.$dispatch('date-picker-open');
                 },
                 close: function() {
                     that.opened = false;
+                    that.$dispatch('date-picker-close');
                 },
                 set: function(thingSet) {
-                    if(thingSet.select)
+                    if(thingSet.select) {
                         that.date = thingSet.select;
+                        that.$dispatch('date-picker-change', thingSet.select);
+                    }
                 }
             });
 
