@@ -249,6 +249,7 @@
             <select-field
                     class="col s12"
                     label="select field"
+                    :selected.sync="optionSelected"
                     :options="options">slot</select-field>
         </div>
 
@@ -384,10 +385,11 @@
             return {
                 imageUrl: 'http://wedding.jackyang.me/static/images/wedding_pic_02.jpg',
                 options: [
-                    {value: '0', text: 'zero', disabled: false, selected: false},
-                    {value: '1', text: 'one', disabled: false, selected: true},
-                    {value: '2', text: 'two', disabled: false, selected: false},
-                    {value: '3', text: 'three', disabled: false, selected: false}],
+                    {value: '0', text: 'zero', disabled: false},
+                    {value: '1', text: 'one', disabled: false},
+                    {value: '2', text: 'two', disabled: false},
+                    {value: '3', text: 'three', disabled: false}],
+                optionSelected: '2',
                 dropdownItems: [
                     {href: '#', text: '123'},
                     {href: '#', text: '223'},
@@ -428,6 +430,9 @@
             },
             date: function(value) {
                 console.log('picker date', new Date(value));
+            },
+            optionSelected: function(value) {
+                console.log('optionSelected', value);
             }
 
         },
@@ -438,16 +443,9 @@
             },
             changeOptions: (function() {
                 var i = 0;
-
                 return function() {
-
-                    this.options.forEach(function(o) {
-                        if(o.value == i)
-                            o.selected = true;
-                        else
-                            o.selected = false;
-                    });
                     i = (i+1) % 4;
+                    this.optionSelected = '' + i;
                 }
             })(),
             clickButton: function() {

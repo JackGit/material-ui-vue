@@ -1,10 +1,9 @@
 <template>
     <div class="input-field">
-        <select v-el:select>
+        <select v-el:select v-model="selected">
             <option v-for="option in options"
                     :value="option.value"
-                    :disabled="option.disabled"
-                    :selected="option.selected">{{option.text}}</option>
+                    :disabled="option.disabled">{{option.text}}</option>
         </select>
         <label>{{label}}<slot></slot></label>
     </div>
@@ -29,8 +28,12 @@
                 default: false
             },
             options: {
-                type: Array,    // {value: '', text: '', disabled: false, selected: false}
+                type: Array,    // {value: '', text: '', disabled: false}
                 default: function() {return [];}
+            },
+            selected: {
+                type: String,
+                default: ''
             }
         },
 
@@ -47,6 +50,9 @@
                 },
                 deep: true
             },
+            selected: function() {
+                $(this.$els.select).material_select();
+            },
             disabled: function() {
                 $(this.$els.select).material_select();
             }
@@ -57,14 +63,7 @@
 
             $(this.$els.select).material_select();
             $(this.$els.select).on('change', function(e) {
-                var val = $(this).val();
-                that.options.forEach(function(o) {
-                    if(o.value == val)
-                        o.selected = true;
-                    else
-                        o.selected = false;
-                });
-
+                that.selected = $(this).val();
                 that.$dispatch('select-field-' + e.type, e);
             });
         },
