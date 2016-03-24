@@ -3,7 +3,7 @@
         <ul class="slides">
             <li v-for="image in images">
                 <img :src="image.url">
-                <div class="caption center-align">
+                <div :class="['caption', image.captionPosition ? image.captionPosition + '-align' : 'center-align']">
                     <h3>{{image.caption}}</h3>
                     <h5 class="light grey-text text-lighten-3">{{image.description}}</h5>
                 </div>
@@ -18,10 +18,6 @@
 
     module.exports = {
         props: {
-            fullWidth: {
-                type: Boolean,
-                default: true
-            },
             fullscreen: {
                 type: Boolean,
                 default: false
@@ -29,6 +25,19 @@
             images: {
                 type: Array, // {url: '', caption: '', description: ''}
                 default: function() {return [];}
+            },
+            indicators: {
+                type: Boolean,
+                default: true
+            },
+            height: {
+                default: 400
+            },
+            transition: {
+                default: 500
+            },
+            interval: {
+                default: 6000
             }
         },
 
@@ -42,7 +51,27 @@
         },
 
         ready: function() {
-            $(this.$el).slider({full_width: this.fullWidth});
+            $(this.$el).slider({
+                indicators: this.indicators,
+                height: this.height,
+                transition: this.transition,
+                interval: this.interval
+            });
+        },
+
+        methods: {
+            start: function() {
+                $(this.$el).slider('start');
+            },
+            pause: function() {
+                $(this.$el).slider('pause');
+            },
+            next: function() {
+                $(this.$el).slider('next');
+            },
+            prev: function() {
+                $(this.$el).slider('prev');
+            }
         }
     };
 </script>

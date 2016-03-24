@@ -345,6 +345,10 @@
         <parallax :image-url="imageUrl" height="200"></parallax>
         <slider :images="images"></slider>
 
+        <div class="row">
+            <carousel :images="images"></carousel>
+        </div>
+
         <mui-footer>
             <div class="container">
                 <div class="row">
@@ -432,7 +436,8 @@
             'mui-footer': MUI['footer'],
             'footer-copyright': MUI['footer-copyright'],
             'parallax': MUI['parallax'],
-            'slider': MUI['slider']
+            'slider': MUI['slider'],
+            'carousel': MUI['carousel']
         },
 
         data: function() {
@@ -469,10 +474,10 @@
                 openPicker: false,
                 date: new Date(),
                 images: [
-                    {url:'http://lorempixel.com/580/250/nature/1',caption:'This is our big Tagline!',description:'Here our small slogan.'},
-                    {url:'http://lorempixel.com/580/250/nature/2',caption:'Left Aligned Caption',description:'Here our small slogan.'},
-                    {url:'http://lorempixel.com/580/250/nature/3',caption:'Right Aligned Caption',description:'Here our small slogan.'},
-                    {url:'http://lorempixel.com/580/250/nature/4',caption:'This is our big Tagline!',description:'Here our small slogan.'}
+                    {url:'http://wedding.jackyang.me/static/images/wedding_pic_01.jpg',caption:'This is our big Tagline!',description:'Here our small slogan.'},
+                    {url:'http://wedding.jackyang.me/static/images/wedding_pic_02.jpg',caption:'Left Aligned Caption',description:'Here our small slogan.'},
+                    {url:'http://wedding.jackyang.me/static/images/wedding_pic_03.jpg',caption:'Right Aligned Caption',description:'Here our small slogan.',captionPosition:'left'},
+                    {url:'http://wedding.jackyang.me/static/images/wedding_pic_04.jpg',caption:'This is our big Tagline!',description:'Here our small slogan.'}
                 ]
             }
         },
