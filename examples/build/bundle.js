@@ -10156,8 +10156,13 @@
 	    data: function data() {
 	        return {
 	            imageUrl: 'http://wedding.jackyang.me/static/images/wedding_pic_02.jpg',
-	            options: [{ value: '0', text: 'zero', disabled: false }, { value: '1', text: 'one', disabled: false }, { value: '2', text: 'two', disabled: false }, { value: '3', text: 'three', disabled: false }],
+	            options: [{ value: '0', text: 'zero', disabled: false, icon: 'http://wedding.jackyang.me/static/images/wedding_pic_02.jpg' }, { value: '1', text: 'one', disabled: false, icon: 'http://wedding.jackyang.me/static/images/wedding_pic_02.jpg' }, { value: '2', text: 'two', disabled: false, icon: 'http://wedding.jackyang.me/static/images/wedding_pic_02.jpg' }, { value: '3', text: 'three', disabled: false, icon: 'http://wedding.jackyang.me/static/images/wedding_pic_02.jpg' }],
 	            optionSelected: '2',
+	            groupOptions: {
+	                g1: [{ value: '0', text: 'zero', disabled: false }, { value: '1', text: 'one', disabled: false }],
+	                g2: [{ value: '2', text: 'two', disabled: false }, { value: '3', text: 'three', disabled: false }]
+	            },
+	            groupOptionSelected: '2',
 	            dropdownItems: [{ href: '#', text: '123' }, { href: '#', text: '223' }, { href: '#', text: '323' }, { divider: true }, { href: '#', text: '423' }],
 	            crumbs: [{ href: '#', label: 'c1' }, { href: '#', label: 'c2' }],
 	            links: [{ href: '#', label: 'active link', active: true }, { href: '#', label: 'link' }],
@@ -10249,27 +10254,27 @@
 	module.exports = {
 	    'text-field': __webpack_require__(10),
 	    'select-field': __webpack_require__(18),
-	    'radio': __webpack_require__(21),
-	    'checkbox': __webpack_require__(24),
-	    'switch': __webpack_require__(27),
-	    'range': __webpack_require__(30),
-	    'text-area': __webpack_require__(33),
-	    'date-picker': __webpack_require__(36),
+	    'radio': __webpack_require__(22),
+	    'checkbox': __webpack_require__(25),
+	    'switch': __webpack_require__(28),
+	    'range': __webpack_require__(31),
+	    'text-area': __webpack_require__(34),
+	    'date-picker': __webpack_require__(37),
 	    'icon': __webpack_require__(14),
-	    'tabs': __webpack_require__(41),
-	    'tab': __webpack_require__(44),
-	    'collapsible': __webpack_require__(47),
-	    'collapsible-item': __webpack_require__(50),
-	    'collapsible-body': __webpack_require__(53),
-	    'collapsible-header': __webpack_require__(56),
-	    'card': __webpack_require__(59),
-	    'card-action': __webpack_require__(62),
-	    'card-content': __webpack_require__(65),
-	    'card-image': __webpack_require__(68),
-	    'card-panel': __webpack_require__(74),
-	    'card-title': __webpack_require__(70),
-	    'card-reveal': __webpack_require__(77),
-	    'dropdown': __webpack_require__(80),
+	    'tabs': __webpack_require__(42),
+	    'tab': __webpack_require__(45),
+	    'collapsible': __webpack_require__(48),
+	    'collapsible-item': __webpack_require__(51),
+	    'collapsible-body': __webpack_require__(54),
+	    'collapsible-header': __webpack_require__(57),
+	    'card': __webpack_require__(60),
+	    'card-action': __webpack_require__(63),
+	    'card-content': __webpack_require__(66),
+	    'card-image': __webpack_require__(69),
+	    'card-panel': __webpack_require__(75),
+	    'card-title': __webpack_require__(71),
+	    'card-reveal': __webpack_require__(78),
+	    'dropdown': __webpack_require__(81),
 	    'button': __webpack_require__(85),
 	    'fixed-action-button': __webpack_require__(91),
 	    'badge': __webpack_require__(94),
@@ -10719,7 +10724,7 @@
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] ..\\src\\components\\forms\\select-field.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(20)
+	__vue_template__ = __webpack_require__(21)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -10743,8 +10748,8 @@
 
 	'use strict';
 	
-	var Vue = __webpack_require__(1);
 	var uuid = __webpack_require__(12);
+	var classes = __webpack_require__(20).classes;
 	
 	module.exports = {
 	    props: {
@@ -10765,20 +10770,59 @@
 	                return [];
 	            }
 	        },
+	        groupOptions: {
+	            type: Object,
+	            default: null
+	        },
 	        selected: {
-	            type: String,
 	            default: ''
+	        },
+	        icons: {
+	            type: Boolean,
+	            default: false
+	        },
+	        iconPosition: {
+	            type: String,
+	            default: 'left'
+	        },
+	        circleIcon: {
+	            type: Boolean,
+	            default: true
+	        },
+	        browserDefault: {
+	            type: Boolean,
+	            default: false
 	        }
 	    },
 	
+	    computed: {},
+	
 	    data: function data() {
 	        return {
-	            id: uuid.v1()
+	            id: uuid.v1(),
+	            optionClasses: classes({
+	                'circle': this.circleIcon,
+	                'left': this.iconPosition === 'left',
+	                'right': this.iconPosition === 'right'
+	            }),
+	            selectClasses: classes({
+	                'icons': this.icons,
+	                'browser-default': this.browserDefault
+	            }),
+	            divClasses: classes({
+	                'input-field': !this.browserDefault
+	            })
 	        };
 	    },
 	
 	    watch: {
 	        options: {
+	            handler: function handler() {
+	                $(this.$els.select).material_select();
+	            },
+	            deep: true
+	        },
+	        groupOptions: {
 	            handler: function handler() {
 	                $(this.$els.select).material_select();
 	            },
@@ -10811,19 +10855,38 @@
 /* 20 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"input-field\">\n    <select v-el:select v-model=\"selected\">\n        <option v-for=\"option in options\"\n                :value=\"option.value\"\n                :disabled=\"option.disabled\">{{option.text}}</option>\n    </select>\n    <label>{{label}}<slot></slot></label>\n</div>\n";
+	
+	
+	function classes(options) {
+	    var cls = [];
+	    for(var p in options) {
+	        if(options[p])
+	            cls.push(p);
+	    }
+	    return cls;
+	}
+	
+	module.exports = {
+	    classes: classes
+	};
 
 /***/ },
 /* 21 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div :class=\"divClasses\">\n    <select v-el:select v-model=\"selected\" :multiple=\"multiple\" :class=\"selectClasses\">\n        <option v-if=\"options\" v-for=\"option in options\"\n                :value=\"option.value\"\n                :class=\"optionClasses\"\n                :data-icon=\"option.icon\"\n                :disabled=\"option.disabled\">{{option.text}}</option>\n        <optgroup v-if=\"groupOptions\" v-for=\"(name, opts) in groupOptions\" :label=\"name\">\n            <option v-for=\"option in opts\"\n                    :value=\"option.value\"\n                    :class=\"optionClasses\"\n                    :data-icon=\"option.icon\"\n                    :disabled=\"option.disabled\">{{option.text}}</option>\n        </optgroup>\n    </select>\n    <label>{{label}}<slot></slot></label>\n</div>\n";
+
+/***/ },
+/* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(22)
+	__vue_script__ = __webpack_require__(23)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] ..\\src\\components\\forms\\radio.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(23)
+	__vue_template__ = __webpack_require__(24)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -10842,7 +10905,7 @@
 	})()}
 
 /***/ },
-/* 22 */
+/* 23 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -10885,22 +10948,22 @@
 	};
 
 /***/ },
-/* 23 */
+/* 24 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div>\n    <p v-for=\"item in items\">\n        <input type=\"radio\"\n               v-model=\"selected\"\n               :class=\"[withGap ? 'with-gap' : '']\"\n               :name=\"group\"\n               :id=\"'_' + group + item.value\"\n               :value=\"item.value\"\n               :disabled=\"item.disabled\"/>\n        <label :for=\"'_' + group + item.value\">{{item.label}}</label>\n    </p>\n</div>\n";
 
 /***/ },
-/* 24 */
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(25)
+	__vue_script__ = __webpack_require__(26)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] ..\\src\\components\\forms\\checkbox.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(26)
+	__vue_template__ = __webpack_require__(27)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -10919,7 +10982,7 @@
 	})()}
 
 /***/ },
-/* 25 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -10968,22 +11031,22 @@
 	};
 
 /***/ },
-/* 26 */
+/* 27 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div>\n    <p v-for=\"item in items\">\n        <input type=\"checkbox\"\n               v-model=\"selected\"\n               :class=\"[filledIn ? 'filled-in' : '']\"\n               :value=\"item.value\"\n               :id=\"'_' + id + item.value\"\n               :disabled=\"item.disabled\" />\n        <label :for=\"'_' + id + item.value\">{{item.label}}</label>\n    </p>\n</div>\n";
 
 /***/ },
-/* 27 */
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(28)
+	__vue_script__ = __webpack_require__(29)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] ..\\src\\components\\forms\\switch.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(29)
+	__vue_template__ = __webpack_require__(30)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -11002,7 +11065,7 @@
 	})()}
 
 /***/ },
-/* 28 */
+/* 29 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -11039,22 +11102,22 @@
 	};
 
 /***/ },
-/* 29 */
+/* 30 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"switch\">\n    <label>\n        {{leftLabel}}\n        <input v-el:input type=\"checkbox\" v-model=\"value\" :disabled=\"disabled\">\n        <span class=\"lever\"></span>\n        {{rightLabel}}\n    </label>\n</div>\n";
 
 /***/ },
-/* 30 */
+/* 31 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(31)
+	__vue_script__ = __webpack_require__(32)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] ..\\src\\components\\forms\\range.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(32)
+	__vue_template__ = __webpack_require__(33)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -11073,7 +11136,7 @@
 	})()}
 
 /***/ },
-/* 31 */
+/* 32 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -11107,22 +11170,22 @@
 	};
 
 /***/ },
-/* 32 */
+/* 33 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<p class=\"range-field\">\n    <input type=\"range\"\n           v-el:input\n           v-model=\"value\"\n           :min=\"min\"\n           :max=\"max\"\n           :disabled=\"disabled\" />\n</p>\n";
 
 /***/ },
-/* 33 */
+/* 34 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(34)
+	__vue_script__ = __webpack_require__(35)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] ..\\src\\components\\forms\\text-area.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(35)
+	__vue_template__ = __webpack_require__(36)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -11141,7 +11204,7 @@
 	})()}
 
 /***/ },
-/* 34 */
+/* 35 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -11237,23 +11300,23 @@
 	};
 
 /***/ },
-/* 35 */
+/* 36 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"input-field\">\n    <icon v-if=\"icon\"\n          :class=\"['prefix', labelActive ? 'active' : '']\"\n          :value=\"icon\"></icon>\n\n    <textarea v-el:text-area\n              :id=\"id\"\n              :class=\"['materialize-textarea', validate ? 'validate': '', valid]\"\n              :length=\"length\">{{value}}</textarea>\n\n    <label :for=\"id\"\n           :class=\"value ? 'active' : ''\"\n           :data-error=\"errorMessage\"\n           :data-success=\"successMessage\">{{label}}<slot></slot></label>\n</div>\n";
 
 /***/ },
-/* 36 */
+/* 37 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(37)
-	__vue_script__ = __webpack_require__(39)
+	__webpack_require__(38)
+	__vue_script__ = __webpack_require__(40)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] ..\\src\\components\\forms\\date-picker.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(40)
+	__vue_template__ = __webpack_require__(41)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -11272,13 +11335,13 @@
 	})()}
 
 /***/ },
-/* 37 */
+/* 38 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(38);
+	var content = __webpack_require__(39);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(7)(content, {});
@@ -11298,7 +11361,7 @@
 	}
 
 /***/ },
-/* 38 */
+/* 39 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(6)();
@@ -11312,7 +11375,7 @@
 
 
 /***/ },
-/* 39 */
+/* 40 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -11417,22 +11480,22 @@
 	};
 
 /***/ },
-/* 40 */
+/* 41 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"input-field\">\n    <icon v-if=\"icon\"\n          class=\"prefix\"\n          :value=\"icon\"></icon>\n\n    <input v-el:input type=\"date\" class=\"datepicker\" :id=\"id\" :disabled=\"disabled\">\n    <label :for=\"id\" class=\"date-picker-active-label\">{{label}}<slot></slot></label>\n</div>\n";
 
 /***/ },
-/* 41 */
+/* 42 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(42)
+	__vue_script__ = __webpack_require__(43)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] ..\\src\\components\\tabs\\tabs.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(43)
+	__vue_template__ = __webpack_require__(44)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -11451,7 +11514,7 @@
 	})()}
 
 /***/ },
-/* 42 */
+/* 43 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -11469,22 +11532,22 @@
 	};
 
 /***/ },
-/* 43 */
+/* 44 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div>\n    <ul class=\"tabs\">\n        <slot></slot>\n    </ul>\n</div>\n";
 
 /***/ },
-/* 44 */
+/* 45 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(45)
+	__vue_script__ = __webpack_require__(46)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] ..\\src\\components\\tabs\\tab.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(46)
+	__vue_template__ = __webpack_require__(47)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -11503,7 +11566,7 @@
 	})()}
 
 /***/ },
-/* 45 */
+/* 46 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -11541,22 +11604,22 @@
 	};
 
 /***/ },
-/* 46 */
+/* 47 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<li :class=\"['tab', disabled ? 'disabled' : '']\">\n    <a :class=\"active ? 'active' : ''\" :href=\"'#' + tabId\">{{label}}</a>\n    <div :id=\"tabId\">\n        <slot></slot>\n    </div>\n</li>\n";
 
 /***/ },
-/* 47 */
+/* 48 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(48)
+	__vue_script__ = __webpack_require__(49)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] ..\\src\\components\\collapsible\\collapsible.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(49)
+	__vue_template__ = __webpack_require__(50)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -11575,7 +11638,7 @@
 	})()}
 
 /***/ },
-/* 48 */
+/* 49 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -11597,22 +11660,22 @@
 	};
 
 /***/ },
-/* 49 */
+/* 50 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<ul :class=\"['collapsible', popout ? 'popout' : '']\" :data-collapsible=\"behavior\">\n    <slot></slot>\n</ul>\n";
 
 /***/ },
-/* 50 */
+/* 51 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(51)
+	__vue_script__ = __webpack_require__(52)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] ..\\src\\components\\collapsible\\collapsible-item.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(52)
+	__vue_template__ = __webpack_require__(53)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -11631,7 +11694,7 @@
 	})()}
 
 /***/ },
-/* 51 */
+/* 52 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -11639,22 +11702,22 @@
 	module.exports = {};
 
 /***/ },
-/* 52 */
+/* 53 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<li><slot></slot></li>\n";
 
 /***/ },
-/* 53 */
+/* 54 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(54)
+	__vue_script__ = __webpack_require__(55)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] ..\\src\\components\\collapsible\\collapsible-body.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(55)
+	__vue_template__ = __webpack_require__(56)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -11673,7 +11736,7 @@
 	})()}
 
 /***/ },
-/* 54 */
+/* 55 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -11681,22 +11744,22 @@
 	module.exports = {};
 
 /***/ },
-/* 55 */
+/* 56 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"collapsible-body\">\n    <slot></slot>\n</div>\n";
 
 /***/ },
-/* 56 */
+/* 57 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(57)
+	__vue_script__ = __webpack_require__(58)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] ..\\src\\components\\collapsible\\collapsible-header.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(58)
+	__vue_template__ = __webpack_require__(59)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -11715,7 +11778,7 @@
 	})()}
 
 /***/ },
-/* 57 */
+/* 58 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -11744,22 +11807,22 @@
 	};
 
 /***/ },
-/* 58 */
+/* 59 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"['collapsible-header', active ? 'active' : '']\">\n    <mui-icon v-if=\"icon\" :value=\"icon\" :class=\"iconPosition\"></mui-icon>\n    {{label}}\n</div>\n";
 
 /***/ },
-/* 59 */
+/* 60 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(60)
+	__vue_script__ = __webpack_require__(61)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] ..\\src\\components\\cards\\card.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(61)
+	__vue_template__ = __webpack_require__(62)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -11778,7 +11841,7 @@
 	})()}
 
 /***/ },
-/* 60 */
+/* 61 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -11802,22 +11865,22 @@
 	};
 
 /***/ },
-/* 61 */
+/* 62 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"['card', size]\">\n    <slot></slot>\n</div>\n";
 
 /***/ },
-/* 62 */
+/* 63 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(63)
+	__vue_script__ = __webpack_require__(64)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] ..\\src\\components\\cards\\card-action.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(64)
+	__vue_template__ = __webpack_require__(65)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -11836,7 +11899,7 @@
 	})()}
 
 /***/ },
-/* 63 */
+/* 64 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -11844,22 +11907,22 @@
 	module.exports = {};
 
 /***/ },
-/* 64 */
+/* 65 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"card-action\">\n    <slot></slot>\n</div>\n";
 
 /***/ },
-/* 65 */
+/* 66 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(66)
+	__vue_script__ = __webpack_require__(67)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] ..\\src\\components\\cards\\card-content.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(67)
+	__vue_template__ = __webpack_require__(68)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -11878,7 +11941,7 @@
 	})()}
 
 /***/ },
-/* 66 */
+/* 67 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -11886,22 +11949,22 @@
 	module.exports = {};
 
 /***/ },
-/* 67 */
+/* 68 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"card-content\">\n    <slot></slot>\n</div>\n";
 
 /***/ },
-/* 68 */
+/* 69 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(69)
+	__vue_script__ = __webpack_require__(70)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] ..\\src\\components\\cards\\card-image.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(73)
+	__vue_template__ = __webpack_require__(74)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -11920,14 +11983,14 @@
 	})()}
 
 /***/ },
-/* 69 */
+/* 70 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	module.exports = {
 	    components: {
-	        'card-title': __webpack_require__(70)
+	        'card-title': __webpack_require__(71)
 	    },
 	
 	    props: {
@@ -11963,16 +12026,16 @@
 	};
 
 /***/ },
-/* 70 */
+/* 71 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(71)
+	__vue_script__ = __webpack_require__(72)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] ..\\src\\components\\cards\\card-title.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(72)
+	__vue_template__ = __webpack_require__(73)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -11991,7 +12054,7 @@
 	})()}
 
 /***/ },
-/* 71 */
+/* 72 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -12005,28 +12068,28 @@
 	};
 
 /***/ },
-/* 72 */
+/* 73 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<span class=\"card-title\"><slot></slot></span>\n";
 
 /***/ },
-/* 73 */
+/* 74 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div :class=\"divClasses\">\n    <img :src=\"src\" :class=\"imgClasses\">\n    <card-title v-if=\"title\" :title=\"title\"></card-title>\n    <!-- this slot can be put as styled card title -->\n    <slot></slot>\n</div>\n";
 
 /***/ },
-/* 74 */
+/* 75 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(75)
+	__vue_script__ = __webpack_require__(76)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] ..\\src\\components\\cards\\card-panel.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(76)
+	__vue_template__ = __webpack_require__(77)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -12045,7 +12108,7 @@
 	})()}
 
 /***/ },
-/* 75 */
+/* 76 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -12053,22 +12116,22 @@
 	module.exports = {};
 
 /***/ },
-/* 76 */
+/* 77 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"card-panel\">\n    <slot></slot>\n</div>\n";
 
 /***/ },
-/* 77 */
+/* 78 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(78)
+	__vue_script__ = __webpack_require__(79)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] ..\\src\\components\\cards\\card-reveal.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(79)
+	__vue_template__ = __webpack_require__(80)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -12087,7 +12150,7 @@
 	})()}
 
 /***/ },
-/* 78 */
+/* 79 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -12095,17 +12158,17 @@
 	module.exports = {};
 
 /***/ },
-/* 79 */
+/* 80 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"card-reveal\">\n    <slot></slot>\n</div>\n";
 
 /***/ },
-/* 80 */
+/* 81 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(81)
+	__vue_script__ = __webpack_require__(82)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
@@ -12129,13 +12192,13 @@
 	})()}
 
 /***/ },
-/* 81 */
+/* 82 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	var uuid = __webpack_require__(12);
-	var ButtonPropMixin = __webpack_require__(82);
+	var ButtonPropMixin = __webpack_require__(83);
 	var DropdownPropMixin = __webpack_require__(84);
 	
 	module.exports = {
@@ -12202,10 +12265,10 @@
 	};
 
 /***/ },
-/* 82 */
+/* 83 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var classes = __webpack_require__(83).classes;
+	var classes = __webpack_require__(20).classes;
 	
 	module.exports = {
 	    props: {
@@ -12241,25 +12304,6 @@
 	            default: false
 	        }
 	    }
-	};
-
-/***/ },
-/* 83 */
-/***/ function(module, exports) {
-
-	
-	
-	function classes(options) {
-	    var cls = [];
-	    for(var p in options) {
-	        if(options[p])
-	            cls.push(p);
-	    }
-	    return cls;
-	}
-	
-	module.exports = {
-	    classes: classes
 	};
 
 /***/ },
@@ -12372,7 +12416,7 @@
 /* 88 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var classes = __webpack_require__(83).classes;
+	var classes = __webpack_require__(20).classes;
 	
 	module.exports = {
 	
@@ -12476,7 +12520,7 @@
 
 	'use strict';
 	
-	var classes = __webpack_require__(83).classes;
+	var classes = __webpack_require__(20).classes;
 	var ButtonMixin = __webpack_require__(88);
 	
 	module.exports = {
@@ -12565,7 +12609,7 @@
 
 	'use strict';
 	
-	var classes = __webpack_require__(83).classes;
+	var classes = __webpack_require__(20).classes;
 	
 	module.exports = {
 	    props: {
@@ -12796,7 +12840,7 @@
 
 	'use strict';
 	
-	var classes = __webpack_require__(83).classes;
+	var classes = __webpack_require__(20).classes;
 	
 	module.exports = {
 	    props: {
@@ -12856,7 +12900,7 @@
 
 	'use strict';
 	
-	var classes = __webpack_require__(83).classes;
+	var classes = __webpack_require__(20).classes;
 	
 	module.exports = {
 	    props: {
@@ -13048,7 +13092,7 @@
 
 	'use strict';
 	
-	var classes = __webpack_require__(83).classes;
+	var classes = __webpack_require__(20).classes;
 	
 	module.exports = {
 	    components: {
@@ -13212,7 +13256,7 @@
 
 	'use strict';
 	
-	var ButtonPropMixin = __webpack_require__(82);
+	var ButtonPropMixin = __webpack_require__(83);
 	var DropdownPropMixin = __webpack_require__(84);
 	var NavItemPropMixin = __webpack_require__(123);
 	
@@ -13220,7 +13264,7 @@
 	    mixins: [ButtonPropMixin, DropdownPropMixin, NavItemPropMixin],
 	
 	    components: {
-	        dropdown: __webpack_require__(80)
+	        dropdown: __webpack_require__(81)
 	    },
 	
 	    props: {
@@ -13277,8 +13321,8 @@
 	    mixins: [NavItemPropMixin],
 	
 	    components: {
-	        'collapsible': __webpack_require__(47),
-	        'collapsible-item': __webpack_require__(50)
+	        'collapsible': __webpack_require__(48),
+	        'collapsible-item': __webpack_require__(51)
 	    }
 	};
 
@@ -13322,7 +13366,7 @@
 
 	'use strict';
 	
-	var classes = __webpack_require__(83).classes;
+	var classes = __webpack_require__(20).classes;
 	
 	module.exports = {
 	    props: {
@@ -13424,7 +13468,7 @@
 
 	'use strict';
 	
-	var classes = __webpack_require__(83).classes;
+	var classes = __webpack_require__(20).classes;
 	
 	module.exports = {
 	    components: {
@@ -13586,7 +13630,7 @@
 
 	'use strict';
 	
-	var classes = __webpack_require__(83).classes;
+	var classes = __webpack_require__(20).classes;
 	
 	
 	module.exports = {
@@ -13718,7 +13762,7 @@
 
 	'use strict';
 	
-	var classes = __webpack_require__(83).classes;
+	var classes = __webpack_require__(20).classes;
 	
 	module.exports = {
 	    props: {
@@ -13903,7 +13947,7 @@
 /* 158 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"row\">\n\n    <div class=\"col s12\">\n        <btn @click=\"openModal\">open modal</btn>\n    </div>\n    <modal :open=\"modalStatus\" bottom-sheet>\n        <modal-content>\n            <h4>Modal Header</h4>\n            <p>A bunch of text</p>\n        </modal-content>\n        <modal-footer>\n            <btn @click=\"closeModal\" class=\"modal-action\" type=\"flat\">close</btn>\n            <btn @click=\"confirmModal\" class=\"modal-action\" type=\"flat\">Confirm</btn>\n        </modal-footer>\n    </modal>\n\n    <div class=\"row\">\n        <dropdown :label=\"label\" :items=\"dropdownItems\" disabled></dropdown>\n        <dropdown label=\"I am a dropdown 2\" icon=\"edit\" icon-position=\"right\" :large=\"true\">\n            <ul>\n                <li><a href=\"#!\">223<badge>2</badge></a></li>\n                <li class=\"divider\"></li>\n                <li><a href=\"#!\">224<badge new>2</badge></a></li>\n            </ul>\n        </dropdown>\n    </div>\n\n    <div class=\"row\">\n        <breadcrumbs :crumbs=\"crumbs\"></breadcrumbs>\n        <breadcrumbs>\n            <a href=\"#!\">a in slot</a>\n            <a href=\"#!\">a2 in slot</a>\n            <a href=\"#!\">a3 in slot</a>\n        </breadcrumbs>\n    </div>\n\n    <div class=\"row\">\n        <chip label=\"Tag\"></chip>\n        <chip label=\"Tag\" removable :image=\"imageUrl\"></chip>\n    </div>\n\n    <div class=\"row\">\n        <link-collection>\n            <a href=\"#\" class=\"active\">active</a>\n            <a href=\"#\">link</a>\n        </link-collection>\n        <link-collection :links=\"links\"></link-collection>\n    </div>\n\n    <div class=\"row\">\n        <collection with-header>\n            <collection-header><h4>header</h4></collection-header>\n            <collection-item>Jack Yang</collection-item>\n            <collection-item dismissable>Tom J</collection-item>\n            <collection-item>\n                <div>\n                    Alvin\n                    <a href=\"#!\" class=\"secondary-content\">\n                        <icon value=\"send\"></icon>\n                    </a>\n                </div>\n            </collection-item>\n        </collection>\n    </div>\n\n    <div class=\"row\">\n        <collection>\n            <collection-item avatar>\n                <img :src=\"imageUrl\" alt=\"\" class=\"circle\">\n                <span class=\"title\">Title</span>\n                <p>First Line <br>\n                    Second Line\n                </p>\n                <a href=\"#!\" class=\"secondary-content\"><icon value=\"grade\"></icon></a>\n            </collection-item>\n        </collection>\n    </div>\n\n    <div class=\"row\">\n        <search-bar placeholder=\"search str\"></search-bar>\n    </div>\n\n    <div class=\"row\">\n        <navbar logo=\"Material UI with Vue\" logo-href=\"//wedding.jackyang.me\" side-nav-id=\"sideNav\" show-on-large>\n            <nav-item><icon value=\"more_vert\"></icon></nav-item>\n            <nav-item><a href=\"#\">Sass</a></nav-item>\n            <nav-item><a href=\"#\">Sass</a></nav-item>\n            <nav-item><btn label=\"button\"></btn></nav-item>\n            <nav-dropdown-item label=\"I am a dropdown\" :items=\"dropdownItems\" active></nav-dropdown-item>\n            <nav-dropdown-item label=\"I am a dropdown 2\">\n                <ul>\n                    <li><a href=\"#!\">223</a></li>\n                    <li class=\"divider\"></li>\n                    <li><a href=\"#!\">224</a></li>\n                </ul>\n            </nav-dropdown-item>\n        </navbar>\n    </div>\n\n    <div class=\"row\">\n        <side-nav id=\"sideNav\">\n            <nav-item active><a href=\"#\" class=\"waves-effect waves-teal\">Link 1</a></nav-item>\n            <nav-item><a href=\"#\"  class=\"waves-effect waves-teal\">Link 2</a></nav-item>\n            <nav-collapsible-item>\n                <collapsible-header label=\"dropdown menu\" icon=\"arrow_drop_down\" icon-position=\"right\"></collapsible-header>\n                <collapsible-body>\n                    <ul>\n                        <nav-item><a href=\"#\">Link 1</a></nav-item>\n                        <nav-item><a href=\"#\">Link 2</a></nav-item>\n                    </ul>\n                </collapsible-body>\n            </nav-collapsible-item>\n        </side-nav>\n    </div>\n\n    <div class=\"row\">\n        <btn label=\"tooltipped button\" icon=\"edit\" icon-position=\"left\" @click=\"clickButton\" v-tooltip=\"{position:'top',text:'i am tooltip'}\"></btn>\n        <btn label=\"large button\" :large=\"true\" icon=\"edit\" icon-position=\"left\" @click=\"clickButton\"></btn>\n        <btn class='waves-teal' label=\"flat button\" type=\"flat\" icon=\"edit\" icon-position=\"right\"></btn>\n        <btn type=\"floating\" icon=\"add\"></btn>\n        <btn type=\"floating\" :large=\"true\" :light-wave=\"false\" icon=\"edit\" class=\"red\"></btn>\n    </div>\n\n    <div class=\"row\">\n        <fixed-action-button icon=\"edit\" :horizontal=\"true\" :click-only=\"true\" :active=\"true\">\n            <ul>\n                <li><btn type=\"floating\" class=\"red\" icon=\"edit\"></btn></li>\n                <li><btn type=\"floating\" class=\"yellow\" icon=\"edit\"></btn></li>\n                <li><btn type=\"floating\" class=\"green\" icon=\"edit\"></btn></li>\n                <li><btn type=\"floating\" class=\"blue\" icon=\"edit\"></btn></li>\n            </ul>\n        </fixed-action-button>\n    </div>\n\n    <div class=\"row\">\n        <card size=\"medium\">\n            <card-image :src=\"imageUrl\">\n                <card-title>wedding image</card-title>\n            </card-image>\n            <card-content>\n                <card-title class=\"red-text\" title=\"123\">Title</card-title>\n                <p>this is description</p>\n            </card-content>\n            <card-action>\n                <a href=\"#\">Link A</a>\n                <a href=\"#\">Link B</a>\n            </card-action>\n        </card>\n    </div>\n\n    <div class=\"row\">\n        <card :revealed=\"false\">\n            <card-image :src=\"imageUrl\" activator></card-image>\n            <card-content>\n                <card-title class=\"red-text\" title=\"123\">Title</card-title>\n                <p>this is description</p>\n            </card-content>\n            <card-reveal>\n                <card-title class=\"blue-text\">reveal title</card-title>\n                <p>Here is some more information about this product that is o</p>\n            </card-reveal>\n        </card>\n    </div>\n\n    <div class=\"row\">\n        <radio class=\"col s4\" group=\"g1\" :items=\"radioItems\" :selected.sync=\"radioSelected\" with-gap @radio-click=\"clickRadio\"></radio>\n        <checkbox class=\"col s4\" :items=\"checkboxItems\" :selected.sync=\"checkboxSelected\" @checkbox-change=\"changeCheckbox\"></checkbox>\n        <div class=\"col s4\">\n            <switch :value.sync=\"switchValue\" left-label=\"off\" right-label=\"on\" @switch-change=\"changeSwitch\"></switch>\n            <p></p>\n            <switch :value=\"false\" disabled left-label=\"off\" right-label=\"on\"></switch>\n            <p></p>\n            <switch :value=\"true\" disabled left-label=\"off\" right-label=\"on\"></switch>\n        </div>\n    </div>\n\n    <div class=\"col s8\">\n        <range min=\"20\" max=\"50\" :value.sync=\"rangeValue\" @range-input=\"inputRange\"></range>\n        <p></p>\n        <range disabled></range>\n    </div>\n\n    <div class=\"row\">\n        <switch :value.sync=\"openPicker\" left-label=\"close\" right-label=\"open\" class=\"col s12\"></switch>\n        <date-picker :date.sync=\"date\" :opened.sync=\"openPicker\" :picker-options=\"{selectMonths: true}\" label=\"birthday\" class=\"col s12\"></date-picker>\n        <date-picker :date=\"new Date()\" label=\"today\" icon=\"edit\" disabled class=\"col s12\"></date-picker>\n        <text-field label=\"text field\"\n                    :validate=\"true\"\n                    class=\"col s12\"\n                    @text-field-input=\"handleEvent\"\n                    @text-field-click=\"handleEvent\"\n                    @text-field-blur=\"handleEvent\"\n                    @text-field-keydown=\"handleEvent\"\n                    @text-field-keyup=\"handleEvent\"\n                    @text-field-focus=\"handleEvent\"\n                    @text-field-change=\"handleEvent\"\n                    success-message=\"right\"></text-field>\n\n        <text-field class=\"col s12\">slot label</text-field>\n\n        <text-field label=\"text field\"\n                    icon=\"phone\"\n                    length=\"10\"\n                    class=\"col s12\"></text-field>\n\n        <text-field label=\"text field\"\n                    icon=\"phone\"\n                    :disabled=\"true\"\n                    :value.sync=\"text\"\n                    :validate=\"true\"\n                    class=\"col s12\"></text-field>\n\n        <text-field label=\"Email\"\n                    icon=\"email\"\n                    type=\"email\"\n                    length=\"10\"\n                    :validate=\"true\"\n                    class=\"col s12\"\n                    error-message=\"wrong email\"\n                    success-message=\"correct email\"></text-field>\n\n        <text-field label=\"password\"\n                    :value.sync=\"text\"\n                    :validate=\"true\"\n                    type=\"password\"\n                    class=\"col s12\"\n                    @text-field-input=\"handleTextFieldInput\"\n                    success-message=\"right\"\n                    placeholder=\"enter your password\"></text-field>\n\n        <text-area class=\"col s12\"\n                   label=\"my text field\"\n                   value=\"this is description\"\n                   :validate=\"true\"\n                   :length=\"10\"\n                   error-message=\"wrong\"\n                   @input=\"handleEvent\"\n                   icon=\"phone\"></text-area>\n\n        <text-area class=\"col s12\"\n                   label=\"counter text area\"\n                   value=\"this is description\"></text-area>\n\n        <select-field\n                class=\"col s12\"\n                label=\"select field\"\n                :selected.sync=\"optionSelected\"\n                :options=\"options\">slot</select-field>\n    </div>\n\n\n    <icon class=\"red-text\" value=\"add\" @click=\"changeOptions\"></icon>\n\n    <div class=\"row\">\n        <collapsible behavior=\"expandable\" popout>\n            <collapsible-item>\n                <collapsible-header active label=\"first one\" icon=\"edit\"></collapsible-header>\n                <collapsible-body><p>test for item 1</p></collapsible-body>\n            </collapsible-item>\n            <collapsible-item>\n                <collapsible-header label=\"2nd one\" icon=\"edit\"></collapsible-header>\n                <collapsible-body>\n                    <div class=\"row\">\n                        <text-area class=\"col s12\"\n                                   label=\"my text field\"\n                                   value=\"this is description\"\n                                   :validate=\"true\"\n                                   :length=\"10\"\n                                   error-message=\"wrong\"\n                                   @input=\"handleEvent\"\n                                   icon=\"phone\"></text-area>\n                    </div>\n                </collapsible-body>\n            </collapsible-item>\n        </collapsible>\n    </div>\n\n    <div class=\"row\">\n        <material-box :image-url=\"imageUrl\" caption=\"test image\" width=\"500\"></material-box>\n    </div>\n\n    <div class=\"row\">\n        <linear-progress color=\"red\" background-color=\"red lighten-4\"></linear-progress>\n        <linear-progress determinate percentage=\"70\"></linear-progress>\n        <circle-progress color=\"green\"></circle-progress>\n        <circle-progress flash size=\"big\"></circle-progress>\n        <pagination>\n            <pagination-item prev disabled></pagination-item>\n            <pagination-item active>1</pagination-item>\n            <pagination-item>2</pagination-item>\n            <pagination-item>3</pagination-item>\n            <pagination-item next></pagination-item>\n        </pagination>\n    </div>\n\n    <div class=\"row\">\n        <tabs>\n            <tab label=\"tab1\" >\n                this is tab page 1\n            </tab>\n            <tab label=\"tab2\" disabled>\n                <div class=\"row\">\n                    <select-field\n                            class=\"col s12\"\n                            label=\"select field\"\n                            :options=\"options\"></select-field>\n\n                    <text-area class=\"col s12\"\n                               label=\"my text field\"\n                               value=\"this is description\"\n                               :validate=\"true\"\n                               :length=\"10\"\n                               error-message=\"wrong\"\n                               @input=\"handleEvent\"\n                               icon=\"phone\"></text-area>\n                </div>\n            </tab>\n        </tabs>\n    </div>\n</div>\n\n\n";
+	module.exports = "\n<div class=\"row\">\n\n    <div class=\"col s12\">\n        <btn @click=\"openModal\">open modal</btn>\n    </div>\n    <modal :open=\"modalStatus\" bottom-sheet>\n        <modal-content>\n            <h4>Modal Header</h4>\n            <p>A bunch of text</p>\n        </modal-content>\n        <modal-footer>\n            <btn @click=\"closeModal\" class=\"modal-action\" type=\"flat\">close</btn>\n            <btn @click=\"confirmModal\" class=\"modal-action\" type=\"flat\">Confirm</btn>\n        </modal-footer>\n    </modal>\n\n    <div class=\"row\">\n        <dropdown :label=\"label\" :items=\"dropdownItems\" disabled></dropdown>\n        <dropdown label=\"I am a dropdown 2\" icon=\"edit\" icon-position=\"right\" :large=\"true\">\n            <ul>\n                <li><a href=\"#!\">223<badge>2</badge></a></li>\n                <li class=\"divider\"></li>\n                <li><a href=\"#!\">224<badge new>2</badge></a></li>\n            </ul>\n        </dropdown>\n    </div>\n\n    <div class=\"row\">\n        <breadcrumbs :crumbs=\"crumbs\"></breadcrumbs>\n        <breadcrumbs>\n            <a href=\"#!\">a in slot</a>\n            <a href=\"#!\">a2 in slot</a>\n            <a href=\"#!\">a3 in slot</a>\n        </breadcrumbs>\n    </div>\n\n    <div class=\"row\">\n        <chip label=\"Tag\"></chip>\n        <chip label=\"Tag\" removable :image=\"imageUrl\"></chip>\n    </div>\n\n    <div class=\"row\">\n        <link-collection>\n            <a href=\"#\" class=\"active\">active</a>\n            <a href=\"#\">link</a>\n        </link-collection>\n        <link-collection :links=\"links\"></link-collection>\n    </div>\n\n    <div class=\"row\">\n        <collection with-header>\n            <collection-header><h4>header</h4></collection-header>\n            <collection-item>Jack Yang</collection-item>\n            <collection-item dismissable>Tom J</collection-item>\n            <collection-item>\n                <div>\n                    Alvin\n                    <a href=\"#!\" class=\"secondary-content\">\n                        <icon value=\"send\"></icon>\n                    </a>\n                </div>\n            </collection-item>\n        </collection>\n    </div>\n\n    <div class=\"row\">\n        <collection>\n            <collection-item avatar>\n                <img :src=\"imageUrl\" alt=\"\" class=\"circle\">\n                <span class=\"title\">Title</span>\n                <p>First Line <br>\n                    Second Line\n                </p>\n                <a href=\"#!\" class=\"secondary-content\"><icon value=\"grade\"></icon></a>\n            </collection-item>\n        </collection>\n    </div>\n\n    <div class=\"row\">\n        <search-bar placeholder=\"search str\"></search-bar>\n    </div>\n\n    <div class=\"row\">\n        <navbar logo=\"Material UI with Vue\" logo-href=\"//wedding.jackyang.me\" side-nav-id=\"sideNav\" show-on-large>\n            <nav-item><icon value=\"more_vert\"></icon></nav-item>\n            <nav-item><a href=\"#\">Sass</a></nav-item>\n            <nav-item><a href=\"#\">Sass</a></nav-item>\n            <nav-item><btn label=\"button\"></btn></nav-item>\n            <nav-dropdown-item label=\"I am a dropdown\" :items=\"dropdownItems\" active></nav-dropdown-item>\n            <nav-dropdown-item label=\"I am a dropdown 2\">\n                <ul>\n                    <li><a href=\"#!\">223</a></li>\n                    <li class=\"divider\"></li>\n                    <li><a href=\"#!\">224</a></li>\n                </ul>\n            </nav-dropdown-item>\n        </navbar>\n    </div>\n\n    <div class=\"row\">\n        <side-nav id=\"sideNav\">\n            <nav-item active><a href=\"#\" class=\"waves-effect waves-teal\">Link 1</a></nav-item>\n            <nav-item><a href=\"#\"  class=\"waves-effect waves-teal\">Link 2</a></nav-item>\n            <nav-collapsible-item>\n                <collapsible-header label=\"dropdown menu\" icon=\"arrow_drop_down\" icon-position=\"right\"></collapsible-header>\n                <collapsible-body>\n                    <ul>\n                        <nav-item><a href=\"#\">Link 1</a></nav-item>\n                        <nav-item><a href=\"#\">Link 2</a></nav-item>\n                    </ul>\n                </collapsible-body>\n            </nav-collapsible-item>\n        </side-nav>\n    </div>\n\n    <div class=\"row\">\n        <btn label=\"tooltipped button\" icon=\"edit\" icon-position=\"left\" @click=\"clickButton\" v-tooltip=\"{position:'top',text:'i am tooltip'}\"></btn>\n        <btn label=\"large button\" :large=\"true\" icon=\"edit\" icon-position=\"left\" @click=\"clickButton\"></btn>\n        <btn class='waves-teal' label=\"flat button\" type=\"flat\" icon=\"edit\" icon-position=\"right\"></btn>\n        <btn type=\"floating\" icon=\"add\"></btn>\n        <btn type=\"floating\" :large=\"true\" :light-wave=\"false\" icon=\"edit\" class=\"red\"></btn>\n    </div>\n\n    <div class=\"row\">\n        <fixed-action-button icon=\"edit\" :horizontal=\"true\" :click-only=\"true\" :active=\"true\">\n            <ul>\n                <li><btn type=\"floating\" class=\"red\" icon=\"edit\"></btn></li>\n                <li><btn type=\"floating\" class=\"yellow\" icon=\"edit\"></btn></li>\n                <li><btn type=\"floating\" class=\"green\" icon=\"edit\"></btn></li>\n                <li><btn type=\"floating\" class=\"blue\" icon=\"edit\"></btn></li>\n            </ul>\n        </fixed-action-button>\n    </div>\n\n    <div class=\"row\">\n        <card size=\"medium\">\n            <card-image :src=\"imageUrl\">\n                <card-title>wedding image</card-title>\n            </card-image>\n            <card-content>\n                <card-title class=\"red-text\" title=\"123\">Title</card-title>\n                <p>this is description</p>\n            </card-content>\n            <card-action>\n                <a href=\"#\">Link A</a>\n                <a href=\"#\">Link B</a>\n            </card-action>\n        </card>\n    </div>\n\n    <div class=\"row\">\n        <card :revealed=\"false\">\n            <card-image :src=\"imageUrl\" activator></card-image>\n            <card-content>\n                <card-title class=\"red-text\" title=\"123\">Title</card-title>\n                <p>this is description</p>\n            </card-content>\n            <card-reveal>\n                <card-title class=\"blue-text\">reveal title</card-title>\n                <p>Here is some more information about this product that is o</p>\n            </card-reveal>\n        </card>\n    </div>\n\n    <div class=\"row\">\n        <radio class=\"col s4\" group=\"g1\" :items=\"radioItems\" :selected.sync=\"radioSelected\" with-gap @radio-click=\"clickRadio\"></radio>\n        <checkbox class=\"col s4\" :items=\"checkboxItems\" :selected.sync=\"checkboxSelected\" @checkbox-change=\"changeCheckbox\"></checkbox>\n        <div class=\"col s4\">\n            <switch :value.sync=\"switchValue\" left-label=\"off\" right-label=\"on\" @switch-change=\"changeSwitch\"></switch>\n            <p></p>\n            <switch :value=\"false\" disabled left-label=\"off\" right-label=\"on\"></switch>\n            <p></p>\n            <switch :value=\"true\" disabled left-label=\"off\" right-label=\"on\"></switch>\n        </div>\n    </div>\n\n    <div class=\"col s8\">\n        <range min=\"20\" max=\"50\" :value.sync=\"rangeValue\" @range-input=\"inputRange\"></range>\n        <p></p>\n        <range disabled></range>\n    </div>\n\n    <div class=\"row\">\n        <switch :value.sync=\"openPicker\" left-label=\"close\" right-label=\"open\" class=\"col s12\"></switch>\n        <date-picker :date.sync=\"date\" :opened.sync=\"openPicker\" :picker-options=\"{selectMonths: true}\" label=\"birthday\" class=\"col s12\"></date-picker>\n        <date-picker :date=\"new Date()\" label=\"today\" icon=\"edit\" disabled class=\"col s12\"></date-picker>\n        <text-field label=\"text field\"\n                    :validate=\"true\"\n                    class=\"col s12\"\n                    @text-field-input=\"handleEvent\"\n                    @text-field-click=\"handleEvent\"\n                    @text-field-blur=\"handleEvent\"\n                    @text-field-keydown=\"handleEvent\"\n                    @text-field-keyup=\"handleEvent\"\n                    @text-field-focus=\"handleEvent\"\n                    @text-field-change=\"handleEvent\"\n                    success-message=\"right\"></text-field>\n\n        <text-field class=\"col s12\">slot label</text-field>\n\n        <text-field label=\"text field\"\n                    icon=\"phone\"\n                    length=\"10\"\n                    class=\"col s12\"></text-field>\n\n        <text-field label=\"text field\"\n                    icon=\"phone\"\n                    :disabled=\"true\"\n                    :value.sync=\"text\"\n                    :validate=\"true\"\n                    class=\"col s12\"></text-field>\n\n        <text-field label=\"Email\"\n                    icon=\"email\"\n                    type=\"email\"\n                    length=\"10\"\n                    :validate=\"true\"\n                    class=\"col s12\"\n                    error-message=\"wrong email\"\n                    success-message=\"correct email\"></text-field>\n\n        <text-field label=\"password\"\n                    :value.sync=\"text\"\n                    :validate=\"true\"\n                    type=\"password\"\n                    class=\"col s12\"\n                    @text-field-input=\"handleTextFieldInput\"\n                    success-message=\"right\"\n                    placeholder=\"enter your password\"></text-field>\n\n        <text-area class=\"col s12\"\n                   label=\"my text field\"\n                   value=\"this is description\"\n                   :validate=\"true\"\n                   :length=\"10\"\n                   error-message=\"wrong\"\n                   @input=\"handleEvent\"\n                   icon=\"phone\"></text-area>\n\n        <text-area class=\"col s12\"\n                   label=\"counter text area\"\n                   value=\"this is description\"></text-area>\n\n        <select-field\n                class=\"col s12\"\n                label=\"select field\"\n                :selected.sync=\"optionSelected\"\n                :options=\"options\"></select-field>\n\n        <select-field\n                class=\"col s12\"\n                label=\"group selection\"\n                :selected.sync=\"optionSelected\"\n                :group-options=\"groupOptions\"></select-field>\n\n        <div class=\"col s12\">\n            <label>browser default</label>\n            <select-field :options=\"options\" browser-default></select-field>\n        </div>\n\n        <select-field\n                class=\"col s12\"\n                icon-position=\"right\"\n                :circle-icon=\"false\"\n                multiple\n                :selected.sync=\"optionSelected\"\n                :options=\"options\">multi selection</select-field>\n    </div>\n\n\n    <icon class=\"red-text\" value=\"add\" @click=\"changeOptions\"></icon>\n\n    <div class=\"row\">\n        <collapsible behavior=\"expandable\" popout>\n            <collapsible-item>\n                <collapsible-header active label=\"first one\" icon=\"edit\"></collapsible-header>\n                <collapsible-body><p>test for item 1</p></collapsible-body>\n            </collapsible-item>\n            <collapsible-item>\n                <collapsible-header label=\"2nd one\" icon=\"edit\"></collapsible-header>\n                <collapsible-body>\n                    <div class=\"row\">\n                        <text-area class=\"col s12\"\n                                   label=\"my text field\"\n                                   value=\"this is description\"\n                                   :validate=\"true\"\n                                   :length=\"10\"\n                                   error-message=\"wrong\"\n                                   @input=\"handleEvent\"\n                                   icon=\"phone\"></text-area>\n                    </div>\n                </collapsible-body>\n            </collapsible-item>\n        </collapsible>\n    </div>\n\n    <div class=\"row\">\n        <material-box :image-url=\"imageUrl\" caption=\"test image\" width=\"500\"></material-box>\n    </div>\n\n    <div class=\"row\">\n        <linear-progress color=\"red\" background-color=\"red lighten-4\"></linear-progress>\n        <linear-progress determinate percentage=\"70\"></linear-progress>\n        <circle-progress color=\"green\"></circle-progress>\n        <circle-progress flash size=\"big\"></circle-progress>\n        <pagination>\n            <pagination-item prev disabled></pagination-item>\n            <pagination-item active>1</pagination-item>\n            <pagination-item>2</pagination-item>\n            <pagination-item>3</pagination-item>\n            <pagination-item next></pagination-item>\n        </pagination>\n    </div>\n\n    <div class=\"row\">\n        <tabs>\n            <tab label=\"tab1\" >\n                this is tab page 1\n            </tab>\n            <tab label=\"tab2\" disabled>\n                <div class=\"row\">\n                    <select-field\n                            class=\"col s12\"\n                            label=\"select field\"\n                            :options=\"options\"></select-field>\n\n                    <text-area class=\"col s12\"\n                               label=\"my text field\"\n                               value=\"this is description\"\n                               :validate=\"true\"\n                               :length=\"10\"\n                               error-message=\"wrong\"\n                               @input=\"handleEvent\"\n                               icon=\"phone\"></text-area>\n                </div>\n            </tab>\n        </tabs>\n    </div>\n</div>\n\n\n";
 
 /***/ }
 /******/ ]);

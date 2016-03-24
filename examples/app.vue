@@ -250,7 +250,26 @@
                     class="col s12"
                     label="select field"
                     :selected.sync="optionSelected"
-                    :options="options">slot</select-field>
+                    :options="options"></select-field>
+
+            <select-field
+                    class="col s12"
+                    label="group selection"
+                    :selected.sync="optionSelected"
+                    :group-options="groupOptions"></select-field>
+
+            <div class="col s12">
+                <label>browser default</label>
+                <select-field :options="options" browser-default></select-field>
+            </div>
+
+            <select-field
+                    class="col s12"
+                    icon-position="right"
+                    :circle-icon="false"
+                    multiple
+                    :selected.sync="optionSelected"
+                    :options="options">multi selection</select-field>
         </div>
 
 
@@ -385,11 +404,16 @@
             return {
                 imageUrl: 'http://wedding.jackyang.me/static/images/wedding_pic_02.jpg',
                 options: [
-                    {value: '0', text: 'zero', disabled: false},
-                    {value: '1', text: 'one', disabled: false},
-                    {value: '2', text: 'two', disabled: false},
-                    {value: '3', text: 'three', disabled: false}],
+                    {value: '0', text: 'zero', disabled: false, icon: 'http://wedding.jackyang.me/static/images/wedding_pic_02.jpg'},
+                    {value: '1', text: 'one', disabled: false, icon: 'http://wedding.jackyang.me/static/images/wedding_pic_02.jpg'},
+                    {value: '2', text: 'two', disabled: false, icon: 'http://wedding.jackyang.me/static/images/wedding_pic_02.jpg'},
+                    {value: '3', text: 'three', disabled: false, icon: 'http://wedding.jackyang.me/static/images/wedding_pic_02.jpg'}],
                 optionSelected: '2',
+                groupOptions: {
+                    g1: [{value: '0', text: 'zero', disabled: false}, {value: '1', text: 'one', disabled: false}],
+                    g2: [{value: '2', text: 'two', disabled: false}, {value: '3', text: 'three', disabled: false}]
+                },
+                groupOptionSelected: '2',
                 dropdownItems: [
                     {href: '#', text: '123'},
                     {href: '#', text: '223'},
