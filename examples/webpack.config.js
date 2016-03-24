@@ -16,11 +16,11 @@ module.exports = {
             {test: /\.vue$/, loader: 'vue'}
         ]
     },
-    /*plugins: [
+    plugins: [
         new webpack.optimize.UglifyJsPlugin({
             compress: {
                 warnings: false
             }
         })
-    ]*/
+    ]
 }
