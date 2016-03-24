@@ -6,6 +6,7 @@ module.exports = {
     'switch': require('./forms/switch.vue'),
     'range': require('./forms/range.vue'),
     'text-area': require('./forms/text-area.vue'),
+    'date-picker': require('./forms/date-picker.vue'),
     'icon': require('./icons/icon.vue'),
     'tabs': require('./tabs/tabs.vue'),
     'tab': require('./tabs/tab.vue'),

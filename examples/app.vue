@@ -185,61 +185,65 @@
             <range disabled></range>
         </div>
 
-        <text-field label="text field"
-                    :validate="true"
-                    class="col s12"
-                    @text-field-input="handleEvent"
-                    @text-field-click="handleEvent"
-                    @text-field-blur="handleEvent"
-                    @text-field-keydown="handleEvent"
-                    @text-field-keyup="handleEvent"
-                    @text-field-focus="handleEvent"
-                    @text-field-change="handleEvent"
-                    success-message="right"></text-field>
-
-        <text-field label="text field"
-                    icon="phone"
-                    class="col s12"></text-field>
-
-        <text-field label="text field"
-                    icon="phone"
-                    :disabled="true"
-                    :value.sync="text"
-                    :validate="true"
-                    class="col s12"></text-field>
-
-        <text-field label="Email"
-                    icon="email"
-                    type="email"
-                    :validate="true"
-                    class="col s12"
-                    error-message="wrong email"
-                    success-message="correct email"></text-field>
-
-        <text-field label="password"
-                    :value.sync="text"
-                    :validate="true"
-                    type="password"
-                    class="col s12"
-                    @text-field-input="handleTextFieldInput"
-                    success-message="right"
-                    placeholder="enter your password"></text-field>
-
-        <text-area class="col s12"
-                   label="my text field"
-                   value="this is description"
-                   :validate="true"
-                   :length="10"
-                   error-message="wrong"
-                   @input="handleEvent"
-                   icon="phone"></text-area>
-
         <div class="row">
+            <switch :value.sync="openPicker" left-label="close" right-label="open" class="col s12"></switch>
+            <date-picker :date.sync="date" :opened.sync="openPicker" :picker-options="{selectMonths: true}" label="birthday" class="col s12"></date-picker>
+            <date-picker :date="new Date()" label="today" icon="edit" disabled class="col s12"></date-picker>
+            <text-field label="text field"
+                        :validate="true"
+                        class="col s12"
+                        @text-field-input="handleEvent"
+                        @text-field-click="handleEvent"
+                        @text-field-blur="handleEvent"
+                        @text-field-keydown="handleEvent"
+                        @text-field-keyup="handleEvent"
+                        @text-field-focus="handleEvent"
+                        @text-field-change="handleEvent"
+                        success-message="right"></text-field>
+
+            <text-field label="text field"
+                        icon="phone"
+                        class="col s12"></text-field>
+
+            <text-field label="text field"
+                        icon="phone"
+                        :disabled="true"
+                        :value.sync="text"
+                        :validate="true"
+                        class="col s12"></text-field>
+
+            <text-field label="Email"
+                        icon="email"
+                        type="email"
+                        :validate="true"
+                        class="col s12"
+                        error-message="wrong email"
+                        success-message="correct email"></text-field>
+
+            <text-field label="password"
+                        :value.sync="text"
+                        :validate="true"
+                        type="password"
+                        class="col s12"
+                        @text-field-input="handleTextFieldInput"
+                        success-message="right"
+                        placeholder="enter your password"></text-field>
+
+            <text-area class="col s12"
+                       label="my text field"
+                       value="this is description"
+                       :validate="true"
+                       :length="10"
+                       error-message="wrong"
+                       @input="handleEvent"
+                       icon="phone"></text-area>
+
             <select-field
                     class="col s12"
                     label="select field"
                     :options="options"></select-field>
         </div>
+
 
         <icon class="red-text" value="add" @click="changeOptions"></icon>
 
@@ -328,6 +332,7 @@
             'checkbox': MUI['checkbox'],
             'switch': MUI['switch'],
             'range': MUI['range'],
+            'date-picker': MUI['date-picker'],
             'tabs': MUI['tabs'],
             'tab': MUI['tab'],
             'collapsible': MUI['collapsible'],
@@ -391,7 +396,9 @@
                 checkboxItems: [{label:'RED',value:'red',disabled:false}, {label:'GREEN',value:'green',disabled:true}, {label:'BLUE',value:'blue',disabled:false}, {label:'YELLOW',value:'yellow',disabled:false}],
                 checkboxSelected: ['red', 'blue', 'green'],
                 switchValue: true,
-                rangeValue: 30
+                rangeValue: 30,
+                openPicker: false,
+                date: new Date()
             }
         },
 
@@ -407,6 +414,12 @@
             },
             rangeValue: function(value) {
                 console.log('rangeValue', value);
+            },
+            openPicker: function(value) {
+                console.log('openPicker', value);
+            },
+            date: function(value) {
+                console.log('picker date', new Date(value));
             }
 
         },
