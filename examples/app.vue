@@ -1,7 +1,3 @@
-<style>
-
-</style>
-
 <template>
     <div class="row">
 
@@ -298,11 +294,17 @@
                 </collapsible-item>
             </collapsible>
         </div>
+        <!--
+        <div class="row">
+             <material-box :image-url="imageUrl" caption="test image" width="500"></material-box>
+        </div>
+        <parallax :image-url="imageUrl" height="200"></parallax>
+        <slider :images="images"></slider>
 
         <div class="row">
-            <material-box :image-url="imageUrl" caption="test image" width="500"></material-box>
+            <carousel :images="images"></carousel>
         </div>
-
+        -->
         <div class="row">
             <linear-progress color="red" background-color="red lighten-4"></linear-progress>
             <linear-progress determinate percentage="70"></linear-progress>
@@ -340,13 +342,6 @@
                     </div>
                 </tab>
             </tabs>
-        </div>
-
-        <parallax :image-url="imageUrl" height="200"></parallax>
-        <slider :images="images"></slider>
-
-        <div class="row">
-            <carousel :images="images"></carousel>
         </div>
 
         <mui-footer>

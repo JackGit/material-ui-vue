@@ -1,7 +1,7 @@
 <template>
     <div class="input-field">
         <icon v-if="icon"
-              :class="['prefix', labelActive ? 'active' : '']"
+              :class="iconClasses"
               :value="icon"></icon>
 
         <input v-el:input
@@ -10,11 +10,11 @@
                :type="type"
                :placeholder="placeholder"
                :disabled="disabled"
-               :class="[validate ? 'validate' : '', valid]"
+               :class="inputClasses"
                :length="length">
 
         <label :for="id"
-               :class="(value || placeholder) ? 'active' : ''"
+               :class="labelClasses"
                :data-error="errorMessage"
                :data-success="successMessage">{{label}}<slot></slot></label>
     </div>
@@ -22,6 +22,7 @@
 
 <script>
     var uuid = require('uuid');
+    var classes = require('../../Util.js').classes;
 
     module.exports = {
         components: {
@@ -61,6 +62,27 @@
             },
             successMessage: {
                 type: String
+            }
+        },
+
+        computed: {
+            iconClasses: function() {
+                return classes({
+                    'prefix': true,
+                    'active': this.labelActive
+                });
+            },
+            inputClasses: function() {
+                return classes({
+                    'validate': this.validate,
+                    'valid': this.valid === 'valid',
+                    'invalid': this.valid === 'invalid'
+                });
+            },
+            labelClasses: function() {
+                return classes({
+                    'active': this.value || this.placeholder
+                });
             }
         },
 

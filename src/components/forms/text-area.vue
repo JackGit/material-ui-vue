@@ -1,12 +1,12 @@
 <template>
     <div class="input-field">
         <icon v-if="icon"
-              :class="['prefix', labelActive ? 'active' : '']"
+              :class="iconClasses"
               :value="icon"></icon>
 
         <textarea v-el:text-area
                   :id="id"
-                  :class="['materialize-textarea', validate ? 'validate': '', valid]"
+                  :class="textareaClasses"
                   :length="length">{{value}}</textarea>
 
         <label :for="id"
@@ -18,6 +18,7 @@
 
 <script>
     var uuid = require('uuid');
+    var classes = require('../../Util.js').classes;
 
     module.exports = {
         components: {
@@ -47,6 +48,23 @@
             },
             successMessage: {
                 type: String
+            }
+        },
+
+        computed: {
+            iconClasses: function() {
+                return classes({
+                    'prefix': true,
+                    'active': this.labelActive
+                });
+            },
+            textareaClasses: function() {
+                return classes({
+                    'materialize-textarea': true,
+                    'validate': this.validate,
+                    'valid': this.valid === 'valid',
+                    'invalid': this.valid === 'invalid'
+                });
             }
         },
 
