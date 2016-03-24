@@ -45,5 +45,7 @@ module.exports = {
     'modal': require('./modals/modal.vue'),
     'modal-content': require('./modals/modal-content.vue'),
     'modal-footer': require('./modals/modal-footer.vue'),
+    'footer': require('./footer/footer.vue'),
+    'footer-copyright': require('./footer/footer-copyright.vue')
 
 };
