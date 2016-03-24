@@ -342,6 +342,8 @@
             </tabs>
         </div>
 
+        <parallax :image-url="imageUrl" height="200"></parallax>
+
         <mui-footer>
             <div class="container">
                 <div class="row">
@@ -426,7 +428,8 @@
             'modal-content': MUI['modal-content'],
             'modal-footer': MUI['modal-footer'],
             'mui-footer': MUI['footer'],
-            'footer-copyright': MUI['footer-copyright']
+            'footer-copyright': MUI['footer-copyright'],
+            'parallax': MUI['parallax']
         },
 
         data: function() {
