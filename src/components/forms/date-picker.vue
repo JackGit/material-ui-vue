@@ -12,7 +12,7 @@
               :value="icon"></icon>
 
         <input v-el:input type="date" class="datepicker" :id="id" :disabled="disabled">
-        <label :for="id" class="date-picker-active-label">{{label}}</label>
+        <label :for="id" class="date-picker-active-label">{{label}}<slot></slot></label>
     </div>
 </template>
 

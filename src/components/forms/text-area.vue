@@ -12,7 +12,7 @@
         <label :for="id"
                :class="value ? 'active' : ''"
                :data-error="errorMessage"
-               :data-success="successMessage">{{label}}</label>
+               :data-success="successMessage">{{label}}<slot></slot></label>
     </div>
 </template>
 

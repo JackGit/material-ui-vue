@@ -6,7 +6,7 @@
                     :disabled="option.disabled"
                     :selected="option.selected">{{option.text}}</option>
         </select>
-        <label>{{label}}</label>
+        <label>{{label}}<slot></slot></label>
     </div>
 </template>
 

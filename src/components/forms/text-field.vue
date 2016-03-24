@@ -16,7 +16,7 @@
         <label :for="id"
                :class="(value || placeholder) ? 'active' : ''"
                :data-error="errorMessage"
-               :data-success="successMessage">{{label}}</label>
+               :data-success="successMessage">{{label}}<slot></slot></label>
     </div>
 </template>
 
@@ -40,7 +40,7 @@
                 type: String
             },
             length: {
-                type: Number
+
             },
             type: {
                 type: String,

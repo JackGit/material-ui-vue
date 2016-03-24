@@ -201,8 +201,11 @@
                         @text-field-change="handleEvent"
                         success-message="right"></text-field>
 
+            <text-field class="col s12">slot label</text-field>
+
             <text-field label="text field"
                         icon="phone"
+                        length="10"
                         class="col s12"></text-field>
 
             <text-field label="text field"
@@ -215,6 +218,7 @@
             <text-field label="Email"
                         icon="email"
                         type="email"
+                        length="10"
                         :validate="true"
                         class="col s12"
                         error-message="wrong email"
@@ -238,10 +242,14 @@
                        @input="handleEvent"
                        icon="phone"></text-area>
 
+            <text-area class="col s12"
+                       label="counter text area"
+                       value="this is description"></text-area>
+
             <select-field
                     class="col s12"
                     label="select field"
-                    :options="options"></select-field>
+                    :options="options">slot</select-field>
         </div>
 
 
