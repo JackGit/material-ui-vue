@@ -5,7 +5,8 @@ webpackConfig.devtool = 'inline-source-map';
 module.exports = {
     frameworks: ['jasmine'],
     files: [
-        '../test/unit/lib/jquery-2.1.1min.js',
+        '../test/unit/lib/jquery-2.1.1.min.js',
+        '../test/unit/lib/materialize.min.js',
         '../test/unit/specs/index.js'
     ],
     preprocessors: {
@@ -15,5 +16,5 @@ module.exports = {
     webpackMiddleware: {
         noInfo: true
     },
-    singleRun: true
+    singleRun: false
 };
