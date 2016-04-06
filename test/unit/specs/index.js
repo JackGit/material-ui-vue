@@ -10,7 +10,17 @@ describe("A suite", function() {
         }
     }).$mount('body');
 
+    var h = document.createElement('h1');
+    h.innerText = 'demo';
+    document.body.appendChild(h);
+
     it("contains spec with an expectation", function() {
         expect(true).toBe(true);
     });
+
+    console.log($('#mountNode').length);
 });
+
+// require all test files
+var testsContext = require.context('.', true, /_spec$/);
+testsContext.keys().forEach(testsContext);
