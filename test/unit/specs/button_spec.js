@@ -1,16 +1,16 @@
 var Vue = require('vue');
-var Button = require('../../../src/components/buttons/button.vue');
+var Icon = require('../../../src/components/icons/icon.vue');
 
-describe('', function() {
+describe('Button Spec', function() {
 
     var vm;
 
     beforeEach(function () {
-        vm =  new Vue({
-            template: '<btn></btn>',
+       vm =  new Vue({
+            template: '<icon value="edit">',
             replace: false,
             components: {
-                'btn': Button
+                'icon': Icon
             }
         }).$mount('body');
     });
