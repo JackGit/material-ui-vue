@@ -1,6 +1,6 @@
 {
   "name": "material-ui-vue",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "material UI with vue.js",
   "main": "index.js",
   "scripts": {
