@@ -94,6 +94,8 @@ function createPackageFile() {
                 console.log('read package.json file successfully');
 
                 delete data.devDependencies;
+                delete data.scripts;
+
                 fs.outputJson(dest, data, function(err) {
                     if(err) reject(err);
                     else {

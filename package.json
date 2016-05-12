@@ -1,11 +1,19 @@
 {
   "name": "material-ui-vue",
-  "version": "0.0.3",
-  "description": "material UI with vue.js",
+  "version": "0.0.5",
+  "description": "material UI with vue.js, based on materialize-css 0.97.5",
   "main": "index.js",
+  "keywords": [
+    "vue",
+    "vue component",
+    "material design",
+    "materialize-css",
+    "material-ui"
+  ],
   "scripts": {
     "test": "karma start build/karma.unit.config.js",
-    "build": "node ./scripts/build.js"
+    "build": "node ./scripts/build.js",
+    "publish": "npm publish ./dist"
   },
   "author": "Jack Yang",
   "license": "MIT",
@@ -13,7 +21,6 @@
     "vue": "^1.0.16"
   },
   "dependencies": {
-    "materialize-css": "^0.97.5",
     "uuid": "^2.0.1"
   },
   "devDependencies": {
