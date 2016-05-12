@@ -4,7 +4,7 @@
   "description": "material UI with vue.js",
   "main": "index.js",
   "scripts": {
-    "unit": "karma start build/karma.unit.config.js"
+    "test": "karma start build/karma.unit.config.js"
   },
   "author": "",
   "license": "ISC",
