@@ -10,6 +10,10 @@
     "materialize-css",
     "material-ui"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JackGit/material-ui-vue.git"
+  },
   "scripts": {
     "test": "karma start build/karma.unit.config.js",
     "build": "node ./scripts/build.js",
