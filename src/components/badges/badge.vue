@@ -1,5 +1,5 @@
 <template>
-    <span :class="classes"><slot></slot></span>
+    <span :class="classes">{{label}}<slot></slot></span>
 </template>
 
 <script>
@@ -13,6 +13,16 @@
      */
     module.exports = {
         props: {
+            /**
+             * @prop label
+             * @type {String}
+             * @default false
+             * @description badge label
+             */
+            label: {
+                type: String,
+                default: ''
+            },
             /**
              * @prop new
              * @type {Boolean}

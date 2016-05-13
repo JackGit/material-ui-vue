@@ -11,7 +11,7 @@
              :disabled="false"></btn>
         <ul v-if="items.length > 0" class="dropdown-content" :id="id">
             <li v-for="item in items" :class="item.divider ? 'divider' : ''">
-                <a v-if="!item.divider" :href="item.href">{{item.label}}</a>
+                <a v-if="!item.divider" :href="item.href">{{item.label}}<badge v-if="item.badge" :label="item.badge.label" :new="item.badge.new"></badge></a>
             </li>
         </ul>
         <slot v-if="items.length === 0"></slot>
@@ -33,7 +33,8 @@
         mixins: [ButtonPropMixin, DropdownPropMixin],
 
         components: {
-            btn: require('../buttons/button.vue')
+            btn: require('../buttons/button.vue'),
+            badge: require('../badges/badge.vue')
         },
 
         data: function() {

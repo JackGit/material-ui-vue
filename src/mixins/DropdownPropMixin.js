@@ -4,7 +4,7 @@ module.exports = {
          * @prop items
          * @type {Array}
          * @default function() {return [];}
-         * @description example value: [{href: '#!', label: 'item 1'}, {href: '#!', label: 'item 2'}]
+         * @description example value: [{href: '#!', label: 'item 1', badge: {label: '1', new: true}}, {href: '#!', label: 'item 2'}]
          */
         items: {
             type: Array,
