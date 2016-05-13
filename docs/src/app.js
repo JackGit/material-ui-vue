@@ -18,7 +18,7 @@ router.map({
     },
     '/components/badges': {
         name: 'badges',
-        component: require('./components/badges.vue')
+        component: require('./components/example.vue')
     }
 });
 

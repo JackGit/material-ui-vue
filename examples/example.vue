@@ -7,13 +7,21 @@
 </template>
 
 <script>
+    var components = [
+        {name: 'badge-in-dropdown', path: './components/badges/badges-in-dropdown.vue'},
+        {name: 'badge-in-dropdown-in-slot', path: './components/badges/badges-in-dropdown-in-slot.vue'},
+        {name: 'badge-in-collections', path: './components/badges/badges-in-collections.vue'}
+    ];
+
     module.exports = {
-        components: {
-            'badge-in-dropdown': require('./components/badges/badges-in-dropdown.vue'),
-            'badge-in-dropdown-in-slot': require('./components/badges/badges-in-dropdown-in-slot.vue'),
-            'badge-in-collections': require('./components/badges/badges-in-collections.vue'),
-            'badge-in-collections-in-slot': require('./components/badges/badges-in-collections-in-slot.vue'),
-            'badge-in-navbar': require('./components/badges/badges-in-navbar.vue')
+        components: function() {
+            var coms = [];
+            components.forEach(function(c) {
+                var t = {};
+                t[c.name] = require(c.path);
+                coms.push(t);
+            });
+            return coms;
         }
     };
 </script>
