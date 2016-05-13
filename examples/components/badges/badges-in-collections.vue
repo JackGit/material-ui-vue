@@ -1,0 +1,21 @@
+<template>
+    <link-collection :links="links"></link-collection>
+</template>
+
+<script>
+    module.exports = {
+        components: {
+            'link-collection': require('../../../src/components/collections/link-collection.vue')
+        },
+
+        data: function() {
+            return {
+                links: [
+                    {href: '#!', label: 'Inbox', badge: {label: '12', new: true}},
+                    {href: '#!', label: 'Outbox', badge: {label: '2', new: false}},
+                    {href: '#!', label: 'Draft'}
+                ]
+            }
+        }
+    }
+</script>
