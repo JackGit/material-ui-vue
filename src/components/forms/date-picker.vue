@@ -19,31 +19,73 @@
 <script>
     var uuid = require('uuid');
 
+    /**
+     * date picker
+     * @module forms/date-picker
+     * @author Jack Yang
+     * @description {@link http://materializecss.com/forms.html forms} date picker component
+     */
     module.exports = {
         components: {
             'icon': require('../icons/icon.vue')
         },
 
         props: {
+            /**
+             * @prop label
+             * @type {String}
+             * @default ''
+             * @description label of the date picker input controller
+             */
             label: {
                 type: String,
                 default: ''
             },
+            /**
+             * @prop icon
+             * @type {String}
+             * @default ''
+             * @description icon of the date picker input controller
+             */
             icon: {
                 type: String,
                 default: ''
             },
+            /**
+             * @prop date
+             * @type {Date}
+             * @default new Date()
+             * @description date value of the date picker
+             */
             date: {
                 default: function() {return new Date();}
             },
+            /**
+             * @prop pickerOptions
+             * @type {Object}
+             * @default ''
+             * @description options for pickdate.js
+             */
             pickerOptions: {
                 type: Object,
                 default: function() {return {};}
             },
+            /**
+             * @prop opened
+             * @type {Boolean}
+             * @default false
+             * @description indicate this picker popup is opened or not
+             */
             opened: {
                 type: Boolean,
                 default: false
             },
+            /**
+             * @prop disabled
+             * @type {Boolean}
+             * @default false
+             * @description indicate this picker is disabled or not
+             */
             disabled: {
                 type: Boolean,
                 default: false

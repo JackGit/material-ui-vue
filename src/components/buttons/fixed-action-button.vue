@@ -9,6 +9,12 @@
     var classes = require('../../Util.js').classes;
     var ButtonMixin = require('../../mixins/ButtonMixin.js');
 
+    /**
+     * fixed action button
+     * @module buttons/fixed-action-button
+     * @author Jack Yang
+     * @description If you want a fixed floating action button, you can add multiple actions that will appear on hover. Our demo is in the bottom righthand corner of the page.
+     */
     module.exports = {
         mixins: [ButtonMixin],
 
@@ -17,18 +23,31 @@
         },
 
         props: {
+            /**
+             * @prop horizontal
+             * @type {Boolean}
+             * @default false
+             * @description indicate this is a horizontal FAB
+             */
             horizontal: {
                 type: Boolean,
                 default: false
             },
+            /**
+             * @prop clickOnly
+             * @type {Boolean}
+             * @default false
+             * @description if you want to disable the hover behaviour, and instead toggle the FAB menu when the user clicks on the large button (works great on mobile!), just add the click-to-toggle class to the FAB
+             */
             clickOnly: {
                 type: Boolean,
                 default: false
             },
+            /*
             active: {
                 type: Boolean,
                 default: false
-            }
+            }*/
         },
 
         data: function() {

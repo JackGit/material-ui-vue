@@ -10,15 +10,40 @@
 <script>
     var uuid = require('uuid');
 
+    /**
+     * tab
+     * @module tabs/tab
+     * @author Jack Yang
+     * @description single tab component
+     */
     module.exports = {
         props: {
+            /**
+             * @prop label
+             * @type {String}
+             * @default ''
+             * @description label of this tab
+             */
             label: {
-                type: String
+                type: String,
+                default: ''
             },
+            /**
+             * @prop active
+             * @type {Boolean}
+             * @default false
+             * @description indicate this tab is active or not
+             */
             active: {
                 type: Boolean,
                 default: false
             },
+            /**
+             * @prop disabled
+             * @type {Boolean}
+             * @default false
+             * @description indicate this tab is disabled or not
+             */
             disabled: {
                 type: Boolean,
                 default: false
@@ -35,10 +60,6 @@
             $(this.$el).on('click', function(e) {
                  this.$dispatch('tab-' + e.type, e);
             }.bind(this));
-        },
-
-        methods: {
-
         }
     };
 </script>

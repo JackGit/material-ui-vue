@@ -11,7 +11,7 @@
              :disabled="false"></btn>
         <ul v-if="items.length > 0" class="dropdown-content" :id="id">
             <li v-for="item in items" :class="item.divider ? 'divider' : ''">
-                <a v-if="!item.divider" :href="item.href">{{item.text}}</a>
+                <a v-if="!item.divider" :href="item.href">{{item.label}}</a>
             </li>
         </ul>
         <slot v-if="items.length === 0"></slot>
@@ -23,6 +23,12 @@
     var ButtonPropMixin = require('../../mixins/ButtonPropMixin.js');
     var DropdownPropMixin = require('../../mixins/DropdownPropMixin.js');
 
+    /**
+     * dropdown
+     * @module dropdown/dropdown
+     * @author Jack Yang
+     * @description Add a {@link http://materializecss.com/dropdown.html dropdown} list to any button.
+     */
     module.exports = {
         mixins: [ButtonPropMixin, DropdownPropMixin],
 

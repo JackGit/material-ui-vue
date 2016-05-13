@@ -5,6 +5,12 @@
 </template>
 
 <script>
+    /**
+     * card panel
+     * @module cards/card-panel
+     * @author Jack Yang
+     * @description a component for card-panel
+     */
     module.exports = {
 
     };

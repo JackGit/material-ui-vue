@@ -269,7 +269,7 @@
         </div>
 
 
-        <icon class="red-text" value="add" @click="changeOptions"></icon>
+        <icon class="red-text" value="add" @click="changeOptions" size="large"></icon>
 
         <div class="row">
             <collapsible behavior="expandable" popout>
@@ -298,7 +298,7 @@
         <div class="row">
              <material-box :image-url="imageUrl" caption="test image" width="500"></material-box>
         </div>
-        <parallax :image-url="imageUrl" height="200"></parallax>
+        <parallax :image-src="imageUrl" height="200"></parallax>
         <slider :images="images"></slider>
 
         <div class="row">
@@ -439,22 +439,22 @@
             return {
                 imageUrl: 'http://wedding.jackyang.me/static/images/wedding_pic_02.jpg',
                 options: [
-                    {value: '0', text: 'zero', disabled: false, icon: 'http://wedding.jackyang.me/static/images/wedding_pic_02.jpg'},
-                    {value: '1', text: 'one', disabled: false, icon: 'http://wedding.jackyang.me/static/images/wedding_pic_02.jpg'},
-                    {value: '2', text: 'two', disabled: false, icon: 'http://wedding.jackyang.me/static/images/wedding_pic_02.jpg'},
-                    {value: '3', text: 'three', disabled: false, icon: 'http://wedding.jackyang.me/static/images/wedding_pic_02.jpg'}],
+                    {value: '0', label: 'zero', disabled: false, icon: 'http://wedding.jackyang.me/static/images/wedding_pic_02.jpg'},
+                    {value: '1', label: 'one', disabled: false, icon: 'http://wedding.jackyang.me/static/images/wedding_pic_02.jpg'},
+                    {value: '2', label: 'two', disabled: false, icon: 'http://wedding.jackyang.me/static/images/wedding_pic_02.jpg'},
+                    {value: '3', label: 'three', disabled: false, icon: 'http://wedding.jackyang.me/static/images/wedding_pic_02.jpg'}],
                 optionSelected: '2',
                 groupOptions: {
-                    g1: [{value: '0', text: 'zero', disabled: false}, {value: '1', text: 'one', disabled: false}],
-                    g2: [{value: '2', text: 'two', disabled: false}, {value: '3', text: 'three', disabled: false}]
+                    g1: [{value: '0', label: 'zero', disabled: false}, {value: '1', label: 'one', disabled: false}],
+                    g2: [{value: '2', label: 'two', disabled: false}, {value: '3', label: 'three', disabled: false}]
                 },
                 groupOptionSelected: '2',
                 dropdownItems: [
-                    {href: '#', text: '123'},
-                    {href: '#', text: '223'},
-                    {href: '#', text: '323'},
+                    {href: '#', label: '123'},
+                    {href: '#', label: '223'},
+                    {href: '#', label: '323'},
                     {divider: true},
-                    {href: '#', text: '423'},
+                    {href: '#', label: '423'},
                 ],
                 crumbs: [{href: '#', label: 'c1'}, {href: '#', label: 'c2'}],
                 links: [{href:'#',label:'active link',active:true},{href:'#',label:'link'}],
@@ -469,10 +469,10 @@
                 openPicker: false,
                 date: new Date(),
                 images: [
-                    {url:'http://wedding.jackyang.me/static/images/wedding_pic_01.jpg',caption:'This is our big Tagline!',description:'Here our small slogan.'},
-                    {url:'http://wedding.jackyang.me/static/images/wedding_pic_02.jpg',caption:'Left Aligned Caption',description:'Here our small slogan.'},
-                    {url:'http://wedding.jackyang.me/static/images/wedding_pic_03.jpg',caption:'Right Aligned Caption',description:'Here our small slogan.',captionPosition:'left'},
-                    {url:'http://wedding.jackyang.me/static/images/wedding_pic_04.jpg',caption:'This is our big Tagline!',description:'Here our small slogan.'}
+                    {src:'http://wedding.jackyang.me/static/images/wedding_pic_01.jpg',caption:'This is our big Tagline!',description:'Here our small slogan.'},
+                    {src:'http://wedding.jackyang.me/static/images/wedding_pic_02.jpg',caption:'Left Aligned Caption',description:'Here our small slogan.'},
+                    {src:'http://wedding.jackyang.me/static/images/wedding_pic_03.jpg',caption:'Right Aligned Caption',description:'Here our small slogan.',captionPosition:'left'},
+                    {src:'http://wedding.jackyang.me/static/images/wedding_pic_04.jpg',caption:'This is our big Tagline!',description:'Here our small slogan.'}
                 ]
             }
         },

@@ -6,10 +6,22 @@
 </template>
 
 <script>
+    /**
+     * collection
+     * @module collections/link-collection
+     * @author Jack Yang
+     * @description a component for link collection
+     */
     module.exports = {
         props: {
+            /**
+             * @prop links
+             * @type {Array}
+             * @default function() {return [];}
+             * @description links data for rendering. Example value: [{href: '#!', label: 'Link A', active: true}, {href: '#!', label: 'Link B', active: false}]
+             */
             links: {
-                type: Array, // {href: '', label: '', active: false}
+                type: Array,
                 default: function() {return [];}
             }
         },

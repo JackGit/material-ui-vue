@@ -15,16 +15,40 @@
 <script>
     var uuid = require('uuid');
 
+    /**
+     * checkbox
+     * @module forms/checkbox
+     * @author Jack Yang
+     * @description {@link http://materializecss.com/forms.html forms} checkbox component
+     */
     module.exports = {
         props: {
+            /**
+             * @prop selected
+             * @type {Array}
+             * @default function() {return [];}
+             * @description indicate the items been selected. Value should come from value attribute of item object. Example value: ['red', 'green']
+             */
             selected: {
                 type: Array,
                 default: function() {return [];}
             },
+            /**
+             * @prop items
+             * @type {Array}
+             * @default function() {return [];}
+             * @description items of the checkbox. Example value: [{label: 'RED', value: 'red', disabled: false}, {label: 'GREEN', value: 'green', disabled: true}]
+             */
             items: {
                 type: Array,
                 default: function() {return [];}
             },
+            /**
+             * @prop filledIn
+             * @type {Boolean}
+             * @default false
+             * @description indicate use filled-in style or not
+             */
             filledIn: {
                 type: Boolean,
                 default: false

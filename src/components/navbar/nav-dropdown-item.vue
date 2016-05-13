@@ -11,6 +11,12 @@
     var DropdownPropMixin = require('../../mixins/DropdownPropMixin.js');
     var NavItemPropMixin = require('../../mixins/NavItemPropMixin.js');
 
+    /**
+     * nav dropdown item
+     * @module navbar/nav-dropdown-item
+     * @author Jack Yang
+     * @description dropdown menu component in navbar
+     */
     module.exports = {
         mixins: [ButtonPropMixin, DropdownPropMixin, NavItemPropMixin],
 
@@ -19,6 +25,12 @@
         },
 
         props: {
+            /**
+             * @prop iconPosition
+             * @type {String}
+             * @default 'right'
+             * @description icon position of the nav-dropdown-item
+             */
             iconPosition: {
                 type: String,
                 default: 'right'

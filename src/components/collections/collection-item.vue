@@ -5,6 +5,12 @@
 <script>
     var classes = require('../../Util.js').classes;
 
+    /**
+     * collection item
+     * @module collections/collection-item
+     * @author Jack Yang
+     * @description a component for collection-item
+     */
     module.exports = {
         props: {
             avatar: {

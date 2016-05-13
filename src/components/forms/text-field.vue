@@ -24,44 +24,116 @@
     var uuid = require('uuid');
     var classes = require('../../Util.js').classes;
 
+    /**
+     * text field
+     * @module forms/text-field
+     * @author Jack Yang
+     * @description {@link http://materializecss.com/forms.html forms} text field component
+     */
     module.exports = {
         components: {
             'icon': require('../icons/icon.vue')
         },
 
         props: {
+            /**
+             * @prop label
+             * @type {String}
+             * @default ''
+             * @description label of text field
+             */
             label: {
-                type: String
+                type: String,
+                default: ''
             },
+            /**
+             * @prop value
+             * @type {String}
+             * @default ''
+             * @description value of text field
+             */
             value: {
                 type: String,
                 default: ''
             },
+            /**
+             * @prop placeholder
+             * @type {String}
+             * @default ''
+             * @description placeholder of text field
+             */
             placeholder: {
-                type: String
+                type: String,
+                default: ''
             },
+            /**
+             * @prop length
+             * @type {Number}
+             * @default null
+             * @description length of text field
+             */
             length: {
 
             },
+            /**
+             * @prop type
+             * @type {String}
+             * @default 'text'
+             * @description input type of text field
+             */
             type: {
                 type: String,
                 default: 'text'
             },
+            /**
+             * @prop disabled
+             * @type {Boolean}
+             * @default false
+             * @description indicate text field is disabled or not
+             */
             disabled: {
                 type: Boolean,
                 default: false
             },
+            /**
+             * @prop icon
+             * @type {String}
+             * @default ''
+             * @description icon of text field
+             */
             icon: {
-                type: String
+                type: String,
+                default: ''
             },
+            /**
+             * @prop validate
+             * @type {Boolean}
+             * @default false
+             * @description enable field validate or not
+             */
             validate: {
-                type: Boolean
+                type: Boolean,
+                default: false
             },
+            /**
+             * @prop errorMessage
+             * @type {String}
+             * @default ''
+             * @description error message content
+             */
             errorMessage: {
-                type: String
+                type: String,
+                default: ''
             },
+            /**
+             * @prop successMessage
+             * @type {String}
+             * @default ''
+             * @description success message content
+             */
             successMessage: {
-                type: String
+                type: String,
+                default: ''
             }
         },
 

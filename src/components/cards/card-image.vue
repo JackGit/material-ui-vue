@@ -8,19 +8,44 @@
 </template>
 
 <script>
+    /**
+     * card image
+     * @module cards/card-image
+     * @author Jack Yang
+     * @description this is a component to create image card
+     */
     module.exports = {
         components: {
             'card-title': require('./card-title.vue')
         },
 
         props: {
+            /**
+             * @prop src
+             * @type {String}
+             * @default null
+             * @required true
+             * @description src of the image
+             */
             src: {
                 type: String,
                 required: true
             },
+            /**
+             * @prop title
+             * @type {String}
+             * @default null
+             * @description title of the image
+             */
             title: {
                 type: String
             },
+            /**
+             * @prop activator
+             * @type {Boolean}
+             * @default false
+             * @description indicate this image is the activator in card reveal
+             */
             activator: {
                 type: Boolean,
                 default: false

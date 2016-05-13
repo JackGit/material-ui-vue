@@ -17,20 +17,44 @@
 <script>
     var uuid = require('uuid');
 
+    /**
+     * search bar
+     * @module navbar/search-bar
+     * @author Jack Yang
+     * @description search form in the navbar
+     */
     module.exports = {
         components: {
             icon: require('../icons/icon.vue')
         },
 
         props: {
+            /**
+             * @prop placeholder
+             * @type {String}
+             * @default ''
+             * @description placeholder of search box
+             */
             placeholder: {
                 type: String,
                 default: ''
             },
+            /**
+             * @prop value
+             * @type {String}
+             * @default ''
+             * @description value of the search box
+             */
             value: {
                 type: String,
                 default: ''
             },
+            /**
+             * @prop fixed
+             * @type {Boolean}
+             * @default false
+             * @description indicate this is fixed search-bar or not
+             */
             fixed: {
                 type: Boolean,
                 default: false

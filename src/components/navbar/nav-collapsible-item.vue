@@ -9,6 +9,12 @@
 <script>
     var NavItemPropMixin = require('../../mixins/NavItemPropMixin.js');
 
+    /**
+     * nav collapsible item
+     * @module navbar/nav-collapsible-item
+     * @author Jack Yang
+     * @description collapsible menu component in navbar. When your nav bar is resized, you will see that the links on the right turn into a hamburger icon
+     */
     module.exports = {
         mixins: [NavItemPropMixin],
 

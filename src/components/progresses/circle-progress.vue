@@ -16,22 +16,51 @@
 
 <script>
     var classes = require('../../Util.js').classes;
-    // red, blue, yellow, green
 
+    /**
+     * circle progress
+     * @module progresses/circle-progress
+     * @author Jack Yang
+     * @description Circular {@link http://materializecss.com/preloader.html preloader} in materializecss
+     */
     module.exports = {
         props: {
+            /**
+             * @prop size
+             * @type {String}
+             * @default ''
+             * @description size of the circle. Possible values: 'big', 'small' and by default ''
+             */
             size: {
                 type: String,
-                default: '' // '', big, small
+                default: ''
             },
+            /**
+             * @prop active
+             * @type {Boolean}
+             * @default true
+             * @description indicate the progress is active or not
+             */
             active: {
                 type: Boolean,
                 default: true
             },
+            /**
+             * @prop color
+             * @type {String}
+             * @default 'red'
+             * @description color or the circle. Possible values: 'red', 'blue', 'yellow' and 'green'
+             */
             color: {
                 type: String,
                 default: 'red'
             },
+            /**
+             * @prop flash
+             * @type {Boolean}
+             * @default false
+             * @description enable circular flashing colors
+             */
             flash: {
                 type: Boolean,
                 default: false

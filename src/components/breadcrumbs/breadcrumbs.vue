@@ -10,10 +10,22 @@
 </template>
 
 <script>
+    /**
+     * breadcrumbs
+     * @module breadcrumbs/breadcrumbs
+     * @author Jack Yang
+     * @description {@link http://materializecss.com/breadcrumbs.html Breadcrumbs} are a good way to display your current location. This is usually used when you have multiple layers of content.
+     */
     module.exports = {
         props: {
+            /**
+             * @prop crumbs
+             * @type {Array}
+             * @default function() {return [];}
+             * @description example value: [{href: '#!', label: 'First'}, {href: '#!', label: 'Second'}, {href: '#!', label: 'Third'}]
+             */
             crumbs: {
-                type: Array,    // {href:'', label:''}
+                type: Array,
                 default: function() {return [];}
             }
         },

@@ -20,34 +20,86 @@
     var uuid = require('uuid');
     var classes = require('../../Util.js').classes;
 
+    /**
+     * text area
+     * @module forms/text-area
+     * @author Jack Yang
+     * @description {@link http://materializecss.com/forms.html forms} text area component
+     */
     module.exports = {
         components: {
             'icon': require('../icons/icon.vue')
         },
 
         props: {
+            /**
+             * @prop label
+             * @type {String}
+             * @default ''
+             * @description label of text area controller
+             */
             label: {
                 type: String,
                 default: ''
             },
+            /**
+             * @prop value
+             * @type {String}
+             * @default ''
+             * @description text value of text area controller
+             */
             value: {
                 type: String,
                 default: ''
             },
+            /**
+             * @prop icon
+             * @type {String}
+             * @default ''
+             * @description icon of text area controller
+             */
             icon: {
-                type: String
+                type: String,
+                default: ''
             },
+            /**
+             * @prop length
+             * @type {Number}
+             * @default null
+             * @description length restriction of text area controller
+             */
             length: {
                 type: Number
             },
+            /**
+             * @prop validate
+             * @type {Boolean}
+             * @default false
+             * @description enable text area validate or not
+             */
             validate: {
-                type: Boolean
+                type: Boolean,
+                default: false
             },
+            /**
+             * @prop errorMessage
+             * @type {String}
+             * @default ''
+             * @description error message content
+             */
             errorMessage: {
-                type: String
+                type: String,
+                default: ''
             },
+            /**
+             * @prop successMessage
+             * @type {String}
+             * @default ''
+             * @description success message content
+             */
             successMessage: {
-                type: String
+                type: String,
+                default: ''
             }
         },
 

@@ -98,3 +98,4 @@ webpack
 
 Now you can test your index.html in browser.
 
+(And I am working on the detail document...)
