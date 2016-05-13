@@ -1,6 +1,6 @@
 <template>
     <span>
-        <btn class="dropdown-button" href="#" :data-activates="id"
+        <btn class="dropdown-button" href="#!" :data-activates="id"
              :type="type"
              :label="label"
              :icon="icon"
@@ -14,7 +14,7 @@
                 <a v-if="!item.divider" :href="item.href">{{item.label}}<badge v-if="item.badge" :label="item.badge.label" :new="item.badge.new"></badge></a>
             </li>
         </ul>
-        <slot v-if="items.length === 0"></slot>
+        <slot></slot>
     </span>
 </template>
 
