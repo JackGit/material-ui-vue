@@ -50,12 +50,12 @@ module.exports = {
         /**
          * @prop iconPosition
          * @type {String}
-         * @default ''
+         * @default 'left'
          * @description icon position of the button icon. Possible values: 'left', 'right'
          */
         iconPosition: {
             type: String,
-            default: ''
+            default: 'left'
         },
         /**
          * @prop wavesEffect

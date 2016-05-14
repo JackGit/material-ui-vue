@@ -1,17 +1,18 @@
 <template>
-    <component is="current"></component>
+    <component :is="demo"></component>
 </template>
 
 <script>
     module.exports = {
         props: {
-
+            demo: {
+                type: String,
+                required: true
+            }
         },
 
         components: {
-            '': function(resolve) {
-                require([''], resolve);
-            }
+            '': require('')
         }
     };
 </script>

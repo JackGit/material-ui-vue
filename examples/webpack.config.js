@@ -3,16 +3,12 @@
 var webpack = require('webpack');
 
 module.exports = {
-    entry: './main.js',
+    entry: './src/main.js',
     output: {
-        filename: './build/bundle.js',
+        filename: './src/bundle.js',
     },
-    devtool: 'source-map',
     module: {
         loaders: [
-            //{test: /\.css$/, loader: 'style!css!'},
-            //
-            // {test: /\.(png|jpg)$/, loader: 'file'},
             {test: /\.vue$/, loader: 'vue'}
         ]
     },
