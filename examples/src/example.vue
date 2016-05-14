@@ -35,6 +35,19 @@
             'card-size': require('./components/cards/card-size.vue'),
             'image-card': require('./components/cards/image-card.vue'),
             'card-reveal': require('./components/cards/card-reveal.vue'),
+
+            'image-chip': require('./components/chips/image-chip.vue'),
+            'removable-chip': require('./components/chips/removable-chip.vue'),
+
+            'accordion-collapsible': require('./components/collapsible/accordion-collapsible.vue'),
+            'expandable-collapsible': require('./components/collapsible/expandable-collapsible.vue'),
+            'popout-collapsible': require('./components/collapsible/popout-collapsible.vue'),
+
+            'basic-collection': require('./components/collections/basic-collection.vue'),
+            'header-collection': require('./components/collections/header-collection.vue'),
+            'avatar-collection': require('./components/collections/avatar-collection.vue'),
+            'link-collection': require('./components/collections/link-collection.vue'),
+            'link-collection-with-slot': require('./components/collections/link-collection-with-slot.vue'),
         }
     };
 </script>
