@@ -66,6 +66,8 @@
             'range-demo': require('./components/forms/range-demo.vue'),
             'date-picker-demo': require('./components/forms/date-picker-demo.vue'),
             'select-field-demo': require('./components/forms/select-field-demo.vue'),
+
+            'modal-demo': require('./components/modals/modal-demo.vue')
         }
     };
 </script>

@@ -10200,7 +10200,7 @@
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/example.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(235)
+	__vue_template__ = __webpack_require__(247)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -10284,7 +10284,9 @@
 	        'checkbox-demo': __webpack_require__(207),
 	        'range-demo': __webpack_require__(213),
 	        'date-picker-demo': __webpack_require__(219),
-	        'select-field-demo': __webpack_require__(229)
+	        'select-field-demo': __webpack_require__(229),
+
+	        'modal-demo': __webpack_require__(235)
 	    }
 	};
 
@@ -10800,7 +10802,7 @@
 	         * @prop items
 	         * @type {Array}
 	         * @default function() {return [];}
-	         * @description example value: [{href: '#!', label: 'item 1', badge: {label: '1', new: true}}, {href: '#!', label: 'item 2'}]
+	         * @description example value: [{href: '#!', label: 'item 1', badge: {label: '1', new: true}}, {href: '#!', label: 'item 2'}, {divider: true}]
 	         */
 	        items: {
 	            type: Array,
@@ -11018,12 +11020,12 @@
 	        /**
 	         * @prop iconPosition
 	         * @type {String}
-	         * @default ''
+	         * @default 'left'
 	         * @description icon position of the button icon. Possible values: 'left', 'right'
 	         */
 	        iconPosition: {
 	            type: String,
-	            default: ''
+	            default: 'left'
 	        },
 	        /**
 	         * @prop wavesEffect
@@ -15442,6 +15444,298 @@
 
 /***/ },
 /* 235 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(236)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src/components/modals/modal-demo.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(246)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/src/components/modals/modal-demo.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 236 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	module.exports = {
+	    components: {
+	        'btn': __webpack_require__(17),
+	        'modal': __webpack_require__(237),
+	        'modal-content': __webpack_require__(240),
+	        'modal-footer': __webpack_require__(243)
+	    },
+
+	    data: function data() {
+	        return {
+	            m1OpenStatus: false,
+	            m2OpenStatus: false,
+	            m3OpenStatus: false
+	        };
+	    },
+
+	    methods: {
+	        toggleM1: function toggleM1() {
+	            this.m1OpenStatus = !this.m1OpenStatus;
+	        },
+	        toggleM2: function toggleM2() {
+	            this.m2OpenStatus = !this.m2OpenStatus;
+	        },
+	        toggleM3: function toggleM3() {
+	            this.m3OpenStatus = !this.m3OpenStatus;
+	        }
+	    }
+	};
+
+/***/ },
+/* 237 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(238)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] node_modules/material-ui-vue/components/modals/modal.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(239)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/node_modules/material-ui-vue/components/modals/modal.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 238 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var classes = __webpack_require__(9).classes;
+
+	module.exports = {
+	    props: {
+	        opacity: {
+	            default: 0.5
+	        },
+
+	        inDuration: {
+	            default: 350
+	        },
+
+	        outDuration: {
+	            default: 250
+	        },
+
+	        readyCallback: {
+	            type: Function,
+	            default: null
+	        },
+
+	        completeCallback: {
+	            type: Function,
+	            default: null
+	        },
+
+	        dismissible: {
+	            type: Boolean,
+	            default: true
+	        },
+
+	        fixedFooter: {
+	            type: Boolean,
+	            default: false
+	        },
+
+	        bottomSheet: {
+	            type: Boolean,
+	            default: false
+	        },
+
+	        open: {
+	            type: Boolean,
+	            default: false
+	        }
+	    },
+
+	    data: function data() {
+	        return {
+	            modalClasses: classes({
+	                'modal': true,
+	                'modal-fixed-footer': this.fixedFooter,
+	                'bottom-sheet': this.bottomSheet
+	            }),
+	            modalOptions: {
+	                opacity: this.opacity,
+	                in_duration: this.inDuration,
+	                out_duration: this.outDuration,
+	                ready: this.handleReady.bind(this),
+	                complete: this.handleComplete.bind(this),
+	                dismissible: this.dismissible
+	            },
+	            status: 'closed'
+	        };
+	    },
+
+	    watch: {
+	        open: function open(value) {
+	            if (value) this.openModal();else this.closeModal();
+	        }
+	    },
+
+	    ready: function ready() {
+	        if (this.open) this.openModal();
+	    },
+
+	    methods: {
+	        openModal: function openModal() {
+	            $(this.$el).openModal(this.modalOptions);
+	        },
+	        closeModal: function closeModal() {
+	            $(this.$el).closeModal();
+	        },
+	        handleReady: function handleReady() {
+	            this.status = 'open';
+	            this.readyCallback && this.readyCallback.call(null);
+	        },
+	        handleComplete: function handleComplete() {
+	            this.status = 'closed';
+	            this.completeCallback && this.completeCallback.call(null);
+	        }
+	    }
+
+	};
+
+/***/ },
+/* 239 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div :class=\"modalClasses\">\n    <slot></slot>\n</div>\n";
+
+/***/ },
+/* 240 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(241)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] node_modules/material-ui-vue/components/modals/modal-content.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(242)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/node_modules/material-ui-vue/components/modals/modal-content.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 241 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	module.exports = {};
+
+/***/ },
+/* 242 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"modal-content\">\n    <slot></slot>\n</div>\n";
+
+/***/ },
+/* 243 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(244)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] node_modules/material-ui-vue/components/modals/modal-footer.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(245)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/node_modules/material-ui-vue/components/modals/modal-footer.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 244 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	module.exports = {
+	    ready: function ready() {
+	        $(this.$el).find('a').addClass('modal-action');
+	    }
+	};
+
+/***/ },
+/* 245 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"modal-footer\">\n    <slot></slot>\n</div>\n";
+
+/***/ },
+/* 246 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"row\">\n    <div class=\"col s12\">\n        <btn @click=\"toggleM1\">Open Modal</btn>\n        <modal :open=\"m1OpenStatus\" :complete-callback=\"toggleM1\">\n            <modal-content>\n                <h4>Modal Header</h4>\n                <p>A bunch of text</p>\n            </modal-content>\n            <modal-footer>\n                <btn @click=\"toggleM1\" class=\"modal-action\" type=\"flat\">close</btn>\n            </modal-footer>\n        </modal>\n    </div>\n    <div class=\"col s12\">\n        <btn @click=\"toggleM2\">Open Fixed Footer Modal</btn>\n        <modal :open=\"m2OpenStatus\" :complete-callback=\"toggleM2\" fixed-footer>\n            <modal-content>\n                <h4>Modal Header</h4>\n                <p>\n                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum\n\n                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum\n\n                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum\n\n                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum\n                </p>\n            </modal-content>\n            <modal-footer>\n                <btn @click=\"toggleM2\" class=\"modal-action\" type=\"flat\">close</btn>\n            </modal-footer>\n        </modal>\n    </div>\n    <div class=\"col s12\">\n        <btn @click=\"toggleM3\">Open Bottom Sheet Style Modal</btn>\n        <modal :open=\"m3OpenStatus\" :complete-callback=\"toggleM3\" bottom-sheet>\n            <modal-content>\n                <h4>Modal Header</h4>\n                <p>A bunch of text</p>\n            </modal-content>\n            <modal-footer>\n                <btn @click=\"toggleM3\" class=\"modal-action\" type=\"flat\">close</btn>\n            </modal-footer>\n        </modal>\n    </div>\n</div>\n";
+
+/***/ },
+/* 247 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"row\">\n    <component :is=\"example\"></component>\n</div>\n";
