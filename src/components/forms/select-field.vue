@@ -1,6 +1,6 @@
 <template>
     <div :class="divClasses">
-        <select v-el:select v-model="selected" :multiple="multiple" :class="selectClasses">
+        <select v-el:select v-model="selected" :multiple="multiple" :class="selectClasses" :disabled="disabled">
             <option v-if="options" v-for="option in options"
                     :value="option.value"
                     :class="optionClasses"
