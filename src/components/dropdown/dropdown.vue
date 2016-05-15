@@ -27,7 +27,7 @@
      * dropdown
      * @module dropdown/dropdown
      * @author Jack Yang
-     * @description Add a {@link http://materializecss.com/dropdown.html dropdown} list to any button.
+     * @description Add a {@link http://materializecss.com/dropdown.html dropdown} list to any button. These button props can't be changed for a dropdown: waves-effect, light-wave and disabled.
      */
     module.exports = {
         mixins: [ButtonPropMixin, DropdownPropMixin],
