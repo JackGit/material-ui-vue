@@ -67,7 +67,11 @@
             'date-picker-demo': require('./components/forms/date-picker-demo.vue'),
             'select-field-demo': require('./components/forms/select-field-demo.vue'),
 
-            'modal-demo': require('./components/modals/modal-demo.vue')
+            'modal-demo': require('./components/modals/modal-demo.vue'),
+
+            'tabs-demo': require('./components/tabs/tabs-demo.vue'),
+
+            'pagination-demo': require('./components/pagination/pagination-demo.vue')
         }
     };
 </script>

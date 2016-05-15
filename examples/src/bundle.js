@@ -10200,7 +10200,7 @@
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/example.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(247)
+	__vue_template__ = __webpack_require__(265)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -10286,7 +10286,11 @@
 	        'date-picker-demo': __webpack_require__(219),
 	        'select-field-demo': __webpack_require__(229),
 
-	        'modal-demo': __webpack_require__(235)
+	        'modal-demo': __webpack_require__(235),
+
+	        'tabs-demo': __webpack_require__(247),
+
+	        'pagination-demo': __webpack_require__(256)
 	    }
 	};
 
@@ -15736,6 +15740,390 @@
 
 /***/ },
 /* 247 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(248)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src/components/tabs/tabs-demo.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(255)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/src/components/tabs/tabs-demo.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 248 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	module.exports = {
+	    components: {
+	        'tabs': __webpack_require__(249),
+	        'tab': __webpack_require__(252)
+	    }
+	};
+
+/***/ },
+/* 249 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(250)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] node_modules/material-ui-vue/components/tabs/tabs.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(251)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/node_modules/material-ui-vue/components/tabs/tabs.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 250 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	module.exports = {
+	    ready: function ready() {
+	        var that = this;
+
+	        this.$children.forEach(function (tab) {
+	            $(that.$el).append(tab.$el.children[1]);
+	        });
+
+	        $(this.$el).find('.tabs').tabs();
+	    }
+	};
+
+/***/ },
+/* 251 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div>\n    <ul class=\"tabs\">\n        <slot></slot>\n    </ul>\n</div>\n";
+
+/***/ },
+/* 252 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(253)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] node_modules/material-ui-vue/components/tabs/tab.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(254)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/node_modules/material-ui-vue/components/tabs/tab.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 253 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var uuid = __webpack_require__(13);
+
+	module.exports = {
+	    props: {
+	        label: {
+	            type: String,
+	            default: ''
+	        },
+
+	        active: {
+	            type: Boolean,
+	            default: false
+	        },
+
+	        disabled: {
+	            type: Boolean,
+	            default: false
+	        }
+	    },
+
+	    data: function data() {
+	        return {
+	            tabId: 'tab-' + uuid.v1()
+	        };
+	    },
+
+	    ready: function ready() {
+	        $(this.$el).on('click', function (e) {
+	            this.$dispatch('tab-' + e.type, e);
+	        }.bind(this));
+	    }
+	};
+
+/***/ },
+/* 254 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<li :class=\"['tab', disabled ? 'disabled' : '']\">\n    <a :class=\"active ? 'active' : ''\" :href=\"'#' + tabId\">{{label}}</a>\n    <div :id=\"tabId\">\n        <slot></slot>\n    </div>\n</li>\n";
+
+/***/ },
+/* 255 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"row\">\n    <tabs>\n        <tab label=\"Test 1\" >\n            Test 1 Page\n        </tab>\n        <tab label=\"Test 2\" acitve>\n            Test 2 Page\n        </tab>\n        <tab label=\"Disabled Tab\" disabled>\n            Test 3 page\n        </tab>\n        <tab label=\"Test 4\">\n            Test 4 page\n        </tab>\n    </tabs>\n</div>\n";
+
+/***/ },
+/* 256 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(257)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src/components/pagination/pagination-demo.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(264)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/src/components/pagination/pagination-demo.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 257 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	module.exports = {
+	    components: {
+	        'pagination': __webpack_require__(258),
+	        'pagination-item': __webpack_require__(261)
+	    },
+
+	    data: function data() {
+	        return {
+	            pages: [1, 2, 3],
+	            current: 1
+	        };
+	    },
+
+	    methods: {
+	        setCurrent: function setCurrent(pageIndex) {
+	            console.log('setCurrent', pageIndex);
+	            this.current = pageIndex;
+	            console.log('setCurrent', this.current);
+	        }
+	    }
+	};
+
+/***/ },
+/* 258 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(259)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] node_modules/material-ui-vue/components/pagination/pagination.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(260)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/node_modules/material-ui-vue/components/pagination/pagination.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 259 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	module.exports = {};
+
+/***/ },
+/* 260 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<ul class=\"pagination\">\n    <slot></slot>\n</ul>\n";
+
+/***/ },
+/* 261 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(262)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] node_modules/material-ui-vue/components/pagination/pagination-item.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(263)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/node_modules/material-ui-vue/components/pagination/pagination-item.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 262 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var classes = __webpack_require__(9).classes;
+
+	module.exports = {
+	    components: {
+	        icon: __webpack_require__(21)
+	    },
+
+	    props: {
+	        disabled: {
+	            type: Boolean,
+	            default: false
+	        },
+
+	        active: {
+	            type: Boolean,
+	            default: false
+	        },
+
+	        link: {
+	            type: String,
+	            default: '#!'
+	        },
+
+	        prev: {
+	            type: Boolean,
+	            default: false
+	        },
+
+	        next: {
+	            type: Boolean,
+	            default: false
+	        },
+
+	        label: {
+	            type: String,
+	            default: ''
+	        },
+
+	        wavesEffect: {
+	            type: Boolean,
+	            default: true
+	        }
+	    },
+
+	    data: function data() {
+	        var iconValue = '';
+
+	        if (this.prev) {
+	            iconValue = 'chevron_left';
+	            this.label = '';
+	        }
+
+	        if (this.next) {
+	            iconValue = 'chevron_right';
+	            this.label = '';
+	        }
+
+	        return {
+	            liClasses: classes({
+	                'waves-effect': this.wavesEffect,
+	                'disabled': this.disabled,
+	                'active': this.active
+	            }),
+	            iconValue: iconValue
+	        };
+	    }
+	};
+
+/***/ },
+/* 263 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<li :class=\"liClasses\">\n    <a :href=\"link\">\n        <icon v-if=\"iconValue\" :value=\"iconValue\"></icon>\n        {{label}}\n        <slot></slot>\n    </a>\n</li>\n";
+
+/***/ },
+/* 264 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"row\">\n    <pagination>\n        <pagination-item prev disabled></pagination-item>\n        <pagination-item v-for=\"page in pages\" :active=\"$index == current-1\" @click=\"setCurrent(page)\">{{page}} + {{page==current}}</pagination-item>\n        <pagination-item next></pagination-item>\n    </pagination>\n</div>\n";
+
+/***/ },
+/* 265 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"row\">\n    <component :is=\"example\"></component>\n</div>\n";
