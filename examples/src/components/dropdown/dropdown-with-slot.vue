@@ -1,5 +1,12 @@
 <template>
-    <dropdown></dropdown>
+    <dropdown label="Dropdown with slot">
+        <ul>
+            <li><a href="#!">One</a></li>
+            <li class="divider"></li>
+            <li><a href="#!">Two</a></li>
+            <li><a href="#!">Three</a></li>
+        </ul>
+    </dropdown>
 </template>
 
 <script>

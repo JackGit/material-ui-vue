@@ -1,5 +1,5 @@
 <template>
-    <dropdown :items="items" label="Drop Me!" icon="edit" icon-position="right" :large="true"></dropdown>
+    <dropdown :items="items" label="Click to Drop Me!" :hover="false"></dropdown>
 </template>
 
 <script>

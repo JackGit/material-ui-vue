@@ -48,6 +48,24 @@
             'avatar-collection': require('./components/collections/avatar-collection.vue'),
             'link-collection': require('./components/collections/link-collection.vue'),
             'link-collection-with-slot': require('./components/collections/link-collection-with-slot.vue'),
+
+            'dropdown': require('./components/dropdown/dropdown.vue'),
+            'dropdown-with-slot': require('./components/dropdown/dropdown-with-slot.vue'),
+            'icon-large-dropdown': require('./components/dropdown/icon-large-dropdown.vue'),
+            'click-dropdown': require('./components/dropdown/click-dropdown.vue'),
+
+            'footer-with-copyright': require('./components/footer/footer.vue'),
+
+            'icon-demo': require('./components/icons/icon.vue'),
+
+            'text-field-demo': require('./components/forms/text-field-demo.vue'),
+            'text-area-demo': require('./components/forms/text-area-demo.vue'),
+            'switch-demo': require('./components/forms/switch-demo.vue'),
+            'radio-demo': require('./components/forms/radio-demo.vue'),
+            'checkbox-demo': require('./components/forms/checkbox-demo.vue'),
+            'range-demo': require('./components/forms/range-demo.vue'),
+            'date-picker-demo': require('./components/forms/date-picker-demo.vue'),
+            'select-field-demo': require('./components/forms/select-field-demo.vue'),
         }
     };
 </script>
