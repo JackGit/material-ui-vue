@@ -1,5 +1,6 @@
 var path = require('path');
-var fs = require('fs-extra');
+var fse = require('fs-extra');
+var fs = require('fs');
 
 
 function parseComponentFile(fileString) {
@@ -120,12 +121,62 @@ function parseLink(value) {
     return value;
 }
 
+function scan() {
+    var root = path.resolve(__dirname, '../src/components');
+    var items = [];
+    var results = [];
+
+    console.log('scanning started ' + root);
+
+    fse.walk(root)
+        .on('data', function(item) {
+            // skip directory
+            if(!item.stats.isDirectory()) {
+                items.push(item.path);
+                console.log('scanning file ' + item.path, items.length);
+            }
+        })
+        .on('end', function() {
+            console.log('scanning completed');
+            console.log('parsing started');
+
+            items.forEach(function(filePath, index) {
+                fs.readFile(filePath, 'utf-8', function(err, data) {
+                    var result;
+
+                    if(err) {
+                        console.error('parsing component file ' + filePath + ' failed');
+                        throw err;
+                    } else {
+                        console.log('parsing component file', filePath);
+
+                        result = parseComponentFile(data);
+                        result.name && results.push(result); // store only when there is module name
+
+                        // when loop end, output json file
+                        if(index === items.length - 1) {
+                            fse.outputJson(path.resolve(__dirname, './temp.json'), results, function(err) {
+                                if(err)
+                                    console.log('output json failed', err);
+                                else
+                                    console.log('output json successfully');
+                            });
+
+                            console.log('parsing completed');
+                        }
+                    }
+                });
+            });
+        });
+}
+
 function run() {
     console.log('building docs...');
     // scan files
         // store the .vue file content as code
         // extract comment blocks
         // for each blocks, find the right parser to parse it
+    scan();
 }
 
 run();

@@ -1,0 +1,1173 @@
+[
+  {
+    "name": "badges/badge",
+    "author": "Jack Yang",
+    "description": "<a href=\"http://materializecss.com/badges.html\">Badges</a> can notify you that there are new or unread messages or notifications. Add the new class to the badge to give it the background.",
+    "props": [
+      {
+        "name": "label",
+        "type": "{String}",
+        "default": "''",
+        "description": "badge label"
+      },
+      {
+        "name": "new",
+        "type": "{Boolean}",
+        "default": "false",
+        "description": "apply the new-style of this badge"
+      }
+    ],
+    "methods": []
+  },
+  {
+    "name": "breadcrumbs/breadcrumbs",
+    "author": "Jack Yang",
+    "description": "<a href=\"http://materializecss.com/breadcrumbs.html\">Breadcrumbs</a> are a good way to display your current location. This is usually used when you have multiple layers of content.",
+    "props": [
+      {
+        "name": "crumbs",
+        "type": "{Array}",
+        "default": "function() {return [];}",
+        "description": "example value: [{href: '#!', label: 'First'}, {href: '#!', label: 'Second'}, {href: '#!', label: 'Third'}]"
+      }
+    ],
+    "methods": []
+  },
+  {
+    "name": "buttons/button",
+    "author": "Jack Yang",
+    "description": "There are 3 main button types described in material design. The raised button is a standard button that signify actions and seek to give depth to a mostly flat page. The floating circular action button is meant for very important functions. Flat buttons are usually used within elements that already have depth like cards or modals.",
+    "props": [],
+    "methods": []
+  },
+  {
+    "name": "buttons/fixed-action-button",
+    "author": "Jack Yang",
+    "description": "If you want a fixed floating action button, you can add multiple actions that will appear on hover. Our demo is in the bottom righthand corner of the page.",
+    "props": [
+      {
+        "name": "horizontal",
+        "type": "{Boolean}",
+        "default": "false",
+        "description": "indicate this is a horizontal FAB"
+      },
+      {
+        "name": "clickOnly",
+        "type": "{Boolean}",
+        "default": "false",
+        "description": "if you want to disable the hover behaviour, and instead toggle the FAB menu when the user clicks on the large button (works great on mobile!), just add the click-to-toggle class to the FAB"
+      }
+    ],
+    "methods": []
+  },
+  {
+    "name": "cards/card-action",
+    "author": "Jack Yang",
+    "description": "a component for card-action",
+    "props": [],
+    "methods": []
+  },
+  {
+    "name": "cards/card-content",
+    "author": "Jack Yang",
+    "description": "a component for card-content",
+    "props": [],
+    "methods": []
+  },
+  {
+    "name": "cards/card-image",
+    "author": "Jack Yang",
+    "description": "this is a component to create image card",
+    "props": [
+      {
+        "name": "src",
+        "type": "{String}",
+        "default": "null",
+        "description": "src of the image"
+      },
+      {
+        "name": "title",
+        "type": "{String}",
+        "default": "null",
+        "description": "title of the image"
+      },
+      {
+        "name": "activator",
+        "type": "{Boolean}",
+        "default": "false",
+        "description": "indicate this image is the activator in card reveal"
+      }
+    ],
+    "methods": []
+  },
+  {
+    "name": "cards/card-panel",
+    "author": "Jack Yang",
+    "description": "a component for card-panel",
+    "props": [],
+    "methods": []
+  },
+  {
+    "name": "cards/card-reveal",
+    "author": "Jack Yang",
+    "description": "a component for card-reveal",
+    "props": [],
+    "methods": []
+  },
+  {
+    "name": "cards/card-title",
+    "author": "Jack Yang",
+    "description": "a component for card-title",
+    "props": [
+      {
+        "name": "title",
+        "type": "{String}",
+        "default": "null",
+        "description": "title of the card"
+      }
+    ],
+    "methods": []
+  },
+  {
+    "name": "cards/card",
+    "author": "Jack Yang",
+    "description": "<a href=\"http://materializecss.com/cards.html\">Cards</a> are a convenient means of displaying content composed of different types of objects. They’re also well-suited for presenting similar objects whose size or supported actions can vary considerably, like photos with captions of variable length",
+    "props": [
+      {
+        "name": "size",
+        "type": "{String}",
+        "default": "''",
+        "description": "if you want to have uniformly sized cards, you can use our premade size classes. Just add the size class in addition to the card class. Possible values: 'small', 'medium', 'large', and by default ''"
+      },
+      {
+        "name": "revealed",
+        "type": "{Boolean}",
+        "default": "false",
+        "description": "indicate the status for card reveal"
+      }
+    ],
+    "methods": []
+  },
+  {
+    "name": "chips/chip",
+    "author": "Jack Yang",
+    "description": "<a href=\"http://materializecss.com/chips.html\">Chips</a> can be used to represent small blocks of information. They are most commonly used either for contacts or for tags.",
+    "props": [
+      {
+        "name": "label",
+        "type": "{String}",
+        "default": "''",
+        "description": "label of the chip"
+      },
+      {
+        "name": "removable",
+        "type": "{Boolean}",
+        "default": "false",
+        "description": "indicate this chip is removable or not"
+      },
+      {
+        "name": "image",
+        "type": "{String}",
+        "default": "''",
+        "description": "src of the chip image"
+      }
+    ],
+    "methods": []
+  },
+  {
+    "name": "collapsible/collapsible-body",
+    "author": "Jack Yang",
+    "description": "a component for collapsible-body",
+    "props": [],
+    "methods": []
+  },
+  {
+    "name": "collapsible/collapsible-item",
+    "author": "Jack Yang",
+    "description": "a component for collapsible-item",
+    "props": [],
+    "methods": []
+  },
+  {
+    "name": "collapsible/collapsible-header",
+    "author": "Jack Yang",
+    "description": "a component for collapsible-header",
+    "props": [
+      {
+        "name": "label",
+        "type": "{String}",
+        "default": "''",
+        "description": ""
+      },
+      {
+        "name": "icon",
+        "type": "{String}",
+        "default": "''",
+        "description": "the icon of the collapsible-header"
+      },
+      {
+        "name": "iconPosition",
+        "type": "{String}",
+        "default": "'left'",
+        "description": "indicate the position of the icon. Possible values: 'left', 'right'"
+      },
+      {
+        "name": "active",
+        "type": "{Boolean}",
+        "default": "false",
+        "description": "indicate the collapsible open status"
+      }
+    ],
+    "methods": []
+  },
+  {
+    "name": "collapsible/collapsible",
+    "author": "Jack Yang",
+    "description": "<a href=\"http://materializecss.com/collapsible.html\">Collapsibles</a> are accordion elements that expand when clicked on. They allow you to hide content that is not immediately relevant to the user.",
+    "props": [
+      {
+        "name": "behavior",
+        "type": "{String}",
+        "default": "'accordion'",
+        "description": "indicate the behavior of the collapsible. Possible values: 'accordion', 'expandable'"
+      },
+      {
+        "name": "popout",
+        "type": "{Boolean}",
+        "default": "false",
+        "description": "set as true to create a popout collapsible"
+      }
+    ],
+    "methods": []
+  },
+  {
+    "name": "collections/collection-header",
+    "author": "Jack Yang",
+    "description": "a component for collection-header",
+    "props": [],
+    "methods": []
+  },
+  {
+    "name": "collections/collection-item",
+    "author": "Jack Yang",
+    "description": "a component for collection-item",
+    "props": [],
+    "methods": []
+  },
+  {
+    "name": "dropdown/dropdown",
+    "author": "Jack Yang",
+    "description": "Add a <a href=\"http://materializecss.com/dropdown.html\">dropdown</a> list to any button. These button props can't be changed for a dropdown: waves-effect, light-wave and disabled.",
+    "props": [],
+    "methods": []
+  },
+  {
+    "name": "collections/collection",
+    "author": "Jack Yang",
+    "description": "<a href=\"http://materializecss.com/collections.html\">Collections</a> allow you to group list objects together.",
+    "props": [
+      {
+        "name": "withHeader",
+        "type": "{Boolean}",
+        "default": "false",
+        "description": "to indicate the collection with header or not"
+      }
+    ],
+    "methods": []
+  },
+  {
+    "name": "collections/link-collection",
+    "author": "Jack Yang",
+    "description": "a component for link collection",
+    "props": [
+      {
+        "name": "links",
+        "type": "{Array}",
+        "default": "function() {return [];}",
+        "description": "links data for rendering. Example value: [{href: '#!', label: 'Link A', active: true}, {href: '#!', label: 'Link B', active: false, badge: {label: '1', new: false}}]"
+      }
+    ],
+    "methods": []
+  },
+  {
+    "name": "footer/footer-copyright",
+    "author": "Jack Yang",
+    "description": "a component for footer-copyright",
+    "props": [],
+    "methods": []
+  },
+  {
+    "name": "footer/footer",
+    "author": "Jack Yang",
+    "description": "a component for footer",
+    "props": [],
+    "methods": []
+  },
+  {
+    "name": "forms/checkbox",
+    "author": "Jack Yang",
+    "description": "<a href=\"http://materializecss.com/forms.html\">forms</a> checkbox component",
+    "props": [
+      {
+        "name": "selected",
+        "type": "{Array}",
+        "default": "function() {return [];}",
+        "description": "indicate the items been selected. Value should come from value attribute of item object. Example value: ['red', 'green']"
+      },
+      {
+        "name": "items",
+        "type": "{Array}",
+        "default": "function() {return [];}",
+        "description": "items of the checkbox. Example value: [{label: 'RED', value: 'red', disabled: false}, {label: 'GREEN', value: 'green', disabled: true}]"
+      },
+      {
+        "name": "filledIn",
+        "type": "{Boolean}",
+        "default": "false",
+        "description": "indicate use filled-in style or not"
+      }
+    ],
+    "methods": []
+  },
+  {
+    "name": "forms/radio",
+    "author": "Jack Yang",
+    "description": "<a href=\"http://materializecss.com/forms.html\">forms</a> radio component",
+    "props": [
+      {
+        "name": "group",
+        "type": "{String}",
+        "default": "''",
+        "description": "the group name of this radios"
+      },
+      {
+        "name": "withGap",
+        "type": "{Boolean}",
+        "default": "false",
+        "description": "indicate apply with-gap style or not"
+      },
+      {
+        "name": "selected",
+        "type": "{String}",
+        "default": "''",
+        "description": "indicate which item is selected. Value should come from value attribute of item object. Example value: 'green'"
+      },
+      {
+        "name": "items",
+        "type": "{Array}",
+        "default": "function() {return [];}",
+        "description": "radio items data. Example value: [{label: 'RED', value: 'red', disabled: false}, {label: 'GREEN', value: 'green', disabled: true}]"
+      }
+    ],
+    "methods": []
+  },
+  {
+    "name": "forms/date-picker",
+    "author": "Jack Yang",
+    "description": "<a href=\"http://materializecss.com/forms.html\">forms</a> date picker component",
+    "props": [
+      {
+        "name": "label",
+        "type": "{String}",
+        "default": "''",
+        "description": "label of the date picker input controller"
+      },
+      {
+        "name": "icon",
+        "type": "{String}",
+        "default": "''",
+        "description": "icon of the date picker input controller"
+      },
+      {
+        "name": "date",
+        "type": "{Date}",
+        "default": "new Date()",
+        "description": "date value of the date picker"
+      },
+      {
+        "name": "pickerOptions",
+        "type": "{Object}",
+        "default": "''",
+        "description": "options for pickdate.js"
+      },
+      {
+        "name": "opened",
+        "type": "{Boolean}",
+        "default": "false",
+        "description": "indicate this picker popup is opened or not"
+      },
+      {
+        "name": "disabled",
+        "type": "{Boolean}",
+        "default": "false",
+        "description": "indicate this picker is disabled or not"
+      }
+    ],
+    "methods": []
+  },
+  {
+    "name": "forms/range",
+    "author": "Jack Yang",
+    "description": "<a href=\"http://materializecss.com/forms.html\">forms</a> range component",
+    "props": [
+      {
+        "name": "min",
+        "type": "{Number}",
+        "default": "0",
+        "description": "set the min of range"
+      },
+      {
+        "name": "max",
+        "type": "{Number}",
+        "default": "100",
+        "description": "set the max of range"
+      },
+      {
+        "name": "value",
+        "type": "{Number}",
+        "default": "50",
+        "description": "set the current value of range"
+      },
+      {
+        "name": "disabled",
+        "type": "{Boolean}",
+        "default": "false",
+        "description": "indicate this range controller is disabled or not"
+      }
+    ],
+    "methods": []
+  },
+  {
+    "name": "forms/select-field",
+    "author": "Jack Yang",
+    "description": "<a href=\"http://materializecss.com/forms.html\">forms</a> select field component",
+    "props": [
+      {
+        "name": "label",
+        "type": "{String}",
+        "default": "''",
+        "description": "label of select field"
+      },
+      {
+        "name": "multiple",
+        "type": "{Boolean}",
+        "default": "false",
+        "description": "indicate this is a multiple select field or not"
+      },
+      {
+        "name": "disabled",
+        "type": "{Boolean}",
+        "default": "false",
+        "description": "indicate this select field is disabled or not"
+      },
+      {
+        "name": "options",
+        "type": "{Array}",
+        "default": "function() {return [];}",
+        "description": "options of the select field. Example value: [{value: '0', label: 'zero', disabled: false, icon: 'http://wedding.jackyang.me/static/images/wedding_pic_02.jpg'}, {value: '1', label: 'one', disabled: false, icon: 'http://wedding.jackyang.me/static/images/wedding_pic_02.jpg'}]"
+      },
+      {
+        "name": "groupOptions",
+        "type": "{Object}",
+        "default": "null",
+        "description": "group options of the select field. Example value: {g1: [{value: '0', label: 'zero', disabled: false}, {value: '1', label: 'one', disabled: false}], g2: [{value: '2', label: 'two', disabled: false}, {value: '3', label: 'three', disabled: false}]}"
+      },
+      {
+        "name": "selected",
+        "type": "{Array | String}",
+        "default": "''",
+        "description": "value been select. It could be a string value or an array of string values. Values should come from value attribute of item object."
+      },
+      {
+        "name": "icons",
+        "type": "{Boolean}",
+        "default": "false",
+        "description": "indicate options with icons"
+      },
+      {
+        "name": "iconPosition",
+        "type": "{String}",
+        "default": "'left'",
+        "description": "position of option icon. Possible values: 'left' and 'right'"
+      },
+      {
+        "name": "circleIcon",
+        "type": "{Boolean}",
+        "default": "true",
+        "description": "apply circle icon style or not"
+      },
+      {
+        "name": "browserDefault",
+        "type": "{Boolean}",
+        "default": "false",
+        "description": "use browser default style or not"
+      }
+    ],
+    "methods": []
+  },
+  {
+    "name": "forms/switch",
+    "author": "Jack Yang",
+    "description": "<a href=\"http://materializecss.com/forms.html\">forms</a> switch component",
+    "props": [
+      {
+        "name": "rightLabel",
+        "type": "{String}",
+        "default": "''",
+        "description": "right label of switch"
+      },
+      {
+        "name": "leftLabel",
+        "type": "{String}",
+        "default": "''",
+        "description": "left label of switch"
+      },
+      {
+        "name": "value",
+        "type": "{Boolean}",
+        "default": "false",
+        "description": "value of switch. Set true means switch on. Set false means switch off"
+      },
+      {
+        "name": "disabled",
+        "type": "{Boolean}",
+        "default": "false",
+        "description": "indicate the switch disabled or not"
+      }
+    ],
+    "methods": []
+  },
+  {
+    "name": "forms/text-area",
+    "author": "Jack Yang",
+    "description": "<a href=\"http://materializecss.com/forms.html\">forms</a> text area component",
+    "props": [
+      {
+        "name": "label",
+        "type": "{String}",
+        "default": "''",
+        "description": "label of text area controller"
+      },
+      {
+        "name": "value",
+        "type": "{String}",
+        "default": "''",
+        "description": "text value of text area controller"
+      },
+      {
+        "name": "icon",
+        "type": "{String}",
+        "default": "''",
+        "description": "icon of text area controller"
+      },
+      {
+        "name": "length",
+        "type": "{Number}",
+        "default": "null",
+        "description": "length restriction of text area controller"
+      },
+      {
+        "name": "validate",
+        "type": "{Boolean}",
+        "default": "false",
+        "description": "enable text area validate or not"
+      },
+      {
+        "name": "errorMessage",
+        "type": "{String}",
+        "default": "''",
+        "description": "error message content"
+      },
+      {
+        "name": "successMessage",
+        "type": "{String}",
+        "default": "''",
+        "description": "success message content"
+      }
+    ],
+    "methods": []
+  },
+  {
+    "name": "icons/icon",
+    "author": "Jack Yang",
+    "description": "We have included 740 Material Design <a href=\"http://materializecss.com/icons.html\">Icons</a> courtesy of Google. You can download them directly from the Material Design specs",
+    "props": [
+      {
+        "name": "value",
+        "type": "{String}",
+        "default": "null",
+        "description": "icon value"
+      },
+      {
+        "name": "size",
+        "type": "{String}",
+        "default": "''",
+        "description": "indicate size of the icon. Possible values: 'tiny', 'small', 'medium', 'large' and by default ''"
+      }
+    ],
+    "methods": []
+  },
+  {
+    "name": "forms/text-field",
+    "author": "Jack Yang",
+    "description": "<a href=\"http://materializecss.com/forms.html\">forms</a> text field component",
+    "props": [
+      {
+        "name": "label",
+        "type": "{String}",
+        "default": "''",
+        "description": "label of text field"
+      },
+      {
+        "name": "value",
+        "type": "{String}",
+        "default": "''",
+        "description": "value of text field"
+      },
+      {
+        "name": "placeholder",
+        "type": "{String}",
+        "default": "''",
+        "description": "placeholder of text field"
+      },
+      {
+        "name": "length",
+        "type": "{Number}",
+        "default": "null",
+        "description": "length of text field"
+      },
+      {
+        "name": "type",
+        "type": "{String}",
+        "default": "'text'",
+        "description": "input type of text field"
+      },
+      {
+        "name": "disabled",
+        "type": "{Boolean}",
+        "default": "false",
+        "description": "indicate text field is disabled or not"
+      },
+      {
+        "name": "icon",
+        "type": "{String}",
+        "default": "''",
+        "description": "icon of text field"
+      },
+      {
+        "name": "validate",
+        "type": "{Boolean}",
+        "default": "false",
+        "description": "enable field validate or not"
+      },
+      {
+        "name": "errorMessage",
+        "type": "{String}",
+        "default": "''",
+        "description": "error message content"
+      },
+      {
+        "name": "successMessage",
+        "type": "{String}",
+        "default": "''",
+        "description": "success message content"
+      }
+    ],
+    "methods": []
+  },
+  {
+    "name": "media/carousel",
+    "author": "Jack Yang",
+    "description": "Our slider is a simple and elegant image carousel. You can also have captions that will be transitioned on their own depending on their alignment. You can also have indicators that show up on the bottom of the slider",
+    "props": [
+      {
+        "name": "images",
+        "type": "{Array}",
+        "default": "function() {return [];}",
+        "description": "image data. Example value: [{src: 'path/to/your/image.png', href: '#!'}]"
+      },
+      {
+        "name": "slider",
+        "type": "{Boolean}",
+        "default": "false",
+        "description": "indicate the carousel in a slider-type"
+      },
+      {
+        "name": "dist",
+        "type": "{Number}",
+        "default": "-100",
+        "description": "perspective zoom. If 0, all items are the same size"
+      },
+      {
+        "name": "timeConstant",
+        "type": "{Number}",
+        "default": "200",
+        "description": "transition time"
+      },
+      {
+        "name": "shift",
+        "type": "{Number}",
+        "default": "0",
+        "description": "spacing for center image"
+      },
+      {
+        "name": "padding",
+        "type": "{Number}",
+        "default": "0",
+        "description": "padding between non center items"
+      },
+      {
+        "name": "fullWidth",
+        "type": "{Boolean}",
+        "default": "false",
+        "description": "change to full width styles"
+      }
+    ],
+    "methods": []
+  },
+  {
+    "name": "media/material-box",
+    "author": "Jack Yang",
+    "description": "<a href=\"http://materializecss.com/media.html\">Material</a> is a material design implementation of the Lightbox plugin. When a user clicks on an image that can be enlarged. Material box centers the image and enlarges it in a smooth, non-jarring manner. To dismiss the image, the user can either click on the image again, scroll away, or press the ESC key",
+    "props": [
+      {
+        "name": "imageUrl",
+        "type": "{String}",
+        "default": "''",
+        "description": "url of the image"
+      },
+      {
+        "name": "caption",
+        "type": "{String}",
+        "default": "''",
+        "description": "caption of the image"
+      }
+    ],
+    "methods": []
+  },
+  {
+    "name": "media/slider-item",
+    "author": "Jack Yang",
+    "description": "a component for slider-item",
+    "props": [],
+    "methods": []
+  },
+  {
+    "name": "modals/modal-content",
+    "author": "Jack Yang",
+    "description": "a component for modal-content",
+    "props": [],
+    "methods": []
+  },
+  {
+    "name": "media/slider",
+    "author": "Jack Yang",
+    "description": "<a href=\"http://materializecss.com/media.html\">Slider</a> is a simple and elegant image carousel. You can also have captions that will be transitioned on their own depending on their alignment. You can also have indicators that show up on the bottom of the slider",
+    "props": [
+      {
+        "name": "fullscreen",
+        "type": "{Boolean}",
+        "default": "false",
+        "description": "make it a fullscreen slider"
+      },
+      {
+        "name": "images",
+        "type": "{Array}",
+        "default": "function() {return [];}",
+        "description": "images of the slider. Example value: [{src: 'path/to/your/image.png', caption: 'nice image', description: 'really?'}]"
+      },
+      {
+        "name": "indicators",
+        "type": "{Boolean}",
+        "default": "true",
+        "description": "set to false to hide slide indicators"
+      },
+      {
+        "name": "height",
+        "type": "{Number}",
+        "default": "400",
+        "description": "set height of slider"
+      },
+      {
+        "name": "transition",
+        "type": "{Number}",
+        "default": "500",
+        "description": "set the duration of the transition animation in ms"
+      },
+      {
+        "name": "interval",
+        "type": "{Number}",
+        "default": "6000",
+        "description": "set the duration between transitions in ms"
+      }
+    ],
+    "methods": []
+  },
+  {
+    "name": "modals/modal-footer",
+    "author": "Jack Yang",
+    "description": "a component for modal-footer",
+    "props": [],
+    "methods": []
+  },
+  {
+    "name": "modals/modal",
+    "author": "Jack Yang",
+    "description": "Use a <a href=\"http://materializecss.com/modals.html\">modal</a> for dialog boxes, confirmation messages, or other content that can be called up. In order for the modal to work you have to add the Modal ID to the link of the trigger",
+    "props": [
+      {
+        "name": "opacity",
+        "type": "{Number}",
+        "default": "0.5",
+        "description": "opacity of modal background"
+      },
+      {
+        "name": "inDuration",
+        "type": "{Number}",
+        "default": "350",
+        "description": "transition in duration"
+      },
+      {
+        "name": "outDuration",
+        "type": "{Number}",
+        "default": "250",
+        "description": "transition out duration"
+      },
+      {
+        "name": "readyCallback",
+        "type": "{Function}",
+        "default": "null",
+        "description": "callback for Modal open"
+      },
+      {
+        "name": "completeCallback",
+        "type": "{Function}",
+        "default": "null",
+        "description": "callback for Modal close"
+      },
+      {
+        "name": "dismissible",
+        "type": "{Boolean}",
+        "default": "true",
+        "description": "modal can be dismissed by clicking outside of the modal"
+      },
+      {
+        "name": "fixedFooter",
+        "type": "{Boolean}",
+        "default": "false",
+        "description": "set true, if you have content that is very long and you want the action buttons to be visible all the time"
+      },
+      {
+        "name": "bottomSheet",
+        "type": "{Boolean}",
+        "default": "false",
+        "description": "bottom Sheet Modals are good for displaying actions to the user on the bottom of a screen. They still act the same as regular modals"
+      },
+      {
+        "name": "open",
+        "type": "{Boolean}",
+        "default": "false",
+        "description": "the model open status"
+      }
+    ],
+    "methods": []
+  },
+  {
+    "name": "navbar/nav-collapsible-item",
+    "author": "Jack Yang",
+    "description": "collapsible menu component in navbar. When your nav bar is resized, you will see that the links on the right turn into a hamburger icon",
+    "props": [],
+    "methods": []
+  },
+  {
+    "name": "navbar/nav-item",
+    "author": "Jack Yang",
+    "description": "a component for nav-item",
+    "props": [],
+    "methods": []
+  },
+  {
+    "name": "navbar/nav-dropdown-item",
+    "author": "Jack Yang",
+    "description": "dropdown menu component in navbar",
+    "props": [
+      {
+        "name": "iconPosition",
+        "type": "{String}",
+        "default": "'right'",
+        "description": "icon position of the nav-dropdown-item"
+      }
+    ],
+    "methods": []
+  },
+  {
+    "name": "navbar/navbar",
+    "author": "Jack Yang",
+    "description": "The <a href=\"http://materializecss.com/navbar.html\">navbar</a> is fully contained by an HTML5 Nav tag. Inside a recommended container div, there are 2 main parts of the navbar. A logo or brand link, and the navigations links. You can align these links to the left or right",
+    "props": [
+      {
+        "name": "linkPosition",
+        "type": "{String}",
+        "default": "'right'",
+        "description": "to indicate the position of links in the navbar. Possible values: 'left' and 'right'"
+      },
+      {
+        "name": "logo",
+        "type": "{String}",
+        "default": "''",
+        "description": "logo text value"
+      },
+      {
+        "name": "logoHref",
+        "type": "{String}",
+        "default": "'#!'",
+        "description": "href of logo"
+      },
+      {
+        "name": "logoPosition",
+        "type": "{String}",
+        "default": "'left'",
+        "description": "position of logo. Possible values: 'left', 'right', 'center' and by default ''"
+      },
+      {
+        "name": "fixed",
+        "type": "{Boolean}",
+        "default": "false",
+        "description": "indicate this is a fixed navbar"
+      },
+      {
+        "name": "autoHide",
+        "type": "{Boolean}",
+        "default": "true",
+        "description": "add hide-on-med-and-down"
+      },
+      {
+        "name": "sideNavId",
+        "type": "{String}",
+        "default": "''",
+        "description": ""
+      },
+      {
+        "name": "showOnLarge",
+        "type": "{Boolean}",
+        "default": "false",
+        "description": "to control collapse button show on large screen"
+      }
+    ],
+    "methods": []
+  },
+  {
+    "name": "pagination/pagination-item",
+    "author": "Jack Yang",
+    "description": "a component for pagination-item",
+    "props": [
+      {
+        "name": "disabled",
+        "type": "{Boolean}",
+        "default": "false",
+        "description": "indicate if this pagination is disabled or not"
+      },
+      {
+        "name": "active",
+        "type": "{Boolean}",
+        "default": "false",
+        "description": "indicate the active status of this pagination item"
+      },
+      {
+        "name": "link",
+        "type": "{String}",
+        "default": "'#!'",
+        "description": "link of this pagination item"
+      },
+      {
+        "name": "prev",
+        "type": "{Boolean}",
+        "default": "false",
+        "description": "indicate this is the \"prev\" pagination"
+      },
+      {
+        "name": "next",
+        "type": "{Boolean}",
+        "default": "false",
+        "description": "indicate this is the \"next\" pagination"
+      },
+      {
+        "name": "label",
+        "type": "{String}",
+        "default": "''",
+        "description": "label of this pagination item. This value will be ignored when prev or next props is set as true"
+      },
+      {
+        "name": "wavesEffect",
+        "type": "{Boolean}",
+        "default": "true",
+        "description": "indicate the pagination with waves effect or not"
+      }
+    ],
+    "methods": []
+  },
+  {
+    "name": "pagination/pagination",
+    "author": "Jack Yang",
+    "description": "a component for pagination",
+    "props": [],
+    "methods": []
+  },
+  {
+    "name": "navbar/search-bar",
+    "author": "Jack Yang",
+    "description": "search form in the navbar",
+    "props": [
+      {
+        "name": "placeholder",
+        "type": "{String}",
+        "default": "''",
+        "description": "placeholder of search box"
+      },
+      {
+        "name": "value",
+        "type": "{String}",
+        "default": "''",
+        "description": "value of the search box"
+      },
+      {
+        "name": "fixed",
+        "type": "{Boolean}",
+        "default": "false",
+        "description": "indicate this is fixed search-bar or not"
+      }
+    ],
+    "methods": []
+  },
+  {
+    "name": "parallax/parallax",
+    "author": "Jack Yang",
+    "description": "<a href=\"http://materializecss.com/parallax.html\">Parallax</a> is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling",
+    "props": [
+      {
+        "name": "imageSrc",
+        "type": "{String}",
+        "default": "''",
+        "description": "src of image of the parallax"
+      },
+      {
+        "name": "height",
+        "type": "{Number}",
+        "default": "500",
+        "description": "define the height (px) of the parallax"
+      }
+    ],
+    "methods": []
+  },
+  {
+    "name": "progresses/circle-progress",
+    "author": "Jack Yang",
+    "description": "Circular <a href=\"http://materializecss.com/preloader.html\">preloader</a> in materializecss",
+    "props": [
+      {
+        "name": "size",
+        "type": "{String}",
+        "default": "''",
+        "description": "size of the circle. Possible values: 'big', 'small' and by default ''"
+      },
+      {
+        "name": "active",
+        "type": "{Boolean}",
+        "default": "true",
+        "description": "indicate the progress is active or not"
+      },
+      {
+        "name": "color",
+        "type": "{String}",
+        "default": "'red'",
+        "description": "color or the circle. Possible values: 'red', 'blue', 'yellow' and 'green'"
+      },
+      {
+        "name": "flash",
+        "type": "{Boolean}",
+        "default": "false",
+        "description": "enable circular flashing colors"
+      }
+    ],
+    "methods": []
+  },
+  {
+    "name": "side-nav/side-nav",
+    "author": "Jack Yang",
+    "description": "This is a slide out menu. You can add a dropdown to your sidebar by using our collapsible component. If you want to see a demo, our sidebar will use this on smaller screens. To use this in conjunction with a fullscreen navigation, you have to use two copies of the same UL",
+    "props": [
+      {
+        "name": "fixed",
+        "type": "{Boolean}",
+        "default": "false",
+        "description": "indicate this is a fixed side-nav or not"
+      }
+    ],
+    "methods": []
+  },
+  {
+    "name": "progresses/linear-progress",
+    "author": "Jack Yang",
+    "description": "Linear <a href=\"http://materializecss.com/preloader.html\">preloader</a> in materializecss",
+    "props": [
+      {
+        "name": "determinate",
+        "type": "{Boolean}",
+        "default": "false",
+        "description": "indicate this is a determinate progress or not"
+      },
+      {
+        "name": "percentage",
+        "type": "{Number}",
+        "default": "0",
+        "description": "this value used in a determinate progress"
+      },
+      {
+        "name": "color",
+        "type": "{String}",
+        "default": "''",
+        "description": "set the front color. <a href=\"http://materializecss.com/color.html\">Possible</a>. Example: color=\"red\""
+      },
+      {
+        "name": "backgroundColor",
+        "type": "{String}",
+        "default": "''",
+        "description": "set the background color. <a href=\"http://materializecss.com/color.html\">Possible</a>. Example: background-color=\"red lighten-4\""
+      }
+    ],
+    "methods": []
+  },
+  {
+    "name": "tabs/tab",
+    "author": "Jack Yang",
+    "description": "single tab component",
+    "props": [
+      {
+        "name": "label",
+        "type": "{String}",
+        "default": "''",
+        "description": "label of this tab"
+      },
+      {
+        "name": "active",
+        "type": "{Boolean}",
+        "default": "false",
+        "description": "indicate this tab is active or not"
+      },
+      {
+        "name": "disabled",
+        "type": "{Boolean}",
+        "default": "false",
+        "description": "indicate this tab is disabled or not"
+      }
+    ],
+    "methods": []
+  },
+  {
+    "name": "tabs/tabs",
+    "author": "Jack Yang",
+    "description": "The <a href=\"http://materializecss.com/tabs.html\">tabs</a> structure consists of an unordered list of tabs that have hashes corresponding to tab ids. Then when you click on each tab, only the container with the corresponding tab id will become visible",
+    "props": [],
+    "methods": []
+  }
+]
