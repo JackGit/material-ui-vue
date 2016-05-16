@@ -16,14 +16,14 @@ router.map({
         name: 'about',
         component: require('./about/about.vue')
     },
-    '/components/badges': {
-        name: 'badges',
+    '/components': {
+        name: 'components',
         component: require('./components/example.vue')
     }
 });
 
 router.redirect({
-    '/': '/index'
+    '/': '/components'
 });
 
 

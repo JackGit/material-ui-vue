@@ -19,24 +19,7 @@
         },
 
         ready: function() {
-            this.componentDetails = {
-                name: 'Badge',
-                description: 'Badge description here',
-                author: 'Jack Yang',
-                props: [
-                    {name: '', type: '', default: '', description: ''}
-                ],
-                methods: [],
-                events: [],
-                examples: [
-                    {
-                        name: '',
-                        description: '',
-                        code: '',
-                        componentsPath: 'examples/components/badges/badges-in-navbar.vue'
-                    }
-                ]
-            };
+
         },
 
         methods: {
