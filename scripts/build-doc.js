@@ -40,7 +40,7 @@ function parseComponentFile(fileString) {
     return module;
 }
 
-function parseDemoFile() {
+function parseExampleFile() {
 
 }
 
