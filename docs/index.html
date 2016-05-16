@@ -16,11 +16,15 @@
     </div>
 
     <script type="text/javascript" src="dist/js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="dist/js/prism.js"></script>
     <script type="text/javascript" src="dist/materialize-css/js/materialize.min.js"></script>
-    <script type="text/javascript" src="dist/js/material-ui-vue.js"></script>
     <script src="dist/bundle.js"></script>
     <script>
 
+        $(function() {
+            var s = '<div id="example"><div>A custom component!</div></div>';
+            $('#code').text(s)
+        });
         var moduleData = {
             name: 'Badge',
             description: '',
@@ -35,6 +39,7 @@
                     name: '',
                     description: '',
                     code: '',
+                    demoComponentName: '',
                     componentsPath: 'examples/components/badges/badges-in-navbar.vue'
                 }
             ]

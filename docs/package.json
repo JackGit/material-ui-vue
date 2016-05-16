@@ -1,16 +1,14 @@
 {
-  "name": "examples",
-  "version": "1.0.0",
+  "name": "docs",
+  "version": "0.0.1",
   "description": "",
-  "main": "main.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
+  "main": "index.js",
   "dependencies": {
-    "material-ui-vue": "^0.1.0",
-    "vue": "^1.0.24"
+    "material-ui-vue": "^0.1.1",
+    "vue": "^1.0.24",
+    "vue-resource": "^0.7.0",
+    "vue-router": "^0.7.13",
+    "vuex": "^0.6.3"
   },
   "devDependencies": {
     "babel-core": "^6.8.0",
@@ -24,5 +22,10 @@
     "vue-loader": "^8.3.1",
     "vue-style-loader": "^1.0.0",
     "webpack": "^1.13.0"
-  }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
 }

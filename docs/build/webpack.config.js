@@ -10,9 +10,6 @@ module.exports = {
     devtool: 'source-map',
     module: {
         loaders: [
-            //{test: /\.css$/, loader: 'style!css!'},
-            //
-            // {test: /\.(png|jpg)$/, loader: 'file'},
             {test: /\.vue$/, loader: 'vue'}
         ]
     },
