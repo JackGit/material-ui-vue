@@ -16,7 +16,7 @@
             /**
              * @prop label
              * @type {String}
-             * @default false
+             * @default ''
              * @description badge label
              */
             label: {
