@@ -63,11 +63,11 @@
              * @prop logoPosition
              * @type {String}
              * @default 'left'
-             * @description position of logo. Possible values: 'left', 'right' and 'center'
+             * @description position of logo. Possible values: 'left', 'right', 'center' and by default ''
              */
             logoPosition: {
                 type: String,
-                default: 'left'
+                default: ''
             },
             /**
              * @prop fixed
