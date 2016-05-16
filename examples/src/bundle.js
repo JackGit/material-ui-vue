@@ -10199,8 +10199,8 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/example.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(265)
+	  console.warn("[vue-loader] src\\example.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(305)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -10210,7 +10210,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/src/example.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\example.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10290,7 +10290,14 @@
 
 	        'tabs-demo': __webpack_require__(247),
 
-	        'pagination-demo': __webpack_require__(256)
+	        'pagination-demo': __webpack_require__(256),
+
+	        'navbar-demo': __webpack_require__(265),
+	        'search-bar-demo': __webpack_require__(284),
+	        'side-nav-demo': __webpack_require__(290),
+
+	        'linear-progress-demo': __webpack_require__(293),
+	        'circle-progress-demo': __webpack_require__(299)
 	    }
 	};
 
@@ -10303,7 +10310,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/badges/badges-in-dropdown.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] src\\components\\badges\\badges-in-dropdown.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(26)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -10314,7 +10321,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/src/components/badges/badges-in-dropdown.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\components\\badges\\badges-in-dropdown.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10350,7 +10357,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] node_modules/material-ui-vue/components/badges/badge.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] node_modules\\material-ui-vue\\components\\badges\\badge.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(10)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -10361,7 +10368,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/node_modules/material-ui-vue/components/badges/badge.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\node_modules\\material-ui-vue\\components\\badges\\badge.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10434,7 +10441,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] node_modules/material-ui-vue/components/dropdown/dropdown.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] node_modules\\material-ui-vue\\components\\dropdown\\dropdown.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(25)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -10445,7 +10452,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/node_modules/material-ui-vue/components/dropdown/dropdown.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\node_modules\\material-ui-vue\\components\\dropdown\\dropdown.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10894,7 +10901,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] node_modules/material-ui-vue/components/buttons/button.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] node_modules\\material-ui-vue\\components\\buttons\\button.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(24)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -10905,7 +10912,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/node_modules/material-ui-vue/components/buttons/button.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\node_modules\\material-ui-vue\\components\\buttons\\button.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11088,7 +11095,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] node_modules/material-ui-vue/components/icons/icon.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] node_modules\\material-ui-vue\\components\\icons\\icon.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(23)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -11099,7 +11106,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/node_modules/material-ui-vue/components/icons/icon.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\node_modules\\material-ui-vue\\components\\icons\\icon.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11160,7 +11167,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/badges/badges-in-dropdown-with-slot.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] src\\components\\badges\\badges-in-dropdown-with-slot.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(29)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -11171,7 +11178,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/src/components/badges/badges-in-dropdown-with-slot.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\components\\badges\\badges-in-dropdown-with-slot.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11207,7 +11214,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/badges/badges-in-collections.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] src\\components\\badges\\badges-in-collections.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(35)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -11218,7 +11225,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/src/components/badges/badges-in-collections.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\components\\badges\\badges-in-collections.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11253,7 +11260,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] node_modules/material-ui-vue/components/collections/link-collection.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] node_modules\\material-ui-vue\\components\\collections\\link-collection.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(34)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -11264,7 +11271,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/node_modules/material-ui-vue/components/collections/link-collection.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\node_modules\\material-ui-vue\\components\\collections\\link-collection.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11318,7 +11325,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/badges/badges-in-collections-with-slot.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] src\\components\\badges\\badges-in-collections-with-slot.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(38)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -11329,7 +11336,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/src/components/badges/badges-in-collections-with-slot.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\components\\badges\\badges-in-collections-with-slot.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11365,7 +11372,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/breadcrumbs/breadcrumbs.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] src\\components\\breadcrumbs\\breadcrumbs.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(44)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -11376,7 +11383,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/src/components/breadcrumbs/breadcrumbs.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\components\\breadcrumbs\\breadcrumbs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11412,7 +11419,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] node_modules/material-ui-vue/components/breadcrumbs/breadcrumbs.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] node_modules\\material-ui-vue\\components\\breadcrumbs\\breadcrumbs.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(43)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -11423,7 +11430,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/node_modules/material-ui-vue/components/breadcrumbs/breadcrumbs.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\node_modules\\material-ui-vue\\components\\breadcrumbs\\breadcrumbs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11473,7 +11480,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/breadcrumbs/breadcrumbs-with-slot.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] src\\components\\breadcrumbs\\breadcrumbs-with-slot.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(47)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -11484,7 +11491,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/src/components/breadcrumbs/breadcrumbs-with-slot.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\components\\breadcrumbs\\breadcrumbs-with-slot.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11519,7 +11526,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/buttons/raised-button.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] src\\components\\buttons\\raised-button.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(50)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -11530,7 +11537,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/src/components/buttons/raised-button.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\components\\buttons\\raised-button.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11565,7 +11572,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/buttons/flat-button.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] src\\components\\buttons\\flat-button.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(53)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -11576,7 +11583,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/src/components/buttons/flat-button.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\components\\buttons\\flat-button.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11611,7 +11618,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/buttons/float-button.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] src\\components\\buttons\\float-button.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(56)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -11622,7 +11629,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/src/components/buttons/float-button.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\components\\buttons\\float-button.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11657,7 +11664,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/buttons/click-only-fab.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] src\\components\\buttons\\click-only-fab.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(62)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -11668,7 +11675,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/src/components/buttons/click-only-fab.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\components\\buttons\\click-only-fab.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11698,7 +11705,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] node_modules/material-ui-vue/components/buttons/fixed-action-button.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] node_modules\\material-ui-vue\\components\\buttons\\fixed-action-button.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(61)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -11709,7 +11716,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/node_modules/material-ui-vue/components/buttons/fixed-action-button.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\node_modules\\material-ui-vue\\components\\buttons\\fixed-action-button.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11790,7 +11797,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/buttons/horizontal-fab.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] src\\components\\buttons\\horizontal-fab.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(65)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -11801,7 +11808,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/src/components/buttons/horizontal-fab.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\components\\buttons\\horizontal-fab.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11837,7 +11844,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/buttons/vertical-fab.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] src\\components\\buttons\\vertical-fab.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(68)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -11848,7 +11855,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/src/components/buttons/vertical-fab.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\components\\buttons\\vertical-fab.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11884,7 +11891,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/cards/basic-card.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] src\\components\\cards\\basic-card.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(83)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -11895,7 +11902,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/src/components/cards/basic-card.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\components\\cards\\basic-card.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11927,7 +11934,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] node_modules/material-ui-vue/components/cards/card.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] node_modules\\material-ui-vue\\components\\cards\\card.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(73)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -11938,7 +11945,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/node_modules/material-ui-vue/components/cards/card.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\node_modules\\material-ui-vue\\components\\cards\\card.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11986,7 +11993,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] node_modules/material-ui-vue/components/cards/card-title.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] node_modules\\material-ui-vue\\components\\cards\\card-title.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(76)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -11997,7 +12004,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/node_modules/material-ui-vue/components/cards/card-title.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\node_modules\\material-ui-vue\\components\\cards\\card-title.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -12034,7 +12041,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] node_modules/material-ui-vue/components/cards/card-content.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] node_modules\\material-ui-vue\\components\\cards\\card-content.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(79)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -12045,7 +12052,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/node_modules/material-ui-vue/components/cards/card-content.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\node_modules\\material-ui-vue\\components\\cards\\card-content.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -12076,7 +12083,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] node_modules/material-ui-vue/components/cards/card-action.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] node_modules\\material-ui-vue\\components\\cards\\card-action.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(82)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -12087,7 +12094,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/node_modules/material-ui-vue/components/cards/card-action.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\node_modules\\material-ui-vue\\components\\cards\\card-action.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -12124,7 +12131,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/cards/card-panel.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] src\\components\\cards\\card-panel.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(89)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -12135,7 +12142,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/src/components/cards/card-panel.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\components\\cards\\card-panel.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -12164,7 +12171,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] node_modules/material-ui-vue/components/cards/card-panel.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] node_modules\\material-ui-vue\\components\\cards\\card-panel.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(88)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -12175,7 +12182,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/node_modules/material-ui-vue/components/cards/card-panel.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\node_modules\\material-ui-vue\\components\\cards\\card-panel.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -12212,7 +12219,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/cards/card-size.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] src\\components\\cards\\card-size.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(92)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -12223,7 +12230,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/src/components/cards/card-size.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\components\\cards\\card-size.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -12261,7 +12268,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/cards/image-card.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] src\\components\\cards\\image-card.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(98)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -12272,7 +12279,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/src/components/cards/image-card.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\components\\cards\\image-card.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -12311,7 +12318,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] node_modules/material-ui-vue/components/cards/card-image.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] node_modules\\material-ui-vue\\components\\cards\\card-image.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(97)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -12322,7 +12329,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/node_modules/material-ui-vue/components/cards/card-image.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\node_modules\\material-ui-vue\\components\\cards\\card-image.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -12396,7 +12403,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/cards/card-reveal.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] src\\components\\cards\\card-reveal.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(104)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -12407,7 +12414,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/src/components/cards/card-reveal.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\components\\cards\\card-reveal.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -12447,7 +12454,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] node_modules/material-ui-vue/components/cards/card-reveal.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] node_modules\\material-ui-vue\\components\\cards\\card-reveal.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(103)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -12458,7 +12465,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/node_modules/material-ui-vue/components/cards/card-reveal.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\node_modules\\material-ui-vue\\components\\cards\\card-reveal.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -12495,7 +12502,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/chips/image-chip.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] src\\components\\chips\\image-chip.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(110)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -12506,7 +12513,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/src/components/chips/image-chip.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\components\\chips\\image-chip.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -12541,7 +12548,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] node_modules/material-ui-vue/components/chips/chip.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] node_modules\\material-ui-vue\\components\\chips\\chip.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(109)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -12552,7 +12559,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/node_modules/material-ui-vue/components/chips/chip.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\node_modules\\material-ui-vue\\components\\chips\\chip.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -12610,7 +12617,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/chips/removable-chip.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] src\\components\\chips\\removable-chip.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(113)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -12621,7 +12628,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/src/components/chips/removable-chip.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\components\\chips\\removable-chip.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -12656,7 +12663,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/collapsible/accordion-collapsible.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] src\\components\\collapsible\\accordion-collapsible.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(128)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -12667,7 +12674,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/src/components/collapsible/accordion-collapsible.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\components\\collapsible\\accordion-collapsible.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -12699,7 +12706,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] node_modules/material-ui-vue/components/collapsible/collapsible.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] node_modules\\material-ui-vue\\components\\collapsible\\collapsible.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(118)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -12710,7 +12717,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/node_modules/material-ui-vue/components/collapsible/collapsible.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\node_modules\\material-ui-vue\\components\\collapsible\\collapsible.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -12757,7 +12764,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] node_modules/material-ui-vue/components/collapsible/collapsible-body.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] node_modules\\material-ui-vue\\components\\collapsible\\collapsible-body.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(121)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -12768,7 +12775,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/node_modules/material-ui-vue/components/collapsible/collapsible-body.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\node_modules\\material-ui-vue\\components\\collapsible\\collapsible-body.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -12799,7 +12806,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] node_modules/material-ui-vue/components/collapsible/collapsible-header.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] node_modules\\material-ui-vue\\components\\collapsible\\collapsible-header.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(124)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -12810,7 +12817,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/node_modules/material-ui-vue/components/collapsible/collapsible-header.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\node_modules\\material-ui-vue\\components\\collapsible\\collapsible-header.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -12867,7 +12874,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] node_modules/material-ui-vue/components/collapsible/collapsible-item.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] node_modules\\material-ui-vue\\components\\collapsible\\collapsible-item.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(127)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -12878,7 +12885,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/node_modules/material-ui-vue/components/collapsible/collapsible-item.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\node_modules\\material-ui-vue\\components\\collapsible\\collapsible-item.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -12915,7 +12922,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/collapsible/expandable-collapsible.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] src\\components\\collapsible\\expandable-collapsible.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(131)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -12926,7 +12933,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/src/components/collapsible/expandable-collapsible.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\components\\collapsible\\expandable-collapsible.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -12964,7 +12971,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/collapsible/popout-collapsible.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] src\\components\\collapsible\\popout-collapsible.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(134)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -12975,7 +12982,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/src/components/collapsible/popout-collapsible.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\components\\collapsible\\popout-collapsible.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -13013,7 +13020,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/collections/basic-collection.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] src\\components\\collections\\basic-collection.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(143)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -13024,7 +13031,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/src/components/collections/basic-collection.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\components\\collections\\basic-collection.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -13055,7 +13062,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] node_modules/material-ui-vue/components/collections/collection.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] node_modules\\material-ui-vue\\components\\collections\\collection.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(139)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -13066,7 +13073,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/node_modules/material-ui-vue/components/collections/collection.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\node_modules\\material-ui-vue\\components\\collections\\collection.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -13115,7 +13122,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] node_modules/material-ui-vue/components/collections/collection-item.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] node_modules\\material-ui-vue\\components\\collections\\collection-item.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(142)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -13126,7 +13133,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/node_modules/material-ui-vue/components/collections/collection-item.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\node_modules\\material-ui-vue\\components\\collections\\collection-item.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -13186,7 +13193,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/collections/header-collection.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] src\\components\\collections\\header-collection.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(149)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -13197,7 +13204,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/src/components/collections/header-collection.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\components\\collections\\header-collection.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -13228,7 +13235,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] node_modules/material-ui-vue/components/collections/collection-header.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] node_modules\\material-ui-vue\\components\\collections\\collection-header.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(148)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -13239,7 +13246,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/node_modules/material-ui-vue/components/collections/collection-header.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\node_modules\\material-ui-vue\\components\\collections\\collection-header.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -13276,7 +13283,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/collections/avatar-collection.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] src\\components\\collections\\avatar-collection.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(152)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -13287,7 +13294,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/src/components/collections/avatar-collection.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\components\\collections\\avatar-collection.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -13330,7 +13337,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/collections/link-collection.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] src\\components\\collections\\link-collection.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(155)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -13341,7 +13348,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/src/components/collections/link-collection.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\components\\collections\\link-collection.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -13382,7 +13389,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/collections/link-collection-with-slot.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] src\\components\\collections\\link-collection-with-slot.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(158)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -13393,7 +13400,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/src/components/collections/link-collection-with-slot.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\components\\collections\\link-collection-with-slot.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -13428,7 +13435,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/dropdown/dropdown.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] src\\components\\dropdown\\dropdown.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(161)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -13439,7 +13446,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/src/components/dropdown/dropdown.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\components\\dropdown\\dropdown.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -13480,7 +13487,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/dropdown/dropdown-with-slot.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] src\\components\\dropdown\\dropdown-with-slot.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(164)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -13491,7 +13498,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/src/components/dropdown/dropdown-with-slot.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\components\\dropdown\\dropdown-with-slot.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -13526,7 +13533,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/dropdown/icon-large-dropdown.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] src\\components\\dropdown\\icon-large-dropdown.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(167)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -13537,7 +13544,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/src/components/dropdown/icon-large-dropdown.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\components\\dropdown\\icon-large-dropdown.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -13578,7 +13585,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/dropdown/click-dropdown.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] src\\components\\dropdown\\click-dropdown.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(170)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -13589,7 +13596,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/src/components/dropdown/click-dropdown.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\components\\dropdown\\click-dropdown.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -13630,7 +13637,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/footer/footer.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] src\\components\\footer\\footer.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(179)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -13641,7 +13648,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/src/components/footer/footer.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\components\\footer\\footer.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -13671,7 +13678,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] node_modules/material-ui-vue/components/footer/footer.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] node_modules\\material-ui-vue\\components\\footer\\footer.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(175)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -13682,7 +13689,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/node_modules/material-ui-vue/components/footer/footer.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\node_modules\\material-ui-vue\\components\\footer\\footer.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -13713,7 +13720,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] node_modules/material-ui-vue/components/footer/footer-copyright.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] node_modules\\material-ui-vue\\components\\footer\\footer-copyright.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(178)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -13724,7 +13731,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/node_modules/material-ui-vue/components/footer/footer-copyright.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\node_modules\\material-ui-vue\\components\\footer\\footer-copyright.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -13761,7 +13768,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/icons/icon.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] src\\components\\icons\\icon.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(182)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -13772,7 +13779,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/src/components/icons/icon.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\components\\icons\\icon.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -13807,7 +13814,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/forms/text-field-demo.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] src\\components\\forms\\text-field-demo.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(188)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -13818,7 +13825,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/src/components/forms/text-field-demo.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\components\\forms\\text-field-demo.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -13847,7 +13854,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] node_modules/material-ui-vue/components/forms/text-field.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] node_modules\\material-ui-vue\\components\\forms\\text-field.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(187)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -13858,7 +13865,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/node_modules/material-ui-vue/components/forms/text-field.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\node_modules\\material-ui-vue\\components\\forms\\text-field.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -14027,7 +14034,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/forms/text-area-demo.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] src\\components\\forms\\text-area-demo.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(194)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -14038,7 +14045,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/src/components/forms/text-area-demo.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\components\\forms\\text-area-demo.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -14067,7 +14074,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] node_modules/material-ui-vue/components/forms/text-area.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] node_modules\\material-ui-vue\\components\\forms\\text-area.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(193)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -14078,7 +14085,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/node_modules/material-ui-vue/components/forms/text-area.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\node_modules\\material-ui-vue\\components\\forms\\text-area.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -14231,7 +14238,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/forms/switch-demo.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] src\\components\\forms\\switch-demo.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(200)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -14242,7 +14249,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/src/components/forms/switch-demo.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\components\\forms\\switch-demo.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -14271,7 +14278,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] node_modules/material-ui-vue/components/forms/switch.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] node_modules\\material-ui-vue\\components\\forms\\switch.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(199)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -14282,7 +14289,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/node_modules/material-ui-vue/components/forms/switch.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\node_modules\\material-ui-vue\\components\\forms\\switch.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -14351,7 +14358,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/forms/radio-demo.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] src\\components\\forms\\radio-demo.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(206)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -14362,7 +14369,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/src/components/forms/radio-demo.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\components\\forms\\radio-demo.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -14397,7 +14404,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] node_modules/material-ui-vue/components/forms/radio.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] node_modules\\material-ui-vue\\components\\forms\\radio.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(205)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -14408,7 +14415,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/node_modules/material-ui-vue/components/forms/radio.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\node_modules\\material-ui-vue\\components\\forms\\radio.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -14483,7 +14490,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/forms/checkbox-demo.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] src\\components\\forms\\checkbox-demo.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(212)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -14494,7 +14501,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/src/components/forms/checkbox-demo.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\components\\forms\\checkbox-demo.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -14530,7 +14537,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] node_modules/material-ui-vue/components/forms/checkbox.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] node_modules\\material-ui-vue\\components\\forms\\checkbox.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(211)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -14541,7 +14548,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/node_modules/material-ui-vue/components/forms/checkbox.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\node_modules\\material-ui-vue\\components\\forms\\checkbox.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -14621,7 +14628,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/forms/range-demo.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] src\\components\\forms\\range-demo.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(218)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -14632,7 +14639,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/src/components/forms/range-demo.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\components\\forms\\range-demo.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -14661,7 +14668,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] node_modules/material-ui-vue/components/forms/range.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] node_modules\\material-ui-vue\\components\\forms\\range.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(217)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -14672,7 +14679,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/node_modules/material-ui-vue/components/forms/range.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\node_modules\\material-ui-vue\\components\\forms\\range.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -14738,7 +14745,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/forms/date-picker-demo.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] src\\components\\forms\\date-picker-demo.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(228)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -14749,7 +14756,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/src/components/forms/date-picker-demo.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\components\\forms\\date-picker-demo.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -14779,7 +14786,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] node_modules/material-ui-vue/components/forms/date-picker.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] node_modules\\material-ui-vue\\components\\forms\\date-picker.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(227)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -14790,7 +14797,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/node_modules/material-ui-vue/components/forms/date-picker.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\node_modules\\material-ui-vue\\components\\forms\\date-picker.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -15247,7 +15254,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/forms/select-field-demo.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] src\\components\\forms\\select-field-demo.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(234)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -15258,7 +15265,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/src/components/forms/select-field-demo.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\components\\forms\\select-field-demo.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -15298,7 +15305,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] node_modules/material-ui-vue/components/forms/select-field.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] node_modules\\material-ui-vue\\components\\forms\\select-field.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(233)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -15309,7 +15316,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/node_modules/material-ui-vue/components/forms/select-field.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\node_modules\\material-ui-vue\\components\\forms\\select-field.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -15455,7 +15462,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/modals/modal-demo.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] src\\components\\modals\\modal-demo.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(246)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -15466,7 +15473,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/src/components/modals/modal-demo.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\components\\modals\\modal-demo.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -15518,7 +15525,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] node_modules/material-ui-vue/components/modals/modal.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] node_modules\\material-ui-vue\\components\\modals\\modal.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(239)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -15529,7 +15536,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/node_modules/material-ui-vue/components/modals/modal.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\node_modules\\material-ui-vue\\components\\modals\\modal.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -15653,7 +15660,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] node_modules/material-ui-vue/components/modals/modal-content.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] node_modules\\material-ui-vue\\components\\modals\\modal-content.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(242)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -15664,7 +15671,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/node_modules/material-ui-vue/components/modals/modal-content.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\node_modules\\material-ui-vue\\components\\modals\\modal-content.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -15695,7 +15702,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] node_modules/material-ui-vue/components/modals/modal-footer.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] node_modules\\material-ui-vue\\components\\modals\\modal-footer.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(245)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -15706,7 +15713,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/node_modules/material-ui-vue/components/modals/modal-footer.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\node_modules\\material-ui-vue\\components\\modals\\modal-footer.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -15747,7 +15754,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/tabs/tabs-demo.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] src\\components\\tabs\\tabs-demo.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(255)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -15758,7 +15765,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/src/components/tabs/tabs-demo.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\components\\tabs\\tabs-demo.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -15788,7 +15795,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] node_modules/material-ui-vue/components/tabs/tabs.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] node_modules\\material-ui-vue\\components\\tabs\\tabs.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(251)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -15799,7 +15806,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/node_modules/material-ui-vue/components/tabs/tabs.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\node_modules\\material-ui-vue\\components\\tabs\\tabs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -15840,7 +15847,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] node_modules/material-ui-vue/components/tabs/tab.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] node_modules\\material-ui-vue\\components\\tabs\\tab.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(254)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -15851,7 +15858,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/node_modules/material-ui-vue/components/tabs/tab.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\node_modules\\material-ui-vue\\components\\tabs\\tab.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -15919,7 +15926,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/pagination/pagination-demo.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] src\\components\\pagination\\pagination-demo.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(264)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -15930,7 +15937,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/src/components/pagination/pagination-demo.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\components\\pagination\\pagination-demo.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -15975,7 +15982,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] node_modules/material-ui-vue/components/pagination/pagination.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] node_modules\\material-ui-vue\\components\\pagination\\pagination.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(260)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -15986,7 +15993,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/node_modules/material-ui-vue/components/pagination/pagination.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\node_modules\\material-ui-vue\\components\\pagination\\pagination.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -16017,7 +16024,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] node_modules/material-ui-vue/components/pagination/pagination-item.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] node_modules\\material-ui-vue\\components\\pagination\\pagination-item.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(263)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -16028,7 +16035,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/Jack/WebstormProjects/material-ui-vue/examples/node_modules/material-ui-vue/components/pagination/pagination-item.vue"
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\node_modules\\material-ui-vue\\components\\pagination\\pagination-item.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -16120,10 +16127,832 @@
 /* 264 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"row\">\n    <pagination>\n        <pagination-item prev disabled></pagination-item>\n        <pagination-item v-for=\"page in pages\" :active=\"$index == current-1\" @click=\"setCurrent(page)\">{{page}} + {{page==current}}</pagination-item>\n        <pagination-item next></pagination-item>\n    </pagination>\n</div>\n";
+	module.exports = "\n<div class=\"row\">\n    <pagination>\n        <pagination-item prev disabled></pagination-item>\n        <pagination-item v-for=\"page in pages\"\n                         :active=\"page == current\"\n                         @click=\"setCurrent(page)\">\n            {{page}}\n        </pagination-item>\n        <pagination-item next></pagination-item>\n    </pagination>\n</div>\n";
 
 /***/ },
 /* 265 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(266)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src\\components\\navbar\\navbar-demo.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(283)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\components\\navbar\\navbar-demo.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 266 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	module.exports = {
+	    components: {
+	        'navbar': __webpack_require__(267),
+	        'nav-item': __webpack_require__(270),
+	        'nav-collapsible-item': __webpack_require__(274),
+	        'nav-dropdown-item': __webpack_require__(277),
+	        'icon': __webpack_require__(21),
+	        'btn': __webpack_require__(17),
+	        'side-nav': __webpack_require__(280),
+	        'collapsible-header': __webpack_require__(122),
+	        'collapsible-body': __webpack_require__(119)
+	    },
+
+	    data: function data() {
+	        return {
+	            dropdownItems: [{ href: '#!', label: 'One' }, { href: '#!', label: 'Two' }, { divider: true }, { href: '#!', label: 'Three' }]
+	        };
+	    }
+	};
+
+/***/ },
+/* 267 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(268)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] node_modules\\material-ui-vue\\components\\navbar\\navbar.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(269)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\node_modules\\material-ui-vue\\components\\navbar\\navbar.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 268 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var classes = __webpack_require__(9).classes;
+
+	module.exports = {
+	    components: {
+	        icon: __webpack_require__(21)
+	    },
+
+	    props: {
+	        linkPosition: {
+	            type: String,
+	            default: 'right'
+	        },
+
+	        logo: {
+	            type: String,
+	            default: ''
+	        },
+
+	        logoHref: {
+	            type: String,
+	            default: '#!'
+	        },
+
+	        logoPosition: {
+	            type: String,
+	            default: ''
+	        },
+
+	        fixed: {
+	            type: Boolean,
+	            default: false
+	        },
+
+	        autoHide: {
+	            type: Boolean,
+	            default: true
+	        },
+
+	        sideNavId: {
+	            type: String,
+	            default: ''
+	        },
+
+	        showOnLarge: {
+	            type: Boolean,
+	            default: false
+	        }
+	    },
+
+	    data: function data() {
+	        return {
+	            collapseButtonClasses: classes({
+	                'button-collapse': true,
+	                'show-on-large': this.showOnLarge
+	            })
+	        };
+	    },
+
+	    ready: function ready() {
+	        if (this.sideNavId) $(this.$els.buttonCollapse).sideNav();
+	    }
+	};
+
+/***/ },
+/* 269 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div :class=\"[fixed ? 'navbar-fixed' : '']\">\n    <nav>\n        <div class=\"nav-wrapper\">\n            <a :href=\"logoHref\" :class=\"['brand-logo', logoPosition]\">{{logo}}</a>\n            <ul :class=\"[autoHide ? 'hide-on-med-and-down' : '', linkPosition]\">\n                <slot></slot>\n            </ul>\n            <a v-if=\"sideNavId\" v-el:button-collapse href=\"#!\" :data-activates=\"sideNavId\" :class=\"collapseButtonClasses\">\n                <icon value=\"menu\"></icon>\n            </a>\n        </div>\n    </nav>\n</div>\n";
+
+/***/ },
+/* 270 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(271)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] node_modules\\material-ui-vue\\components\\navbar\\nav-item.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(273)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\node_modules\\material-ui-vue\\components\\navbar\\nav-item.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 271 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var NavItemPropMixin = __webpack_require__(272);
+
+	module.exports = {
+	  mixins: [NavItemPropMixin]
+	};
+
+/***/ },
+/* 272 */
+/***/ function(module, exports) {
+
+	module.exports = {
+	    props: {
+	        /**
+	         * @prop active
+	         * @type {Boolean}
+	         * @default false
+	         * @description indicate the nav-item is active or not
+	         */
+	        active: {
+	            type: Boolean,
+	            default: false
+	        }
+	    }
+	};
+
+/***/ },
+/* 273 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<li :class=\"[active ? 'active' : '']\">\n    <slot></slot>\n</li>\n";
+
+/***/ },
+/* 274 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(275)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] node_modules\\material-ui-vue\\components\\navbar\\nav-collapsible-item.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(276)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\node_modules\\material-ui-vue\\components\\navbar\\nav-collapsible-item.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 275 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var NavItemPropMixin = __webpack_require__(272);
+
+	module.exports = {
+	    mixins: [NavItemPropMixin],
+
+	    components: {
+	        'collapsible': __webpack_require__(116),
+	        'collapsible-item': __webpack_require__(125)
+	    }
+	};
+
+/***/ },
+/* 276 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<li :class=\"['no-padding', active ? 'active' : '']\">\n    <collapsible>\n        <collapsible-item><slot></slot></collapsible-item>\n    </collapsible>\n</li>\n";
+
+/***/ },
+/* 277 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(278)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] node_modules\\material-ui-vue\\components\\navbar\\nav-dropdown-item.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(279)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\node_modules\\material-ui-vue\\components\\navbar\\nav-dropdown-item.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 278 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var ButtonPropMixin = __webpack_require__(15);
+	var DropdownPropMixin = __webpack_require__(16);
+	var NavItemPropMixin = __webpack_require__(272);
+
+	module.exports = {
+	    mixins: [ButtonPropMixin, DropdownPropMixin, NavItemPropMixin],
+
+	    components: {
+	        dropdown: __webpack_require__(11)
+	    },
+
+	    props: {
+	        iconPosition: {
+	            type: String,
+	            default: 'right'
+	        }
+	    }
+	};
+
+/***/ },
+/* 279 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<li :class=\"[active ? 'active' : '']\">\n    <dropdown type=\"none\" icon=\"arrow_drop_down\" :icon-position=\"iconPosition\" :label=\"label\" :items=\"items\" :hover=\"false\">\n        <slot></slot>\n    </dropdown>\n</li>\n";
+
+/***/ },
+/* 280 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(281)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] node_modules\\material-ui-vue\\components\\side-nav\\side-nav.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(282)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\node_modules\\material-ui-vue\\components\\side-nav\\side-nav.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 281 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var classes = __webpack_require__(9).classes;
+
+	module.exports = {
+	    props: {
+	        fixed: {
+	            type: Boolean,
+	            default: false
+	        }
+	    },
+
+	    data: function data() {
+	        return {
+	            navClasses: classes({
+	                'side-nav': true,
+	                'fixed': this.fixed
+	            })
+	        };
+	    }
+	};
+
+/***/ },
+/* 282 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<ul :class=\"navClasses\">\n    <slot></slot>\n</ul>\n";
+
+/***/ },
+/* 283 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"row\">\n    <navbar logo=\"Navbar\" logo-href=\"#!\">\n        <nav-item><a href=\"#!\"><icon value=\"refresh\"></icon></a></nav-item>\n        <nav-item active><a href=\"#!\">Vue</a></nav-item>\n        <nav-item><a href=\"#!\">React</a></nav-item>\n        <nav-item><a href=\"#!\">Angular</a></nav-item>\n        <nav-item><btn label=\"button\"></btn></nav-item>\n    </navbar>\n    <navbar logo=\"Centering Logo Navbar\" logo-href=\"#!\" logo-position=\"center\" link-position=\"left\">\n        <nav-item active><a href=\"#!\">Vue</a></nav-item>\n        <nav-item><a href=\"#!\">React</a></nav-item>\n        <nav-item><a href=\"#!\">Angular</a></nav-item>\n    </navbar>\n    <navbar logo=\"Navbar with dropdown\" logo-href=\"#!\">\n        <nav-item active><a href=\"#!\">Vue</a></nav-item>\n        <nav-item><a href=\"#!\">React</a></nav-item>\n        <nav-item><a href=\"#!\">Angular</a></nav-item>\n        <nav-dropdown-item label=\"Others 1\" :items=\"dropdownItems\"></nav-dropdown-item>\n        <nav-dropdown-item label=\"Others 2\">\n            <ul>\n                <li><a href=\"#!\">Three</a></li>\n                <li><a href=\"#!\">Four</a></li>\n            </ul>\n        </nav-dropdown-item>\n    </navbar>\n\n    <div class=\"row\">\n        <navbar logo=\"Logo\" logo-href=\"#!\" side-nav-id=\"sideNav\">\n            <nav-item><a href=\"#!\">Link 1</a></nav-item>\n            <nav-item><a href=\"#!\">Link 2</a></nav-item>\n            <nav-dropdown-item label=\"dropdown menu\">\n                <ul>\n                    <li><a href=\"#!\">Link 3</a></li>\n                    <li><a href=\"#!\">Link 4</a></li>\n                </ul>\n            </nav-dropdown-item>\n        </navbar>\n        <side-nav id=\"sideNav\">\n            <nav-item active><a href=\"#!\" class=\"waves-effect waves-teal\">Link 1</a></nav-item>\n            <nav-item><a href=\"#!\" class=\"waves-effect waves-teal\">Link 2</a></nav-item>\n            <nav-collapsible-item>\n                <collapsible-header label=\"dropdown menu\" icon=\"arrow_drop_down\" icon-position=\"right\"></collapsible-header>\n                <collapsible-body>\n                    <ul>\n                        <nav-item><a href=\"#!\">Link 3</a></nav-item>\n                        <nav-item><a href=\"#!\">Link 4</a></nav-item>\n                    </ul>\n                </collapsible-body>\n            </nav-collapsible-item>\n        </side-nav>\n    </div>\n</div>\n";
+
+/***/ },
+/* 284 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(285)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src\\components\\navbar\\search-bar-demo.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(289)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\components\\navbar\\search-bar-demo.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 285 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	module.exports = {
+	    components: {
+	        'search-bar': __webpack_require__(286)
+	    }
+	};
+
+/***/ },
+/* 286 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(287)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] node_modules\\material-ui-vue\\components\\navbar\\search-bar.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(288)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\node_modules\\material-ui-vue\\components\\navbar\\search-bar.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 287 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var uuid = __webpack_require__(13);
+
+	module.exports = {
+	    components: {
+	        icon: __webpack_require__(21)
+	    },
+
+	    props: {
+	        placeholder: {
+	            type: String,
+	            default: ''
+	        },
+
+	        value: {
+	            type: String,
+	            default: ''
+	        },
+
+	        fixed: {
+	            type: Boolean,
+	            default: false
+	        }
+	    },
+
+	    data: function data() {
+	        return {
+	            id: uuid.v1()
+	        };
+	    },
+
+	    ready: function ready() {
+	        for (var p in this.$els.input) {
+	            if (p.startsWith('on')) {
+	                $(this.$els.input).on(p.substring(2), function (e) {
+	                    this.$dispatch('search-bar-' + e.type, e);
+	                }.bind(this));
+	            }
+	        }
+	    },
+
+	    methods: {
+	        close: function close() {
+	            this.$dispatch('search-bar-close');
+	        }
+	    }
+	};
+
+/***/ },
+/* 288 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div :class=\"[fixed ? 'navbar-fixed' : '']\">\n    <nav>\n        <div class=\"nav-wrapper\">\n            <form>\n                <div class=\"input-field\">\n                    <input v-el:input :id=\"id\" type=\"search\" required :placeholder=\"placeholder\" :value=\"value\">\n                    <label :for=\"id\"><icon value=\"search\"></icon></label>\n                    <icon value=\"close\" @click=\"close\"></icon>\n                </div>\n            </form>\n        </div>\n    </nav>\n</div>\n";
+
+/***/ },
+/* 289 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"row\">\n    <search-bar placeholder=\"search...\"></search-bar>\n</div>\n";
+
+/***/ },
+/* 290 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(291)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src\\components\\side-nav\\side-nav-demo.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(292)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\components\\side-nav\\side-nav-demo.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 291 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	module.exports = {
+	    components: {
+	        'side-nav': __webpack_require__(280),
+	        'nav-collapsible-item': __webpack_require__(274),
+	        'nav-dropdown-item': __webpack_require__(277),
+	        'nav-item': __webpack_require__(270),
+	        'collapsible-header': __webpack_require__(122),
+	        'collapsible-body': __webpack_require__(119)
+	    }
+	};
+
+/***/ },
+/* 292 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"row\">\n    <side-nav fixed>\n        <nav-item><a href=\"#!\" class=\"waves-effect waves-teal\">Link 1</a></nav-item>\n        <nav-item><a href=\"#!\" class=\"waves-effect waves-teal\">Link 2</a></nav-item>\n        <nav-collapsible-item>\n            <collapsible-header label=\"dropdown menu\" icon=\"arrow_drop_down\" icon-position=\"right\"></collapsible-header>\n            <collapsible-body>\n                <ul>\n                    <nav-item><a href=\"#!\">Link 3</a></nav-item>\n                    <nav-item><a href=\"#!\">Link 4</a></nav-item>\n                </ul>\n            </collapsible-body>\n        </nav-collapsible-item>\n    </side-nav>\n</div>\n";
+
+/***/ },
+/* 293 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(294)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src\\components\\progresses\\linear-progress-demo.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(298)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\components\\progresses\\linear-progress-demo.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 294 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	module.exports = {
+	    components: {
+	        'linear-progress': __webpack_require__(295)
+	    }
+	};
+
+/***/ },
+/* 295 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(296)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] node_modules\\material-ui-vue\\components\\progresses\\linear-progress.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(297)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\node_modules\\material-ui-vue\\components\\progresses\\linear-progress.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 296 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	module.exports = {
+	    props: {
+	        determinate: {
+	            type: Boolean,
+	            default: false
+	        },
+
+	        percentage: {
+	            default: 0
+	        },
+
+	        color: {
+	            type: String,
+	            default: ''
+	        },
+
+	        backgroundColor: {
+	            type: String,
+	            default: ''
+	        }
+	    },
+
+	    data: function data() {
+	        return {
+	            containerClasses: 'progress ' + this.backgroundColor,
+	            barClasses: (this.determinate ? 'determinate' : 'indeterminate') + ' ' + this.color
+	        };
+	    }
+	};
+
+/***/ },
+/* 297 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"{{containerClasses}}\">\n    <div class=\"{{barClasses}}\" :style=\"{width: percentage + '%'}\"></div>\n</div>\n";
+
+/***/ },
+/* 298 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"row\">\n    <linear-progress color=\"red\" background-color=\"red lighten-4\"></linear-progress>\n    <linear-progress color=\"red\" background-color=\"red lighten-4\" determinate :percentage=\"33\"></linear-progress>\n</div>\n";
+
+/***/ },
+/* 299 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(300)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src\\components\\progresses\\circle-progress-demo.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(304)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\src\\components\\progresses\\circle-progress-demo.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 300 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	module.exports = {
+	    components: {
+	        'circle-progress': __webpack_require__(301)
+	    }
+	};
+
+/***/ },
+/* 301 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(302)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] node_modules\\material-ui-vue\\components\\progresses\\circle-progress.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(303)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "C:\\Users\\Administrator\\Documents\\GitHub\\material-ui-vue\\examples\\node_modules\\material-ui-vue\\components\\progresses\\circle-progress.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 302 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var classes = __webpack_require__(9).classes;
+
+	module.exports = {
+	    props: {
+	        size: {
+	            type: String,
+	            default: ''
+	        },
+
+	        active: {
+	            type: Boolean,
+	            default: true
+	        },
+
+	        color: {
+	            type: String,
+	            default: 'red'
+	        },
+
+	        flash: {
+	            type: Boolean,
+	            default: false
+	        }
+	    },
+
+	    data: function data() {
+	        return {
+	            wrapperClasses: classes({
+	                'preloader-wrapper': true,
+	                'big': this.size === 'big',
+	                'small': this.size === 'small',
+	                'active': this.active
+	            }),
+	            colors: this.flash ? ['blue', 'red', 'yellow', 'green'] : [this.color]
+	        };
+	    }
+	};
+
+/***/ },
+/* 303 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div :class=\"wrapperClasses\">\n    <div v-for=\"cl in colors\" :class=\"['spinner-layer', colors.length === 1 ? 'spinner-' + cl + '-only' : 'spinner-' + cl]\">\n        <div class=\"circle-clipper left\">\n            <div class=\"circle\"></div>\n        </div>\n        <div class=\"gap-patch\">\n            <div class=\"circle\"></div>\n        </div>\n        <div class=\"circle-clipper right\">\n            <div class=\"circle\"></div>\n        </div>\n    </div>\n</div>\n";
+
+/***/ },
+/* 304 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"row\">\n    <circle-progress color=\"red\" :active=\"false\"></circle-progress>\n    <circle-progress color=\"teal\" size=\"small\"></circle-progress>\n    <circle-progress color=\"yellow\" size=\"big\"></circle-progress>\n    <circle-progress active flash></circle-progress>\n</div>\n";
+
+/***/ },
+/* 305 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"row\">\n    <component :is=\"example\"></component>\n</div>\n";

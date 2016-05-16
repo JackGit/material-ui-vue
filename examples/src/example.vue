@@ -71,7 +71,14 @@
 
             'tabs-demo': require('./components/tabs/tabs-demo.vue'),
 
-            'pagination-demo': require('./components/pagination/pagination-demo.vue')
+            'pagination-demo': require('./components/pagination/pagination-demo.vue'),
+
+            'navbar-demo': require('./components/navbar/navbar-demo.vue'),
+            'search-bar-demo': require('./components/navbar/search-bar-demo.vue'),
+            'side-nav-demo': require('./components/side-nav/side-nav-demo.vue'),
+
+            'linear-progress-demo': require('./components/progresses/linear-progress-demo.vue'),
+            'circle-progress-demo': require('./components/progresses/circle-progress-demo.vue')
         }
     };
 </script>

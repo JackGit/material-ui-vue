@@ -1,0 +1,13 @@
+<template>
+    <div class="row">
+        <search-bar placeholder="search..."></search-bar>
+    </div>
+</template>
+
+<script>
+    module.exports = {
+        components: {
+            'search-bar': require('material-ui-vue/components/navbar/search-bar.vue')
+        }
+    };
+</script>
