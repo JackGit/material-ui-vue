@@ -121,7 +121,7 @@ function parseLink(value) {
     return value;
 }
 
-function scan() {
+function scan(callback) {
     var root = path.resolve(__dirname, '../src/components');
     var items = [];
     var results = [];
@@ -155,13 +155,7 @@ function scan() {
 
                         // when loop end, output json file
                         if(index === items.length - 1) {
-                            fse.outputJson(path.resolve(__dirname, './temp.json'), results, function(err) {
-                                if(err)
-                                    console.log('output json failed', err);
-                                else
-                                    console.log('output json successfully');
-                            });
-
+                            callback && callback(results);
                             console.log('parsing completed');
                         }
                     }
@@ -172,11 +166,15 @@ function scan() {
 
 function run() {
     console.log('building docs...');
-    // scan files
-        // store the .vue file content as code
-        // extract comment blocks
-        // for each blocks, find the right parser to parse it
-    scan();
+
+    scan(function(results) {
+        fse.outputJson(path.resolve(__dirname, './temp.json'), results, function(err) {
+            if(err)
+                console.log('output json failed', err);
+            else
+                console.log('output json successfully');
+        });
+    });
 }
 
 run();

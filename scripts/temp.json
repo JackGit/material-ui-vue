@@ -129,26 +129,6 @@
     "methods": []
   },
   {
-    "name": "cards/card",
-    "author": "Jack Yang",
-    "description": "<a href=\"http://materializecss.com/cards.html\">Cards</a> are a convenient means of displaying content composed of different types of objects. They’re also well-suited for presenting similar objects whose size or supported actions can vary considerably, like photos with captions of variable length",
-    "props": [
-      {
-        "name": "size",
-        "type": "{String}",
-        "default": "''",
-        "description": "if you want to have uniformly sized cards, you can use our premade size classes. Just add the size class in addition to the card class. Possible values: 'small', 'medium', 'large', and by default ''"
-      },
-      {
-        "name": "revealed",
-        "type": "{Boolean}",
-        "default": "false",
-        "description": "indicate the status for card reveal"
-      }
-    ],
-    "methods": []
-  },
-  {
     "name": "chips/chip",
     "author": "Jack Yang",
     "description": "<a href=\"http://materializecss.com/chips.html\">Chips</a> can be used to represent small blocks of information. They are most commonly used either for contacts or for tags.",
@@ -175,16 +155,29 @@
     "methods": []
   },
   {
-    "name": "collapsible/collapsible-body",
+    "name": "cards/card",
     "author": "Jack Yang",
-    "description": "a component for collapsible-body",
-    "props": [],
+    "description": "<a href=\"http://materializecss.com/cards.html\">Cards</a> are a convenient means of displaying content composed of different types of objects. They’re also well-suited for presenting similar objects whose size or supported actions can vary considerably, like photos with captions of variable length",
+    "props": [
+      {
+        "name": "size",
+        "type": "{String}",
+        "default": "''",
+        "description": "if you want to have uniformly sized cards, you can use our premade size classes. Just add the size class in addition to the card class. Possible values: 'small', 'medium', 'large', and by default ''"
+      },
+      {
+        "name": "revealed",
+        "type": "{Boolean}",
+        "default": "false",
+        "description": "indicate the status for card reveal"
+      }
+    ],
     "methods": []
   },
   {
-    "name": "collapsible/collapsible-item",
+    "name": "collapsible/collapsible-body",
     "author": "Jack Yang",
-    "description": "a component for collapsible-item",
+    "description": "a component for collapsible-body",
     "props": [],
     "methods": []
   },
@@ -218,6 +211,13 @@
         "description": "indicate the collapsible open status"
       }
     ],
+    "methods": []
+  },
+  {
+    "name": "collapsible/collapsible-item",
+    "author": "Jack Yang",
+    "description": "a component for collapsible-item",
+    "props": [],
     "methods": []
   },
   {
@@ -255,13 +255,6 @@
     "methods": []
   },
   {
-    "name": "dropdown/dropdown",
-    "author": "Jack Yang",
-    "description": "Add a <a href=\"http://materializecss.com/dropdown.html\">dropdown</a> list to any button. These button props can't be changed for a dropdown: waves-effect, light-wave and disabled.",
-    "props": [],
-    "methods": []
-  },
-  {
     "name": "collections/collection",
     "author": "Jack Yang",
     "description": "<a href=\"http://materializecss.com/collections.html\">Collections</a> allow you to group list objects together.",
@@ -287,6 +280,13 @@
         "description": "links data for rendering. Example value: [{href: '#!', label: 'Link A', active: true}, {href: '#!', label: 'Link B', active: false, badge: {label: '1', new: false}}]"
       }
     ],
+    "methods": []
+  },
+  {
+    "name": "dropdown/dropdown",
+    "author": "Jack Yang",
+    "description": "Add a <a href=\"http://materializecss.com/dropdown.html\">dropdown</a> list to any button. These button props can't be changed for a dropdown: waves-effect, light-wave and disabled.",
+    "props": [],
     "methods": []
   },
   {
@@ -588,26 +588,6 @@
     "methods": []
   },
   {
-    "name": "icons/icon",
-    "author": "Jack Yang",
-    "description": "We have included 740 Material Design <a href=\"http://materializecss.com/icons.html\">Icons</a> courtesy of Google. You can download them directly from the Material Design specs",
-    "props": [
-      {
-        "name": "value",
-        "type": "{String}",
-        "default": "null",
-        "description": "icon value"
-      },
-      {
-        "name": "size",
-        "type": "{String}",
-        "default": "''",
-        "description": "indicate size of the icon. Possible values: 'tiny', 'small', 'medium', 'large' and by default ''"
-      }
-    ],
-    "methods": []
-  },
-  {
     "name": "forms/text-field",
     "author": "Jack Yang",
     "description": "<a href=\"http://materializecss.com/forms.html\">forms</a> text field component",
@@ -671,6 +651,26 @@
         "type": "{String}",
         "default": "''",
         "description": "success message content"
+      }
+    ],
+    "methods": []
+  },
+  {
+    "name": "icons/icon",
+    "author": "Jack Yang",
+    "description": "We have included 740 Material Design <a href=\"http://materializecss.com/icons.html\">Icons</a> courtesy of Google. You can download them directly from the Material Design specs",
+    "props": [
+      {
+        "name": "value",
+        "type": "{String}",
+        "default": "null",
+        "description": "icon value"
+      },
+      {
+        "name": "size",
+        "type": "{String}",
+        "default": "''",
+        "description": "indicate size of the icon. Possible values: 'tiny', 'small', 'medium', 'large' and by default ''"
       }
     ],
     "methods": []
@@ -753,13 +753,6 @@
     "methods": []
   },
   {
-    "name": "modals/modal-content",
-    "author": "Jack Yang",
-    "description": "a component for modal-content",
-    "props": [],
-    "methods": []
-  },
-  {
     "name": "media/slider",
     "author": "Jack Yang",
     "description": "<a href=\"http://materializecss.com/media.html\">Slider</a> is a simple and elegant image carousel. You can also have captions that will be transitioned on their own depending on their alignment. You can also have indicators that show up on the bottom of the slider",
@@ -801,6 +794,13 @@
         "description": "set the duration between transitions in ms"
       }
     ],
+    "methods": []
+  },
+  {
+    "name": "modals/modal-content",
+    "author": "Jack Yang",
+    "description": "a component for modal-content",
+    "props": [],
     "methods": []
   },
   {
@@ -880,13 +880,6 @@
     "methods": []
   },
   {
-    "name": "navbar/nav-item",
-    "author": "Jack Yang",
-    "description": "a component for nav-item",
-    "props": [],
-    "methods": []
-  },
-  {
     "name": "navbar/nav-dropdown-item",
     "author": "Jack Yang",
     "description": "dropdown menu component in navbar",
@@ -898,6 +891,13 @@
         "description": "icon position of the nav-dropdown-item"
       }
     ],
+    "methods": []
+  },
+  {
+    "name": "navbar/nav-item",
+    "author": "Jack Yang",
+    "description": "a component for nav-item",
+    "props": [],
     "methods": []
   },
   {
@@ -952,6 +952,32 @@
         "type": "{Boolean}",
         "default": "false",
         "description": "to control collapse button show on large screen"
+      }
+    ],
+    "methods": []
+  },
+  {
+    "name": "navbar/search-bar",
+    "author": "Jack Yang",
+    "description": "search form in the navbar",
+    "props": [
+      {
+        "name": "placeholder",
+        "type": "{String}",
+        "default": "''",
+        "description": "placeholder of search box"
+      },
+      {
+        "name": "value",
+        "type": "{String}",
+        "default": "''",
+        "description": "value of the search box"
+      },
+      {
+        "name": "fixed",
+        "type": "{Boolean}",
+        "default": "false",
+        "description": "indicate this is fixed search-bar or not"
       }
     ],
     "methods": []
@@ -1014,32 +1040,6 @@
     "methods": []
   },
   {
-    "name": "navbar/search-bar",
-    "author": "Jack Yang",
-    "description": "search form in the navbar",
-    "props": [
-      {
-        "name": "placeholder",
-        "type": "{String}",
-        "default": "''",
-        "description": "placeholder of search box"
-      },
-      {
-        "name": "value",
-        "type": "{String}",
-        "default": "''",
-        "description": "value of the search box"
-      },
-      {
-        "name": "fixed",
-        "type": "{Boolean}",
-        "default": "false",
-        "description": "indicate this is fixed search-bar or not"
-      }
-    ],
-    "methods": []
-  },
-  {
     "name": "parallax/parallax",
     "author": "Jack Yang",
     "description": "<a href=\"http://materializecss.com/parallax.html\">Parallax</a> is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling",
@@ -1092,20 +1092,6 @@
     "methods": []
   },
   {
-    "name": "side-nav/side-nav",
-    "author": "Jack Yang",
-    "description": "This is a slide out menu. You can add a dropdown to your sidebar by using our collapsible component. If you want to see a demo, our sidebar will use this on smaller screens. To use this in conjunction with a fullscreen navigation, you have to use two copies of the same UL",
-    "props": [
-      {
-        "name": "fixed",
-        "type": "{Boolean}",
-        "default": "false",
-        "description": "indicate this is a fixed side-nav or not"
-      }
-    ],
-    "methods": []
-  },
-  {
     "name": "progresses/linear-progress",
     "author": "Jack Yang",
     "description": "Linear <a href=\"http://materializecss.com/preloader.html\">preloader</a> in materializecss",
@@ -1133,6 +1119,20 @@
         "type": "{String}",
         "default": "''",
         "description": "set the background color. <a href=\"http://materializecss.com/color.html\">Possible</a>. Example: background-color=\"red lighten-4\""
+      }
+    ],
+    "methods": []
+  },
+  {
+    "name": "side-nav/side-nav",
+    "author": "Jack Yang",
+    "description": "This is a slide out menu. You can add a dropdown to your sidebar by using our collapsible component. If you want to see a demo, our sidebar will use this on smaller screens. To use this in conjunction with a fullscreen navigation, you have to use two copies of the same UL",
+    "props": [
+      {
+        "name": "fixed",
+        "type": "{Boolean}",
+        "default": "false",
+        "description": "indicate this is a fixed side-nav or not"
       }
     ],
     "methods": []
