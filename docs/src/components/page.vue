@@ -18,6 +18,7 @@
 
         ready: function() {
             this.loadAllModules();
+            this.selectModule('badges/badge');
         },
 
         vuex: {
@@ -27,7 +28,8 @@
                 }
             },
             actions: {
-                loadAllModules: actions.loadAllModules
+                loadAllModules: actions.loadAllModules,
+                selectModule: actions.selectModule
             }
         }
     };

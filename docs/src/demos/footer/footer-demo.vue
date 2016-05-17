@@ -1,5 +1,5 @@
 <template>
-    <mui-footer>
+    <mui-footer style="padding-left: 0">
         <div class="container">
             <div class="row">
                 <div class="col l6 s12">
