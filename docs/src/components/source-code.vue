@@ -17,6 +17,10 @@
                 type: String,
                 default: ''
             }
+        },
+
+        ready: function() {
+            Prism.highlightAll();
         }
     };
 </script>
