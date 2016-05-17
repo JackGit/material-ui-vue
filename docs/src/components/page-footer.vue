@@ -5,7 +5,7 @@
                 <div class="col l6 s12">
                     <h5 class="white-text">Material-ui-vue</h5>
                     <p class="grey-text text-lighten-4">is a <a href="http://vuejs.org/">vue</a> component lib which basically a wrapper of <a href="http://materializecss.com/">materializecss.com</a> work.</p>
-                    <p class="grey-text text-lighten-4">You can install it by: <code class="language-markup">npm install material-ui-vue</code></p>
+                    <p class="grey-text text-lighten-4"><a href="https://nodei.co/npm/material-ui-vue/"><img src="https://nodei.co/npm/material-ui-vue.png?downloads=true"></a></p>
                 </div>
                 <div class="col l4 offset-l2 s12">
                     <h5 class="white-text">Links</h5>
