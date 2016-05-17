@@ -4,7 +4,7 @@
             <h4 class="header">{{data.name}}</h4>
             <p>{{data.description}}</p>
             <real-demo :demo-name="data.demoComponentName"></real-demo>
-            <source-code :code="data.code"></source-code>
+            <source-code :code="'\r\n' + data.code"></source-code>
         </div>
     </div>
 </template>

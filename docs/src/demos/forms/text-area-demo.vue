@@ -12,6 +12,11 @@
 </template>
 
 <script>
+    /**
+     * @example text-area demo
+     * @for text-area
+     * @description
+     */
     module.exports = {
         components: {
             'text-area': require('material-ui-vue/components/forms/text-area.vue')

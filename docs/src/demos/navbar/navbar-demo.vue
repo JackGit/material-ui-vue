@@ -25,7 +25,7 @@
             </nav-dropdown-item>
         </navbar>
 
-        <div class="row">
+        <div>
             <navbar logo="Logo" logo-href="#!" side-nav-id="sideNav">
                 <nav-item><a href="#!">Link 1</a></nav-item>
                 <nav-item><a href="#!">Link 2</a></nav-item>
@@ -54,6 +54,11 @@
 </template>
 
 <script>
+    /**
+     * @example navbar demos
+     * @for navbar
+     * @description
+     */
     module.exports = {
         components: {
             'navbar': require('material-ui-vue/components/navbar/navbar.vue'),
@@ -77,5 +82,5 @@
                 ]
             }
         }
-    }
+    };
 </script>

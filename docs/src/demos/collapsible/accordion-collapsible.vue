@@ -16,6 +16,11 @@
 </template>
 
 <script>
+    /**
+     * @example accordion collapsible
+     * @for collapsible
+     * @description
+     */
     module.exports = {
         components: {
             'collapsible': require('material-ui-vue/components/collapsible/collapsible.vue'),

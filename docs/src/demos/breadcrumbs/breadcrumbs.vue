@@ -3,6 +3,11 @@
 </template>
 
 <script>
+    /**
+     * @example basic usage
+     * @for breadcrumbs
+     * @description you can init breadcrumbs by assigning <code>crumbs</code> prop
+     */
     module.exports = {
 
         components: {

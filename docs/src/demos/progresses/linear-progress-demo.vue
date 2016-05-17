@@ -6,9 +6,14 @@
 </template>
 
 <script>
+    /**
+     * @example linear-progress demo
+     * @for linear-progress
+     * @description
+     */
     module.exports = {
         components: {
             'linear-progress': require('material-ui-vue/components/progresses/linear-progress.vue')
         }
-    }
+    };
 </script>

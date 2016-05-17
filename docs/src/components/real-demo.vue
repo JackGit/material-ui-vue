@@ -21,6 +21,7 @@
             'badges-in-dropdown-with-slot': require('../demos/badges/badges-in-dropdown-with-slot.vue'),
             'badges-in-collections': require('../demos/badges/badges-in-collections.vue'),
             'badges-in-collections-with-slot': require('../demos/badges/badges-in-collections-with-slot.vue'),
+            'badges-in-navbar': require('../demos/badges/badges-in-navbar.vue'),
 
             'breadcrumbs': require('../demos/breadcrumbs/breadcrumbs.vue'),
             'breadcrumbs-with-slot': require('../demos/breadcrumbs/breadcrumbs-with-slot.vue'),
@@ -56,9 +57,9 @@
             'icon-large-dropdown': require('../demos/dropdown/icon-large-dropdown.vue'),
             'click-dropdown': require('../demos/dropdown/click-dropdown.vue'),
 
-            'footer-with-copyright': require('../demos/footer/footer.vue'),
+            'footer-demo': require('../demos/footer/footer-demo.vue'),
 
-            'icon-demo': require('../demos/icons/icon.vue'),
+            'icon': require('../demos/icons/icon.vue'),
 
             'text-field-demo': require('../demos/forms/text-field-demo.vue'),
             'text-area-demo': require('../demos/forms/text-area-demo.vue'),

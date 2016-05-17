@@ -7,6 +7,11 @@
 </template>
 
 <script>
+    /**
+     * @example badges in collections with slot
+     * @for badge
+     * @description you can put badges in collections by adding child element of <code>link-collection</code> element
+     */
     module.exports = {
         components: {
             'badge': require('material-ui-vue/components/badges/badge.vue'),

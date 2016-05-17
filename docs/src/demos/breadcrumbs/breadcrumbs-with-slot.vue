@@ -7,6 +7,11 @@
 </template>
 
 <script>
+    /**
+     * @example with slot
+     * @for breadcrumbs
+     * @description you can init breadcrumbs by adding anchor as child elements
+     */
     module.exports = {
         components: {
             'breadcrumbs': require('material-ui-vue/components/breadcrumbs/breadcrumbs.vue')

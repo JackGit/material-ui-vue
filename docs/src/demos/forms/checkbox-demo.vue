@@ -1,12 +1,15 @@
 <template>
-    <div class="row">
-        <form>
-            <checkbox :items="items" :selected="selected"></checkbox>
-        </form>
-    </div>
+    <form>
+        <checkbox :items="items" :selected="selected"></checkbox>
+    </form>
 </template>
 
 <script>
+    /**
+     * @example basic checkbox
+     * @for checkbox
+     * @description
+     */
     module.exports = {
         components: {
             'checkbox': require('material-ui-vue/components/forms/checkbox.vue')
@@ -18,10 +21,10 @@
                     {label: 'Green', value: 'green'},
                     {label: 'Red', value: 'red'},
                     {label: 'Yellow', value: 'yellow', disabled: true},
-                    {label: 'Blue', value: 'blue'},
+                    {label: 'Blue', value: 'blue'}
                 ],
                 selected: ['green', 'red', 'yellow']
             }
         }
-    }
+    };
 </script>

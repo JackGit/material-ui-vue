@@ -9,6 +9,11 @@
 </template>
 
 <script>
+    /**
+     * @example basic card panel
+     * @for card-panel
+     * @description
+     */
     module.exports = {
         components: {
             'card-panel': require('material-ui-vue/components/cards/card-panel.vue')

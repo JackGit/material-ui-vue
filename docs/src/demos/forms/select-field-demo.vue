@@ -12,6 +12,11 @@
 </template>
 
 <script>
+    /**
+     * @example select field demos
+     * @for select-field
+     * @description
+     */
     module.exports = {
         components: {
             'select-field': require('material-ui-vue/components/forms/select-field.vue')
@@ -43,5 +48,5 @@
                 ]
             };
         }
-    }
+    };
 </script>

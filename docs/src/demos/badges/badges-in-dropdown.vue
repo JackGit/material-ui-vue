@@ -5,7 +5,8 @@
 <script>
     /**
      * @example badges in dropdown via props
-     * @description you can put badges in dropdown, by assigning <i>badge</i> attribute of dropdown item.
+     * @for badge
+     * @description you can put badges in dropdown, by assigning <code>badge</code> attribute of dropdown item.
      */
     module.exports = {
         components: {

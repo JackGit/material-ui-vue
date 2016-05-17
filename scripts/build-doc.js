@@ -2,6 +2,8 @@ var path = require('path');
 var fse = require('fs-extra');
 var fs = require('fs');
 
+var isWin = /^win/.test(process.platform);
+var SLASH = isWin ? '\\' : '/';
 
 function parseComponentFile(fileString) {
     var blocks = parseCommentBlocks(fileString);
@@ -41,9 +43,38 @@ function parseComponentFile(fileString) {
     return module;
 }
 
-function parseExampleFile() {
+/**
+ * @description parse example .vue file into example object
+ * @param fileString
+ */
+function parseExampleFile(filePath, fileString) {
+    var blocks = parseCommentBlocks(fileString);
+    var lines = [];
+    var example = {
+        name: '',
+        description: '',
+        code: '',
+        componentName: '',
+        demoComponentName: filePath.substring(filePath.lastIndexOf(SLASH) + 1).split('.')[0]
+    };
 
+    blocks.forEach(function(block) {
+        lines = parseCommentLines(block);
+        if(lines.length > 0) {
+            switch(lines[0].key) {
+                case 'example':
+                    example.name = lines.filter(function(line) { return line.key == 'example'; })[0].value;
+                    example.description = lines.filter(function(line) { return line.key == 'description'; })[0].value;
+                    example.code = fileString; // should remove comments
+                    example.componentName = lines.filter(function(line) { return line.key == 'for'; })[0].value;
+                    break;
+            }
+        }
+    });
+
+    return example;
 }
+
 
 /**
  * @description input string content of a file, return an array of comment blocks
@@ -121,8 +152,8 @@ function parseLink(value) {
     return value;
 }
 
-function scan(callback) {
-    var root = path.resolve(__dirname, '../src/components');
+function scan(root, callback) {
+
     var items = [];
     var results = [];
 
@@ -164,17 +195,69 @@ function scan(callback) {
         });
 }
 
-function run() {
-    console.log('building docs...');
+function scanExamples(root, callback) {
+    var items = [];
+    var examples = [];
 
-    scan(function(results) {
-        fse.outputJson(path.resolve(__dirname, './temp.json'), results, function(err) {
-            if(err)
-                console.log('output json failed', err);
-            else
-                console.log('output json successfully');
+    fse.walk(root)
+        .on('data', function(item) {
+            // skip directory
+            if(!item.stats.isDirectory()) {
+                items.push(item.path);
+                console.log('scanning example file ' + item.path);
+            }
+        })
+        .on('end', function() {
+            items.forEach(function(filePath, index) {
+                fs.readFile(filePath, 'utf-8', function (err, data) {
+                    var example;
+
+                    if(err) {
+
+                    } else {
+                        example = parseExampleFile(filePath, data);
+                        if(example.name && example.componentName) {
+                            examples.push(example);
+                        }
+
+                        if(index === items.length - 1) {
+                            callback && callback(examples);
+                        }
+                    }
+                });
+            });
+        });
+}
+
+function run(callback) {
+    console.log('building docs...');
+    var root = path.resolve(__dirname, '../src/components');
+    var exampleRoot = path.resolve(__dirname, '../docs/src/demos');
+
+    scan(root, function(results) {
+        scanExamples(exampleRoot, function(examples) {
+            results.forEach(function(module) {
+                module.examples = examples.filter(function(example) {
+                    // module.name = 'chips/chip'
+                    // example.componentName = 'chip'
+                    return example.componentName === module.name.split('/')[1];
+                });
+
+                if(module.examples.length === 0) {
+                    console.warn('module ' + module.name + ' has no examples');
+                }
+            });
+
+            callback && callback(results);
         });
     });
 }
 
-run();
+run(function(modules) {
+    fse.outputJson(path.resolve(__dirname, './temp.json'), modules, function(err) {
+        if(err)
+            console.log('output json failed', err);
+        else
+            console.log('output json successfully');
+    });
+});

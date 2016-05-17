@@ -9,6 +9,11 @@
 </template>
 
 <script>
+    /**
+     * @example collection with header
+     * @for collection
+     * @description
+     */
     module.exports = {
         components: {
             'collection': require('material-ui-vue/components/collections/collection.vue'),

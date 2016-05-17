@@ -8,9 +8,14 @@
 </template>
 
 <script>
+    /**
+     * @example switch demos
+     * @for switch
+     * @description
+     */
     module.exports = {
         components: {
             'switch': require('material-ui-vue/components/forms/switch.vue')
         }
-    }
+    };
 </script>

@@ -26,6 +26,11 @@
 </template>
 
 <script>
+    /**
+     * @example text-field demos
+     * @for text-field
+     * @description
+     */
     module.exports = {
         components: {
             'text-field': require('material-ui-vue/components/forms/text-field.vue')

@@ -3,6 +3,11 @@
 </template>
 
 <script>
+    /**
+     * @example link collection
+     * @for link-collection
+     * @description
+     */
     module.exports = {
         components: {
             'link-collection': require('material-ui-vue/components/collections/link-collection.vue')

@@ -17,6 +17,11 @@
 </template>
 
 <script>
+    /**
+     * @example side-nav demo
+     * @for side-nav
+     * @description
+     */
     module.exports = {
         components: {
             'side-nav': require('material-ui-vue/components/side-nav/side-nav.vue'),

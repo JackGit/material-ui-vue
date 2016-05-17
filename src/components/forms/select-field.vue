@@ -64,7 +64,7 @@
              * @prop options
              * @type {Array}
              * @default function() {return [];}
-             * @description options of the select field. Example value: [{value: '0', label: 'zero', disabled: false, icon: 'http://wedding.jackyang.me/static/images/wedding_pic_02.jpg'}, {value: '1', label: 'one', disabled: false, icon: 'http://wedding.jackyang.me/static/images/wedding_pic_02.jpg'}]
+             * @description options of the select field. Example value: [{value: '0', label: 'zero', disabled: false, icon: 'path/to/image.jpg'}, {value: '1', label: 'one', disabled: false, icon: 'path/to/image.jpg'}]
              */
             options: {
                 type: Array,

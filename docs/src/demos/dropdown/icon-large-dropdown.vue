@@ -3,6 +3,11 @@
 </template>
 
 <script>
+    /**
+     * @example icon, and large dropdown
+     * @for dropdown
+     * @description
+     */
     module.exports = {
         components: {
             'dropdown': require('material-ui-vue/components/dropdown/dropdown.vue')

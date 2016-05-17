@@ -1,10 +1,11 @@
 <template>
     <main>
         <div class="container">
-            <p class="caption">{{componentDetails.description}}</p>
+            <h4 class="header">Introduction</h4>
+            <p class="caption">{{{componentDetails.description}}}</p>
             <example v-for="example in componentDetails.examples" :data="example"></example>
-            <properties :data="componentDetails.props"></properties>
-            <methods :data="componentDetails.methods"></methods>
+            <properties v-if="componentDetails.props.length" :data="componentDetails.props"></properties>
+            <methods v-if="componentDetails.methods.length" :data="componentDetails.methods"></methods>
         </div>
     </main>
 </template>

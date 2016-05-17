@@ -5,6 +5,11 @@
 </template>
 
 <script>
+    /**
+     * @example float button
+     * @for button
+     * @description
+     */
     module.exports = {
         components: {
             'float-button': require('material-ui-vue/components/buttons/button.vue')

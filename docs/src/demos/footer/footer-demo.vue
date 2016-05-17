@@ -28,6 +28,11 @@
 </template>
 
 <script>
+    /**
+     * @example footer with copyright
+     * @for footer
+     * @description
+     */
     module.exports = {
         components: {
             'mui-footer': require('material-ui-vue/components/footer/footer.vue'),

@@ -5,6 +5,11 @@
 </template>
 
 <script>
+    /**
+     * @example search-bar demo
+     * @for search-bar
+     * @description
+     */
     module.exports = {
         components: {
             'search-bar': require('material-ui-vue/components/navbar/search-bar.vue')

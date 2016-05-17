@@ -8,9 +8,14 @@
 </template>
 
 <script>
+    /**
+     * @example circle-progress demo
+     * @for circle-progress
+     * @description
+     */
     module.exports = {
         components: {
             'circle-progress': require('material-ui-vue/components/progresses/circle-progress.vue')
         }
-    }
+    };
 </script>

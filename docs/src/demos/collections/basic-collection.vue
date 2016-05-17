@@ -16,6 +16,11 @@
 </template>
 
 <script>
+    /**
+     * @example basic collection
+     * @for collection
+     * @description
+     */
     module.exports = {
         components: {
             'collection': require('material-ui-vue/components/collections/collection.vue'),

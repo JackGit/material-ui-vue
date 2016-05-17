@@ -9,6 +9,11 @@
 </template>
 
 <script>
+    /**
+     * @example icon demos
+     * @for icon
+     * @description
+     */
     module.exports = {
         components: {
             'icon': require('material-ui-vue/components/icons/icon.vue')

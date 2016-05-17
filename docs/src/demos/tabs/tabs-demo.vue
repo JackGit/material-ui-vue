@@ -18,10 +18,15 @@
 </template>
 
 <script>
+    /**
+     * @example tabs demo
+     * @for tabs
+     * @description
+     */
     module.exports = {
         components: {
             'tabs': require('material-ui-vue/components/tabs/tabs.vue'),
-            'tab': require('material-ui-vue/components/tabs/tab.vue'),
+            'tab': require('material-ui-vue/components/tabs/tab.vue')
         }
-    }
+    };
 </script>

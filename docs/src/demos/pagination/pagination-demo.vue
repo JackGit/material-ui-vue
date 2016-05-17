@@ -13,6 +13,11 @@
 </template>
 
 <script>
+    /**
+     * @example pagination demo
+     * @for pagination
+     * @description
+     */
     module.exports = {
         components: {
             'pagination': require('material-ui-vue/components/pagination/pagination.vue'),
@@ -28,10 +33,8 @@
 
         methods: {
             setCurrent: function(pageIndex) {
-                console.log('setCurrent', pageIndex)
                 this.current = pageIndex;
-                console.log('setCurrent', this.current)
             }
         }
-    }
+    };
 </script>

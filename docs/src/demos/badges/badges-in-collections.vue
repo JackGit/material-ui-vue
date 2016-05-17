@@ -3,6 +3,11 @@
 </template>
 
 <script>
+    /**
+     * @example badges in collections
+     * @for badge
+     * @description you can put badges in collections by adding <code>badge</code> into the collection <code>links</code> object
+     */
     module.exports = {
         components: {
             'link-collection': require('material-ui-vue/components/collections/link-collection.vue')
@@ -17,5 +22,5 @@
                 ]
             }
         }
-    }
+    };
 </script>

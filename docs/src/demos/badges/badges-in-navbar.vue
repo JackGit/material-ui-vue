@@ -6,6 +6,11 @@
 </template>
 
 <script>
+    /**
+     * @example badges in navbar
+     * @for badge
+     * @description you can put badges in navbar by adding <code>badge</code> element into <code>nav-item</code> element
+     */
     module.exports = {
         components: {
             'navbar': require('material-ui-vue/components/navbar/navbar.vue'),

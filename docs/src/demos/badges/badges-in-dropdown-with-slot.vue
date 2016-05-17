@@ -11,7 +11,8 @@
 <script>
     /**
      * @example badges in dropdown via slot
-     * @description you can put badges in dropdown by slot content
+     * @for badge
+     * @description you can put badges in dropdown by adding child elements
      */
     module.exports = {
         components: {

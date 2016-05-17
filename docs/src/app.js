@@ -1,10 +1,14 @@
 var Vue = require('vue');
 var VueRouter = require('vue-router');
+var store = require('./vuex/store.js');
 
 Vue.use(VueRouter);
 
+
 var App = require('./app.vue');
 var router = new VueRouter();
+
+
 
 
 router.map({

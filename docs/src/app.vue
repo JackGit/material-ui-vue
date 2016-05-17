@@ -5,27 +5,13 @@
 </template>
 
 <script>
+    var store = require('./vuex/store.js');
+
     module.exports = {
         components: {
             'page': require('./components/page.vue')
         },
 
-        data: function() {
-            return {
-                components: ['badges', 'buttons'],
-                currentComponent: 'badges',
-                componentDetails: {}
-            }
-        },
-
-        ready: function() {
-
-        },
-
-        methods: {
-            selectComponent: function(name) {
-                this.currentComponent = name;
-            }
-        }
+        store: store,
     };
 </script>

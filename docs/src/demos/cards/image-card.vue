@@ -15,6 +15,11 @@
 </template>
 
 <script>
+    /**
+     * @example card image
+     * @for card-image
+     * @description
+     */
     module.exports = {
         components: {
             'card': require('material-ui-vue/components/cards/card.vue'),

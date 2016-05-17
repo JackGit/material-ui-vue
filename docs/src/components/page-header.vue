@@ -1,15 +1,17 @@
 <template>
     <header>
-        <navbar logo="Badge" logo-href="#!" side-nav-id="sideNav"></navbar>
-
+        <navbar :logo="currentModule.name" logo-href="#!" side-nav-id="sideNav" logo-position="center"></navbar>
         <side-nav id="sideNav" fixed>
-            <nav-item active><a href="#!" class="waves-effect waves-teal">Badge</a></nav-item>
-            <nav-item><a href="#!" class="waves-effect waves-teal">Breadcrumbs</a></nav-item>
+            <nav-item v-for="module in modules | orderBy 'name'" :active="module.name === currentModule.name" @click="handleClick(module.name)">
+                <a href="#!" class="waves-effect waves-teal">{{module.name | simplify}}</a>
+            </nav-item>
         </side-nav>
     </header>
 </template>
 
 <script>
+    var actions = require('../vuex/actions.js');
+
     module.exports = {
         components: {
             'navbar': require('material-ui-vue/components/navbar/navbar.vue'),
@@ -24,6 +26,32 @@
         props: {
             componentDetails: {
                 type: Object
+            }
+        },
+
+        methods: {
+            handleClick: function(name) {
+                this.selectModule(name);
+            }
+        },
+
+        filters: {
+            simplify: function(value) {
+                return value.split('/')[1];
+            }
+        },
+
+        vuex: {
+            getters: {
+                modules: function(state) {
+                    return state.modules;
+                },
+                currentModule: function(state) {
+                    return state.currentModule;
+                }
+            },
+            actions: {
+                selectModule: actions.selectModule
             }
         }
     };

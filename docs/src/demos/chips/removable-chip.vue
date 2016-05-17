@@ -3,6 +3,11 @@
 </template>
 
 <script>
+    /**
+     * @example removable chip
+     * @for chip
+     * @description
+     */
     module.exports = {
         components: {
             'chip': require('material-ui-vue/components/chips/chip.vue')

@@ -13,6 +13,11 @@
 </template>
 
 <script>
+    /**
+     * @example raised button
+     * @for button
+     * @description
+     */
     module.exports = {
         components: {
             'raised-button': require('material-ui-vue/components/buttons/button.vue')
