@@ -12,6 +12,6 @@
             'page': require('./components/page.vue')
         },
 
-        store: store,
+        store: store
     };
 </script>
