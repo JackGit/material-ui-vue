@@ -2,17 +2,11 @@
     <mui-footer>
         <div class="container">
             <div class="row">
-                <div class="col l6 s12">
+                <div class="col l8 s12">
                     <h5 class="white-text">Material-ui-vue</h5>
                     <p class="grey-text text-lighten-4">is a <a href="http://vuejs.org/">vue</a> component lib which basically a wrapper of <a href="http://materializecss.com/">materializecss.com</a> work.</p>
                     <p class="grey-text text-lighten-4"><a href="https://nodei.co/npm/material-ui-vue/"><img src="https://nodei.co/npm/material-ui-vue.png?downloads=true"></a></p>
-                </div>
-                <div class="col l4 offset-l2 s12">
-                    <h5 class="white-text">Links</h5>
-                    <ul>
-                        <li><a class="grey-text text-lighten-3" href="https://www.npmjs.com/package/material-ui-vue">npm</a></li>
-                        <li><a class="grey-text text-lighten-3" href="https://github.com/JackGit/material-ui-vue">github</a></li>
-                    </ul>
+                    <p><iframe src="https://ghbtns.com/github-btn.html?user=jackgit&repo=material-ui-vue&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe></p>
                 </div>
             </div>
         </div>
