@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/material-ui-vue.svg)](https://badge.fury.io/js/material-ui-vue)
+
 This is a [materializecss.com](http://materializecss.com/) implementation with [Vue.js](http://vuejs.org).
 
 ### document ###
