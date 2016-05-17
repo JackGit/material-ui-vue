@@ -1,6 +1,6 @@
 {
   "name": "material-ui-vue",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "material UI with vue.js, based on materialize-css 0.97.5",
   "main": "index.js",
   "keywords": [

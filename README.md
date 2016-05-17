@@ -1,5 +1,8 @@
 This is a [materializecss.com](http://materializecss.com/) implementation with [Vue.js](http://vuejs.org).
 
+### document ###
+[Document](http://material-ui-vue.jackyang.me/docs/index.html)
+
 ### install ###
 ```
 npm install material-ui-vue --save
@@ -98,4 +101,3 @@ webpack
 
 Now you can test your index.html in browser.
 
-(And I am working on the detail document...)
