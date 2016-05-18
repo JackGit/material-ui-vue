@@ -1,6 +1,6 @@
 <template>
     <div>
-        <router-view></router-view>
+        <page></page>
     </div>
 </template>
 
@@ -9,6 +9,10 @@
     var actions = require('./vuex/actions.js');
 
     module.exports = {
+
+        components: {
+            'page': require('./components/page.vue')
+        },
 
         ready: function() {
             this.loadAllModules();

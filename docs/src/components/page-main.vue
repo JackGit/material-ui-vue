@@ -1,16 +1,18 @@
 <template>
     <main>
-        <div class="container">
+        <div v-if="currentModule.name" class="container">
             <h4 class="header">Introduction</h4>
-            <p class="caption">{{{componentDetails.description}}}</p>
-            <example v-for="example in componentDetails.examples" :data="example"></example>
-            <properties v-if="componentDetails.props.length" :data="componentDetails.props"></properties>
-            <methods v-if="componentDetails.methods.length" :data="componentDetails.methods"></methods>
+            <p class="caption">{{{currentModule.description}}}</p>
+            <example v-for="example in currentModule.examples" :data="example"></example>
+            <properties v-if="currentModule.props.length" :data="currentModule.props"></properties>
+            <methods v-if="currentModule.methods.length" :data="currentModule.methods"></methods>
         </div>
     </main>
 </template>
 
 <script>
+    var actions = require('../vuex/actions.js');
+
     module.exports = {
         components: {
             'example': require('./example.vue'),
@@ -18,11 +20,24 @@
             'methods': require('./methods.vue')
         },
 
-        props: {
-            componentDetails: {
-                type: Object,
-                default: function() {return {};}
+        ready: function() {
+            this.selectModule(this.$route.params.component);
+        },
+
+        vuex: {
+            getters: {
+                currentModule: function(state) {
+                    return state.currentModule;
+                }
+            },
+            actions: {
+                selectModule: actions.selectModule
             }
+        },
+
+        route: {
+            // don't reuse this component in router, coz component data will be retrieved and re-render
+            canReuse: false
         }
     }
 </script>

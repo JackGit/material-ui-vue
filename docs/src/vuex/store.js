@@ -6,7 +6,8 @@ Vue.use(Vuex);
 module.exports = window.store = new Vuex.Store({
     state: {
         modules: [],
-        currentModule: {}
+        currentModule: {},
+        navTree: []
     },
 
     mutations: {
@@ -18,6 +19,10 @@ module.exports = window.store = new Vuex.Store({
             state.currentModule = state.modules.filter(function(module) {
                 return module.name === name;
             })[0];
+        },
+
+        SET_NAV_TREE: function(state, tree) {
+            state.navTree = tree;
         }
     }
 });

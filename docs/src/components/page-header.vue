@@ -2,9 +2,22 @@
     <header>
         <navbar :logo="currentModule.name" logo-href="#!" side-nav-id="sideNav" logo-position="center"></navbar>
         <side-nav id="sideNav" fixed>
-            <nav-item v-for="module in modules | orderBy 'name'" :active="module.name === currentModule.name" @click="handleClick(module.name)">
-                <a class="waves-effect waves-teal" v-link="{name: 'components', params: {component: module.name}}">{{module.name | simplify}}</a>
-            </nav-item>
+            <div v-for="item in navTree">
+                <nav-collapsible-item v-if="item.length > 0">
+                    <collapsible-header :label="item[0].category" icon="arrow_drop_down" icon-position="right"></collapsible-header>
+                    <collapsible-body>
+                        <ul>
+                            <nav-item v-for="it in item" :active="it.name === currentModule.name" @click="handleClick(it.name)">
+                                <a v-link="{name: 'components', params: {component: it.name}}">{{it.name | simplify}}</a>
+                            </nav-item>
+                        </ul>
+                    </collapsible-body>
+                </nav-collapsible-item>
+
+                <nav-item v-else :active="item.name === currentModule.name" @click="handleClick(item.name)">
+                    <a class="waves-effect waves-red lighten-4" v-link="{name: 'components', params: {component: item.name}}">{{item.name | simplify}}</a>
+                </nav-item>
+            </div>
         </side-nav>
     </header>
 </template>
@@ -48,6 +61,9 @@
                 },
                 currentModule: function(state) {
                     return state.currentModule;
+                },
+                navTree: function(state) {
+                    return state.navTree;
                 }
             },
             actions: {

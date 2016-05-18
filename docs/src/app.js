@@ -17,7 +17,7 @@ router.map({
     },
     '/components/*component': {
         name: 'components',
-        component: require('./components/page.vue')
+        component: require('./components/page-main.vue')
     }
 });
 
