@@ -5,6 +5,43 @@ var fs = require('fs');
 var isWin = /^win/.test(process.platform);
 var SLASH = isWin ? '\\' : '/';
 
+var AV = require('avoscloud-sdk');
+AV.initialize('IsqV9oNn0Qf14oTG8VeQjnEo-gzGzoHsz', 'OLLDSIaSPh9CkzhKzF8RY6nE');
+
+var ModuleMetaDataAVObject = AV.Object.extend('ModuleMetaData');
+
+function saveModuleToCloud(version, module) {
+    var avObj = new ModuleMetaDataAVObject();
+
+    avObj.set('version', version);
+    avObj.set('moduleData', module);
+    avObj.set('moduleName', module.name);
+
+    avObj.save().then(function() {
+        console.log('module [' + module.name + ':' + version + '] saved to the cloud');
+    }, function(error) {
+        console.log('module [' + module.name + ':' + version + '] save failed', error);
+    });
+}
+
+function saveModules(version, modules) {
+    var query = new AV.Query('ModuleMetaData');
+
+    query.equalTo('version', version);
+
+    query.destroyAll().then(function() {
+        console.log('all previous module data of ' + version + ' version have been deleted');
+        modules.forEach(function(module) {
+            saveModuleToCloud(version, module);
+        });
+    }, function() {
+        console.log('trying to delete previous module data of ' + version + ' version failed');
+        modules.forEach(function(module) {
+            saveModuleToCloud(version, module);
+        });
+    });
+}
+
 function parseComponentFile(filePath, fileString) {
     var blocks = parseCommentBlocks(fileString);
     var lines = [];
@@ -255,11 +292,17 @@ function run(callback) {
     });
 }
 
-run(function(modules) {
+/*run(function(modules) {
     fse.outputJson(path.resolve(__dirname, './temp.json'), modules, function(err) {
         if(err)
             console.log('output json failed', err);
         else
             console.log('output json successfully');
+    });
+});*/
+
+run(function(modules) {
+    fse.readJson(path.resolve(__dirname, '../package.json'), function(err, packageObj) {
+        saveModules(packageObj.version, modules);
     });
 });

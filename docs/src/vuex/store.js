@@ -21,6 +21,10 @@ module.exports = window.store = new Vuex.Store({
             })[0] || {};
         },
 
+        SET_CURRENT_MODULE_AS_LOADED: function(state, module) {
+            state.currentModule = module;
+        },
+
         SET_NAV_TREE: function(state, tree) {
             state.navTree = tree;
         }

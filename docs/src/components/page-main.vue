@@ -20,6 +20,13 @@
             'methods': require('./methods.vue')
         },
 
+        /*watch: {
+            modules: function(value) {
+                if(value.length > 0)
+                    this.selectModule(this.$route.params.component);
+            }
+        },*/
+
         ready: function() {
             this.selectModule(this.$route.params.component);
         },
@@ -28,6 +35,9 @@
             getters: {
                 currentModule: function(state) {
                     return state.currentModule;
+                },
+                modules: function(state) {
+                    return state.modules;
                 }
             },
             actions: {

@@ -1,15 +1,35 @@
 var AV = require('avoscloud-sdk');
 AV.initialize('IsqV9oNn0Qf14oTG8VeQjnEo-gzGzoHsz', 'OLLDSIaSPh9CkzhKzF8RY6nE');
 
-var query = new AV.Query('ModuleMetaData');
-var VERSION = "0.1.3";
+var VERSION = "0.1.4";
 
 function queryModules(version, callback) {
+    var query = new AV.Query('ModuleMetaData');
     query.equalTo('version', version);
     query.find().then(function(results) {
-        callback && callback(results[0].get('modulesData'));
+        var modules = results.map(function(r) {
+            return r.get('moduleData');
+        });
+
+        callback && callback(modules);
     }, function(error) {
         console.error('load modules data failed: ' + error.code + ' ' + error.message);
+    });
+}
+
+function queryModule(version, name, callback) {
+    var query = new AV.Query('ModuleMetaData');
+
+    query.equalTo('version', version);
+    query.equalTo('moduleName', name);
+
+    query.find().then(function(results) {
+        if(results.length > 0)
+            callback && callback(results[0].get('moduleData'));
+        else
+            console.warn('load module ' + name + ':' + version + ' returns nothing');
+    }, function(error) {
+        console.error('load module ' + name + ':' + version + ' failed', error);
     });
 }
 
@@ -37,8 +57,6 @@ function getModuleTree(modules) {
 module.exports = {
     loadAllModules: function(store, callback) {
         queryModules(VERSION, function(modules) {
-            modules = JSON.parse(modules);
-
             store.dispatch('SET_MODULES', modules.sort(function(m1, m2) {
                 if(m1.name < m2.name) return -1;
                 if(m1.name > m2.name) return 1;
@@ -52,7 +70,14 @@ module.exports = {
     },
 
     selectModule: function(store, name/* badges/badge */) {
-        store.dispatch('SET_CURRENT_MODULE', name);
+        if(store.state.modules.length > 0) {
+            store.dispatch('SET_CURRENT_MODULE', name);
+        } else {
+            queryModule(VERSION, name, function(module) {
+                console.log('query module returned', module);
+                store.dispatch('SET_CURRENT_MODULE_AS_LOADED', module);
+            });
+        }
     },
 
     checkModule: function(store, name) {

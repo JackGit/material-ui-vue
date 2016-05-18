@@ -36,12 +36,6 @@
             'collapsible-body': require('material-ui-vue/components/collapsible/collapsible-body.vue')
         },
 
-        props: {
-            componentDetails: {
-                type: Object
-            }
-        },
-
         methods: {
             handleClick: function(name) {
                 this.selectModule(name);
