@@ -24,18 +24,18 @@ var modules = [
         "methods": [],
         "examples": [
             {
-                "name": "badges in collections",
-                "description": "you can put badges in collections by adding <code>badge</code> into the collection <code>links</code> object",
-                "code": "<template>\r\n    <link-collection :links=\"links\"></link-collection>\r\n</template>\r\n\r\n<script>\r\n    /**\r\n     * @example badges in collections\r\n     * @for badge\r\n     * @description you can put badges in collections by adding <code>badge</code> into the collection <code>links</code> object\r\n     */\r\n    module.exports = {\r\n        components: {\r\n            'link-collection': require('material-ui-vue/components/collections/link-collection.vue')\r\n        },\r\n\r\n        data: function() {\r\n            return {\r\n                links: [\r\n                    {href: '#!', label: 'Inbox', badge: {label: '12', new: true}},\r\n                    {href: '#!', label: 'Outbox', badge: {label: '2', new: false}},\r\n                    {href: '#!', label: 'Draft'}\r\n                ]\r\n            }\r\n        }\r\n    };\r\n</script>",
-                "componentName": "badge",
-                "demoComponentName": "badges-in-collections"
-            },
-            {
                 "name": "badges in collections with slot",
                 "description": "you can put badges in collections by adding child element of <code>link-collection</code> element",
                 "code": "<template>\r\n    <link-collection>\r\n        <a href=\"#!\">Inbox<badge new>12</badge></a>\r\n        <a href=\"#!\">Outbox<badge>22</badge></a>\r\n        <a href=\"#!\">Draft<badge>2</badge></a>\r\n    </link-collection>\r\n</template>\r\n\r\n<script>\r\n    /**\r\n     * @example badges in collections with slot\r\n     * @for badge\r\n     * @description you can put badges in collections by adding child element of <code>link-collection</code> element\r\n     */\r\n    module.exports = {\r\n        components: {\r\n            'badge': require('material-ui-vue/components/badges/badge.vue'),\r\n            'link-collection': require('material-ui-vue/components/collections/link-collection.vue')\r\n        }\r\n    }\r\n</script>",
                 "componentName": "badge",
                 "demoComponentName": "badges-in-collections-with-slot"
+            },
+            {
+                "name": "badges in collections",
+                "description": "you can put badges in collections by adding <code>badge</code> into the collection <code>links</code> object",
+                "code": "<template>\r\n    <link-collection :links=\"links\"></link-collection>\r\n</template>\r\n\r\n<script>\r\n    /**\r\n     * @example badges in collections\r\n     * @for badge\r\n     * @description you can put badges in collections by adding <code>badge</code> into the collection <code>links</code> object\r\n     */\r\n    module.exports = {\r\n        components: {\r\n            'link-collection': require('material-ui-vue/components/collections/link-collection.vue')\r\n        },\r\n\r\n        data: function() {\r\n            return {\r\n                links: [\r\n                    {href: '#!', label: 'Inbox', badge: {label: '12', new: true}},\r\n                    {href: '#!', label: 'Outbox', badge: {label: '2', new: false}},\r\n                    {href: '#!', label: 'Draft'}\r\n                ]\r\n            }\r\n        }\r\n    };\r\n</script>",
+                "componentName": "badge",
+                "demoComponentName": "badges-in-collections"
             },
             {
                 "name": "badges in dropdown via slot",
@@ -59,6 +59,184 @@ var modules = [
                 "demoComponentName": "badges-in-navbar"
             }
         ]
+    },
+    {
+        "name": "buttons/button",
+        "author": "Jack Yang",
+        "description": "There are 3 main button types described in material design. The raised button is a standard button that signify actions and seek to give depth to a mostly flat page. The floating circular action button is meant for very important functions. Flat buttons are usually used within elements that already have depth like cards or modals.",
+        "props": [
+            {
+                "name": "label",
+                "type": "{String}",
+                "default": "''",
+                "description": "label of this button"
+            },
+            {
+                "name": "type",
+                "type": "{String}",
+                "default": "''",
+                "description": "type of this button. '': raised button, by default. 'flat': flat button. 'floating': floating button"
+            },
+            {
+                "name": "large",
+                "type": "{Boolean}",
+                "default": "false",
+                "description": "set this prop as true to let this button has a larger height for buttons that need more attention"
+            },
+            {
+                "name": "icon",
+                "type": "{String}",
+                "default": "''",
+                "description": "icon of this button"
+            },
+            {
+                "name": "iconPosition",
+                "type": "{String}",
+                "default": "'left'",
+                "description": "icon position of the button icon. Possible values: 'left', 'right'"
+            },
+            {
+                "name": "wavesEffect",
+                "type": "{Boolean}",
+                "default": "true",
+                "description": "apple the waves effect of the button"
+            },
+            {
+                "name": "lightWave",
+                "type": "{Boolean}",
+                "default": "true",
+                "description": "apply the light-style waves effect to the button"
+            },
+            {
+                "name": "",
+                "type": "{Boolean}",
+                "default": "false",
+                "description": "indicate the button is disabled or not"
+            }
+        ],
+        "methods": [],
+        "examples": [
+            {
+                "name": "flat button",
+                "description": "",
+                "code": "<template>\r\n    <div>\r\n        <flat-button type=\"flat\" :light-wave=\"false\" class=\"waves-red\">flat button</flat-button>\r\n    </div>\r\n</template>\r\n\r\n<script>\r\n    /**\r\n     * @example flat button\r\n     * @for button\r\n     * @description\r\n     */\r\n    module.exports = {\r\n        components: {\r\n            'flat-button': require('material-ui-vue/components/buttons/button.vue')\r\n        }\r\n    };\r\n</script>",
+                "componentName": "button",
+                "demoComponentName": "flat-button"
+            },
+            {
+                "name": "float button",
+                "description": "",
+                "code": "<template>\r\n    <div>\r\n        <float-button type=\"floating\" icon=\"add\" large class=\"red\"></float-button>\r\n    </div>\r\n</template>\r\n\r\n<script>\r\n    /**\r\n     * @example float button\r\n     * @for button\r\n     * @description\r\n     */\r\n    module.exports = {\r\n        components: {\r\n            'float-button': require('material-ui-vue/components/buttons/button.vue')\r\n        }\r\n    };\r\n</script>",
+                "componentName": "button",
+                "demoComponentName": "float-button"
+            },
+            {
+                "name": "raised button",
+                "description": "",
+                "code": "<template>\r\n    <div>\r\n        <raised-button label=\"raised button\"></raised-button>\r\n        <raised-button>slot label button</raised-button>\r\n        <raised-button label=\"left icon button\" icon=\"edit\" icon-position=\"left\"></raised-button>\r\n        <raised-button label=\"right icon button\" icon=\"edit\" icon-position=\"right\"></raised-button>\r\n        <raised-button label=\"large button\" large></raised-button>\r\n        <raised-button label=\"disabled button\" disabled></raised-button>\r\n        <raised-button label=\"no waves effect button\" :waves-effect=\"false\"></raised-button>\r\n        <raised-button label=\"no light waves button\" :light-wave=\"false\"></raised-button>\r\n        <raised-button label=\"styled button\" class=\"red black-text\"></raised-button>\r\n    </div>\r\n</template>\r\n\r\n<script>\r\n    /**\r\n     * @example raised button\r\n     * @for button\r\n     * @description\r\n     */\r\n    module.exports = {\r\n        components: {\r\n            'raised-button': require('material-ui-vue/components/buttons/button.vue')\r\n        }\r\n    };\r\n</script>",
+                "componentName": "button",
+                "demoComponentName": "raised-button"
+            }
+        ]
+    },
+    {
+        "name": "buttons/fixed-action-button",
+        "author": "Jack Yang",
+        "description": "If you want a fixed floating action button, you can add multiple actions that will appear on hover. Our demo is in the bottom righthand corner of the page.",
+        "props": [
+            {
+                "name": "label",
+                "type": "{String}",
+                "default": "''",
+                "description": "label of this button"
+            },
+            {
+                "name": "type",
+                "type": "{String}",
+                "default": "''",
+                "description": "type of this button. '': raised button, by default. 'flat': flat button. 'floating': floating button"
+            },
+            {
+                "name": "large",
+                "type": "{Boolean}",
+                "default": "false",
+                "description": "set this prop as true to let this button has a larger height for buttons that need more attention"
+            },
+            {
+                "name": "icon",
+                "type": "{String}",
+                "default": "''",
+                "description": "icon of this button"
+            },
+            {
+                "name": "iconPosition",
+                "type": "{String}",
+                "default": "'left'",
+                "description": "icon position of the button icon. Possible values: 'left', 'right'"
+            },
+            {
+                "name": "wavesEffect",
+                "type": "{Boolean}",
+                "default": "true",
+                "description": "apple the waves effect of the button"
+            },
+            {
+                "name": "lightWave",
+                "type": "{Boolean}",
+                "default": "true",
+                "description": "apply the light-style waves effect to the button"
+            },
+            {
+                "name": "",
+                "type": "{Boolean}",
+                "default": "false",
+                "description": "indicate the button is disabled or not"
+            },
+            {
+                "name": "horizontal",
+                "type": "{Boolean}",
+                "default": "false",
+                "description": "indicate this is a horizontal FAB"
+            },
+            {
+                "name": "clickOnly",
+                "type": "{Boolean}",
+                "default": "false",
+                "description": "if you want to disable the hover behaviour, and instead toggle the FAB menu when the user clicks on the large button (works great on mobile!), just add the click-to-toggle class to the FAB"
+            }
+        ],
+        "methods": [],
+        "examples": [
+            {
+                "name": "click only FAB",
+                "description": "",
+                "code": "<template>\r\n    <div style=\"position: relative\">\r\n        <fixed-action-button icon=\"edit\" :horizontal=\"true\" :click-only=\"true\" style=\"position: absolute; display: inline-block; right: 24px;\">\r\n            <ul>\r\n                <li><btn type=\"floating\" class=\"red\" icon=\"edit\"></btn></li>\r\n                <li><btn type=\"floating\" class=\"yellow\" icon=\"edit\"></btn></li>\r\n                <li><btn type=\"floating\" class=\"green\" icon=\"edit\"></btn></li>\r\n                <li><btn type=\"floating\" class=\"blue\" icon=\"edit\"></btn></li>\r\n            </ul>\r\n        </fixed-action-button>\r\n    </div>\r\n</template>\r\n\r\n<script>\r\n    /**\r\n     * @example click only FAB\r\n     * @for fixed-action-button\r\n     * @description\r\n     */\r\n    module.exports = {\r\n        components: {\r\n            'btn': require('material-ui-vue/components/buttons/button.vue'),\r\n            'fixed-action-button': require('material-ui-vue/components/buttons/fixed-action-button.vue')\r\n        }\r\n    };\r\n</script>",
+                "componentName": "fixed-action-button",
+                "demoComponentName": "click-only-fab"
+            },
+            {
+                "name": "horizontal FAB",
+                "description": "",
+                "code": "<template>\r\n    <div style=\"position: relative\">\r\n        <fixed-action-button icon=\"edit\" :horizontal=\"true\" style=\"position: absolute; display: inline-block; right: 24px;\">\r\n            <ul>\r\n                <li><btn type=\"floating\" class=\"red\" icon=\"edit\"></btn></li>\r\n                <li><btn type=\"floating\" class=\"yellow\" icon=\"edit\"></btn></li>\r\n                <li><btn type=\"floating\" class=\"green\" icon=\"edit\"></btn></li>\r\n                <li><btn type=\"floating\" class=\"blue\" icon=\"edit\"></btn></li>\r\n            </ul>\r\n        </fixed-action-button>\r\n    </div>\r\n</template>\r\n\r\n<script>\r\n    /**\r\n     * @example horizontal FAB\r\n     * @for fixed-action-button\r\n     * @description\r\n     */\r\n    module.exports = {\r\n        components: {\r\n            'btn': require('material-ui-vue/components/buttons/button.vue'),\r\n            'fixed-action-button': require('material-ui-vue/components/buttons/fixed-action-button.vue')\r\n        }\r\n    };\r\n</script>",
+                "componentName": "fixed-action-button",
+                "demoComponentName": "horizontal-fab"
+            },
+            {
+                "name": "vertical FAB",
+                "description": "",
+                "code": "<template>\r\n    <div style=\"position: relative\">\r\n        <fixed-action-button icon=\"edit\" :active=\"true\" style=\"position: absolute; display: inline-block; right: 24px;\">\r\n            <ul>\r\n                <li><btn type=\"floating\" class=\"red\" icon=\"edit\"></btn></li>\r\n                <li><btn type=\"floating\" class=\"yellow\" icon=\"edit\"></btn></li>\r\n                <li><btn type=\"floating\" class=\"green\" icon=\"edit\"></btn></li>\r\n                <li><btn type=\"floating\" class=\"blue\" icon=\"edit\"></btn></li>\r\n            </ul>\r\n        </fixed-action-button>\r\n    </div>\r\n</template>\r\n\r\n<script>\r\n    /**\r\n     * @example vertical FAB\r\n     * @for fixed-action-button\r\n     * @description\r\n     */\r\n    module.exports = {\r\n        components: {\r\n            'btn': require('material-ui-vue/components/buttons/button.vue'),\r\n            'fixed-action-button': require('material-ui-vue/components/buttons/fixed-action-button.vue')\r\n        }\r\n    };\r\n</script>",
+                "componentName": "fixed-action-button",
+                "demoComponentName": "vertical-fab"
+            }
+        ]
+    },
+    {
+        "name": "cards/card-action",
+        "author": "Jack Yang",
+        "description": "a component for card-action",
+        "props": [],
+        "methods": [],
+        "examples": []
     },
     {
         "name": "breadcrumbs/breadcrumbs",
@@ -87,44 +265,6 @@ var modules = [
                 "code": "<template>\r\n    <breadcrumbs :crumbs=\"crumbs\"></breadcrumbs>\r\n</template>\r\n\r\n<script>\r\n    /**\r\n     * @example basic usage\r\n     * @for breadcrumbs\r\n     * @description you can init breadcrumbs by assigning <code>crumbs</code> prop\r\n     */\r\n    module.exports = {\r\n\r\n        components: {\r\n            'breadcrumbs': require('material-ui-vue/components/breadcrumbs/breadcrumbs.vue')\r\n        },\r\n\r\n        data: function() {\r\n            return {\r\n                crumbs: [\r\n                    {href: '#!', label: 'Top'},\r\n                    {href: '#!', label: 'Middle'},\r\n                    {href: '#!', label: 'Bottom'}\r\n                ]\r\n            };\r\n        }\r\n    };\r\n</script>",
                 "componentName": "breadcrumbs",
                 "demoComponentName": "breadcrumbs"
-            }
-        ]
-    },
-    {
-        "name": "cards/card-action",
-        "author": "Jack Yang",
-        "description": "a component for card-action",
-        "props": [],
-        "methods": [],
-        "examples": []
-    },
-    {
-        "name": "buttons/button",
-        "author": "Jack Yang",
-        "description": "There are 3 main button types described in material design. The raised button is a standard button that signify actions and seek to give depth to a mostly flat page. The floating circular action button is meant for very important functions. Flat buttons are usually used within elements that already have depth like cards or modals.",
-        "props": [],
-        "methods": [],
-        "examples": [
-            {
-                "name": "flat button",
-                "description": "",
-                "code": "<template>\r\n    <div>\r\n        <flat-button type=\"flat\" :light-wave=\"false\" class=\"waves-red\">flat button</flat-button>\r\n    </div>\r\n</template>\r\n\r\n<script>\r\n    /**\r\n     * @example flat button\r\n     * @for button\r\n     * @description\r\n     */\r\n    module.exports = {\r\n        components: {\r\n            'flat-button': require('material-ui-vue/components/buttons/button.vue')\r\n        }\r\n    };\r\n</script>",
-                "componentName": "button",
-                "demoComponentName": "flat-button"
-            },
-            {
-                "name": "float button",
-                "description": "",
-                "code": "<template>\r\n    <div>\r\n        <float-button type=\"floating\" icon=\"add\" large class=\"red\"></float-button>\r\n    </div>\r\n</template>\r\n\r\n<script>\r\n    /**\r\n     * @example float button\r\n     * @for button\r\n     * @description\r\n     */\r\n    module.exports = {\r\n        components: {\r\n            'float-button': require('material-ui-vue/components/buttons/button.vue')\r\n        }\r\n    };\r\n</script>",
-                "componentName": "button",
-                "demoComponentName": "float-button"
-            },
-            {
-                "name": "raised button",
-                "description": "",
-                "code": "<template>\r\n    <div>\r\n        <raised-button label=\"raised button\"></raised-button>\r\n        <raised-button>slot label button</raised-button>\r\n        <raised-button label=\"left icon button\" icon=\"edit\" icon-position=\"left\"></raised-button>\r\n        <raised-button label=\"right icon button\" icon=\"edit\" icon-position=\"right\"></raised-button>\r\n        <raised-button label=\"large button\" large></raised-button>\r\n        <raised-button label=\"disabled button\" disabled></raised-button>\r\n        <raised-button label=\"no waves effect button\" :waves-effect=\"false\"></raised-button>\r\n        <raised-button label=\"no light waves button\" :light-wave=\"false\"></raised-button>\r\n        <raised-button label=\"styled button\" class=\"red black-text\"></raised-button>\r\n    </div>\r\n</template>\r\n\r\n<script>\r\n    /**\r\n     * @example raised button\r\n     * @for button\r\n     * @description\r\n     */\r\n    module.exports = {\r\n        components: {\r\n            'raised-button': require('material-ui-vue/components/buttons/button.vue')\r\n        }\r\n    };\r\n</script>",
-                "componentName": "button",
-                "demoComponentName": "raised-button"
             }
         ]
     },
@@ -168,49 +308,6 @@ var modules = [
                 "code": "<template>\r\n    <div class=\"col s12 m6\">\r\n        <card>\r\n            <card-image :src=\"imageUrl\">\r\n                <card-title>Card Title</card-title>\r\n            </card-image>\r\n            <card-content>\r\n                <p>this is image description</p>\r\n            </card-content>\r\n            <card-action>\r\n                <a href=\"#!\">Link A</a>\r\n            </card-action>\r\n        </card>\r\n    </div>\r\n</template>\r\n\r\n<script>\r\n    /**\r\n     * @example card image\r\n     * @for card-image\r\n     * @description\r\n     */\r\n    module.exports = {\r\n        components: {\r\n            'card': require('material-ui-vue/components/cards/card.vue'),\r\n            'card-title': require('material-ui-vue/components/cards/card-title.vue'),\r\n            'card-content': require('material-ui-vue/components/cards/card-content.vue'),\r\n            'card-action': require('material-ui-vue/components/cards/card-action.vue'),\r\n            'card-image': require('material-ui-vue/components/cards/card-image.vue')\r\n        },\r\n\r\n        data: function() {\r\n            return {\r\n                imageUrl: 'http://materializecss.com/images/sample-1.jpg'\r\n            }\r\n        }\r\n    };\r\n</script>",
                 "componentName": "card-image",
                 "demoComponentName": "image-card"
-            }
-        ]
-    },
-    {
-        "name": "buttons/fixed-action-button",
-        "author": "Jack Yang",
-        "description": "If you want a fixed floating action button, you can add multiple actions that will appear on hover. Our demo is in the bottom righthand corner of the page.",
-        "props": [
-            {
-                "name": "horizontal",
-                "type": "{Boolean}",
-                "default": "false",
-                "description": "indicate this is a horizontal FAB"
-            },
-            {
-                "name": "clickOnly",
-                "type": "{Boolean}",
-                "default": "false",
-                "description": "if you want to disable the hover behaviour, and instead toggle the FAB menu when the user clicks on the large button (works great on mobile!), just add the click-to-toggle class to the FAB"
-            }
-        ],
-        "methods": [],
-        "examples": [
-            {
-                "name": "click only FAB",
-                "description": "",
-                "code": "<template>\r\n    <fixed-action-button icon=\"edit\" :click-only=\"true\">\r\n        <ul>\r\n            <li><btn type=\"floating\" class=\"red\" icon=\"edit\"></btn></li>\r\n            <li><btn type=\"floating\" class=\"yellow\" icon=\"edit\"></btn></li>\r\n            <li><btn type=\"floating\" class=\"green\" icon=\"edit\"></btn></li>\r\n            <li><btn type=\"floating\" class=\"blue\" icon=\"edit\"></btn></li>\r\n        </ul>\r\n    </fixed-action-button>\r\n</template>\r\n\r\n<script>\r\n    /**\r\n     * @example click only FAB\r\n     * @for fixed-action-button\r\n     * @description\r\n     */\r\n    module.exports = {\r\n        components: {\r\n            'btn': require('material-ui-vue/components/buttons/button.vue'),\r\n            'fixed-action-button': require('material-ui-vue/components/buttons/fixed-action-button.vue')\r\n        }\r\n    };\r\n</script>",
-                "componentName": "fixed-action-button",
-                "demoComponentName": "click-only-fab"
-            },
-            {
-                "name": "horizontal FAB",
-                "description": "",
-                "code": "<template>\r\n    <fixed-action-button icon=\"edit\" :horizontal=\"true\">\r\n        <ul>\r\n            <li><btn type=\"floating\" class=\"red\" icon=\"edit\"></btn></li>\r\n            <li><btn type=\"floating\" class=\"yellow\" icon=\"edit\"></btn></li>\r\n            <li><btn type=\"floating\" class=\"green\" icon=\"edit\"></btn></li>\r\n            <li><btn type=\"floating\" class=\"blue\" icon=\"edit\"></btn></li>\r\n        </ul>\r\n    </fixed-action-button>\r\n</template>\r\n\r\n<script>\r\n    /**\r\n     * @example horizontal FAB\r\n     * @for fixed-action-button\r\n     * @description\r\n     */\r\n    module.exports = {\r\n        components: {\r\n            'btn': require('material-ui-vue/components/buttons/button.vue'),\r\n            'fixed-action-button': require('material-ui-vue/components/buttons/fixed-action-button.vue')\r\n        }\r\n    };\r\n</script>",
-                "componentName": "fixed-action-button",
-                "demoComponentName": "horizontal-fab"
-            },
-            {
-                "name": "vertical FAB",
-                "description": "",
-                "code": "<template>\r\n    <fixed-action-button icon=\"edit\" :active=\"true\">\r\n        <ul>\r\n            <li><btn type=\"floating\" class=\"red\" icon=\"edit\"></btn></li>\r\n            <li><btn type=\"floating\" class=\"yellow\" icon=\"edit\"></btn></li>\r\n            <li><btn type=\"floating\" class=\"green\" icon=\"edit\"></btn></li>\r\n            <li><btn type=\"floating\" class=\"blue\" icon=\"edit\"></btn></li>\r\n        </ul>\r\n    </fixed-action-button>\r\n</template>\r\n\r\n<script>\r\n    /**\r\n     * @example vertical FAB\r\n     * @for fixed-action-button\r\n     * @description\r\n     */\r\n    module.exports = {\r\n        components: {\r\n            'btn': require('material-ui-vue/components/buttons/button.vue'),\r\n            'fixed-action-button': require('material-ui-vue/components/buttons/fixed-action-button.vue')\r\n        }\r\n    };\r\n</script>",
-                "componentName": "fixed-action-button",
-                "demoComponentName": "vertical-fab"
             }
         ]
     },
@@ -462,18 +559,18 @@ var modules = [
         "methods": [],
         "examples": [
             {
-                "name": "basic collection",
-                "description": "",
-                "code": "<template>\r\n    <collection>\r\n        <collection-item>\r\n            <div>\r\n                Vue\r\n                <a href=\"#!\" class=\"secondary-content\">\r\n                    <icon value=\"send\"></icon>\r\n                </a>\r\n            </div>\r\n        </collection-item>\r\n        <collection-item>React</collection-item>\r\n        <collection-item>Angular</collection-item>\r\n        <collection-item>Meteor</collection-item>\r\n        <collection-item dismissable>This one is dismissable</collection-item>\r\n    </collection>\r\n</template>\r\n\r\n<script>\r\n    /**\r\n     * @example basic collection\r\n     * @for collection\r\n     * @description\r\n     */\r\n    module.exports = {\r\n        components: {\r\n            'collection': require('material-ui-vue/components/collections/collection.vue'),\r\n            'collection-item': require('material-ui-vue/components/collections/collection-item.vue'),\r\n            'icon': require('material-ui-vue/components/icons/icon.vue')\r\n        }\r\n    };\r\n</script>",
-                "componentName": "collection",
-                "demoComponentName": "basic-collection"
-            },
-            {
                 "name": "avatar collection",
                 "description": "",
                 "code": "<template>\r\n    <collection>\r\n        <collection-item avatar>\r\n            <img :src=\"imageUrl\" alt=\"\" class=\"circle\">\r\n            <span class=\"title\">Title</span>\r\n            <p>First Line <br>\r\n                Second Line\r\n            </p>\r\n            <a href=\"#!\" class=\"secondary-content\"><icon value=\"grade\"></icon></a>\r\n        </collection-item>\r\n        <collection-item avatar>\r\n            <icon value=\"folder\" class=\"circle\"></icon>\r\n            <span class=\"title\">Title</span>\r\n            <p>First Line <br>\r\n                Second Line\r\n            </p>\r\n            <a href=\"#!\" class=\"secondary-content\"><icon value=\"grade\"></icon></a>\r\n        </collection-item>\r\n    </collection>\r\n</template>\r\n\r\n<script>\r\n    /**\r\n     * @example avatar collection\r\n     * @for collection\r\n     * @description\r\n     */\r\n    module.exports = {\r\n        components: {\r\n            'collection': require('material-ui-vue/components/collections/collection.vue'),\r\n            'collection-item': require('material-ui-vue/components/collections/collection-item.vue'),\r\n            'icon': require('material-ui-vue/components/icons/icon.vue')\r\n        },\r\n\r\n        data: function() {\r\n            return {\r\n                imageUrl: 'http://materializecss.com/images/yuna.jpg'\r\n            }\r\n        }\r\n    };\r\n</script>",
                 "componentName": "collection",
                 "demoComponentName": "avatar-collection"
+            },
+            {
+                "name": "basic collection",
+                "description": "",
+                "code": "<template>\r\n    <collection>\r\n        <collection-item>\r\n            <div>\r\n                Vue\r\n                <a href=\"#!\" class=\"secondary-content\">\r\n                    <icon value=\"send\"></icon>\r\n                </a>\r\n            </div>\r\n        </collection-item>\r\n        <collection-item>React</collection-item>\r\n        <collection-item>Angular</collection-item>\r\n        <collection-item>Meteor</collection-item>\r\n        <collection-item dismissable>This one is dismissable</collection-item>\r\n    </collection>\r\n</template>\r\n\r\n<script>\r\n    /**\r\n     * @example basic collection\r\n     * @for collection\r\n     * @description\r\n     */\r\n    module.exports = {\r\n        components: {\r\n            'collection': require('material-ui-vue/components/collections/collection.vue'),\r\n            'collection-item': require('material-ui-vue/components/collections/collection-item.vue'),\r\n            'icon': require('material-ui-vue/components/icons/icon.vue')\r\n        }\r\n    };\r\n</script>",
+                "componentName": "collection",
+                "demoComponentName": "basic-collection"
             },
             {
                 "name": "collection with header",
@@ -515,10 +612,115 @@ var modules = [
         ]
     },
     {
+        "name": "footer/footer-copyright",
+        "author": "Jack Yang",
+        "description": "a component for footer-copyright",
+        "props": [],
+        "methods": [],
+        "examples": []
+    },
+    {
         "name": "dropdown/dropdown",
         "author": "Jack Yang",
         "description": "Add a <a href=\"http://materializecss.com/dropdown.html\">dropdown</a> list to any button. These button props can't be changed for a dropdown: waves-effect, light-wave and disabled.",
-        "props": [],
+        "props": [
+            {
+                "name": "label",
+                "type": "{String}",
+                "default": "''",
+                "description": "label of this button"
+            },
+            {
+                "name": "type",
+                "type": "{String}",
+                "default": "''",
+                "description": "type of this button. '': raised button, by default. 'flat': flat button. 'floating': floating button"
+            },
+            {
+                "name": "large",
+                "type": "{Boolean}",
+                "default": "false",
+                "description": "set this prop as true to let this button has a larger height for buttons that need more attention"
+            },
+            {
+                "name": "icon",
+                "type": "{String}",
+                "default": "''",
+                "description": "icon of this button"
+            },
+            {
+                "name": "iconPosition",
+                "type": "{String}",
+                "default": "'left'",
+                "description": "icon position of the button icon. Possible values: 'left', 'right'"
+            },
+            {
+                "name": "wavesEffect",
+                "type": "{Boolean}",
+                "default": "true",
+                "description": "apple the waves effect of the button"
+            },
+            {
+                "name": "lightWave",
+                "type": "{Boolean}",
+                "default": "true",
+                "description": "apply the light-style waves effect to the button"
+            },
+            {
+                "name": "",
+                "type": "{Boolean}",
+                "default": "false",
+                "description": "indicate the button is disabled or not"
+            },
+            {
+                "name": "items",
+                "type": "{Array}",
+                "default": "function() {return [];}",
+                "description": "example value: [{href: '#!', label: 'item 1', badge: {label: '1', new: true}}, {href: '#!', label: 'item 2'}, {divider: true}]"
+            },
+            {
+                "name": "inDuration",
+                "type": "{Number}",
+                "default": "300",
+                "description": "the duration of the transition enter in milliseconds"
+            },
+            {
+                "name": "outDuration",
+                "type": "{Number}",
+                "default": "225",
+                "description": "the duration of the transition out in milliseconds"
+            },
+            {
+                "name": "constrainWidth",
+                "type": "{Boolean}",
+                "default": "true",
+                "description": "if true, constrainWidth to the size of the dropdown activator"
+            },
+            {
+                "name": "hover",
+                "type": "{Boolean}",
+                "default": "true",
+                "description": "if true, the dropdown will open on hover"
+            },
+            {
+                "name": "gutter",
+                "type": "{Number}",
+                "default": "0",
+                "description": "this defines the spacing from the aligned edge"
+            },
+            {
+                "name": "belowOrigin",
+                "type": "{Boolean}",
+                "default": "false",
+                "description": "if true, the dropdown will show below the activator"
+            },
+            {
+                "name": "alignment",
+                "type": "{String}",
+                "default": "'left'",
+                "description": "defines the edge the menu is aligned to. Possible values: 'left', 'right'"
+            }
+        ],
         "methods": [],
         "examples": [
             {
@@ -536,18 +738,18 @@ var modules = [
                 "demoComponentName": "dropdown-with-slot"
             },
             {
-                "name": "icon, and large dropdown",
-                "description": "",
-                "code": "<template>\r\n    <dropdown :items=\"items\" label=\"Drop Me!\" icon=\"edit\" icon-position=\"right\" large></dropdown>\r\n</template>\r\n\r\n<script>\r\n    /**\r\n     * @example icon, and large dropdown\r\n     * @for dropdown\r\n     * @description\r\n     */\r\n    module.exports = {\r\n        components: {\r\n            'dropdown': require('material-ui-vue/components/dropdown/dropdown.vue')\r\n        },\r\n\r\n        data: function() {\r\n            return {\r\n                items: [\r\n                    {href: '#!', label: 'One'},\r\n                    {href: '#!', label: 'Two'},\r\n                    {divider: true},\r\n                    {href: '#!', label: 'Three'},\r\n                ]\r\n            }\r\n        }\r\n    };\r\n</script>",
-                "componentName": "dropdown",
-                "demoComponentName": "icon-large-dropdown"
-            },
-            {
                 "name": "basic dropdown",
                 "description": "",
                 "code": "<template>\r\n    <dropdown :items=\"items\" label=\"Drop Me!\" icon=\"edit\" icon-position=\"right\" :large=\"true\"></dropdown>\r\n</template>\r\n\r\n<script>\r\n    /**\r\n     * @example basic dropdown\r\n     * @for dropdown\r\n     * @description\r\n     */\r\n    module.exports = {\r\n        components: {\r\n            'dropdown': require('material-ui-vue/components/dropdown/dropdown.vue')\r\n        },\r\n\r\n        data: function() {\r\n            return {\r\n                items: [\r\n                    {href: '#!', label: 'One'},\r\n                    {href: '#!', label: 'Two'},\r\n                    {divider: true},\r\n                    {href: '#!', label: 'Three'},\r\n                ]\r\n            }\r\n        }\r\n    };\r\n</script>",
                 "componentName": "dropdown",
                 "demoComponentName": "dropdown"
+            },
+            {
+                "name": "icon, and large dropdown",
+                "description": "",
+                "code": "<template>\r\n    <dropdown :items=\"items\" label=\"Drop Me!\" icon=\"edit\" icon-position=\"right\" large></dropdown>\r\n</template>\r\n\r\n<script>\r\n    /**\r\n     * @example icon, and large dropdown\r\n     * @for dropdown\r\n     * @description\r\n     */\r\n    module.exports = {\r\n        components: {\r\n            'dropdown': require('material-ui-vue/components/dropdown/dropdown.vue')\r\n        },\r\n\r\n        data: function() {\r\n            return {\r\n                items: [\r\n                    {href: '#!', label: 'One'},\r\n                    {href: '#!', label: 'Two'},\r\n                    {divider: true},\r\n                    {href: '#!', label: 'Three'},\r\n                ]\r\n            }\r\n        }\r\n    };\r\n</script>",
+                "componentName": "dropdown",
+                "demoComponentName": "icon-large-dropdown"
             }
         ]
     },
@@ -561,52 +763,9 @@ var modules = [
             {
                 "name": "footer with copyright",
                 "description": "",
-                "code": "<template>\r\n    <mui-footer>\r\n        <div class=\"container\">\r\n            <div class=\"row\">\r\n                <div class=\"col l6 s12\">\r\n                    <h5 class=\"white-text\">Footer Content</h5>\r\n                    <p class=\"grey-text text-lighten-4\">You can use rows and columns here to organize your footer content.</p>\r\n                </div>\r\n                <div class=\"col l4 offset-l2 s12\">\r\n                    <h5 class=\"white-text\">Links</h5>\r\n                    <ul>\r\n                        <li><a class=\"grey-text text-lighten-3\" href=\"#!\">Link 1</a></li>\r\n                        <li><a class=\"grey-text text-lighten-3\" href=\"#!\">Link 2</a></li>\r\n                        <li><a class=\"grey-text text-lighten-3\" href=\"#!\">Link 3</a></li>\r\n                        <li><a class=\"grey-text text-lighten-3\" href=\"#!\">Link 4</a></li>\r\n                    </ul>\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n        <footer-copyright>\r\n            <div class=\"container\">\r\n                © 2014 Copyright Text\r\n                <a class=\"grey-text text-lighten-4 right\" href=\"#!\">More Links</a>\r\n            </div>\r\n        </footer-copyright>\r\n    </mui-footer>\r\n</template>\r\n\r\n<script>\r\n    /**\r\n     * @example footer with copyright\r\n     * @for footer\r\n     * @description\r\n     */\r\n    module.exports = {\r\n        components: {\r\n            'mui-footer': require('material-ui-vue/components/footer/footer.vue'),\r\n            'footer-copyright': require('material-ui-vue/components/footer/footer-copyright.vue')\r\n        }\r\n    }\r\n</script>",
+                "code": "<template>\r\n    <mui-footer style=\"padding-left: 0\">\r\n        <div class=\"container\">\r\n            <div class=\"row\">\r\n                <div class=\"col l6 s12\">\r\n                    <h5 class=\"white-text\">Footer Content</h5>\r\n                    <p class=\"grey-text text-lighten-4\">You can use rows and columns here to organize your footer content.</p>\r\n                </div>\r\n                <div class=\"col l4 offset-l2 s12\">\r\n                    <h5 class=\"white-text\">Links</h5>\r\n                    <ul>\r\n                        <li><a class=\"grey-text text-lighten-3\" href=\"#!\">Link 1</a></li>\r\n                        <li><a class=\"grey-text text-lighten-3\" href=\"#!\">Link 2</a></li>\r\n                        <li><a class=\"grey-text text-lighten-3\" href=\"#!\">Link 3</a></li>\r\n                        <li><a class=\"grey-text text-lighten-3\" href=\"#!\">Link 4</a></li>\r\n                    </ul>\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n        <footer-copyright>\r\n            <div class=\"container\">\r\n                © 2014 Copyright Text\r\n                <a class=\"grey-text text-lighten-4 right\" href=\"#!\">More Links</a>\r\n            </div>\r\n        </footer-copyright>\r\n    </mui-footer>\r\n</template>\r\n\r\n<script>\r\n    /**\r\n     * @example footer with copyright\r\n     * @for footer\r\n     * @description\r\n     */\r\n    module.exports = {\r\n        components: {\r\n            'mui-footer': require('material-ui-vue/components/footer/footer.vue'),\r\n            'footer-copyright': require('material-ui-vue/components/footer/footer-copyright.vue')\r\n        }\r\n    }\r\n</script>",
                 "componentName": "footer",
                 "demoComponentName": "footer-demo"
-            }
-        ]
-    },
-    {
-        "name": "footer/footer-copyright",
-        "author": "Jack Yang",
-        "description": "a component for footer-copyright",
-        "props": [],
-        "methods": [],
-        "examples": []
-    },
-    {
-        "name": "forms/checkbox",
-        "author": "Jack Yang",
-        "description": "<a href=\"http://materializecss.com/forms.html\">forms</a> checkbox component",
-        "props": [
-            {
-                "name": "selected",
-                "type": "{Array}",
-                "default": "function() {return [];}",
-                "description": "indicate the items been selected. Value should come from value attribute of item object. Example value: ['red', 'green']"
-            },
-            {
-                "name": "items",
-                "type": "{Array}",
-                "default": "function() {return [];}",
-                "description": "items of the checkbox. Example value: [{label: 'RED', value: 'red', disabled: false}, {label: 'GREEN', value: 'green', disabled: true}]"
-            },
-            {
-                "name": "filledIn",
-                "type": "{Boolean}",
-                "default": "false",
-                "description": "indicate use filled-in style or not"
-            }
-        ],
-        "methods": [],
-        "examples": [
-            {
-                "name": "basic checkbox",
-                "description": "",
-                "code": "<template>\r\n    <form>\r\n        <checkbox :items=\"items\" :selected=\"selected\"></checkbox>\r\n    </form>\r\n</template>\r\n\r\n<script>\r\n    /**\r\n     * @example basic checkbox\r\n     * @for checkbox\r\n     * @description\r\n     */\r\n    module.exports = {\r\n        components: {\r\n            'checkbox': require('material-ui-vue/components/forms/checkbox.vue')\r\n        },\r\n\r\n        data: function() {\r\n            return {\r\n                items: [\r\n                    {label: 'Green', value: 'green'},\r\n                    {label: 'Red', value: 'red'},\r\n                    {label: 'Yellow', value: 'yellow', disabled: true},\r\n                    {label: 'Blue', value: 'blue'}\r\n                ],\r\n                selected: ['green', 'red', 'yellow']\r\n            }\r\n        }\r\n    };\r\n</script>",
-                "componentName": "checkbox",
-                "demoComponentName": "checkbox-demo"
             }
         ]
     },
@@ -664,43 +823,37 @@ var modules = [
         ]
     },
     {
-        "name": "forms/range",
+        "name": "forms/checkbox",
         "author": "Jack Yang",
-        "description": "<a href=\"http://materializecss.com/forms.html\">forms</a> range component",
+        "description": "<a href=\"http://materializecss.com/forms.html\">forms</a> checkbox component",
         "props": [
             {
-                "name": "min",
-                "type": "{Number}",
-                "default": "0",
-                "description": "set the min of range"
+                "name": "selected",
+                "type": "{Array}",
+                "default": "function() {return [];}",
+                "description": "indicate the items been selected. Value should come from value attribute of item object. Example value: ['red', 'green']"
             },
             {
-                "name": "max",
-                "type": "{Number}",
-                "default": "100",
-                "description": "set the max of range"
+                "name": "items",
+                "type": "{Array}",
+                "default": "function() {return [];}",
+                "description": "items of the checkbox. Example value: [{label: 'RED', value: 'red', disabled: false}, {label: 'GREEN', value: 'green', disabled: true}]"
             },
             {
-                "name": "value",
-                "type": "{Number}",
-                "default": "50",
-                "description": "set the current value of range"
-            },
-            {
-                "name": "disabled",
+                "name": "filledIn",
                 "type": "{Boolean}",
                 "default": "false",
-                "description": "indicate this range controller is disabled or not"
+                "description": "indicate use filled-in style or not"
             }
         ],
         "methods": [],
         "examples": [
             {
-                "name": "basic range and disabled range",
+                "name": "basic checkbox",
                 "description": "",
-                "code": "<template>\r\n    <form>\r\n        <div class=\"row\">\r\n            <range min=\"0\" max=\"100\" value=\"61\"></range>\r\n            <range min=\"0\" max=\"100\" value=\"10\" disabled></range>\r\n        </div>\r\n    </form>\r\n</template>\r\n\r\n<script>\r\n    /**\r\n     * @example basic range and disabled range\r\n     * @for range\r\n     * @description\r\n     */\r\n    module.exports = {\r\n        components: {\r\n            'range': require('material-ui-vue/components/forms/range.vue')\r\n        }\r\n    }\r\n</script>",
-                "componentName": "range",
-                "demoComponentName": "range-demo"
+                "code": "<template>\r\n    <form>\r\n        <checkbox :items=\"items\" :selected=\"selected\"></checkbox>\r\n    </form>\r\n</template>\r\n\r\n<script>\r\n    /**\r\n     * @example basic checkbox\r\n     * @for checkbox\r\n     * @description\r\n     */\r\n    module.exports = {\r\n        components: {\r\n            'checkbox': require('material-ui-vue/components/forms/checkbox.vue')\r\n        },\r\n\r\n        data: function() {\r\n            return {\r\n                items: [\r\n                    {label: 'Green', value: 'green'},\r\n                    {label: 'Red', value: 'red'},\r\n                    {label: 'Yellow', value: 'yellow', disabled: true},\r\n                    {label: 'Blue', value: 'blue'}\r\n                ],\r\n                selected: ['green', 'red', 'yellow']\r\n            }\r\n        }\r\n    };\r\n</script>",
+                "componentName": "checkbox",
+                "demoComponentName": "checkbox-demo"
             }
         ]
     },
@@ -742,6 +895,47 @@ var modules = [
                 "code": "<template>\r\n    <form>\r\n        <radio group=\"r1\" :items=\"items\" selected=\"red\"></radio>\r\n    </form>\r\n</template>\r\n\r\n<script>\r\n    /**\r\n     * @example basic radio\r\n     * @for radio\r\n     * @description\r\n     */\r\n    module.exports = {\r\n        components: {\r\n            'radio': require('material-ui-vue/components/forms/radio.vue')\r\n        },\r\n\r\n        data: function() {\r\n            return {\r\n                items: [\r\n                    {label: 'Green', value: 'green'},\r\n                    {label: 'Red', value: 'red'},\r\n                    {label: 'Yellow', value: 'yellow', disabled: true},\r\n                    {label: 'Blue', value: 'blue'}\r\n                ]\r\n            }\r\n        }\r\n    };\r\n</script>",
                 "componentName": "radio",
                 "demoComponentName": "radio-demo"
+            }
+        ]
+    },
+    {
+        "name": "forms/range",
+        "author": "Jack Yang",
+        "description": "<a href=\"http://materializecss.com/forms.html\">forms</a> range component",
+        "props": [
+            {
+                "name": "min",
+                "type": "{Number}",
+                "default": "0",
+                "description": "set the min of range"
+            },
+            {
+                "name": "max",
+                "type": "{Number}",
+                "default": "100",
+                "description": "set the max of range"
+            },
+            {
+                "name": "value",
+                "type": "{Number}",
+                "default": "50",
+                "description": "set the current value of range"
+            },
+            {
+                "name": "disabled",
+                "type": "{Boolean}",
+                "default": "false",
+                "description": "indicate this range controller is disabled or not"
+            }
+        ],
+        "methods": [],
+        "examples": [
+            {
+                "name": "basic range and disabled range",
+                "description": "",
+                "code": "<template>\r\n    <form>\r\n        <div class=\"row\">\r\n            <range min=\"0\" max=\"100\" value=\"61\"></range>\r\n            <range min=\"0\" max=\"100\" value=\"10\" disabled></range>\r\n        </div>\r\n    </form>\r\n</template>\r\n\r\n<script>\r\n    /**\r\n     * @example basic range and disabled range\r\n     * @for range\r\n     * @description\r\n     */\r\n    module.exports = {\r\n        components: {\r\n            'range': require('material-ui-vue/components/forms/range.vue')\r\n        }\r\n    }\r\n</script>",
+                "componentName": "range",
+                "demoComponentName": "range-demo"
             }
         ]
     },
@@ -1244,7 +1438,14 @@ var modules = [
         "name": "navbar/nav-collapsible-item",
         "author": "Jack Yang",
         "description": "collapsible menu component in navbar. When your nav bar is resized, you will see that the links on the right turn into a hamburger icon",
-        "props": [],
+        "props": [
+            {
+                "name": "active",
+                "type": "{Boolean}",
+                "default": "false",
+                "description": "indicate the nav-item is active or not"
+            }
+        ],
         "methods": [],
         "examples": []
     },
@@ -1253,6 +1454,108 @@ var modules = [
         "author": "Jack Yang",
         "description": "dropdown menu component in navbar",
         "props": [
+            {
+                "name": "label",
+                "type": "{String}",
+                "default": "''",
+                "description": "label of this button"
+            },
+            {
+                "name": "type",
+                "type": "{String}",
+                "default": "''",
+                "description": "type of this button. '': raised button, by default. 'flat': flat button. 'floating': floating button"
+            },
+            {
+                "name": "large",
+                "type": "{Boolean}",
+                "default": "false",
+                "description": "set this prop as true to let this button has a larger height for buttons that need more attention"
+            },
+            {
+                "name": "icon",
+                "type": "{String}",
+                "default": "''",
+                "description": "icon of this button"
+            },
+            {
+                "name": "iconPosition",
+                "type": "{String}",
+                "default": "'left'",
+                "description": "icon position of the button icon. Possible values: 'left', 'right'"
+            },
+            {
+                "name": "wavesEffect",
+                "type": "{Boolean}",
+                "default": "true",
+                "description": "apple the waves effect of the button"
+            },
+            {
+                "name": "lightWave",
+                "type": "{Boolean}",
+                "default": "true",
+                "description": "apply the light-style waves effect to the button"
+            },
+            {
+                "name": "",
+                "type": "{Boolean}",
+                "default": "false",
+                "description": "indicate the button is disabled or not"
+            },
+            {
+                "name": "items",
+                "type": "{Array}",
+                "default": "function() {return [];}",
+                "description": "example value: [{href: '#!', label: 'item 1', badge: {label: '1', new: true}}, {href: '#!', label: 'item 2'}, {divider: true}]"
+            },
+            {
+                "name": "inDuration",
+                "type": "{Number}",
+                "default": "300",
+                "description": "the duration of the transition enter in milliseconds"
+            },
+            {
+                "name": "outDuration",
+                "type": "{Number}",
+                "default": "225",
+                "description": "the duration of the transition out in milliseconds"
+            },
+            {
+                "name": "constrainWidth",
+                "type": "{Boolean}",
+                "default": "true",
+                "description": "if true, constrainWidth to the size of the dropdown activator"
+            },
+            {
+                "name": "hover",
+                "type": "{Boolean}",
+                "default": "true",
+                "description": "if true, the dropdown will open on hover"
+            },
+            {
+                "name": "gutter",
+                "type": "{Number}",
+                "default": "0",
+                "description": "this defines the spacing from the aligned edge"
+            },
+            {
+                "name": "belowOrigin",
+                "type": "{Boolean}",
+                "default": "false",
+                "description": "if true, the dropdown will show below the activator"
+            },
+            {
+                "name": "alignment",
+                "type": "{String}",
+                "default": "'left'",
+                "description": "defines the edge the menu is aligned to. Possible values: 'left', 'right'"
+            },
+            {
+                "name": "active",
+                "type": "{Boolean}",
+                "default": "false",
+                "description": "indicate the nav-item is active or not"
+            },
             {
                 "name": "iconPosition",
                 "type": "{String}",
@@ -1267,9 +1570,51 @@ var modules = [
         "name": "navbar/nav-item",
         "author": "Jack Yang",
         "description": "a component for nav-item",
-        "props": [],
+        "props": [
+            {
+                "name": "active",
+                "type": "{Boolean}",
+                "default": "false",
+                "description": "indicate the nav-item is active or not"
+            }
+        ],
         "methods": [],
         "examples": []
+    },
+    {
+        "name": "navbar/search-bar",
+        "author": "Jack Yang",
+        "description": "search form in the navbar",
+        "props": [
+            {
+                "name": "placeholder",
+                "type": "{String}",
+                "default": "''",
+                "description": "placeholder of search box"
+            },
+            {
+                "name": "value",
+                "type": "{String}",
+                "default": "''",
+                "description": "value of the search box"
+            },
+            {
+                "name": "fixed",
+                "type": "{Boolean}",
+                "default": "false",
+                "description": "indicate this is fixed search-bar or not"
+            }
+        ],
+        "methods": [],
+        "examples": [
+            {
+                "name": "search-bar demo",
+                "description": "",
+                "code": "<template>\r\n    <div class=\"row\">\r\n        <search-bar placeholder=\"search...\"></search-bar>\r\n    </div>\r\n</template>\r\n\r\n<script>\r\n    /**\r\n     * @example search-bar demo\r\n     * @for search-bar\r\n     * @description\r\n     */\r\n    module.exports = {\r\n        components: {\r\n            'search-bar': require('material-ui-vue/components/navbar/search-bar.vue')\r\n        }\r\n    };\r\n</script>",
+                "componentName": "search-bar",
+                "demoComponentName": "search-bar-demo"
+            }
+        ]
     },
     {
         "name": "navbar/navbar",
@@ -1388,22 +1733,6 @@ var modules = [
         "examples": []
     },
     {
-        "name": "pagination/pagination",
-        "author": "Jack Yang",
-        "description": "a component for pagination",
-        "props": [],
-        "methods": [],
-        "examples": [
-            {
-                "name": "pagination demo",
-                "description": "",
-                "code": "<template>\r\n    <div class=\"row\">\r\n        <pagination>\r\n            <pagination-item prev disabled></pagination-item>\r\n            <pagination-item v-for=\"page in pages\"\r\n                             :active=\"page == current\"\r\n                             @click=\"setCurrent(page)\">\r\n                {{page}}\r\n            </pagination-item>\r\n            <pagination-item next></pagination-item>\r\n        </pagination>\r\n    </div>\r\n</template>\r\n\r\n<script>\r\n    /**\r\n     * @example pagination demo\r\n     * @for pagination\r\n     * @description\r\n     */\r\n    module.exports = {\r\n        components: {\r\n            'pagination': require('material-ui-vue/components/pagination/pagination.vue'),\r\n            'pagination-item': require('material-ui-vue/components/pagination/pagination-item.vue')\r\n        },\r\n\r\n        data: function() {\r\n            return {\r\n                pages: [1,2,3],\r\n                current: 1\r\n            }\r\n        },\r\n\r\n        methods: {\r\n            setCurrent: function(pageIndex) {\r\n                this.current = pageIndex;\r\n            }\r\n        }\r\n    };\r\n</script>",
-                "componentName": "pagination",
-                "demoComponentName": "pagination-demo"
-            }
-        ]
-    },
-    {
         "name": "parallax/parallax",
         "author": "Jack Yang",
         "description": "<a href=\"http://materializecss.com/parallax.html\">Parallax</a> is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling",
@@ -1425,43 +1754,18 @@ var modules = [
         "examples": []
     },
     {
-        "name": "progresses/linear-progress",
+        "name": "pagination/pagination",
         "author": "Jack Yang",
-        "description": "Linear <a href=\"http://materializecss.com/preloader.html\">preloader</a> in materializecss",
-        "props": [
-            {
-                "name": "determinate",
-                "type": "{Boolean}",
-                "default": "false",
-                "description": "indicate this is a determinate progress or not"
-            },
-            {
-                "name": "percentage",
-                "type": "{Number}",
-                "default": "0",
-                "description": "this value used in a determinate progress"
-            },
-            {
-                "name": "color",
-                "type": "{String}",
-                "default": "''",
-                "description": "set the front color. <a href=\"http://materializecss.com/color.html\">Possible</a>. Example: color=\"red\""
-            },
-            {
-                "name": "backgroundColor",
-                "type": "{String}",
-                "default": "''",
-                "description": "set the background color. <a href=\"http://materializecss.com/color.html\">Possible</a>. Example: background-color=\"red lighten-4\""
-            }
-        ],
+        "description": "a component for pagination",
+        "props": [],
         "methods": [],
         "examples": [
             {
-                "name": "linear-progress demo",
+                "name": "pagination demo",
                 "description": "",
-                "code": "<template>\r\n    <div class=\"row\">\r\n        <linear-progress color=\"red\" background-color=\"red lighten-4\"></linear-progress>\r\n        <linear-progress color=\"red\" background-color=\"red lighten-4\" determinate :percentage=\"33\"></linear-progress>\r\n    </div>\r\n</template>\r\n\r\n<script>\r\n    /**\r\n     * @example linear-progress demo\r\n     * @for linear-progress\r\n     * @description\r\n     */\r\n    module.exports = {\r\n        components: {\r\n            'linear-progress': require('material-ui-vue/components/progresses/linear-progress.vue')\r\n        }\r\n    };\r\n</script>",
-                "componentName": "linear-progress",
-                "demoComponentName": "linear-progress-demo"
+                "code": "<template>\r\n    <div class=\"row\">\r\n        <pagination>\r\n            <pagination-item prev disabled></pagination-item>\r\n            <pagination-item v-for=\"page in pages\"\r\n                             :active=\"page == current\"\r\n                             @click=\"setCurrent(page)\">\r\n                {{page}}\r\n            </pagination-item>\r\n            <pagination-item next></pagination-item>\r\n        </pagination>\r\n    </div>\r\n</template>\r\n\r\n<script>\r\n    /**\r\n     * @example pagination demo\r\n     * @for pagination\r\n     * @description\r\n     */\r\n    module.exports = {\r\n        components: {\r\n            'pagination': require('material-ui-vue/components/pagination/pagination.vue'),\r\n            'pagination-item': require('material-ui-vue/components/pagination/pagination-item.vue')\r\n        },\r\n\r\n        data: function() {\r\n            return {\r\n                pages: [1,2,3],\r\n                current: 1\r\n            }\r\n        },\r\n\r\n        methods: {\r\n            setCurrent: function(pageIndex) {\r\n                this.current = pageIndex;\r\n            }\r\n        }\r\n    };\r\n</script>",
+                "componentName": "pagination",
+                "demoComponentName": "pagination-demo"
             }
         ]
     },
@@ -1503,6 +1807,47 @@ var modules = [
                 "code": "<template>\r\n    <div class=\"row\">\r\n        <circle-progress color=\"red\"></circle-progress>\r\n        <circle-progress color=\"teal\" size=\"small\"></circle-progress>\r\n        <circle-progress color=\"yellow\" size=\"big\"></circle-progress>\r\n        <circle-progress active flash></circle-progress>\r\n    </div>\r\n</template>\r\n\r\n<script>\r\n    /**\r\n     * @example circle-progress demo\r\n     * @for circle-progress\r\n     * @description\r\n     */\r\n    module.exports = {\r\n        components: {\r\n            'circle-progress': require('material-ui-vue/components/progresses/circle-progress.vue')\r\n        }\r\n    };\r\n</script>",
                 "componentName": "circle-progress",
                 "demoComponentName": "circle-progress-demo"
+            }
+        ]
+    },
+    {
+        "name": "progresses/linear-progress",
+        "author": "Jack Yang",
+        "description": "Linear <a href=\"http://materializecss.com/preloader.html\">preloader</a> in materializecss",
+        "props": [
+            {
+                "name": "determinate",
+                "type": "{Boolean}",
+                "default": "false",
+                "description": "indicate this is a determinate progress or not"
+            },
+            {
+                "name": "percentage",
+                "type": "{Number}",
+                "default": "0",
+                "description": "this value used in a determinate progress"
+            },
+            {
+                "name": "color",
+                "type": "{String}",
+                "default": "''",
+                "description": "set the front color. <a href=\"http://materializecss.com/color.html\">Possible</a>. Example: color=\"red\""
+            },
+            {
+                "name": "backgroundColor",
+                "type": "{String}",
+                "default": "''",
+                "description": "set the background color. <a href=\"http://materializecss.com/color.html\">Possible</a>. Example: background-color=\"red lighten-4\""
+            }
+        ],
+        "methods": [],
+        "examples": [
+            {
+                "name": "linear-progress demo",
+                "description": "",
+                "code": "<template>\r\n    <div class=\"row\">\r\n        <linear-progress color=\"red\" background-color=\"red lighten-4\"></linear-progress>\r\n        <linear-progress color=\"red\" background-color=\"red lighten-4\" determinate :percentage=\"33\"></linear-progress>\r\n    </div>\r\n</template>\r\n\r\n<script>\r\n    /**\r\n     * @example linear-progress demo\r\n     * @for linear-progress\r\n     * @description\r\n     */\r\n    module.exports = {\r\n        components: {\r\n            'linear-progress': require('material-ui-vue/components/progresses/linear-progress.vue')\r\n        }\r\n    };\r\n</script>",
+                "componentName": "linear-progress",
+                "demoComponentName": "linear-progress-demo"
             }
         ]
     },
@@ -1569,41 +1914,6 @@ var modules = [
                 "code": "<template>\r\n    <div class=\"row\">\r\n        <tabs>\r\n            <tab label=\"Test 1\" >\r\n                Test 1 Page\r\n            </tab>\r\n            <tab label=\"Test 2\" acitve>\r\n                Test 2 Page\r\n            </tab>\r\n            <tab label=\"Disabled Tab\" disabled>\r\n                Test 3 page\r\n            </tab>\r\n            <tab label=\"Test 4\">\r\n                Test 4 page\r\n            </tab>\r\n        </tabs>\r\n    </div>\r\n</template>\r\n\r\n<script>\r\n    /**\r\n     * @example tabs demo\r\n     * @for tabs\r\n     * @description\r\n     */\r\n    module.exports = {\r\n        components: {\r\n            'tabs': require('material-ui-vue/components/tabs/tabs.vue'),\r\n            'tab': require('material-ui-vue/components/tabs/tab.vue')\r\n        }\r\n    };\r\n</script>",
                 "componentName": "tabs",
                 "demoComponentName": "tabs-demo"
-            }
-        ]
-    },
-    {
-        "name": "navbar/search-bar",
-        "author": "Jack Yang",
-        "description": "search form in the navbar",
-        "props": [
-            {
-                "name": "placeholder",
-                "type": "{String}",
-                "default": "''",
-                "description": "placeholder of search box"
-            },
-            {
-                "name": "value",
-                "type": "{String}",
-                "default": "''",
-                "description": "value of the search box"
-            },
-            {
-                "name": "fixed",
-                "type": "{Boolean}",
-                "default": "false",
-                "description": "indicate this is fixed search-bar or not"
-            }
-        ],
-        "methods": [],
-        "examples": [
-            {
-                "name": "search-bar demo",
-                "description": "",
-                "code": "<template>\r\n    <div class=\"row\">\r\n        <search-bar placeholder=\"search...\"></search-bar>\r\n    </div>\r\n</template>\r\n\r\n<script>\r\n    /**\r\n     * @example search-bar demo\r\n     * @for search-bar\r\n     * @description\r\n     */\r\n    module.exports = {\r\n        components: {\r\n            'search-bar': require('material-ui-vue/components/navbar/search-bar.vue')\r\n        }\r\n    };\r\n</script>",
-                "componentName": "search-bar",
-                "demoComponentName": "search-bar-demo"
             }
         ]
     }

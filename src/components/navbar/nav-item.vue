@@ -14,6 +14,12 @@
      * @description a component for nav-item
      */
     module.exports = {
+        /**
+         * @prop active
+         * @type {Boolean}
+         * @default false
+         * @description indicate the nav-item is active or not
+         */
         mixins: [NavItemPropMixin]
     };
 </script>

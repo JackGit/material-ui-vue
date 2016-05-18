@@ -16,6 +16,12 @@
      * @description collapsible menu component in navbar. When your nav bar is resized, you will see that the links on the right turn into a hamburger icon
      */
     module.exports = {
+        /**
+         * @prop active
+         * @type {Boolean}
+         * @default false
+         * @description indicate the nav-item is active or not
+         */
         mixins: [NavItemPropMixin],
 
         components: {
