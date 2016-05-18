@@ -5,11 +5,13 @@ var fs = require('fs');
 var isWin = /^win/.test(process.platform);
 var SLASH = isWin ? '\\' : '/';
 
-function parseComponentFile(fileString) {
+function parseComponentFile(filePath, fileString) {
     var blocks = parseCommentBlocks(fileString);
     var lines = [];
+    var arr = filePath.split(SLASH);
     var module = {
         name: '',
+        category: arr[arr.length - 2], // forms, buttons, etc
         author: '',
         description: '',
         props: [],
@@ -162,7 +164,7 @@ function scan(root, callback) {
     fse.walk(root)
         .on('data', function(item) {
             // skip directory
-            if(!item.stats.isDirectory()) {
+            if(!item.stats.isDirectory() && item.path.endsWith('.vue')) {
                 items.push(item.path);
                 console.log('scanning file ' + item.path, items.length);
             }
@@ -181,7 +183,7 @@ function scan(root, callback) {
                     } else {
                         console.log('parsing component file', filePath);
 
-                        result = parseComponentFile(data);
+                        result = parseComponentFile(filePath, data);
                         result.name && results.push(result); // store only when there is module name
 
                         // when loop end, output json file
