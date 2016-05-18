@@ -1971,6 +1971,7 @@ var modules = [
     }
 ];
 
+
 function getModuleTree(modules) {
     var categories = {};
     var tree = [];
@@ -1989,15 +1990,15 @@ function getModuleTree(modules) {
             tree.push(categories[c]);
     }
 
-    return tree.sort(function(t1, t2) {
-        return (t1.name || t1[0].name) > (t2.name || t2[0].name);
-    });
+    return tree;
 }
 
 module.exports = {
     loadAllModules: function(store) {
         store.dispatch('SET_MODULES', modules.sort(function(m1, m2) {
-            return m1.name < m2.name;
+            if(m1.name < m2.name) return -1;
+            if(m1.name > m2.name) return 1;
+            return 0;
         }));
 
         store.dispatch('SET_NAV_TREE', getModuleTree(modules));
