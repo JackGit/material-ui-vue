@@ -1,5 +1,7 @@
 var AV = require('avoscloud-sdk');
-AV.initialize('IsqV9oNn0Qf14oTG8VeQjnEo-gzGzoHsz', 'OLLDSIaSPh9CkzhKzF8RY6nE');
+var AVConfig = require('../../../av.config.js');
+
+AV.initialize(AVConfig.id, AVConfig.key);
 
 var VERSION = "0.1.4";
 

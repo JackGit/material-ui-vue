@@ -1,12 +1,13 @@
 var path = require('path');
 var fse = require('fs-extra');
 var fs = require('fs');
+var AV = require('avoscloud-sdk');
+var AVConfig = require('../av.config.js');
+
+AV.initialize(AVConfig.id, AVConfig.key);
 
 var isWin = /^win/.test(process.platform);
 var SLASH = isWin ? '\\' : '/';
-
-var AV = require('avoscloud-sdk');
-AV.initialize('IsqV9oNn0Qf14oTG8VeQjnEo-gzGzoHsz', 'OLLDSIaSPh9CkzhKzF8RY6nE');
 
 var ModuleMetaDataAVObject = AV.Object.extend('ModuleMetaData');
 
