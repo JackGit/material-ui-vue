@@ -1,17 +1,25 @@
 <template>
     <div>
-        <page></page>
+        <router-view></router-view>
     </div>
 </template>
 
 <script>
     var store = require('./vuex/store.js');
+    var actions = require('./vuex/actions.js');
 
     module.exports = {
-        components: {
-            'page': require('./components/page.vue')
+
+        ready: function() {
+            this.loadAllModules();
         },
 
-        store: store
+        store: store,
+
+        vuex: {
+            actions: {
+                loadAllModules: actions.loadAllModules
+            }
+        }
     };
 </script>

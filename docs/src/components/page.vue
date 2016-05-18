@@ -17,8 +17,7 @@
         },
 
         ready: function() {
-            this.loadAllModules();
-            this.selectModule('badges/badge');
+            this.selectModule(this.$route.params.component);
         },
 
         vuex: {
@@ -28,9 +27,14 @@
                 }
             },
             actions: {
-                loadAllModules: actions.loadAllModules,
-                selectModule: actions.selectModule
+                selectModule: actions.selectModule,
+                checkModule: actions.checkModule
             }
+        },
+
+        route: {
+            // don't reuse this component in router, coz component data will be retrieved and re-render
+            canReuse: false
         }
     };
 </script>

@@ -1929,5 +1929,11 @@ module.exports = {
 
     selectModule: function(store, name) {
         store.dispatch('SET_CURRENT_MODULE', name);
+    },
+
+    checkModule: function(store, name) {
+        return store.state.modules.filter(function(module) {
+            return module.name === name;
+        }).length > 0;
     }
 };

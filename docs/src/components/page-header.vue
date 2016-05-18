@@ -3,7 +3,7 @@
         <navbar :logo="currentModule.name" logo-href="#!" side-nav-id="sideNav" logo-position="center"></navbar>
         <side-nav id="sideNav" fixed>
             <nav-item v-for="module in modules | orderBy 'name'" :active="module.name === currentModule.name" @click="handleClick(module.name)">
-                <a href="#!" class="waves-effect waves-teal">{{module.name | simplify}}</a>
+                <a class="waves-effect waves-teal" v-link="{name: 'components', params: {component: module.name}}">{{module.name | simplify}}</a>
             </nav-item>
         </side-nav>
     </header>

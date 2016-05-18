@@ -3,12 +3,8 @@ var VueRouter = require('vue-router');
 
 Vue.use(VueRouter);
 
-
 var App = require('./app.vue');
 var router = new VueRouter();
-
-
-
 
 router.map({
     '/index': {
@@ -19,9 +15,9 @@ router.map({
         name: 'about',
         component: require('./about/about.vue')
     },
-    '/components': {
+    '/components/*component': {
         name: 'components',
-        component: require('./components/example.vue')
+        component: require('./components/page.vue')
     }
 });
 
