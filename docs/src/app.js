@@ -22,7 +22,7 @@ router.map({
 });
 
 router.redirect({
-    '/': '/components'
+    '/': '/components/badges/badge'
 });
 
 

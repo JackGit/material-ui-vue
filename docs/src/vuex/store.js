@@ -18,7 +18,7 @@ module.exports = window.store = new Vuex.Store({
         SET_CURRENT_MODULE: function(state, name) {
             state.currentModule = state.modules.filter(function(module) {
                 return module.name === name;
-            })[0];
+            })[0] || {};
         },
 
         SET_NAV_TREE: function(state, tree) {

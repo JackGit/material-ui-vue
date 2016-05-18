@@ -1,6 +1,6 @@
 <template>
     <header>
-        <navbar :logo="currentModule.name" logo-href="#!" side-nav-id="sideNav" logo-position="center"></navbar>
+        <navbar v-if="currentModule.name" :logo="currentModule.name" logo-href="#!" side-nav-id="sideNav" logo-position="center"></navbar>
         <side-nav id="sideNav" fixed>
             <div v-for="item in navTree">
                 <nav-collapsible-item v-if="item.length > 0">
