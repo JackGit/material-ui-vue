@@ -1,0 +1,22 @@
+$dialog-z-index: 1000;
+$dialog-border-radius: 2px;
+$dialog-background-color: $theme-dialog-background-color;
+
+// overlay
+$dialog-overlay-opacity: .5 !default;
+$dialog-overlay-background-color: #000 !default;
+$dialog-overlay-z-index: 999 !default;
+
+// dialog header
+$dialog-header-padding: 24px 24px 0 24px;
+
+// dialog footer
+$dialog-footer-height: 52px;
+$dialog-footer-line-height: 36px;
+$dialog-footer-padding: 8px 0 8px 24px;
+
+// dialog body
+$dialog-body-padding: 24px;
+$dialog-body-padding-after: 20px 24px 24px 24px;
+
+$dialog-action-margin: 0 8px 0 0;

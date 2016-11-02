@@ -1,0 +1,81 @@
+@import "vars";
+@import "state";
+
+.dialog {
+  @extend .z-depth-4;
+  position: fixed;
+  display: none;
+  margin: auto;
+  padding: 0;
+  left: 0;
+  right: 0;
+  top: 10%;
+  width: 55%;
+  max-height: 70%;
+  background-color: $dialog-background-color;
+  border-radius: $dialog-border-radius;
+  overflow-y: auto;
+  will-change: top, opacity;
+  z-index: $dialog-z-index;
+
+  @media #{$medium-and-down} {
+   width: 80%;
+  }
+
+  h1, h2, h3, h4 {
+    margin-top: 0;
+  }
+
+  &-header {
+    margin: 0;
+    padding: $dialog-header-padding;
+  }
+
+  &-body {
+    margin: 0;
+    padding: $dialog-body-padding;
+
+    .dialog-header + & {
+      padding: $dialog-body-padding-after;
+    }
+  }
+
+  &-footer {
+    padding: $dialog-footer-padding;
+    width: 100%;
+    height: $dialog-footer-height;
+    line-height: $dialog-footer-line-height;
+    font-size: 0;
+    border-radius: 0 0 $dialog-border-radius $dialog-border-radius;
+    background-color: $dialog-background-color;
+    text-align: right;
+  }
+
+  &-action {
+    margin: $dialog-action-margin;
+  }
+}
+
+.dialog--fixed-footer {
+  @extend .dialog;
+  height: 70%;
+
+  .dialog-footer {
+    @extend .dialog-footer;
+    position: absolute;
+    bottom: 0;
+    border-top: 1px solid rgba(0,0,0,0.1);
+  }
+}
+
+.dialog__overlay {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: $dialog-overlay-opacity;
+  background-color: $dialog-overlay-background-color;
+  z-index: $dialog-overlay-z-index;
+}

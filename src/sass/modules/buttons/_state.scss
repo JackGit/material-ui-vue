@@ -1,0 +1,44 @@
+// active, disabled, focus, hover
+// shared disabled style
+.btn.disabled {
+  pointer-events: none;
+  box-shadow: none;
+  cursor: default;
+}
+
+// flat button
+.btn-flat {
+  &:active {
+    background-color: rgba(0,0,0,.2);
+    box-shadow: none;
+  }
+  &:hover,
+  &:focus {
+    background-color: rgba(0,0,0,.1);
+    box-shadow: none;
+  }
+  &.disabled {
+    @extend .btn.disabled;
+    background-color: transparent !important;
+    color: $button-flat-disabled-color !important;
+  }
+}
+
+// raised button
+.btn-raised {
+  &:active {
+
+  }
+  &:hover {
+    background-color: $button-raised-hover-background-color;
+    @extend .z-depth-1-half;
+  }
+  &:focus {
+
+  }
+  &.disabled {
+    @extend .btn.disabled;
+    color: $button-raised-disabled-color;
+    background-color: $button-raised-disabled-background-color;
+  }
+}

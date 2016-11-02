@@ -1,0 +1,17 @@
+// raised button
+$theme-button-raised-color: #fff;
+$theme-button-raised-background-color: #2196f3;
+$theme-button-raised-disabled-color: #9F9F9F !default;
+$theme-button-raised-disabled-background-color: #DFDFDF !default;
+
+// flat button
+$theme-button-flat-color: #343434;
+$theme-button-flat-disabled-color: lighten(#999, 10%);
+// flat button background-color is transparent, can't be themed
+
+// floating button
+$theme-button-floating-color: #fff;
+$theme-button-floating-background-color: #ff4081;
+
+// dialog
+$theme-dialog-background-color: #fafafa;

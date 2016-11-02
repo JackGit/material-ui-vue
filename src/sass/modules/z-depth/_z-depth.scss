@@ -1,0 +1,24 @@
+@import 'vars';
+
+// Z-levels
+.z-depth-0 {
+  box-shadow: $z-depth-0-box-shadow
+}
+.z-depth-1 {
+  box-shadow: $z-depth-1-box-shadow;
+}
+.z-depth-1-half {
+  box-shadow: $z-depth-1-half-box-shadow;
+}
+.z-depth-2 {
+  box-shadow: $z-depth-2-box-shadow;
+}
+.z-depth-3 {
+  box-shadow: $z-depth-3-box-shadow;
+}
+.z-depth-4 {
+  box-shadow: $z-depth-4-box-shadow;
+}
+.z-depth-5 {
+  box-shadow: $z-depth-5-box-shadow;
+}

@@ -1,0 +1,14 @@
+$off-black: rgba(0, 0, 0, 0.87) !default;
+
+// header
+$h1-font-size: 4.2rem !default;
+$h2-font-size: 3.56rem !default;
+$h3-font-size: 2.92rem !default;
+$h4-font-size: 2.28rem !default;
+$h5-font-size: 1.64rem !default;
+$h6-font-size: 1rem !default;
+
+// flow text
+$range : $large-screen - $small-screen !default;
+$intervals: 20 !default;
+$interval-size: $range / $intervals !default;

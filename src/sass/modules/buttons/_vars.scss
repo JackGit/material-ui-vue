@@ -1,0 +1,25 @@
+$button-min-width: 88px !default;
+$button-height: 36px !default;
+$button-padding: 0 16px !default;
+$button-font-size: 14px !default;
+$button-border: none !default;
+$button-border-radius: 2px !default;
+
+// flat
+$button-flat-color: $theme-button-flat-color;
+$button-flat-background-color: transparent;
+$button-flat-disabled-color: lighten(#999, 10%) !default;
+$button-flat-disabled-background-color: transparent;
+
+// raised
+$button-raise-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2);
+$button-raised-color: $theme-button-raised-color;
+$button-raised-background-color: $theme-button-raised-background-color;
+// $button-raised-hover-color: ''; // no value
+$button-raised-hover-background-color: lighten($theme-button-raised-background-color, 5%) !default;
+$button-raised-disabled-color: $theme-button-raised-disabled-color;
+$button-raised-disabled-background-color: $theme-button-raised-disabled-background-color;
+
+// floating
+$button-floating-color: $theme-button-floating-color;
+$button-floating-background-color: $theme-button-floating-background-color;

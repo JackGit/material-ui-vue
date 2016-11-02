@@ -1,0 +1,45 @@
+@import "vars";
+@import "state";
+
+// common button style
+.btn {
+  display: inline-block;
+  padding: $button-padding;
+  min-width: $button-min-width;
+  height: $button-height;
+  font-size: $button-font-size;
+  line-height: $button-height;
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: $button-border;
+  border-radius: $button-border-radius;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+}
+
+// flat button
+.btn-flat {
+  @extend .btn;
+  color: $button-flat-color;
+  background-color: transparent;
+  box-shadow: none;
+  transition: background-color .2s;
+}
+
+// raised button
+.btn-raised {
+  @extend .btn;
+  @extend .z-depth-1;
+  color: $button-raised-color;
+  background-color: $button-raised-background-color;
+  letter-spacing: .5px;
+  transition: .2s ease-out;
+}
+
+// floating button
+.btn-floating {
+  color: $button-floating-color;
+  background-color: $button-floating-background-color;
+}
