@@ -5,7 +5,7 @@
 This is a [materializecss.com](http://materializecss.com/) implementation with [Vue.js](http://vuejs.org).
 
 ### document ###
-[Document](http://material-ui-vue.jackyang.me/docs/index.html)
+[Document](http://jackgit.github.io/material-ui-vue/index.html)
 
 ### install ###
 ```
